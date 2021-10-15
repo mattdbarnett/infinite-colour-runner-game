@@ -1,0 +1,48 @@
+[gd_scene format=2]
+
+[node name="menuroot" type="Node2D"]
+
+[node name="menucanvas" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="menumain" type="Control" parent="menucanvas"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menuplay" type="Control" parent="menucanvas"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menucustom" type="Control" parent="menucanvas"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menustore" type="Control" parent="menucanvas"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menusettings" type="Control" parent="menucanvas"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menuhelp" type="Control" parent="menucanvas"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
