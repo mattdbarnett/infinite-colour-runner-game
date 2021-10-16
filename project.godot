@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="Autumn Semester Project"
+run/main_scene="res://0 Scenes/mainmenu.tscn"
 config/icon="res://icon.png"
 
 [display]
