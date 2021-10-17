@@ -3,5 +3,6 @@
 [ext_resource path="res://3 Fonts/0 Const/pixel font-7.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 175
+size = 225
+extra_spacing_top = 30
 font_data = ExtResource( 1 )

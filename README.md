@@ -5,7 +5,7 @@
 ## To-Do:
 
 1. ~~Create base project environment for the menus.~~
-2. Finish early-version of the "Main" Menu.
+2. ~~Finish early-version of the "Main" Menu.~~
 3. Finish early-version of the "Play" Menu.
 4. Finish early-version of the "Custom" Menu.
 5. Finish early-version of the "Store" Menu.
