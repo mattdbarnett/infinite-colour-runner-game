@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://5 Misc/worldenv.tres" type="Environment" id=1]
 [ext_resource path="res://3 Fonts/1 Menus/0 Main/main_playbtn.tres" type="DynamicFont" id=2]
@@ -20,10 +20,12 @@
 [ext_resource path="res://4 Styling/1 Menus/0 Main/5 helpbtn/mm_helpbtn_hover.tres" type="StyleBox" id=18]
 [ext_resource path="res://3 Fonts/1 Menus/0 Main/main_helpbtn.tres" type="DynamicFont" id=19]
 [ext_resource path="res://3 Fonts/1 Menus/0 Main/main_quitbtn.tres" type="DynamicFont" id=20]
+[ext_resource path="res://1 Scripts/menuscript.gd" type="Script" id=21]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="menuroot" type="Node2D"]
+script = ExtResource( 21 )
 
 [node name="menucanvas" type="CanvasLayer" parent="."]
 layer = 5
@@ -104,7 +106,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mm_helpbtn2" type="Button" parent="menucanvas/menumain"]
+[node name="mm_quitbtn" type="Button" parent="menucanvas/menumain"]
 margin_left = 1408.0
 margin_top = 832.0
 margin_right = 1920.0
@@ -165,3 +167,11 @@ current = true
 
 [node name="menuenv" type="WorldEnvironment" parent="menucanvas"]
 environment = ExtResource( 1 )
+
+[connection signal="pressed" from="menucanvas/menumain/mm_playbtn" to="." method="_on_mm_playbtn_pressed"]
+[connection signal="pressed" from="menucanvas/menumain/mm_custombtn" to="." method="_on_mm_custombtn_pressed"]
+[connection signal="pressed" from="menucanvas/menumain/mm_storebtn" to="." method="_on_mm_storebtn_pressed"]
+[connection signal="pressed" from="menucanvas/menumain/mm_settingsbtn" to="." method="_on_mm_settingsbtn_pressed"]
+[connection signal="pressed" from="menucanvas/menumain/mm_helpbtn" to="." method="_on_mm_helpbtn_pressed"]
+[connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn2_pressed"]
+[connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn_pressed"]
