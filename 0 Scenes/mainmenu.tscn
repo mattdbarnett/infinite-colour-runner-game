@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://5 Misc/worldenv.tres" type="Environment" id=1]
 [ext_resource path="res://3 Fonts/1 Menus/0 Main/main_playbtn.tres" type="DynamicFont" id=2]
@@ -21,6 +21,8 @@
 [ext_resource path="res://3 Fonts/1 Menus/0 Main/main_helpbtn.tres" type="DynamicFont" id=19]
 [ext_resource path="res://3 Fonts/1 Menus/0 Main/main_quitbtn.tres" type="DynamicFont" id=20]
 [ext_resource path="res://1 Scripts/menuscript.gd" type="Script" id=21]
+[ext_resource path="res://4 Styling/1 Menus/new_theme.tres" type="Theme" id=22]
+[ext_resource path="res://3 Fonts/1 Menus/1 Play/playfont.tres" type="DynamicFont" id=23]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -123,8 +125,154 @@ __meta__ = {
 
 [node name="menuplay" type="Control" parent="menucanvas"]
 visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_scollcont" type="ScrollContainer" parent="menucanvas/menuplay"]
 margin_right = 1920.0
 margin_bottom = 1080.0
+theme = ExtResource( 22 )
+follow_focus = true
+scroll_vertical_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_hboxcont" type="HBoxContainer" parent="menucanvas/menuplay/mp_scollcont"]
+margin_right = 4504.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_btncontainer1" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
+margin_right = 640.0
+rect_min_size = Vector2( 640, 0 )
+
+[node name="mp_op1" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer1"]
+margin_left = 128.0
+margin_top = 256.0
+margin_right = 512.0
+margin_bottom = 640.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 23 )
+text = "Normal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_btncontainer2" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
+margin_left = 644.0
+margin_right = 1284.0
+rect_min_size = Vector2( 640, 0 )
+
+[node name="mp_op1" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer2"]
+margin_left = 128.0
+margin_top = 256.0
+margin_right = 512.0
+margin_bottom = 640.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 23 )
+text = "Normal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_btncontainer3" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
+margin_left = 1288.0
+margin_right = 1928.0
+rect_min_size = Vector2( 640, 0 )
+
+[node name="mp_op1" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer3"]
+margin_left = 128.0
+margin_top = 256.0
+margin_right = 512.0
+margin_bottom = 640.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 23 )
+text = "Normal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_btncontainer4" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
+margin_left = 1932.0
+margin_right = 2572.0
+rect_min_size = Vector2( 640, 0 )
+
+[node name="mp_op1" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer4"]
+margin_left = 128.0
+margin_top = 256.0
+margin_right = 512.0
+margin_bottom = 640.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 23 )
+text = "Normal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_btncontainer5" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
+margin_left = 2576.0
+margin_right = 3216.0
+rect_min_size = Vector2( 640, 0 )
+
+[node name="mp_op1" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer5"]
+margin_left = 128.0
+margin_top = 256.0
+margin_right = 512.0
+margin_bottom = 640.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 23 )
+text = "Normal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_btncontainer6" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
+margin_left = 3220.0
+margin_right = 3860.0
+rect_min_size = Vector2( 640, 0 )
+
+[node name="mp_op1" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer6"]
+margin_left = 128.0
+margin_top = 256.0
+margin_right = 512.0
+margin_bottom = 640.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 23 )
+text = "Normal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_btncontainer7" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
+margin_left = 3864.0
+margin_right = 4504.0
+rect_min_size = Vector2( 640, 0 )
+
+[node name="mp_op1" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer7"]
+margin_left = 128.0
+margin_top = 256.0
+margin_right = 512.0
+margin_bottom = 640.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 23 )
+text = "Normal"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -162,6 +310,7 @@ __meta__ = {
 }
 
 [node name="menucamera" type="Camera2D" parent="menucanvas"]
+visible = false
 anchor_mode = 0
 current = true
 
@@ -173,5 +322,5 @@ environment = ExtResource( 1 )
 [connection signal="pressed" from="menucanvas/menumain/mm_storebtn" to="." method="_on_mm_storebtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_settingsbtn" to="." method="_on_mm_settingsbtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_helpbtn" to="." method="_on_mm_helpbtn_pressed"]
-[connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn2_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn_pressed"]
+[connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn2_pressed"]
