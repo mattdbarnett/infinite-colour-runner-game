@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://5 Misc/worldenv.tres" type="Environment" id=1]
 [ext_resource path="res://3 Fonts/1 Menus/0 Main/main_playbtn.tres" type="DynamicFont" id=2]
@@ -23,8 +23,38 @@
 [ext_resource path="res://1 Scripts/menuscript.gd" type="Script" id=21]
 [ext_resource path="res://4 Styling/1 Menus/new_theme.tres" type="Theme" id=22]
 [ext_resource path="res://3 Fonts/1 Menus/1 Play/playfont.tres" type="DynamicFont" id=23]
+[ext_resource path="res://3 Fonts/0 Const/pixel font-7.ttf" type="DynamicFontData" id=24]
+[ext_resource path="res://4 Styling/1 Menus/1 Play/scorepanel.tres" type="StyleBox" id=25]
+[ext_resource path="res://4 Styling/1 Menus/1 Play/coinpanel.tres" type="StyleBox" id=26]
+[ext_resource path="res://4 Styling/1 Menus/1 Play/infopanel.tres" type="StyleBox" id=27]
 
 [sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="DynamicFont" id=5]
+size = 50
+font_data = ExtResource( 24 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 50
+font_data = ExtResource( 24 )
 
 [node name="menuroot" type="Node2D"]
 script = ExtResource( 21 )
@@ -156,11 +186,14 @@ margin_right = 512.0
 margin_bottom = 640.0
 custom_styles/hover = ExtResource( 7 )
 custom_styles/pressed = ExtResource( 10 )
+custom_styles/focus = SubResource( 7 )
 custom_styles/normal = ExtResource( 9 )
 custom_fonts/font = ExtResource( 23 )
+toggle_mode = true
 text = "Normal"
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": "1"
 }
 
 [node name="mp_btncontainer2" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
@@ -168,15 +201,17 @@ margin_left = 644.0
 margin_right = 1284.0
 rect_min_size = Vector2( 640, 0 )
 
-[node name="mp_op1" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer2"]
+[node name="mp_op2" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer2"]
 margin_left = 128.0
 margin_top = 256.0
 margin_right = 512.0
 margin_bottom = 640.0
 custom_styles/hover = ExtResource( 7 )
 custom_styles/pressed = ExtResource( 10 )
+custom_styles/focus = SubResource( 8 )
 custom_styles/normal = ExtResource( 9 )
 custom_fonts/font = ExtResource( 23 )
+toggle_mode = true
 text = "Normal"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -187,15 +222,17 @@ margin_left = 1288.0
 margin_right = 1928.0
 rect_min_size = Vector2( 640, 0 )
 
-[node name="mp_op1" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer3"]
+[node name="mp_op3" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer3"]
 margin_left = 128.0
 margin_top = 256.0
 margin_right = 512.0
 margin_bottom = 640.0
 custom_styles/hover = ExtResource( 7 )
 custom_styles/pressed = ExtResource( 10 )
+custom_styles/focus = SubResource( 9 )
 custom_styles/normal = ExtResource( 9 )
 custom_fonts/font = ExtResource( 23 )
+toggle_mode = true
 text = "Normal"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -206,15 +243,17 @@ margin_left = 1932.0
 margin_right = 2572.0
 rect_min_size = Vector2( 640, 0 )
 
-[node name="mp_op1" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer4"]
+[node name="mp_op4" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer4"]
 margin_left = 128.0
 margin_top = 256.0
 margin_right = 512.0
 margin_bottom = 640.0
 custom_styles/hover = ExtResource( 7 )
 custom_styles/pressed = ExtResource( 10 )
+custom_styles/focus = SubResource( 10 )
 custom_styles/normal = ExtResource( 9 )
 custom_fonts/font = ExtResource( 23 )
+toggle_mode = true
 text = "Normal"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -225,15 +264,17 @@ margin_left = 2576.0
 margin_right = 3216.0
 rect_min_size = Vector2( 640, 0 )
 
-[node name="mp_op1" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer5"]
+[node name="mp_op5" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer5"]
 margin_left = 128.0
 margin_top = 256.0
 margin_right = 512.0
 margin_bottom = 640.0
 custom_styles/hover = ExtResource( 7 )
 custom_styles/pressed = ExtResource( 10 )
+custom_styles/focus = SubResource( 11 )
 custom_styles/normal = ExtResource( 9 )
 custom_fonts/font = ExtResource( 23 )
+toggle_mode = true
 text = "Normal"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -244,15 +285,17 @@ margin_left = 3220.0
 margin_right = 3860.0
 rect_min_size = Vector2( 640, 0 )
 
-[node name="mp_op1" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer6"]
+[node name="mp_op6" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer6"]
 margin_left = 128.0
 margin_top = 256.0
 margin_right = 512.0
 margin_bottom = 640.0
 custom_styles/hover = ExtResource( 7 )
 custom_styles/pressed = ExtResource( 10 )
+custom_styles/focus = SubResource( 12 )
 custom_styles/normal = ExtResource( 9 )
 custom_fonts/font = ExtResource( 23 )
+toggle_mode = true
 text = "Normal"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -263,16 +306,117 @@ margin_left = 3864.0
 margin_right = 4504.0
 rect_min_size = Vector2( 640, 0 )
 
-[node name="mp_op1" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer7"]
+[node name="mp_op7" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer7"]
 margin_left = 128.0
 margin_top = 256.0
 margin_right = 512.0
 margin_bottom = 640.0
 custom_styles/hover = ExtResource( 7 )
 custom_styles/pressed = ExtResource( 10 )
+custom_styles/focus = SubResource( 13 )
 custom_styles/normal = ExtResource( 9 )
 custom_fonts/font = ExtResource( 23 )
+toggle_mode = true
 text = "Normal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_back" type="Button" parent="menucanvas/menuplay"]
+margin_right = 384.0
+margin_bottom = 192.0
+custom_styles/hover = ExtResource( 16 )
+custom_styles/pressed = ExtResource( 15 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 23 )
+keep_pressed_outside = true
+text = "Back"
+
+[node name="mp_start" type="Button" parent="menucanvas/menuplay"]
+margin_left = 1472.0
+margin_top = 768.0
+margin_right = 1920.0
+margin_bottom = 952.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 23 )
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_infopanel" type="Panel" parent="menucanvas/menuplay"]
+margin_left = 512.0
+margin_right = 1384.0
+margin_bottom = 128.0
+custom_styles/panel = ExtResource( 27 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_coinpanel" type="Panel" parent="menucanvas/menuplay"]
+margin_left = 1664.0
+margin_top = 576.0
+margin_right = 1920.0
+margin_bottom = 768.0
+rect_pivot_offset = Vector2( -944, -512 )
+custom_styles/panel = ExtResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_coinlabel" type="Label" parent="menucanvas/menuplay/mp_coinpanel"]
+margin_left = 48.0
+margin_top = 40.0
+margin_right = 200.0
+margin_bottom = 91.0
+custom_fonts/font = SubResource( 5 )
+text = "Coins:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_coinvalue" type="Label" parent="menucanvas/menuplay/mp_coinpanel"]
+margin_left = 48.0
+margin_top = 104.0
+margin_right = 200.0
+margin_bottom = 155.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0.937255, 0, 1 )
+text = "0"
+align = 1
+
+[node name="mp_scorepanel" type="Panel" parent="menucanvas/menuplay"]
+margin_left = 1512.0
+margin_right = 1920.0
+margin_bottom = 280.0
+custom_styles/panel = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_coinlabel" type="Label" parent="menucanvas/menuplay/mp_scorepanel"]
+margin_left = 88.0
+margin_top = 64.0
+margin_right = 343.0
+margin_bottom = 115.0
+custom_fonts/font = SubResource( 5 )
+text = "High-Score:"
+align = 1
+
+[node name="mp_coinvalue2" type="Label" parent="menucanvas/menuplay/mp_scorepanel"]
+margin_left = 24.0
+margin_top = 168.0
+margin_right = 384.0
+margin_bottom = 219.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.0235294, 1, 0, 1 )
+text = "0"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -324,3 +468,11 @@ environment = ExtResource( 1 )
 [connection signal="pressed" from="menucanvas/menumain/mm_helpbtn" to="." method="_on_mm_helpbtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn2_pressed"]
+[connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer1/mp_op1" to="." method="_on_mp_op1_pressed"]
+[connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer2/mp_op2" to="." method="_on_mp_op2_pressed"]
+[connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer3/mp_op3" to="." method="_on_mp_op3_pressed"]
+[connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer4/mp_op4" to="." method="_on_mp_op4_pressed"]
+[connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer5/mp_op5" to="." method="_on_mp_op5_pressed"]
+[connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer6/mp_op6" to="." method="_on_mp_op6_pressed"]
+[connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer7/mp_op7" to="." method="_on_mp_op7_pressed"]
+[connection signal="pressed" from="menucanvas/menuplay/mp_back" to="." method="_on_mp_back_pressed"]
