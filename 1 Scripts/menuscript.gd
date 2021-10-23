@@ -45,6 +45,8 @@ func currentmenu_update(newcurrent):
 			get_node("menucanvas/menumain/mm_playbtn").grab_focus()
 		menuplay:
 			get_node("menucanvas/menuplay/mp_back").grab_focus()
+		menucustom:
+			get_node("menucanvas/menucustom/mc_back").grab_focus()
 			
 	newcurrent.visible = true
 	currentmenu.visible = false
@@ -110,6 +112,9 @@ func _on_mp_op7_pressed():
 """
 Custom Menu Signals
 """
+
+func _on_mc_back_pressed():
+	currentmenu_update(menumain)
 
 """
 Store Menu Signals

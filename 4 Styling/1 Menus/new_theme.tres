@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=10 format=2]
+[gd_resource type="Theme" load_steps=15 format=2]
 
 [ext_resource path="res://3 Fonts/0 Const/mainfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://3 Fonts/0 Const/pixel font-7.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -33,6 +34,32 @@ border_width_top = 64
 border_width_bottom = 64
 border_color = Color( 0, 0, 0, 1 )
 corner_detail = 1
+
+[sub_resource type="DynamicFont" id=9]
+size = 25
+extra_spacing_top = 25
+extra_spacing_bottom = 25
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+content_margin_left = 0.0
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+content_margin_left = 25.0
+content_margin_right = 25.0
+bg_color = Color( 0, 0, 0, 0.878431 )
+border_width_bottom = 25
+border_color = Color( 0, 0, 0, 0.878431 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+content_margin_left = 75.0
+content_margin_right = 75.0
+content_margin_top = 0.0
+bg_color = Color( 0, 0, 0, 1 )
+border_width_bottom = 25
+border_color = Color( 0.0313726, 0, 1, 1 )
+shadow_color = Color( 1, 1, 1, 0.6 )
 
 [resource]
 default_font = ExtResource( 1 )
@@ -81,3 +108,41 @@ HScrollBar/styles/grabber_highlight = SubResource( 6 )
 HScrollBar/styles/grabber_pressed = SubResource( 7 )
 HScrollBar/styles/scroll = SubResource( 8 )
 HScrollBar/styles/scroll_focus = null
+TabContainer/colors/font_color_bg = Color( 1, 1, 1, 1 )
+TabContainer/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+TabContainer/colors/font_color_fg = Color( 0.94, 0.94, 0.94, 1 )
+TabContainer/constants/hseparation = 4
+TabContainer/constants/label_valign_bg = 2
+TabContainer/constants/label_valign_fg = 0
+TabContainer/constants/side_margin = 8
+TabContainer/constants/top_margin = 24
+TabContainer/fonts/font = SubResource( 9 )
+TabContainer/icons/decrement = null
+TabContainer/icons/decrement_highlight = null
+TabContainer/icons/increment = null
+TabContainer/icons/increment_highlight = null
+TabContainer/icons/menu = null
+TabContainer/icons/menu_highlight = null
+TabContainer/styles/panel = SubResource( 10 )
+TabContainer/styles/tab_bg = SubResource( 11 )
+TabContainer/styles/tab_disabled = null
+TabContainer/styles/tab_fg = SubResource( 12 )
+Tabs/colors/font_color_bg = Color( 1, 1, 1, 1 )
+Tabs/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Tabs/colors/font_color_fg = Color( 0.94, 0.94, 0.94, 1 )
+Tabs/constants/hseparation = 4
+Tabs/constants/label_valign_bg = 2
+Tabs/constants/label_valign_fg = 0
+Tabs/constants/top_margin = 24
+Tabs/fonts/font = ExtResource( 1 )
+Tabs/icons/close = null
+Tabs/icons/decrement = null
+Tabs/icons/decrement_highlight = null
+Tabs/icons/increment = null
+Tabs/icons/increment_highlight = null
+Tabs/styles/button = null
+Tabs/styles/button_pressed = null
+Tabs/styles/panel = null
+Tabs/styles/tab_bg = null
+Tabs/styles/tab_disabled = null
+Tabs/styles/tab_fg = null
