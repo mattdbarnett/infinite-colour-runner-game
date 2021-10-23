@@ -27,6 +27,14 @@ onready var mpbuttons = [
 	get_node("menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer7/mp_op7")
 ]
 
+#Settings Menu Vars
+onready var msbuttons = [
+	get_node("menucanvas/menusettings/ms_g+d"),
+	get_node("menucanvas/menusettings/ms_gui"),
+	get_node("menucanvas/menusettings/ms_sound"),
+	get_node("menucanvas/menusettings/ms_gameplay"),
+]
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("menucanvas/menumain/mm_playbtn").grab_focus()
@@ -123,6 +131,24 @@ Store Menu Signals
 """
 Settings Menu Signals
 """
+
+func togglemodesettingscheck(num):
+	for but in msbuttons:
+		but.pressed = false
+	
+	msbuttons[num].pressed = true
+
+func _on_ms_gd_pressed():
+	togglemodesettingscheck(0)
+
+func _on_ms_gui_pressed():
+	togglemodesettingscheck(1)
+
+func _on_ms_sound_pressed():
+	togglemodesettingscheck(2)
+
+func _on_ms_gameplay_pressed():
+	togglemodesettingscheck(3)
 
 """
 Help Menu Signals

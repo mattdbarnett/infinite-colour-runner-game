@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://5 Misc/worldenv.tres" type="Environment" id=1]
 [ext_resource path="res://3 Fonts/1 Menus/0 Main/main_playbtn.tres" type="DynamicFont" id=2]
@@ -27,6 +27,13 @@
 [ext_resource path="res://4 Styling/1 Menus/1 Play/scorepanel.tres" type="StyleBox" id=25]
 [ext_resource path="res://4 Styling/1 Menus/1 Play/coinpanel.tres" type="StyleBox" id=26]
 [ext_resource path="res://4 Styling/1 Menus/1 Play/infopanel.tres" type="StyleBox" id=27]
+[ext_resource path="res://4 Styling/1 Menus/4 Settings/mc_tab_hover.tres" type="StyleBox" id=28]
+[ext_resource path="res://3 Fonts/1 Menus/2 Custom/tabfont.tres" type="DynamicFont" id=29]
+[ext_resource path="res://4 Styling/1 Menus/4 Settings/mc_g+d_pressed.tres" type="StyleBox" id=30]
+[ext_resource path="res://4 Styling/1 Menus/4 Settings/mc_tab_normal.tres" type="StyleBox" id=31]
+[ext_resource path="res://4 Styling/1 Menus/4 Settings/mc_gui_pressed.tres" type="StyleBox" id=32]
+[ext_resource path="res://4 Styling/1 Menus/4 Settings/mc_sound_pressed.tres" type="StyleBox" id=33]
+[ext_resource path="res://4 Styling/1 Menus/4 Settings/mc_gameplay_pressed.tres" type="StyleBox" id=34]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -55,6 +62,14 @@ font_data = ExtResource( 24 )
 [sub_resource type="DynamicFont" id=12]
 size = 50
 font_data = ExtResource( 24 )
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=16]
+
+[sub_resource type="StyleBoxEmpty" id=17]
+
+[sub_resource type="StyleBoxEmpty" id=18]
 
 [node name="menuroot" type="Node2D"]
 script = ExtResource( 21 )
@@ -429,54 +444,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mc_tabcont" type="TabContainer" parent="menucanvas/menucustom"]
-margin_right = 1920.0
-margin_bottom = 1080.0
-theme = ExtResource( 22 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Graphics and Display" type="Tabs" parent="menucanvas/menucustom/mc_tabcont"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 101.0
-rect_pivot_offset = Vector2( 676, -74 )
-theme = ExtResource( 22 )
-
-[node name="GUI" type="Tabs" parent="menucanvas/menucustom/mc_tabcont"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 101.0
-theme = ExtResource( 22 )
-
-[node name="Sound" type="Tabs" parent="menucanvas/menucustom/mc_tabcont"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 101.0
-theme = ExtResource( 22 )
-
-[node name="Gameplay" type="Tabs" parent="menucanvas/menucustom/mc_tabcont"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 101.0
-theme = ExtResource( 22 )
-
-[node name="mc_back" type="Button" parent="menucanvas/menucustom"]
-margin_top = 896.0
-margin_right = 384.0
-margin_bottom = 1080.0
-custom_styles/hover = ExtResource( 16 )
-custom_styles/pressed = ExtResource( 15 )
-custom_styles/focus = SubResource( 9 )
-custom_styles/normal = ExtResource( 9 )
-custom_fonts/font = ExtResource( 23 )
-keep_pressed_outside = true
-text = "Back"
-
 [node name="menustore" type="Control" parent="menucanvas"]
 visible = false
 margin_right = 1920.0
@@ -492,6 +459,94 @@ margin_bottom = 1080.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ms_g+d" type="Button" parent="menucanvas/menusettings"]
+margin_left = 128.0
+margin_right = 448.0
+margin_bottom = 128.0
+custom_styles/hover = ExtResource( 28 )
+custom_styles/pressed = ExtResource( 30 )
+custom_styles/focus = SubResource( 13 )
+custom_styles/normal = ExtResource( 31 )
+custom_fonts/font = ExtResource( 29 )
+toggle_mode = true
+text = "Graphics and Display"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ms_g+d_menu" type="Control" parent="menucanvas/menusettings/ms_g+d"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ms_gui" type="Button" parent="menucanvas/menusettings"]
+margin_left = 512.0
+margin_right = 832.0
+margin_bottom = 128.0
+custom_styles/hover = ExtResource( 28 )
+custom_styles/pressed = ExtResource( 32 )
+custom_styles/focus = SubResource( 16 )
+custom_styles/normal = ExtResource( 31 )
+custom_fonts/font = ExtResource( 29 )
+toggle_mode = true
+text = "GUI"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ms_gui_menu" type="Control" parent="menucanvas/menusettings/ms_gui"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ms_sound" type="Button" parent="menucanvas/menusettings"]
+margin_left = 1088.0
+margin_right = 1408.0
+margin_bottom = 128.0
+custom_styles/hover = ExtResource( 28 )
+custom_styles/pressed = ExtResource( 33 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/normal = ExtResource( 31 )
+custom_fonts/font = ExtResource( 29 )
+toggle_mode = true
+text = "Sound"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ms_sound_menu" type="Control" parent="menucanvas/menusettings/ms_sound"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ms_gameplay" type="Button" parent="menucanvas/menusettings"]
+margin_left = 1472.0
+margin_right = 1792.0
+margin_bottom = 128.0
+custom_styles/hover = ExtResource( 28 )
+custom_styles/pressed = ExtResource( 34 )
+custom_styles/focus = SubResource( 18 )
+custom_styles/normal = ExtResource( 31 )
+custom_fonts/font = ExtResource( 29 )
+toggle_mode = true
+text = "Gameplay"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ms_gameplay_menu" type="Control" parent="menucanvas/menusettings/ms_gameplay"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ms_back" type="Button" parent="menucanvas/menusettings"]
+margin_top = 896.0
+margin_right = 384.0
+margin_bottom = 1080.0
+custom_styles/hover = ExtResource( 16 )
+custom_styles/pressed = ExtResource( 15 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 23 )
+keep_pressed_outside = true
+text = "Back"
 
 [node name="menuhelp" type="Control" parent="menucanvas"]
 visible = false
@@ -536,4 +591,8 @@ environment = ExtResource( 1 )
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer6/mp_op6" to="." method="_on_mp_op6_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer7/mp_op7" to="." method="_on_mp_op7_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_back" to="." method="_on_mp_back_pressed"]
-[connection signal="pressed" from="menucanvas/menucustom/mc_back" to="." method="_on_mc_back_pressed"]
+[connection signal="pressed" from="menucanvas/menusettings/ms_g+d" to="." method="_on_ms_gd_pressed"]
+[connection signal="pressed" from="menucanvas/menusettings/ms_gui" to="." method="_on_ms_gui_pressed"]
+[connection signal="pressed" from="menucanvas/menusettings/ms_sound" to="." method="_on_ms_sound_pressed"]
+[connection signal="pressed" from="menucanvas/menusettings/ms_gameplay" to="." method="_on_ms_gameplay_pressed"]
+[connection signal="pressed" from="menucanvas/menusettings/ms_back" to="." method="_on_mc_back_pressed"]
