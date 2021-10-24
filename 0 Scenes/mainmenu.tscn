@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://5 Misc/worldenv.tres" type="Environment" id=1]
 [ext_resource path="res://3 Fonts/1 Menus/0 Main/main_playbtn.tres" type="DynamicFont" id=2]
@@ -89,7 +89,24 @@ font_data = ExtResource( 24 )
 size = 50
 font_data = ExtResource( 24 )
 
+[sub_resource type="StyleBoxFlat" id=24]
+bg_color = Color( 0, 0, 0, 1 )
+
 [sub_resource type="StyleBoxEmpty" id=18]
+
+[sub_resource type="StyleBoxFlat" id=25]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=26]
+
+[sub_resource type="DynamicFont" id=27]
+size = 50
+font_data = ExtResource( 24 )
 
 [sub_resource type="StyleBoxEmpty" id=19]
 
@@ -104,6 +121,7 @@ script = ExtResource( 21 )
 layer = 5
 
 [node name="menumain" type="Control" parent="menucanvas"]
+visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 __meta__ = {
@@ -797,12 +815,17 @@ __meta__ = {
 }
 
 [node name="menusettings" type="Control" parent="menucanvas"]
-visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ms_panel" type="Panel" parent="menucanvas/menusettings"]
+margin_top = 128.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+custom_styles/panel = SubResource( 24 )
 
 [node name="ms_g+d" type="Button" parent="menucanvas/menusettings"]
 margin_left = 128.0
@@ -814,14 +837,92 @@ custom_styles/focus = SubResource( 18 )
 custom_styles/normal = ExtResource( 31 )
 custom_fonts/font = ExtResource( 29 )
 toggle_mode = true
+pressed = true
 text = "Graphics and Display"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ms_g+d_menu" type="Control" parent="menucanvas/menusettings/ms_g+d"]
-margin_right = 40.0
 margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ms_fullscreen" type="CheckButton" parent="menucanvas/menusettings/ms_g+d/ms_g+d_menu"]
+margin_left = -72.0
+margin_top = 248.0
+margin_right = 72.0
+margin_bottom = 392.0
+theme = ExtResource( 22 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mc_lbl_fullscreen" type="Label" parent="menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_fullscreen"]
+margin_left = 200.0
+margin_top = 8.0
+margin_right = 520.0
+margin_bottom = 136.0
+custom_fonts/font = SubResource( 17 )
+text = "Fullscreen"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ms_vsync" type="CheckButton" parent="menucanvas/menusettings/ms_g+d/ms_g+d_menu"]
+margin_left = -72.0
+margin_top = 512.0
+margin_right = 72.0
+margin_bottom = 656.0
+theme = ExtResource( 22 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mc_lbl_fullscreen" type="Label" parent="menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_vsync"]
+margin_left = 200.0
+margin_right = 520.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 17 )
+text = "VSync"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ms_resolution" type="OptionButton" parent="menucanvas/menusettings/ms_g+d/ms_g+d_menu"]
+margin_left = 776.0
+margin_top = 264.0
+margin_right = 1336.0
+margin_bottom = 376.0
+custom_styles/hover = SubResource( 25 )
+custom_styles/pressed = SubResource( 25 )
+custom_styles/focus = SubResource( 26 )
+custom_styles/normal = SubResource( 25 )
+custom_fonts/font = SubResource( 27 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mc_lbl_fullscreen" type="Label" parent="menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_resolution"]
+margin_left = 632.0
+margin_top = -8.0
+margin_right = 952.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 17 )
+text = "Resolution"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ms_gui" type="Button" parent="menucanvas/menusettings"]
 margin_left = 512.0
@@ -839,8 +940,7 @@ __meta__ = {
 }
 
 [node name="ms_gui_menu" type="Control" parent="menucanvas/menusettings/ms_gui"]
-margin_right = 40.0
-margin_bottom = 40.0
+visible = false
 
 [node name="ms_sound" type="Button" parent="menucanvas/menusettings"]
 margin_left = 1088.0
@@ -858,8 +958,8 @@ __meta__ = {
 }
 
 [node name="ms_sound_menu" type="Control" parent="menucanvas/menusettings/ms_sound"]
-margin_right = 40.0
-margin_bottom = 40.0
+visible = false
+rect_pivot_offset = Vector2( -592, 232 )
 
 [node name="ms_gameplay" type="Button" parent="menucanvas/menusettings"]
 margin_left = 1472.0
@@ -877,8 +977,7 @@ __meta__ = {
 }
 
 [node name="ms_gameplay_menu" type="Control" parent="menucanvas/menusettings/ms_gameplay"]
-margin_right = 40.0
-margin_bottom = 40.0
+visible = false
 
 [node name="ms_back" type="Button" parent="menucanvas/menusettings"]
 margin_top = 896.0

@@ -35,9 +35,18 @@ onready var msbuttons = [
 	get_node("menucanvas/menusettings/ms_gameplay"),
 ]
 
+onready var settinggd = get_node("menucanvas/menusettings/ms_g+d/ms_g+d_menu")
+onready var settinggui = get_node("menucanvas/menusettings/ms_gui/ms_gui_menu")
+onready var settingsound = get_node("menucanvas/menusettings/ms_sound/ms_sound_menu")
+onready var settinggameplay = get_node("menucanvas/menusettings/ms_gameplay/ms_gameplay_menu")
+
+onready var resolution = get_node("menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_resolution")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("menucanvas/menumain/mm_playbtn").grab_focus()
+	resolution.add_item("1366x768")
+	resolution.add_item("1920x1080")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -194,15 +203,31 @@ func togglemodesettingscheck(num):
 
 func _on_ms_gd_pressed():
 	togglemodesettingscheck(0)
+	settinggd.visible = true
+	settinggui.visible = false
+	settingsound.visible = false
+	settinggameplay.visible = false
 
 func _on_ms_gui_pressed():
 	togglemodesettingscheck(1)
+	settinggd.visible = false
+	settinggui.visible = true
+	settingsound.visible = false
+	settinggameplay.visible = false
 
 func _on_ms_sound_pressed():
 	togglemodesettingscheck(2)
+	settinggd.visible = false
+	settinggui.visible = false
+	settingsound.visible = true
+	settinggameplay.visible = false
 
 func _on_ms_gameplay_pressed():
 	togglemodesettingscheck(3)
+	settinggd.visible = false
+	settinggui.visible = false
+	settingsound.visible = false
+	settinggameplay.visible = true
 
 func _on_ms_back_pressed():
 	currentmenu_update(menumain)

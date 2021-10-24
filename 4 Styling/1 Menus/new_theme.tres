@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=16 format=2]
+[gd_resource type="Theme" load_steps=19 format=2]
 
 [ext_resource path="res://3 Fonts/0 Const/mainfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://3 Fonts/0 Const/pixel font-7.ttf" type="DynamicFontData" id=2]
@@ -18,6 +18,16 @@ border_color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StreamTexture" id=14]
+flags = 4
+load_path = "res://.import/checkboxfalse.png-75d48c0225a34a1471ff952bf3e880d6.stex"
+
+[sub_resource type="StreamTexture" id=15]
+flags = 4
+load_path = "res://.import/checkboxtrue.png-caff23faf478b86f94d99d9af337f540.stex"
+
+[sub_resource type="StyleBoxEmpty" id=16]
 
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 1, 1, 1, 1 )
@@ -85,12 +95,12 @@ CheckButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 CheckButton/constants/check_vadjust = 0
 CheckButton/constants/hseparation = 4
 CheckButton/fonts/font = null
-CheckButton/icons/off = null
+CheckButton/icons/off = SubResource( 14 )
 CheckButton/icons/off_disabled = null
-CheckButton/icons/on = null
+CheckButton/icons/on = SubResource( 15 )
 CheckButton/icons/on_disabled = null
 CheckButton/styles/disabled = null
-CheckButton/styles/focus = null
+CheckButton/styles/focus = SubResource( 16 )
 CheckButton/styles/hover = null
 CheckButton/styles/hover_pressed = null
 CheckButton/styles/normal = null
