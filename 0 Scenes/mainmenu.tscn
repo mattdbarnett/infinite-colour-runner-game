@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://5 Misc/worldenv.tres" type="Environment" id=1]
 [ext_resource path="res://3 Fonts/1 Menus/0 Main/main_playbtn.tres" type="DynamicFont" id=2]
@@ -34,6 +34,13 @@
 [ext_resource path="res://4 Styling/1 Menus/4 Settings/mc_gui_pressed.tres" type="StyleBox" id=32]
 [ext_resource path="res://4 Styling/1 Menus/4 Settings/mc_sound_pressed.tres" type="StyleBox" id=33]
 [ext_resource path="res://4 Styling/1 Menus/4 Settings/mc_gameplay_pressed.tres" type="StyleBox" id=34]
+[ext_resource path="res://2 Sprites/pink.png" type="Texture" id=35]
+[ext_resource path="res://2 Sprites/red.png" type="Texture" id=36]
+[ext_resource path="res://2 Sprites/blue.png" type="Texture" id=37]
+[ext_resource path="res://2 Sprites/purple.png" type="Texture" id=38]
+[ext_resource path="res://2 Sprites/green.png" type="Texture" id=39]
+[ext_resource path="res://2 Sprites/yellow.png" type="Texture" id=40]
+[ext_resource path="res://2 Sprites/white.png" type="Texture" id=41]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -63,13 +70,32 @@ font_data = ExtResource( 24 )
 size = 50
 font_data = ExtResource( 24 )
 
-[sub_resource type="StyleBoxEmpty" id=13]
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StyleBoxEmpty" id=16]
+[sub_resource type="DynamicFont" id=22]
+size = 60
+font_data = ExtResource( 24 )
 
-[sub_resource type="StyleBoxEmpty" id=17]
+[sub_resource type="DynamicFont" id=16]
+size = 64
+font_data = ExtResource( 24 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 50
+font_data = ExtResource( 24 )
+
+[sub_resource type="DynamicFont" id=23]
+size = 50
+font_data = ExtResource( 24 )
 
 [sub_resource type="StyleBoxEmpty" id=18]
+
+[sub_resource type="StyleBoxEmpty" id=19]
+
+[sub_resource type="StyleBoxEmpty" id=20]
+
+[sub_resource type="StyleBoxEmpty" id=21]
 
 [node name="menuroot" type="Node2D"]
 script = ExtResource( 21 )
@@ -167,6 +193,10 @@ text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="mm_player" type="Sprite" parent="menucanvas/menumain"]
+position = Vector2( 896, 816 )
+texture = ExtResource( 41 )
 
 [node name="menuplay" type="Control" parent="menucanvas"]
 visible = false
@@ -444,6 +474,320 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="mc_colours" type="Panel" parent="menucanvas/menucustom"]
+margin_top = 384.0
+margin_right = 768.0
+margin_bottom = 1080.0
+custom_styles/panel = SubResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mc_sliderblue" type="HSlider" parent="menucanvas/menucustom/mc_colours"]
+margin_left = 192.0
+margin_top = 128.0
+margin_right = 512.0
+margin_bottom = 192.0
+rect_pivot_offset = Vector2( 200, 80 )
+theme = ExtResource( 22 )
+custom_icons/grabber_highlight = ExtResource( 37 )
+custom_icons/grabber = ExtResource( 37 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="blue" type="Sprite" parent="menucanvas/menucustom/mc_colours/mc_sliderblue"]
+position = Vector2( -96, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 37 )
+
+[node name="mc_lblval" type="Label" parent="menucanvas/menucustom/mc_colours/mc_sliderblue"]
+margin_left = 384.0
+margin_right = 512.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 22 )
+text = "0%"
+align = 1
+valign = 1
+
+[node name="mc_sliderpurple" type="HSlider" parent="menucanvas/menucustom/mc_colours"]
+margin_left = 192.0
+margin_top = 224.0
+margin_right = 512.0
+margin_bottom = 288.0
+theme = ExtResource( 22 )
+custom_icons/grabber_highlight = ExtResource( 38 )
+custom_icons/grabber = ExtResource( 38 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="purple" type="Sprite" parent="menucanvas/menucustom/mc_colours/mc_sliderpurple"]
+position = Vector2( -96, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 38 )
+
+[node name="mc_lblval" type="Label" parent="menucanvas/menucustom/mc_colours/mc_sliderpurple"]
+margin_left = 384.0
+margin_right = 512.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 22 )
+text = "0%"
+align = 1
+valign = 1
+
+[node name="mc_slidergreen" type="HSlider" parent="menucanvas/menucustom/mc_colours"]
+margin_left = 192.0
+margin_top = 320.0
+margin_right = 512.0
+margin_bottom = 384.0
+theme = ExtResource( 22 )
+custom_icons/grabber_highlight = ExtResource( 39 )
+custom_icons/grabber = ExtResource( 39 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="green" type="Sprite" parent="menucanvas/menucustom/mc_colours/mc_slidergreen"]
+position = Vector2( -96, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 39 )
+
+[node name="mc_lblval" type="Label" parent="menucanvas/menucustom/mc_colours/mc_slidergreen"]
+margin_left = 384.0
+margin_right = 512.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 22 )
+text = "0%"
+align = 1
+valign = 1
+
+[node name="mc_slideryellow" type="HSlider" parent="menucanvas/menucustom/mc_colours"]
+margin_left = 192.0
+margin_top = 416.0
+margin_right = 512.0
+margin_bottom = 480.0
+theme = ExtResource( 22 )
+custom_icons/grabber_highlight = ExtResource( 40 )
+custom_icons/grabber = ExtResource( 40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="yellow" type="Sprite" parent="menucanvas/menucustom/mc_colours/mc_slideryellow"]
+position = Vector2( -96, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 40 )
+
+[node name="mc_lblval" type="Label" parent="menucanvas/menucustom/mc_colours/mc_slideryellow"]
+margin_left = 384.0
+margin_right = 512.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 22 )
+text = "0%"
+align = 1
+valign = 1
+
+[node name="mc_sliderpink" type="HSlider" parent="menucanvas/menucustom/mc_colours"]
+margin_left = 192.0
+margin_top = 512.0
+margin_right = 512.0
+margin_bottom = 576.0
+theme = ExtResource( 22 )
+custom_icons/grabber_highlight = ExtResource( 35 )
+custom_icons/grabber = ExtResource( 35 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pink" type="Sprite" parent="menucanvas/menucustom/mc_colours/mc_sliderpink"]
+position = Vector2( -96, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+
+[node name="mc_lblval" type="Label" parent="menucanvas/menucustom/mc_colours/mc_sliderpink"]
+margin_left = 384.0
+margin_right = 512.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 22 )
+text = "0%"
+align = 1
+valign = 1
+
+[node name="mc_sliderred" type="HSlider" parent="menucanvas/menucustom/mc_colours"]
+margin_left = 192.0
+margin_top = 608.0
+margin_right = 512.0
+margin_bottom = 672.0
+theme = ExtResource( 22 )
+custom_icons/grabber_highlight = ExtResource( 36 )
+custom_icons/grabber = ExtResource( 36 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="red" type="Sprite" parent="menucanvas/menucustom/mc_colours/mc_sliderred"]
+position = Vector2( -96, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 36 )
+
+[node name="mc_lblval" type="Label" parent="menucanvas/menucustom/mc_colours/mc_sliderred"]
+margin_left = 384.0
+margin_right = 512.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 22 )
+text = "0%"
+align = 1
+valign = 1
+
+[node name="mc_lbl_colours" type="Label" parent="menucanvas/menucustom/mc_colours"]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 704.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 16 )
+text = "Colours"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mc_spdgrav" type="Panel" parent="menucanvas/menucustom"]
+margin_left = 768.0
+margin_top = 768.0
+margin_right = 1536.0
+margin_bottom = 1080.0
+rect_pivot_offset = Vector2( -1200, -752 )
+custom_styles/panel = SubResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mc_lbl_spdgrav" type="Label" parent="menucanvas/menucustom/mc_spdgrav"]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 736.0
+margin_bottom = 83.0
+custom_fonts/font = SubResource( 17 )
+text = "Default Speed + Grav"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mc_lbl_spd" type="Label" parent="menucanvas/menucustom/mc_spdgrav"]
+margin_top = 104.0
+margin_right = 224.0
+margin_bottom = 155.0
+rect_pivot_offset = Vector2( -296, 8 )
+custom_fonts/font = SubResource( 23 )
+text = "Speed:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mc_sliderspd" type="HSlider" parent="menucanvas/menucustom/mc_spdgrav/mc_lbl_spd"]
+margin_left = 224.0
+margin_top = -8.0
+margin_right = 608.0
+margin_bottom = 56.0
+rect_pivot_offset = Vector2( 200, 80 )
+theme = ExtResource( 22 )
+custom_icons/grabber_highlight = ExtResource( 41 )
+custom_icons/grabber = ExtResource( 41 )
+min_value = 10.0
+max_value = 300.0
+value = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mc_lblval" type="Label" parent="menucanvas/menucustom/mc_spdgrav/mc_lbl_spd/mc_sliderspd"]
+margin_left = 384.0
+margin_right = 544.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 22 )
+text = "100%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mc_lbl_grav" type="Label" parent="menucanvas/menucustom/mc_spdgrav"]
+margin_top = 200.0
+margin_right = 224.0
+margin_bottom = 251.0
+custom_fonts/font = SubResource( 17 )
+text = "Gravity:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mc_slidergrav" type="HSlider" parent="menucanvas/menucustom/mc_spdgrav/mc_lbl_grav"]
+margin_left = 224.0
+margin_top = -8.0
+margin_right = 608.0
+margin_bottom = 56.0
+rect_pivot_offset = Vector2( 200, 80 )
+theme = ExtResource( 22 )
+custom_icons/grabber_highlight = ExtResource( 41 )
+custom_icons/grabber = ExtResource( 41 )
+min_value = 10.0
+max_value = 300.0
+value = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mc_lblval" type="Label" parent="menucanvas/menucustom/mc_spdgrav/mc_lbl_grav/mc_slidergrav"]
+margin_left = 384.0
+margin_right = 544.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 22 )
+text = "100%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mc_back" type="Button" parent="menucanvas/menucustom"]
+margin_top = 192.0
+margin_right = 384.0
+margin_bottom = 384.0
+custom_styles/hover = ExtResource( 16 )
+custom_styles/pressed = ExtResource( 15 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 23 )
+keep_pressed_outside = true
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mc_start" type="Button" parent="menucanvas/menucustom"]
+margin_left = 1536.0
+margin_top = 832.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 23 )
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mc_player" type="Sprite" parent="menucanvas/menucustom"]
+position = Vector2( 704, 368 )
+texture = ExtResource( 41 )
+
 [node name="menustore" type="Control" parent="menucanvas"]
 visible = false
 margin_right = 1920.0
@@ -466,7 +810,7 @@ margin_right = 448.0
 margin_bottom = 128.0
 custom_styles/hover = ExtResource( 28 )
 custom_styles/pressed = ExtResource( 30 )
-custom_styles/focus = SubResource( 13 )
+custom_styles/focus = SubResource( 18 )
 custom_styles/normal = ExtResource( 31 )
 custom_fonts/font = ExtResource( 29 )
 toggle_mode = true
@@ -485,7 +829,7 @@ margin_right = 832.0
 margin_bottom = 128.0
 custom_styles/hover = ExtResource( 28 )
 custom_styles/pressed = ExtResource( 32 )
-custom_styles/focus = SubResource( 16 )
+custom_styles/focus = SubResource( 19 )
 custom_styles/normal = ExtResource( 31 )
 custom_fonts/font = ExtResource( 29 )
 toggle_mode = true
@@ -504,7 +848,7 @@ margin_right = 1408.0
 margin_bottom = 128.0
 custom_styles/hover = ExtResource( 28 )
 custom_styles/pressed = ExtResource( 33 )
-custom_styles/focus = SubResource( 17 )
+custom_styles/focus = SubResource( 20 )
 custom_styles/normal = ExtResource( 31 )
 custom_fonts/font = ExtResource( 29 )
 toggle_mode = true
@@ -523,7 +867,7 @@ margin_right = 1792.0
 margin_bottom = 128.0
 custom_styles/hover = ExtResource( 28 )
 custom_styles/pressed = ExtResource( 34 )
-custom_styles/focus = SubResource( 18 )
+custom_styles/focus = SubResource( 21 )
 custom_styles/normal = ExtResource( 31 )
 custom_fonts/font = ExtResource( 29 )
 toggle_mode = true
@@ -591,8 +935,17 @@ environment = ExtResource( 1 )
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer6/mp_op6" to="." method="_on_mp_op6_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer7/mp_op7" to="." method="_on_mp_op7_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_back" to="." method="_on_mp_back_pressed"]
+[connection signal="value_changed" from="menucanvas/menucustom/mc_colours/mc_sliderblue" to="." method="_on_mc_sliderblue_value_changed"]
+[connection signal="value_changed" from="menucanvas/menucustom/mc_colours/mc_sliderpurple" to="." method="_on_mc_sliderpurple_value_changed"]
+[connection signal="value_changed" from="menucanvas/menucustom/mc_colours/mc_slidergreen" to="." method="_on_mc_slidergreen_value_changed"]
+[connection signal="value_changed" from="menucanvas/menucustom/mc_colours/mc_slideryellow" to="." method="_on_mc_slideryellow_value_changed"]
+[connection signal="value_changed" from="menucanvas/menucustom/mc_colours/mc_sliderpink" to="." method="_on_mc_sliderpink_value_changed"]
+[connection signal="value_changed" from="menucanvas/menucustom/mc_colours/mc_sliderred" to="." method="_on_mc_sliderred_value_changed"]
+[connection signal="value_changed" from="menucanvas/menucustom/mc_spdgrav/mc_lbl_spd/mc_sliderspd" to="." method="_on_mc_sliderspd_value_changed"]
+[connection signal="value_changed" from="menucanvas/menucustom/mc_spdgrav/mc_lbl_grav/mc_slidergrav" to="." method="_on_mc_slidergrav_value_changed"]
+[connection signal="pressed" from="menucanvas/menucustom/mc_back" to="." method="_on_mc_back_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_g+d" to="." method="_on_ms_gd_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_gui" to="." method="_on_ms_gui_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_sound" to="." method="_on_ms_sound_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_gameplay" to="." method="_on_ms_gameplay_pressed"]
-[connection signal="pressed" from="menucanvas/menusettings/ms_back" to="." method="_on_mc_back_pressed"]
+[connection signal="pressed" from="menucanvas/menusettings/ms_back" to="." method="_on_ms_back_pressed"]

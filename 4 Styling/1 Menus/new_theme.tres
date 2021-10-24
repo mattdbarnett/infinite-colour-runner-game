@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=15 format=2]
+[gd_resource type="Theme" load_steps=16 format=2]
 
 [ext_resource path="res://3 Fonts/0 Const/mainfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://3 Fonts/0 Const/pixel font-7.ttf" type="DynamicFontData" id=2]
@@ -35,31 +35,27 @@ border_width_bottom = 64
 border_color = Color( 0, 0, 0, 1 )
 corner_detail = 1
 
-[sub_resource type="DynamicFont" id=9]
-size = 25
-extra_spacing_top = 25
-extra_spacing_bottom = 25
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxLine" id=10]
+thickness = 10
+
+[sub_resource type="DynamicFont" id=13]
+size = 40
+extra_spacing_top = 5
+extra_spacing_bottom = 5
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=10]
-content_margin_left = 0.0
-bg_color = Color( 0, 0, 0, 1 )
-
 [sub_resource type="StyleBoxFlat" id=11]
-content_margin_left = 25.0
-content_margin_right = 25.0
-bg_color = Color( 0, 0, 0, 0.878431 )
-border_width_bottom = 25
-border_color = Color( 0, 0, 0, 0.878431 )
-
-[sub_resource type="StyleBoxFlat" id=12]
-content_margin_left = 75.0
-content_margin_right = 75.0
-content_margin_top = 0.0
 bg_color = Color( 0, 0, 0, 1 )
-border_width_bottom = 25
-border_color = Color( 0.0313726, 0, 1, 1 )
-shadow_color = Color( 1, 1, 1, 0.6 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=12]
 
 [resource]
 default_font = ExtResource( 1 )
@@ -108,41 +104,49 @@ HScrollBar/styles/grabber_highlight = SubResource( 6 )
 HScrollBar/styles/grabber_pressed = SubResource( 7 )
 HScrollBar/styles/scroll = SubResource( 8 )
 HScrollBar/styles/scroll_focus = null
-TabContainer/colors/font_color_bg = Color( 1, 1, 1, 1 )
-TabContainer/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
-TabContainer/colors/font_color_fg = Color( 0.94, 0.94, 0.94, 1 )
-TabContainer/constants/hseparation = 4
-TabContainer/constants/label_valign_bg = 2
-TabContainer/constants/label_valign_fg = 0
-TabContainer/constants/side_margin = 8
-TabContainer/constants/top_margin = 24
-TabContainer/fonts/font = SubResource( 9 )
-TabContainer/icons/decrement = null
-TabContainer/icons/decrement_highlight = null
-TabContainer/icons/increment = null
-TabContainer/icons/increment_highlight = null
-TabContainer/icons/menu = null
-TabContainer/icons/menu_highlight = null
-TabContainer/styles/panel = SubResource( 10 )
-TabContainer/styles/tab_bg = SubResource( 11 )
-TabContainer/styles/tab_disabled = null
-TabContainer/styles/tab_fg = SubResource( 12 )
-Tabs/colors/font_color_bg = Color( 1, 1, 1, 1 )
-Tabs/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
-Tabs/colors/font_color_fg = Color( 0.94, 0.94, 0.94, 1 )
-Tabs/constants/hseparation = 4
-Tabs/constants/label_valign_bg = 2
-Tabs/constants/label_valign_fg = 0
-Tabs/constants/top_margin = 24
-Tabs/fonts/font = ExtResource( 1 )
-Tabs/icons/close = null
-Tabs/icons/decrement = null
-Tabs/icons/decrement_highlight = null
-Tabs/icons/increment = null
-Tabs/icons/increment_highlight = null
-Tabs/styles/button = null
-Tabs/styles/button_pressed = null
-Tabs/styles/panel = null
-Tabs/styles/tab_bg = null
-Tabs/styles/tab_disabled = null
-Tabs/styles/tab_fg = null
+HSlider/icons/grabber = null
+HSlider/icons/grabber_disabled = null
+HSlider/icons/grabber_highlight = null
+HSlider/icons/tick = null
+HSlider/styles/grabber_area = SubResource( 9 )
+HSlider/styles/grabber_area_highlight = SubResource( 9 )
+HSlider/styles/slider = SubResource( 10 )
+TextEdit/colors/background_color = Color( 0, 0, 0, 0 )
+TextEdit/colors/bookmark_color = Color( 0.08, 0.49, 0.98, 1 )
+TextEdit/colors/brace_mismatch_color = Color( 1, 0.2, 0.2, 1 )
+TextEdit/colors/breakpoint_color = Color( 0.8, 0.8, 0.4, 0.2 )
+TextEdit/colors/caret_background_color = Color( 0, 0, 0, 1 )
+TextEdit/colors/caret_color = Color( 0.88, 0.88, 0.88, 1 )
+TextEdit/colors/code_folding_color = Color( 0.8, 0.8, 0.8, 0.8 )
+TextEdit/colors/completion_background_color = Color( 0.17, 0.16, 0.2, 1 )
+TextEdit/colors/completion_existing_color = Color( 0.87, 0.87, 0.87, 0.13 )
+TextEdit/colors/completion_font_color = Color( 0.67, 0.67, 0.67, 1 )
+TextEdit/colors/completion_scroll_color = Color( 1, 1, 1, 1 )
+TextEdit/colors/completion_selected_color = Color( 0.26, 0.26, 0.27, 1 )
+TextEdit/colors/current_line_color = Color( 0.25, 0.25, 0.26, 0.8 )
+TextEdit/colors/executing_line_color = Color( 0.2, 0.8, 0.2, 0.4 )
+TextEdit/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+TextEdit/colors/font_color_readonly = Color( 0.88, 0.88, 0.88, 0.5 )
+TextEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+TextEdit/colors/function_color = Color( 0.4, 0.64, 0.81, 1 )
+TextEdit/colors/line_number_color = Color( 0.67, 0.67, 0.67, 0.4 )
+TextEdit/colors/mark_color = Color( 1, 0.4, 0.4, 0.4 )
+TextEdit/colors/member_variable_color = Color( 0.9, 0.31, 0.35, 1 )
+TextEdit/colors/number_color = Color( 0.92, 0.58, 0.2, 1 )
+TextEdit/colors/safe_line_number_color = Color( 0.67, 0.78, 0.67, 0.6 )
+TextEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
+TextEdit/colors/symbol_color = Color( 0.94, 0.94, 0.94, 1 )
+TextEdit/colors/word_highlighted_color = Color( 0.8, 0.9, 0.9, 0.15 )
+TextEdit/constants/completion_lines = 7
+TextEdit/constants/completion_max_width = 50
+TextEdit/constants/completion_scroll_width = 3
+TextEdit/constants/line_spacing = 4
+TextEdit/fonts/font = SubResource( 13 )
+TextEdit/icons/fold = null
+TextEdit/icons/folded = null
+TextEdit/icons/space = null
+TextEdit/icons/tab = null
+TextEdit/styles/completion = SubResource( 11 )
+TextEdit/styles/focus = SubResource( 12 )
+TextEdit/styles/normal = SubResource( 11 )
+TextEdit/styles/read_only = null

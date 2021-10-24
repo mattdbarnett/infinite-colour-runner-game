@@ -55,6 +55,12 @@ func currentmenu_update(newcurrent):
 			get_node("menucanvas/menuplay/mp_back").grab_focus()
 		menucustom:
 			get_node("menucanvas/menucustom/mc_back").grab_focus()
+		menustore:
+			pass
+		menusettings:
+			get_node("menucanvas/menusettings/ms_back").grab_focus()
+		menuhelp:
+			pass
 			
 	newcurrent.visible = true
 	currentmenu.visible = false
@@ -124,6 +130,54 @@ Custom Menu Signals
 func _on_mc_back_pressed():
 	currentmenu_update(menumain)
 
+func _on_mc_sliderblue_value_changed(value):
+	var label = get_node("menucanvas/menucustom/mc_colours/mc_sliderblue/mc_lblval")
+	var slider = get_node("menucanvas/menucustom/mc_colours/mc_sliderblue")
+	
+	label.text = str(slider.value) + "%"
+
+func _on_mc_sliderpurple_value_changed(value):
+	var label = get_node("menucanvas/menucustom/mc_colours/mc_sliderpurple/mc_lblval")
+	var slider = get_node("menucanvas/menucustom/mc_colours/mc_sliderpurple")
+	
+	label.text = str(slider.value) + "%"
+
+func _on_mc_slidergreen_value_changed(value):
+	var label = get_node("menucanvas/menucustom/mc_colours/mc_slidergreen/mc_lblval")
+	var slider = get_node("menucanvas/menucustom/mc_colours/mc_slidergreen")
+	
+	label.text = str(slider.value) + "%"
+
+func _on_mc_slideryellow_value_changed(value):
+	var label = get_node("menucanvas/menucustom/mc_colours/mc_slideryellow/mc_lblval")
+	var slider = get_node("menucanvas/menucustom/mc_colours/mc_slideryellow")
+	
+	label.text = str(slider.value) + "%"
+
+func _on_mc_sliderpink_value_changed(value):
+	var label = get_node("menucanvas/menucustom/mc_colours/mc_sliderpink/mc_lblval")
+	var slider = get_node("menucanvas/menucustom/mc_colours/mc_sliderpink")
+	
+	label.text = str(slider.value) + "%"
+
+func _on_mc_sliderred_value_changed(value):
+	var label = get_node("menucanvas/menucustom/mc_colours/mc_sliderred/mc_lblval")
+	var slider = get_node("menucanvas/menucustom/mc_colours/mc_sliderred")
+	
+	label.text = str(slider.value) + "%"
+
+func _on_mc_sliderspd_value_changed(value):
+	var label = get_node("menucanvas/menucustom/mc_spdgrav/mc_lbl_spd/mc_sliderspd/mc_lblval")
+	var slider = get_node("menucanvas/menucustom/mc_spdgrav/mc_lbl_spd/mc_sliderspd")
+	
+	label.text = str(slider.value) + "%"
+
+func _on_mc_slidergrav_value_changed(value):
+	var label = get_node("menucanvas/menucustom/mc_spdgrav/mc_lbl_grav/mc_slidergrav/mc_lblval")
+	var slider = get_node("menucanvas/menucustom/mc_spdgrav/mc_lbl_grav/mc_slidergrav")
+	
+	label.text = str(slider.value) + "%"
+
 """
 Store Menu Signals
 """
@@ -149,6 +203,9 @@ func _on_ms_sound_pressed():
 
 func _on_ms_gameplay_pressed():
 	togglemodesettingscheck(3)
+
+func _on_ms_back_pressed():
+	currentmenu_update(menumain)
 
 """
 Help Menu Signals
