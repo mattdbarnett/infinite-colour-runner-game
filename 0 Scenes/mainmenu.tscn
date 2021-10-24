@@ -121,7 +121,6 @@ script = ExtResource( 21 )
 layer = 5
 
 [node name="menumain" type="Control" parent="menucanvas"]
-visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 __meta__ = {
@@ -815,6 +814,7 @@ __meta__ = {
 }
 
 [node name="menusettings" type="Control" parent="menucanvas"]
+visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 __meta__ = {
@@ -875,9 +875,9 @@ __meta__ = {
 
 [node name="ms_vsync" type="CheckButton" parent="menucanvas/menusettings/ms_g+d/ms_g+d_menu"]
 margin_left = -72.0
-margin_top = 512.0
+margin_top = 504.0
 margin_right = 72.0
-margin_bottom = 656.0
+margin_bottom = 648.0
 theme = ExtResource( 22 )
 align = 1
 __meta__ = {
@@ -897,9 +897,9 @@ __meta__ = {
 }
 
 [node name="ms_resolution" type="OptionButton" parent="menucanvas/menusettings/ms_g+d/ms_g+d_menu"]
-margin_left = 776.0
+margin_left = 520.0
 margin_top = 264.0
-margin_right = 1336.0
+margin_right = 1080.0
 margin_bottom = 376.0
 custom_styles/hover = SubResource( 25 )
 custom_styles/pressed = SubResource( 25 )
@@ -941,6 +941,106 @@ __meta__ = {
 
 [node name="ms_gui_menu" type="Control" parent="menucanvas/menusettings/ms_gui"]
 visible = false
+
+[node name="ms_spdgrav" type="CheckButton" parent="menucanvas/menusettings/ms_gui/ms_gui_menu"]
+margin_left = -456.0
+margin_top = 248.0
+margin_right = -312.0
+margin_bottom = 392.0
+theme = ExtResource( 22 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mc_lbl_spdgrav" type="Label" parent="menucanvas/menusettings/ms_gui/ms_gui_menu/ms_spdgrav"]
+margin_left = 200.0
+margin_top = 8.0
+margin_right = 520.0
+margin_bottom = 136.0
+custom_fonts/font = SubResource( 17 )
+text = "Speed + Grav
+Info"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ms_status" type="CheckButton" parent="menucanvas/menusettings/ms_gui/ms_gui_menu"]
+margin_left = -456.0
+margin_top = 504.0
+margin_right = -312.0
+margin_bottom = 648.0
+theme = ExtResource( 22 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mc_lbl_status" type="Label" parent="menucanvas/menusettings/ms_gui/ms_gui_menu/ms_status"]
+margin_left = 200.0
+margin_top = 8.0
+margin_right = 520.0
+margin_bottom = 136.0
+custom_fonts/font = SubResource( 17 )
+text = "Player
+Status Box"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ms_movebox" type="CheckButton" parent="menucanvas/menusettings/ms_gui/ms_gui_menu"]
+margin_left = 120.0
+margin_top = 248.0
+margin_right = 264.0
+margin_bottom = 392.0
+theme = ExtResource( 22 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mc_lbl_movebox" type="Label" parent="menucanvas/menusettings/ms_gui/ms_gui_menu/ms_movebox"]
+margin_left = 200.0
+margin_top = 8.0
+margin_right = 520.0
+margin_bottom = 136.0
+custom_fonts/font = SubResource( 17 )
+text = "\"Can I Move\"
+Box"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ms_fps" type="CheckButton" parent="menucanvas/menusettings/ms_gui/ms_gui_menu"]
+margin_left = 120.0
+margin_top = 504.0
+margin_right = 264.0
+margin_bottom = 648.0
+theme = ExtResource( 22 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mc_lbl_fps" type="Label" parent="menucanvas/menusettings/ms_gui/ms_gui_menu/ms_fps"]
+margin_left = 200.0
+margin_top = 8.0
+margin_right = 520.0
+margin_bottom = 136.0
+custom_fonts/font = SubResource( 17 )
+text = "FPS
+Counter"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ms_sound" type="Button" parent="menucanvas/menusettings"]
 margin_left = 1088.0
