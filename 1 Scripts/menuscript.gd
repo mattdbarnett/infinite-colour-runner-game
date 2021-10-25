@@ -42,6 +42,9 @@ onready var settinggameplay = get_node("menucanvas/menusettings/ms_gameplay/ms_g
 
 onready var resolution = get_node("menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_resolution")
 
+onready var hold = false
+onready var pressholdbtn = get_node("menucanvas/menusettings/ms_gameplay/ms_gameplay_menu/ms_presshold")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("menucanvas/menumain/mm_playbtn").grab_focus()
@@ -228,6 +231,14 @@ func _on_ms_gameplay_pressed():
 	settinggui.visible = false
 	settingsound.visible = false
 	settinggameplay.visible = true
+
+func _on_ms_presshold_pressed():
+	hold = !hold
+	
+	if hold == false:
+		pressholdbtn.text = "Press"
+	elif hold == true:
+		pressholdbtn.text = "Hold"
 
 func _on_ms_back_pressed():
 	currentmenu_update(menumain)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://5 Misc/worldenv.tres" type="Environment" id=1]
 [ext_resource path="res://3 Fonts/1 Menus/0 Main/main_playbtn.tres" type="DynamicFont" id=2]
@@ -113,6 +113,28 @@ font_data = ExtResource( 24 )
 [sub_resource type="StyleBoxEmpty" id=20]
 
 [sub_resource type="StyleBoxEmpty" id=21]
+
+[sub_resource type="StyleBoxFlat" id=29]
+bg_color = Color( 0.956863, 0, 1, 1 )
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=30]
+
+[sub_resource type="StyleBoxFlat" id=31]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=28]
+size = 60
+font_data = ExtResource( 24 )
 
 [node name="menuroot" type="Node2D"]
 script = ExtResource( 21 )
@@ -1079,6 +1101,22 @@ __meta__ = {
 [node name="ms_gameplay_menu" type="Control" parent="menucanvas/menusettings/ms_gameplay"]
 visible = false
 
+[node name="ms_presshold" type="Button" parent="menucanvas/menusettings/ms_gameplay/ms_gameplay_menu"]
+margin_left = -1408.0
+margin_top = 256.0
+margin_right = -832.0
+margin_bottom = 384.0
+theme = ExtResource( 22 )
+custom_styles/hover = SubResource( 29 )
+custom_styles/pressed = SubResource( 29 )
+custom_styles/focus = SubResource( 30 )
+custom_styles/normal = SubResource( 31 )
+custom_fonts/font = SubResource( 28 )
+text = "Press"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ms_back" type="Button" parent="menucanvas/menusettings"]
 margin_top = 896.0
 margin_right = 384.0
@@ -1147,4 +1185,5 @@ environment = ExtResource( 1 )
 [connection signal="pressed" from="menucanvas/menusettings/ms_gui" to="." method="_on_ms_gui_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_sound" to="." method="_on_ms_sound_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_gameplay" to="." method="_on_ms_gameplay_pressed"]
+[connection signal="pressed" from="menucanvas/menusettings/ms_gameplay/ms_gameplay_menu/ms_presshold" to="." method="_on_ms_presshold_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_back" to="." method="_on_ms_back_pressed"]

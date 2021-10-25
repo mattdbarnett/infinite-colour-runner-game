@@ -3,7 +3,7 @@
 [ext_resource path="res://3 Fonts/0 Const/mainfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://3 Fonts/0 Const/pixel font-7.ttf" type="DynamicFontData" id=2]
 
-[sub_resource type="StyleBoxEmpty" id=1]
+[sub_resource type="StyleBoxEmpty" id=30]
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.0235294, 1, 0, 1 )
@@ -82,7 +82,7 @@ CheckBox/icons/radio_checked = null
 CheckBox/icons/radio_unchecked = null
 CheckBox/icons/unchecked = null
 CheckBox/styles/disabled = null
-CheckBox/styles/focus = SubResource( 1 )
+CheckBox/styles/focus = SubResource( 30 )
 CheckBox/styles/hover = SubResource( 2 )
 CheckBox/styles/hover_pressed = SubResource( 3 )
 CheckBox/styles/normal = SubResource( 4 )
