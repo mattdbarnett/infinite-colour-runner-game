@@ -9,7 +9,7 @@
 3. ~~Finish early-version of the "Play" Menu.~~
 4. ~~Finish early-version of the "Custom" Menu.~~
 5. Finish early-version of the "Store" Menu.
-6. Finish early-version of the "Settings" Menu.
+6. ~~Finish early-version of the "Settings" Menu.~~
 7. Finish early-version of the "Help" Menu.
 
 *(Finished menus at this stage are expected to be modified and changed later in developed, post-prototype phase.)*

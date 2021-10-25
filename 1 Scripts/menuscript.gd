@@ -240,6 +240,18 @@ func _on_ms_presshold_pressed():
 	elif hold == true:
 		pressholdbtn.text = "Hold"
 
+func _on_ms_slidermusic_value_changed(value):
+	var label = get_node("menucanvas/menusettings/ms_sound/ms_sound_menu/ms_slidermusic/ms_lblval")
+	var slider = get_node("menucanvas/menusettings/ms_sound/ms_sound_menu/ms_slidermusic")
+	
+	label.text = str(slider.value) + "%"
+
+func _on_ms_slidereffect_value_changed(value):
+	var label = get_node("menucanvas/menusettings/ms_sound/ms_sound_menu/ms_slidereffect/ms_lblval")
+	var slider = get_node("menucanvas/menusettings/ms_sound/ms_sound_menu/ms_slidereffect")
+	
+	label.text = str(slider.value) + "%"
+
 func _on_ms_back_pressed():
 	currentmenu_update(menumain)
 

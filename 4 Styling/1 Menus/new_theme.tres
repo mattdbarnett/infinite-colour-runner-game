@@ -3,7 +3,7 @@
 [ext_resource path="res://3 Fonts/0 Const/mainfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://3 Fonts/0 Const/pixel font-7.ttf" type="DynamicFontData" id=2]
 
-[sub_resource type="StyleBoxEmpty" id=30]
+[sub_resource type="StyleBoxEmpty" id=1]
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.0235294, 1, 0, 1 )
@@ -19,45 +19,45 @@ border_color = Color( 1, 1, 1, 1 )
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StreamTexture" id=14]
+[sub_resource type="StreamTexture" id=5]
 flags = 4
 load_path = "res://.import/checkboxfalse.png-75d48c0225a34a1471ff952bf3e880d6.stex"
 
-[sub_resource type="StreamTexture" id=15]
+[sub_resource type="StreamTexture" id=6]
 flags = 4
 load_path = "res://.import/checkboxtrue.png-caff23faf478b86f94d99d9af337f540.stex"
 
-[sub_resource type="StyleBoxEmpty" id=16]
-
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 1, 1, 1, 1 )
-
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 1, 1, 1, 1 )
-
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.0313726, 0, 1, 1 )
+[sub_resource type="StyleBoxEmpty" id=7]
 
 [sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.0313726, 0, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_top = 64
 border_width_bottom = 64
 border_color = Color( 0, 0, 0, 1 )
 corner_detail = 1
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="StyleBoxLine" id=10]
+[sub_resource type="StyleBoxLine" id=13]
 thickness = 10
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=14]
 size = 40
 extra_spacing_top = 5
 extra_spacing_bottom = 5
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=11]
+[sub_resource type="StyleBoxFlat" id=15]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 5
 border_width_top = 5
@@ -65,7 +65,7 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="StyleBoxEmpty" id=12]
+[sub_resource type="StyleBoxEmpty" id=16]
 
 [resource]
 default_font = ExtResource( 1 )
@@ -82,7 +82,7 @@ CheckBox/icons/radio_checked = null
 CheckBox/icons/radio_unchecked = null
 CheckBox/icons/unchecked = null
 CheckBox/styles/disabled = null
-CheckBox/styles/focus = SubResource( 30 )
+CheckBox/styles/focus = SubResource( 1 )
 CheckBox/styles/hover = SubResource( 2 )
 CheckBox/styles/hover_pressed = SubResource( 3 )
 CheckBox/styles/normal = SubResource( 4 )
@@ -95,12 +95,12 @@ CheckButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 CheckButton/constants/check_vadjust = 0
 CheckButton/constants/hseparation = 4
 CheckButton/fonts/font = null
-CheckButton/icons/off = SubResource( 14 )
+CheckButton/icons/off = SubResource( 5 )
 CheckButton/icons/off_disabled = null
-CheckButton/icons/on = SubResource( 15 )
+CheckButton/icons/on = SubResource( 6 )
 CheckButton/icons/on_disabled = null
 CheckButton/styles/disabled = null
-CheckButton/styles/focus = SubResource( 16 )
+CheckButton/styles/focus = SubResource( 7 )
 CheckButton/styles/hover = null
 CheckButton/styles/hover_pressed = null
 CheckButton/styles/normal = null
@@ -109,18 +109,18 @@ HScrollBar/icons/decrement = null
 HScrollBar/icons/decrement_highlight = null
 HScrollBar/icons/increment = null
 HScrollBar/icons/increment_highlight = null
-HScrollBar/styles/grabber = SubResource( 5 )
-HScrollBar/styles/grabber_highlight = SubResource( 6 )
-HScrollBar/styles/grabber_pressed = SubResource( 7 )
-HScrollBar/styles/scroll = SubResource( 8 )
+HScrollBar/styles/grabber = SubResource( 8 )
+HScrollBar/styles/grabber_highlight = SubResource( 9 )
+HScrollBar/styles/grabber_pressed = SubResource( 10 )
+HScrollBar/styles/scroll = SubResource( 11 )
 HScrollBar/styles/scroll_focus = null
 HSlider/icons/grabber = null
 HSlider/icons/grabber_disabled = null
 HSlider/icons/grabber_highlight = null
 HSlider/icons/tick = null
-HSlider/styles/grabber_area = SubResource( 9 )
-HSlider/styles/grabber_area_highlight = SubResource( 9 )
-HSlider/styles/slider = SubResource( 10 )
+HSlider/styles/grabber_area = SubResource( 12 )
+HSlider/styles/grabber_area_highlight = SubResource( 12 )
+HSlider/styles/slider = SubResource( 13 )
 TextEdit/colors/background_color = Color( 0, 0, 0, 0 )
 TextEdit/colors/bookmark_color = Color( 0.08, 0.49, 0.98, 1 )
 TextEdit/colors/brace_mismatch_color = Color( 1, 0.2, 0.2, 1 )
@@ -151,12 +151,12 @@ TextEdit/constants/completion_lines = 7
 TextEdit/constants/completion_max_width = 50
 TextEdit/constants/completion_scroll_width = 3
 TextEdit/constants/line_spacing = 4
-TextEdit/fonts/font = SubResource( 13 )
+TextEdit/fonts/font = SubResource( 14 )
 TextEdit/icons/fold = null
 TextEdit/icons/folded = null
 TextEdit/icons/space = null
 TextEdit/icons/tab = null
-TextEdit/styles/completion = SubResource( 11 )
-TextEdit/styles/focus = SubResource( 12 )
-TextEdit/styles/normal = SubResource( 11 )
+TextEdit/styles/completion = SubResource( 15 )
+TextEdit/styles/focus = SubResource( 16 )
+TextEdit/styles/normal = SubResource( 15 )
 TextEdit/styles/read_only = null

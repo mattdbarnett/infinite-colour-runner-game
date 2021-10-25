@@ -73,28 +73,28 @@ font_data = ExtResource( 24 )
 [sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="DynamicFont" id=22]
+[sub_resource type="DynamicFont" id=14]
 size = 60
 font_data = ExtResource( 24 )
 
-[sub_resource type="DynamicFont" id=16]
+[sub_resource type="DynamicFont" id=15]
 size = 64
+font_data = ExtResource( 24 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 50
 font_data = ExtResource( 24 )
 
 [sub_resource type="DynamicFont" id=17]
 size = 50
 font_data = ExtResource( 24 )
 
-[sub_resource type="DynamicFont" id=23]
-size = 50
-font_data = ExtResource( 24 )
-
-[sub_resource type="StyleBoxFlat" id=24]
+[sub_resource type="StyleBoxFlat" id=18]
 bg_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StyleBoxEmpty" id=18]
+[sub_resource type="StyleBoxEmpty" id=19]
 
-[sub_resource type="StyleBoxFlat" id=25]
+[sub_resource type="StyleBoxFlat" id=20]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 15
 border_width_top = 15
@@ -102,19 +102,19 @@ border_width_right = 15
 border_width_bottom = 15
 border_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="StyleBoxEmpty" id=26]
+[sub_resource type="StyleBoxEmpty" id=21]
 
-[sub_resource type="DynamicFont" id=27]
+[sub_resource type="DynamicFont" id=22]
 size = 50
 font_data = ExtResource( 24 )
 
-[sub_resource type="StyleBoxEmpty" id=19]
+[sub_resource type="StyleBoxEmpty" id=23]
 
-[sub_resource type="StyleBoxEmpty" id=20]
+[sub_resource type="StyleBoxEmpty" id=24]
 
-[sub_resource type="StyleBoxEmpty" id=21]
+[sub_resource type="StyleBoxEmpty" id=25]
 
-[sub_resource type="StyleBoxFlat" id=29]
+[sub_resource type="StyleBoxFlat" id=26]
 bg_color = Color( 0.956863, 0, 1, 1 )
 border_width_left = 15
 border_width_top = 15
@@ -122,9 +122,9 @@ border_width_right = 15
 border_width_bottom = 15
 border_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="StyleBoxEmpty" id=30]
+[sub_resource type="StyleBoxEmpty" id=27]
 
-[sub_resource type="StyleBoxFlat" id=31]
+[sub_resource type="StyleBoxFlat" id=28]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 15
 border_width_top = 15
@@ -132,7 +132,7 @@ border_width_right = 15
 border_width_bottom = 15
 border_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="DynamicFont" id=28]
+[sub_resource type="DynamicFont" id=29]
 size = 60
 font_data = ExtResource( 24 )
 
@@ -544,7 +544,7 @@ texture = ExtResource( 37 )
 margin_left = 384.0
 margin_right = 512.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 22 )
+custom_fonts/font = SubResource( 14 )
 text = "0%"
 align = 1
 valign = 1
@@ -570,7 +570,7 @@ texture = ExtResource( 38 )
 margin_left = 384.0
 margin_right = 512.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 22 )
+custom_fonts/font = SubResource( 14 )
 text = "0%"
 align = 1
 valign = 1
@@ -596,7 +596,7 @@ texture = ExtResource( 39 )
 margin_left = 384.0
 margin_right = 512.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 22 )
+custom_fonts/font = SubResource( 14 )
 text = "0%"
 align = 1
 valign = 1
@@ -622,7 +622,7 @@ texture = ExtResource( 40 )
 margin_left = 384.0
 margin_right = 512.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 22 )
+custom_fonts/font = SubResource( 14 )
 text = "0%"
 align = 1
 valign = 1
@@ -648,7 +648,7 @@ texture = ExtResource( 35 )
 margin_left = 384.0
 margin_right = 512.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 22 )
+custom_fonts/font = SubResource( 14 )
 text = "0%"
 align = 1
 valign = 1
@@ -674,7 +674,7 @@ texture = ExtResource( 36 )
 margin_left = 384.0
 margin_right = 512.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 22 )
+custom_fonts/font = SubResource( 14 )
 text = "0%"
 align = 1
 valign = 1
@@ -684,7 +684,7 @@ margin_left = 32.0
 margin_top = 32.0
 margin_right = 704.0
 margin_bottom = 96.0
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 15 )
 text = "Colours"
 align = 1
 __meta__ = {
@@ -707,7 +707,7 @@ margin_left = 32.0
 margin_top = 32.0
 margin_right = 736.0
 margin_bottom = 83.0
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 16 )
 text = "Default Speed + Grav"
 align = 1
 __meta__ = {
@@ -719,7 +719,7 @@ margin_top = 104.0
 margin_right = 224.0
 margin_bottom = 155.0
 rect_pivot_offset = Vector2( -296, 8 )
-custom_fonts/font = SubResource( 23 )
+custom_fonts/font = SubResource( 17 )
 text = "Speed:"
 align = 1
 __meta__ = {
@@ -746,7 +746,7 @@ __meta__ = {
 margin_left = 384.0
 margin_right = 544.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 22 )
+custom_fonts/font = SubResource( 14 )
 text = "100%"
 align = 1
 valign = 1
@@ -758,7 +758,7 @@ __meta__ = {
 margin_top = 200.0
 margin_right = 224.0
 margin_bottom = 251.0
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 16 )
 text = "Gravity:"
 align = 1
 __meta__ = {
@@ -785,7 +785,7 @@ __meta__ = {
 margin_left = 384.0
 margin_right = 544.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 22 )
+custom_fonts/font = SubResource( 14 )
 text = "100%"
 align = 1
 valign = 1
@@ -847,7 +847,7 @@ __meta__ = {
 margin_top = 128.0
 margin_right = 1920.0
 margin_bottom = 1080.0
-custom_styles/panel = SubResource( 24 )
+custom_styles/panel = SubResource( 18 )
 
 [node name="ms_g+d" type="Button" parent="menucanvas/menusettings"]
 margin_left = 128.0
@@ -855,7 +855,7 @@ margin_right = 448.0
 margin_bottom = 128.0
 custom_styles/hover = ExtResource( 28 )
 custom_styles/pressed = ExtResource( 30 )
-custom_styles/focus = SubResource( 18 )
+custom_styles/focus = SubResource( 19 )
 custom_styles/normal = ExtResource( 31 )
 custom_fonts/font = ExtResource( 29 )
 toggle_mode = true
@@ -887,7 +887,7 @@ margin_left = 200.0
 margin_top = 8.0
 margin_right = 520.0
 margin_bottom = 136.0
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 16 )
 text = "Fullscreen"
 align = 1
 valign = 1
@@ -910,7 +910,7 @@ __meta__ = {
 margin_left = 200.0
 margin_right = 520.0
 margin_bottom = 128.0
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 16 )
 text = "VSync"
 align = 1
 valign = 1
@@ -923,11 +923,11 @@ margin_left = 520.0
 margin_top = 264.0
 margin_right = 1080.0
 margin_bottom = 376.0
-custom_styles/hover = SubResource( 25 )
-custom_styles/pressed = SubResource( 25 )
-custom_styles/focus = SubResource( 26 )
-custom_styles/normal = SubResource( 25 )
-custom_fonts/font = SubResource( 27 )
+custom_styles/hover = SubResource( 20 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/focus = SubResource( 21 )
+custom_styles/normal = SubResource( 20 )
+custom_fonts/font = SubResource( 22 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -938,7 +938,7 @@ margin_left = 632.0
 margin_top = -8.0
 margin_right = 952.0
 margin_bottom = 120.0
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 16 )
 text = "Resolution"
 align = 1
 valign = 1
@@ -952,7 +952,7 @@ margin_right = 832.0
 margin_bottom = 128.0
 custom_styles/hover = ExtResource( 28 )
 custom_styles/pressed = ExtResource( 32 )
-custom_styles/focus = SubResource( 19 )
+custom_styles/focus = SubResource( 23 )
 custom_styles/normal = ExtResource( 31 )
 custom_fonts/font = ExtResource( 29 )
 toggle_mode = true
@@ -980,7 +980,7 @@ margin_left = 200.0
 margin_top = 8.0
 margin_right = 520.0
 margin_bottom = 136.0
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 16 )
 text = "Speed + Grav
 Info"
 align = 1
@@ -1005,7 +1005,7 @@ margin_left = 200.0
 margin_top = 8.0
 margin_right = 520.0
 margin_bottom = 136.0
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 16 )
 text = "Player
 Status Box"
 align = 1
@@ -1030,7 +1030,7 @@ margin_left = 200.0
 margin_top = 8.0
 margin_right = 520.0
 margin_bottom = 136.0
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 16 )
 text = "\"Can I Move\"
 Box"
 align = 1
@@ -1055,7 +1055,7 @@ margin_left = 200.0
 margin_top = 8.0
 margin_right = 520.0
 margin_bottom = 136.0
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 16 )
 text = "FPS
 Counter"
 align = 1
@@ -1070,7 +1070,7 @@ margin_right = 1408.0
 margin_bottom = 128.0
 custom_styles/hover = ExtResource( 28 )
 custom_styles/pressed = ExtResource( 33 )
-custom_styles/focus = SubResource( 20 )
+custom_styles/focus = SubResource( 24 )
 custom_styles/normal = ExtResource( 31 )
 custom_fonts/font = ExtResource( 29 )
 toggle_mode = true
@@ -1083,13 +1083,91 @@ __meta__ = {
 visible = false
 rect_pivot_offset = Vector2( -592, 232 )
 
+[node name="ms_music" type="Label" parent="menucanvas/menusettings/ms_sound/ms_sound_menu"]
+margin_left = -1024.0
+margin_top = 256.0
+margin_right = -768.0
+margin_bottom = 384.0
+custom_fonts/font = SubResource( 14 )
+text = "Music
+Volume"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ms_slidermusic" type="HSlider" parent="menucanvas/menusettings/ms_sound/ms_sound_menu"]
+margin_left = -704.0
+margin_top = 256.0
+margin_bottom = 384.0
+rect_pivot_offset = Vector2( 200, 80 )
+theme = ExtResource( 22 )
+custom_icons/grabber_highlight = ExtResource( 41 )
+custom_icons/grabber = ExtResource( 41 )
+value = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ms_lblval" type="Label" parent="menucanvas/menusettings/ms_sound/ms_sound_menu/ms_slidermusic"]
+margin_left = 768.0
+margin_right = 1024.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 14 )
+text = "50%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ms_effect" type="Label" parent="menucanvas/menusettings/ms_sound/ms_sound_menu"]
+margin_left = -1024.0
+margin_top = 512.0
+margin_right = -768.0
+margin_bottom = 640.0
+custom_fonts/font = SubResource( 14 )
+text = "Effects
+Volume"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ms_slidereffect" type="HSlider" parent="menucanvas/menusettings/ms_sound/ms_sound_menu"]
+margin_left = -704.0
+margin_top = 512.0
+margin_bottom = 640.0
+rect_pivot_offset = Vector2( 200, 80 )
+theme = ExtResource( 22 )
+custom_icons/grabber_highlight = ExtResource( 41 )
+custom_icons/grabber = ExtResource( 41 )
+value = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ms_lblval" type="Label" parent="menucanvas/menusettings/ms_sound/ms_sound_menu/ms_slidereffect"]
+margin_left = 768.0
+margin_right = 1024.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 14 )
+text = "50%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ms_gameplay" type="Button" parent="menucanvas/menusettings"]
 margin_left = 1472.0
 margin_right = 1792.0
 margin_bottom = 128.0
 custom_styles/hover = ExtResource( 28 )
 custom_styles/pressed = ExtResource( 34 )
-custom_styles/focus = SubResource( 21 )
+custom_styles/focus = SubResource( 25 )
 custom_styles/normal = ExtResource( 31 )
 custom_fonts/font = ExtResource( 29 )
 toggle_mode = true
@@ -1107,11 +1185,11 @@ margin_top = 256.0
 margin_right = -832.0
 margin_bottom = 384.0
 theme = ExtResource( 22 )
-custom_styles/hover = SubResource( 29 )
-custom_styles/pressed = SubResource( 29 )
-custom_styles/focus = SubResource( 30 )
-custom_styles/normal = SubResource( 31 )
-custom_fonts/font = SubResource( 28 )
+custom_styles/hover = SubResource( 26 )
+custom_styles/pressed = SubResource( 26 )
+custom_styles/focus = SubResource( 27 )
+custom_styles/normal = SubResource( 28 )
+custom_fonts/font = SubResource( 29 )
 text = "Press"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1184,6 +1262,8 @@ environment = ExtResource( 1 )
 [connection signal="pressed" from="menucanvas/menusettings/ms_g+d" to="." method="_on_ms_gd_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_gui" to="." method="_on_ms_gui_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_sound" to="." method="_on_ms_sound_pressed"]
+[connection signal="value_changed" from="menucanvas/menusettings/ms_sound/ms_sound_menu/ms_slidermusic" to="." method="_on_ms_slidermusic_value_changed"]
+[connection signal="value_changed" from="menucanvas/menusettings/ms_sound/ms_sound_menu/ms_slidereffect" to="." method="_on_ms_slidereffect_value_changed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_gameplay" to="." method="_on_ms_gameplay_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_gameplay/ms_gameplay_menu/ms_presshold" to="." method="_on_ms_presshold_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_back" to="." method="_on_ms_back_pressed"]
