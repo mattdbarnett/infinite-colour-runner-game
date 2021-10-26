@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=19 format=2]
+[gd_resource type="Theme" load_steps=21 format=2]
 
 [ext_resource path="res://3 Fonts/0 Const/mainfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://3 Fonts/0 Const/pixel font-7.ttf" type="DynamicFontData" id=2]
@@ -51,6 +51,9 @@ bg_color = Color( 1, 1, 1, 1 )
 [sub_resource type="StyleBoxLine" id=13]
 thickness = 10
 
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0, 0, 0, 1 )
+
 [sub_resource type="DynamicFont" id=14]
 size = 40
 extra_spacing_top = 5
@@ -66,6 +69,12 @@ border_width_bottom = 5
 border_color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="StyleBoxEmpty" id=16]
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 8
+border_width_right = 8
+border_color = Color( 0.192157, 0.192157, 0.192157, 1 )
 
 [resource]
 default_font = ExtResource( 1 )
@@ -121,6 +130,7 @@ HSlider/icons/tick = null
 HSlider/styles/grabber_area = SubResource( 12 )
 HSlider/styles/grabber_area_highlight = SubResource( 12 )
 HSlider/styles/slider = SubResource( 13 )
+Panel/styles/panel = SubResource( 17 )
 TextEdit/colors/background_color = Color( 0, 0, 0, 0 )
 TextEdit/colors/bookmark_color = Color( 0.08, 0.49, 0.98, 1 )
 TextEdit/colors/brace_mismatch_color = Color( 1, 0.2, 0.2, 1 )
@@ -160,3 +170,12 @@ TextEdit/styles/completion = SubResource( 15 )
 TextEdit/styles/focus = SubResource( 16 )
 TextEdit/styles/normal = SubResource( 15 )
 TextEdit/styles/read_only = null
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/styles/grabber = SubResource( 8 )
+VScrollBar/styles/grabber_highlight = SubResource( 9 )
+VScrollBar/styles/grabber_pressed = SubResource( 10 )
+VScrollBar/styles/scroll = SubResource( 18 )
+VScrollBar/styles/scroll_focus = null

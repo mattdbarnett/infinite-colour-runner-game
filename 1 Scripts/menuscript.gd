@@ -194,6 +194,9 @@ func _on_mc_slidergrav_value_changed(value):
 Store Menu Signals
 """
 
+func _on_mt_back_pressed():
+	currentmenu_update(menumain)
+
 """
 Settings Menu Signals
 """
@@ -258,3 +261,4 @@ func _on_ms_back_pressed():
 """
 Help Menu Signals
 """
+

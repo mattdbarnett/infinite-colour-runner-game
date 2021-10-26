@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://5 Misc/worldenv.tres" type="Environment" id=1]
 [ext_resource path="res://3 Fonts/1 Menus/0 Main/main_playbtn.tres" type="DynamicFont" id=2]
@@ -86,6 +86,48 @@ size = 50
 font_data = ExtResource( 24 )
 
 [sub_resource type="DynamicFont" id=17]
+size = 50
+font_data = ExtResource( 24 )
+
+[sub_resource type="DynamicFont" id=33]
+size = 50
+font_data = ExtResource( 24 )
+
+[sub_resource type="StyleBoxFlat" id=34]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=35]
+size = 32
+font_data = ExtResource( 24 )
+
+[sub_resource type="StyleBoxFlat" id=36]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=30]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.0235294, 1, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=31]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_color = Color( 1, 0.937255, 0, 1 )
+
+[sub_resource type="DynamicFont" id=32]
 size = 50
 font_data = ExtResource( 24 )
 
@@ -831,9 +873,582 @@ texture = ExtResource( 41 )
 visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
+rect_pivot_offset = Vector2( -16, 408 )
+theme = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="mt_skins" type="Panel" parent="menucanvas/menustore"]
+margin_left = 1392.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+
+[node name="mp_coinlabel" type="Label" parent="menucanvas/menustore/mt_skins"]
+margin_right = 528.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 11 )
+text = "Skins"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="menucanvas/menustore/mt_skins"]
+margin_top = 128.0
+margin_right = 512.0
+margin_bottom = 1080.0
+theme = ExtResource( 22 )
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="menucanvas/menustore/mt_skins/ScrollContainer"]
+margin_right = 528.0
+margin_bottom = 1296.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="mt_item1" type="Control" parent="menucanvas/menustore/mt_skins/ScrollContainer/VBoxContainer"]
+margin_right = 512.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 512, 256 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="menucanvas/menustore/mt_skins/ScrollContainer/VBoxContainer/mt_item1"]
+margin_left = 16.0
+margin_right = 336.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 33 )
+text = "Placeholder"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/ScrollContainer/VBoxContainer/mt_item1"]
+margin_left = 352.0
+margin_right = 496.0
+margin_bottom = 64.0
+custom_styles/hover = SubResource( 34 )
+custom_styles/pressed = SubResource( 34 )
+custom_styles/normal = SubResource( 34 )
+custom_fonts/font = SubResource( 35 )
+text = "Buy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_skins/ScrollContainer/VBoxContainer/mt_item1"]
+margin_left = 16.0
+margin_top = 80.0
+margin_right = 496.0
+margin_bottom = 240.0
+custom_styles/panel = SubResource( 36 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mt_item2" type="Control" parent="menucanvas/menustore/mt_skins/ScrollContainer/VBoxContainer"]
+margin_top = 260.0
+margin_right = 512.0
+margin_bottom = 516.0
+rect_min_size = Vector2( 512, 256 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="menucanvas/menustore/mt_skins/ScrollContainer/VBoxContainer/mt_item2"]
+margin_left = 16.0
+margin_right = 336.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 33 )
+text = "Placeholder"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/ScrollContainer/VBoxContainer/mt_item2"]
+margin_left = 352.0
+margin_right = 496.0
+margin_bottom = 64.0
+custom_styles/hover = SubResource( 34 )
+custom_styles/pressed = SubResource( 34 )
+custom_styles/normal = SubResource( 34 )
+custom_fonts/font = SubResource( 35 )
+text = "Buy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_skins/ScrollContainer/VBoxContainer/mt_item2"]
+margin_left = 16.0
+margin_top = 80.0
+margin_right = 496.0
+margin_bottom = 240.0
+custom_styles/panel = SubResource( 36 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mt_item3" type="Control" parent="menucanvas/menustore/mt_skins/ScrollContainer/VBoxContainer"]
+margin_top = 520.0
+margin_right = 512.0
+margin_bottom = 776.0
+rect_min_size = Vector2( 512, 256 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="menucanvas/menustore/mt_skins/ScrollContainer/VBoxContainer/mt_item3"]
+margin_left = 16.0
+margin_right = 336.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 33 )
+text = "Placeholder"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/ScrollContainer/VBoxContainer/mt_item3"]
+margin_left = 352.0
+margin_right = 496.0
+margin_bottom = 64.0
+custom_styles/hover = SubResource( 34 )
+custom_styles/pressed = SubResource( 34 )
+custom_styles/normal = SubResource( 34 )
+custom_fonts/font = SubResource( 35 )
+text = "Buy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_skins/ScrollContainer/VBoxContainer/mt_item3"]
+margin_left = 16.0
+margin_top = 80.0
+margin_right = 496.0
+margin_bottom = 240.0
+custom_styles/panel = SubResource( 36 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mt_item4" type="Control" parent="menucanvas/menustore/mt_skins/ScrollContainer/VBoxContainer"]
+margin_top = 780.0
+margin_right = 512.0
+margin_bottom = 1036.0
+rect_min_size = Vector2( 512, 256 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="menucanvas/menustore/mt_skins/ScrollContainer/VBoxContainer/mt_item4"]
+margin_left = 16.0
+margin_right = 336.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 33 )
+text = "Placeholder"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/ScrollContainer/VBoxContainer/mt_item4"]
+margin_left = 352.0
+margin_right = 496.0
+margin_bottom = 64.0
+custom_styles/hover = SubResource( 34 )
+custom_styles/pressed = SubResource( 34 )
+custom_styles/normal = SubResource( 34 )
+custom_fonts/font = SubResource( 35 )
+text = "Buy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_skins/ScrollContainer/VBoxContainer/mt_item4"]
+margin_left = 16.0
+margin_top = 80.0
+margin_right = 496.0
+margin_bottom = 240.0
+custom_styles/panel = SubResource( 36 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mt_item5" type="Control" parent="menucanvas/menustore/mt_skins/ScrollContainer/VBoxContainer"]
+margin_top = 1040.0
+margin_right = 512.0
+margin_bottom = 1296.0
+rect_min_size = Vector2( 512, 256 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="menucanvas/menustore/mt_skins/ScrollContainer/VBoxContainer/mt_item5"]
+margin_left = 16.0
+margin_right = 336.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 33 )
+text = "Placeholder"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/ScrollContainer/VBoxContainer/mt_item5"]
+margin_left = 352.0
+margin_right = 496.0
+margin_bottom = 64.0
+custom_styles/hover = SubResource( 34 )
+custom_styles/pressed = SubResource( 34 )
+custom_styles/normal = SubResource( 34 )
+custom_fonts/font = SubResource( 35 )
+text = "Buy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_skins/ScrollContainer/VBoxContainer/mt_item5"]
+margin_left = 16.0
+margin_top = 80.0
+margin_right = 496.0
+margin_bottom = 240.0
+custom_styles/panel = SubResource( 36 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mt_themes" type="Panel" parent="menucanvas/menustore"]
+margin_left = 864.0
+margin_top = 320.0
+margin_right = 1392.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_coinlabel" type="Label" parent="menucanvas/menustore/mt_themes"]
+margin_right = 528.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 11 )
+text = "Themes"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="menucanvas/menustore/mt_themes"]
+margin_top = 128.0
+margin_right = 528.0
+margin_bottom = 760.0
+theme = ExtResource( 22 )
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="menucanvas/menustore/mt_themes/ScrollContainer"]
+margin_right = 528.0
+margin_bottom = 1296.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 22 )
+
+[node name="mt_item1" type="Control" parent="menucanvas/menustore/mt_themes/ScrollContainer/VBoxContainer"]
+margin_right = 512.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 512, 256 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="menucanvas/menustore/mt_themes/ScrollContainer/VBoxContainer/mt_item1"]
+margin_left = 16.0
+margin_right = 336.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 33 )
+text = "Placeholder"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="menucanvas/menustore/mt_themes/ScrollContainer/VBoxContainer/mt_item1"]
+margin_left = 352.0
+margin_right = 496.0
+margin_bottom = 64.0
+custom_styles/hover = SubResource( 34 )
+custom_styles/pressed = SubResource( 34 )
+custom_styles/normal = SubResource( 34 )
+custom_fonts/font = SubResource( 35 )
+text = "Buy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_themes/ScrollContainer/VBoxContainer/mt_item1"]
+margin_left = 16.0
+margin_top = 80.0
+margin_right = 496.0
+margin_bottom = 240.0
+custom_styles/panel = SubResource( 36 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mt_item2" type="Control" parent="menucanvas/menustore/mt_themes/ScrollContainer/VBoxContainer"]
+margin_top = 260.0
+margin_right = 512.0
+margin_bottom = 516.0
+rect_min_size = Vector2( 512, 256 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="menucanvas/menustore/mt_themes/ScrollContainer/VBoxContainer/mt_item2"]
+margin_left = 16.0
+margin_right = 336.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 33 )
+text = "Placeholder"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="menucanvas/menustore/mt_themes/ScrollContainer/VBoxContainer/mt_item2"]
+margin_left = 352.0
+margin_right = 496.0
+margin_bottom = 64.0
+custom_styles/hover = SubResource( 34 )
+custom_styles/pressed = SubResource( 34 )
+custom_styles/normal = SubResource( 34 )
+custom_fonts/font = SubResource( 35 )
+text = "Buy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_themes/ScrollContainer/VBoxContainer/mt_item2"]
+margin_left = 16.0
+margin_top = 80.0
+margin_right = 496.0
+margin_bottom = 240.0
+custom_styles/panel = SubResource( 36 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mt_item3" type="Control" parent="menucanvas/menustore/mt_themes/ScrollContainer/VBoxContainer"]
+margin_top = 520.0
+margin_right = 512.0
+margin_bottom = 776.0
+rect_min_size = Vector2( 512, 256 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="menucanvas/menustore/mt_themes/ScrollContainer/VBoxContainer/mt_item3"]
+margin_left = 16.0
+margin_right = 336.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 33 )
+text = "Placeholder"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="menucanvas/menustore/mt_themes/ScrollContainer/VBoxContainer/mt_item3"]
+margin_left = 352.0
+margin_right = 496.0
+margin_bottom = 64.0
+custom_styles/hover = SubResource( 34 )
+custom_styles/pressed = SubResource( 34 )
+custom_styles/normal = SubResource( 34 )
+custom_fonts/font = SubResource( 35 )
+text = "Buy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_themes/ScrollContainer/VBoxContainer/mt_item3"]
+margin_left = 16.0
+margin_top = 80.0
+margin_right = 496.0
+margin_bottom = 240.0
+custom_styles/panel = SubResource( 36 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mt_item4" type="Control" parent="menucanvas/menustore/mt_themes/ScrollContainer/VBoxContainer"]
+margin_top = 780.0
+margin_right = 512.0
+margin_bottom = 1036.0
+rect_min_size = Vector2( 512, 256 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="menucanvas/menustore/mt_themes/ScrollContainer/VBoxContainer/mt_item4"]
+margin_left = 16.0
+margin_right = 336.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 33 )
+text = "Placeholder"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="menucanvas/menustore/mt_themes/ScrollContainer/VBoxContainer/mt_item4"]
+margin_left = 352.0
+margin_right = 496.0
+margin_bottom = 64.0
+custom_styles/hover = SubResource( 34 )
+custom_styles/pressed = SubResource( 34 )
+custom_styles/normal = SubResource( 34 )
+custom_fonts/font = SubResource( 35 )
+text = "Buy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_themes/ScrollContainer/VBoxContainer/mt_item4"]
+margin_left = 16.0
+margin_top = 80.0
+margin_right = 496.0
+margin_bottom = 240.0
+custom_styles/panel = SubResource( 36 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mt_item5" type="Control" parent="menucanvas/menustore/mt_themes/ScrollContainer/VBoxContainer"]
+margin_top = 1040.0
+margin_right = 512.0
+margin_bottom = 1296.0
+rect_min_size = Vector2( 512, 256 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="menucanvas/menustore/mt_themes/ScrollContainer/VBoxContainer/mt_item5"]
+margin_left = 16.0
+margin_right = 336.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 33 )
+text = "Placeholder"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="menucanvas/menustore/mt_themes/ScrollContainer/VBoxContainer/mt_item5"]
+margin_left = 352.0
+margin_right = 496.0
+margin_bottom = 64.0
+custom_styles/hover = SubResource( 34 )
+custom_styles/pressed = SubResource( 34 )
+custom_styles/normal = SubResource( 34 )
+custom_fonts/font = SubResource( 35 )
+text = "Buy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_themes/ScrollContainer/VBoxContainer/mt_item5"]
+margin_left = 16.0
+margin_top = 80.0
+margin_right = 496.0
+margin_bottom = 240.0
+custom_styles/panel = SubResource( 36 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mt_score" type="Panel" parent="menucanvas/menustore"]
+margin_top = 872.0
+margin_right = 576.0
+margin_bottom = 1080.0
+custom_styles/panel = SubResource( 30 )
+
+[node name="mt_coins" type="Panel" parent="menucanvas/menustore"]
+margin_top = 640.0
+margin_right = 576.0
+margin_bottom = 872.0
+rect_pivot_offset = Vector2( 416, -192 )
+custom_styles/panel = SubResource( 31 )
+
+[node name="mp_coinlabel" type="Label" parent="menucanvas/menustore/mt_coins"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 512.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 11 )
+text = "Current Coins:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_coinvalue" type="Label" parent="menucanvas/menustore/mt_coins"]
+margin_left = 64.0
+margin_top = 128.0
+margin_right = 512.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 32 )
+custom_colors/font_color = Color( 1, 0.937255, 0, 1 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_scorelabel" type="Label" parent="menucanvas/menustore/mt_coins"]
+margin_left = 64.0
+margin_top = 256.0
+margin_right = 512.0
+margin_bottom = 320.0
+custom_fonts/font = SubResource( 11 )
+text = "High Score:"
+align = 1
+valign = 1
+
+[node name="mp_scorevalue2" type="Label" parent="menucanvas/menustore/mt_coins"]
+margin_left = 64.0
+margin_top = 320.0
+margin_right = 512.0
+margin_bottom = 384.0
+custom_fonts/font = SubResource( 32 )
+custom_colors/font_color = Color( 0.0235294, 1, 0, 1 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mt_back" type="Button" parent="menucanvas/menustore"]
+margin_right = 384.0
+margin_bottom = 192.0
+custom_styles/hover = ExtResource( 16 )
+custom_styles/pressed = ExtResource( 15 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 23 )
+keep_pressed_outside = true
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="player" type="Sprite" parent="menucanvas/menustore"]
+position = Vector2( 96, 208 )
+texture = ExtResource( 41 )
 
 [node name="menusettings" type="Control" parent="menucanvas"]
 visible = false
@@ -1259,6 +1874,7 @@ environment = ExtResource( 1 )
 [connection signal="value_changed" from="menucanvas/menucustom/mc_spdgrav/mc_lbl_spd/mc_sliderspd" to="." method="_on_mc_sliderspd_value_changed"]
 [connection signal="value_changed" from="menucanvas/menucustom/mc_spdgrav/mc_lbl_grav/mc_slidergrav" to="." method="_on_mc_slidergrav_value_changed"]
 [connection signal="pressed" from="menucanvas/menucustom/mc_back" to="." method="_on_mc_back_pressed"]
+[connection signal="pressed" from="menucanvas/menustore/mt_back" to="." method="_on_mt_back_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_g+d" to="." method="_on_ms_gd_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_gui" to="." method="_on_ms_gui_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_sound" to="." method="_on_ms_sound_pressed"]

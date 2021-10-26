@@ -8,7 +8,7 @@
 2. ~~Finish early-version of the "Main" Menu.~~
 3. ~~Finish early-version of the "Play" Menu.~~
 4. ~~Finish early-version of the "Custom" Menu.~~
-5. Finish early-version of the "Store" Menu.
+5. ~~Finish early-version of the "Store" Menu.~~
 6. ~~Finish early-version of the "Settings" Menu.~~
 7. Finish early-version of the "Help" Menu.
 
