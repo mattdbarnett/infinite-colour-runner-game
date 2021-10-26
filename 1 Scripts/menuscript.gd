@@ -96,6 +96,9 @@ func _on_mm_settingsbtn_pressed():
 
 func _on_mm_helpbtn_pressed():
 	currentmenu_update(menuhelp)
+	get_node("menucanvas/menuhelp/mh_cont1").visible = true
+	get_node("menucanvas/menuhelp/mh_cont2").visible = false
+	get_node("menucanvas/menuhelp/mh_cont3").visible = false
 
 func _on_mm_quitbtn_pressed():
 	get_tree().quit()
@@ -262,3 +265,18 @@ func _on_ms_back_pressed():
 Help Menu Signals
 """
 
+func _on_mh_next1_pressed():
+	get_node("menucanvas/menuhelp/mh_cont1").visible = false
+	get_node("menucanvas/menuhelp/mh_cont2").visible = true
+	get_node("menucanvas/menuhelp/mh_cont3").visible = false
+
+func _on_mh_next2_pressed():
+	get_node("menucanvas/menuhelp/mh_cont1").visible = false
+	get_node("menucanvas/menuhelp/mh_cont2").visible = false
+	get_node("menucanvas/menuhelp/mh_cont3").visible = true
+
+func _on_mh_next3_pressed():
+	get_node("menucanvas/menuhelp/mh_cont1").visible = true
+	get_node("menucanvas/menuhelp/mh_cont2").visible = false
+	get_node("menucanvas/menuhelp/mh_cont3").visible = false
+	currentmenu_update(menumain)

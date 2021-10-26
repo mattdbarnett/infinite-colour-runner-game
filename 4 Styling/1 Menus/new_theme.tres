@@ -51,16 +51,16 @@ bg_color = Color( 1, 1, 1, 1 )
 [sub_resource type="StyleBoxLine" id=13]
 thickness = 10
 
-[sub_resource type="StyleBoxFlat" id=17]
+[sub_resource type="StyleBoxFlat" id=14]
 bg_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=15]
 size = 40
 extra_spacing_top = 5
 extra_spacing_bottom = 5
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=15]
+[sub_resource type="StyleBoxFlat" id=16]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 5
 border_width_top = 5
@@ -68,7 +68,7 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="StyleBoxEmpty" id=16]
+[sub_resource type="StyleBoxEmpty" id=17]
 
 [sub_resource type="StyleBoxFlat" id=18]
 bg_color = Color( 1, 1, 1, 1 )
@@ -130,7 +130,7 @@ HSlider/icons/tick = null
 HSlider/styles/grabber_area = SubResource( 12 )
 HSlider/styles/grabber_area_highlight = SubResource( 12 )
 HSlider/styles/slider = SubResource( 13 )
-Panel/styles/panel = SubResource( 17 )
+Panel/styles/panel = SubResource( 14 )
 TextEdit/colors/background_color = Color( 0, 0, 0, 0 )
 TextEdit/colors/bookmark_color = Color( 0.08, 0.49, 0.98, 1 )
 TextEdit/colors/brace_mismatch_color = Color( 1, 0.2, 0.2, 1 )
@@ -161,14 +161,14 @@ TextEdit/constants/completion_lines = 7
 TextEdit/constants/completion_max_width = 50
 TextEdit/constants/completion_scroll_width = 3
 TextEdit/constants/line_spacing = 4
-TextEdit/fonts/font = SubResource( 14 )
+TextEdit/fonts/font = SubResource( 15 )
 TextEdit/icons/fold = null
 TextEdit/icons/folded = null
 TextEdit/icons/space = null
 TextEdit/icons/tab = null
-TextEdit/styles/completion = SubResource( 15 )
-TextEdit/styles/focus = SubResource( 16 )
-TextEdit/styles/normal = SubResource( 15 )
+TextEdit/styles/completion = SubResource( 16 )
+TextEdit/styles/focus = SubResource( 17 )
+TextEdit/styles/normal = SubResource( 16 )
 TextEdit/styles/read_only = null
 VScrollBar/icons/decrement = null
 VScrollBar/icons/decrement_highlight = null

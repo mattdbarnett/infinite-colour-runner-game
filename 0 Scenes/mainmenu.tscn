@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=85 format=2]
 
 [ext_resource path="res://5 Misc/worldenv.tres" type="Environment" id=1]
 [ext_resource path="res://3 Fonts/1 Menus/0 Main/main_playbtn.tres" type="DynamicFont" id=2]
@@ -89,11 +89,11 @@ font_data = ExtResource( 24 )
 size = 50
 font_data = ExtResource( 24 )
 
-[sub_resource type="DynamicFont" id=33]
+[sub_resource type="DynamicFont" id=18]
 size = 50
 font_data = ExtResource( 24 )
 
-[sub_resource type="StyleBoxFlat" id=34]
+[sub_resource type="StyleBoxFlat" id=19]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 10
 border_width_top = 10
@@ -101,11 +101,11 @@ border_width_right = 10
 border_width_bottom = 10
 border_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="DynamicFont" id=35]
+[sub_resource type="DynamicFont" id=20]
 size = 32
 font_data = ExtResource( 24 )
 
-[sub_resource type="StyleBoxFlat" id=36]
+[sub_resource type="StyleBoxFlat" id=21]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 10
 border_width_top = 10
@@ -113,30 +113,30 @@ border_width_right = 10
 border_width_bottom = 10
 border_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="StyleBoxFlat" id=30]
+[sub_resource type="StyleBoxFlat" id=22]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 20
 border_width_right = 20
 border_width_bottom = 20
 border_color = Color( 0.0235294, 1, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=31]
+[sub_resource type="StyleBoxFlat" id=23]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 20
 border_width_top = 20
 border_width_right = 20
 border_color = Color( 1, 0.937255, 0, 1 )
 
-[sub_resource type="DynamicFont" id=32]
+[sub_resource type="DynamicFont" id=24]
 size = 50
 font_data = ExtResource( 24 )
 
-[sub_resource type="StyleBoxFlat" id=18]
+[sub_resource type="StyleBoxFlat" id=25]
 bg_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StyleBoxEmpty" id=19]
+[sub_resource type="StyleBoxEmpty" id=26]
 
-[sub_resource type="StyleBoxFlat" id=20]
+[sub_resource type="StyleBoxFlat" id=27]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 15
 border_width_top = 15
@@ -144,19 +144,19 @@ border_width_right = 15
 border_width_bottom = 15
 border_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="StyleBoxEmpty" id=21]
+[sub_resource type="StyleBoxEmpty" id=28]
 
-[sub_resource type="DynamicFont" id=22]
+[sub_resource type="DynamicFont" id=29]
 size = 50
 font_data = ExtResource( 24 )
 
-[sub_resource type="StyleBoxEmpty" id=23]
+[sub_resource type="StyleBoxEmpty" id=30]
 
-[sub_resource type="StyleBoxEmpty" id=24]
+[sub_resource type="StyleBoxEmpty" id=31]
 
-[sub_resource type="StyleBoxEmpty" id=25]
+[sub_resource type="StyleBoxEmpty" id=32]
 
-[sub_resource type="StyleBoxFlat" id=26]
+[sub_resource type="StyleBoxFlat" id=33]
 bg_color = Color( 0.956863, 0, 1, 1 )
 border_width_left = 15
 border_width_top = 15
@@ -164,9 +164,9 @@ border_width_right = 15
 border_width_bottom = 15
 border_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="StyleBoxEmpty" id=27]
+[sub_resource type="StyleBoxEmpty" id=34]
 
-[sub_resource type="StyleBoxFlat" id=28]
+[sub_resource type="StyleBoxFlat" id=35]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 15
 border_width_top = 15
@@ -174,9 +174,37 @@ border_width_right = 15
 border_width_bottom = 15
 border_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="DynamicFont" id=29]
+[sub_resource type="DynamicFont" id=36]
 size = 60
 font_data = ExtResource( 24 )
+
+[sub_resource type="StyleBoxFlat" id=37]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=38]
+size = 80
+font_data = ExtResource( 24 )
+
+[sub_resource type="StyleBoxFlat" id=39]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=40]
+size = 50
+font_data = ExtResource( 24 )
+
+[sub_resource type="StyleBoxFlat" id=41]
+bg_color = Color( 0.282353, 0, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=42]
+bg_color = Color( 0.282353, 0, 1, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=43]
+bg_color = Color( 0, 0, 0, 1 )
 
 [node name="menuroot" type="Node2D"]
 script = ExtResource( 21 )
@@ -906,7 +934,7 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="menucanvas/menustore/mt_skins/ScrollContainer"]
-margin_right = 528.0
+margin_right = 512.0
 margin_bottom = 1296.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -921,7 +949,7 @@ size_flags_horizontal = 3
 margin_left = 16.0
 margin_right = 336.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 33 )
+custom_fonts/font = SubResource( 18 )
 text = "Placeholder"
 align = 1
 valign = 1
@@ -933,10 +961,10 @@ __meta__ = {
 margin_left = 352.0
 margin_right = 496.0
 margin_bottom = 64.0
-custom_styles/hover = SubResource( 34 )
-custom_styles/pressed = SubResource( 34 )
-custom_styles/normal = SubResource( 34 )
-custom_fonts/font = SubResource( 35 )
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/normal = SubResource( 19 )
+custom_fonts/font = SubResource( 20 )
 text = "Buy"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -947,7 +975,7 @@ margin_left = 16.0
 margin_top = 80.0
 margin_right = 496.0
 margin_bottom = 240.0
-custom_styles/panel = SubResource( 36 )
+custom_styles/panel = SubResource( 21 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -963,7 +991,7 @@ size_flags_horizontal = 3
 margin_left = 16.0
 margin_right = 336.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 33 )
+custom_fonts/font = SubResource( 18 )
 text = "Placeholder"
 align = 1
 valign = 1
@@ -975,10 +1003,10 @@ __meta__ = {
 margin_left = 352.0
 margin_right = 496.0
 margin_bottom = 64.0
-custom_styles/hover = SubResource( 34 )
-custom_styles/pressed = SubResource( 34 )
-custom_styles/normal = SubResource( 34 )
-custom_fonts/font = SubResource( 35 )
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/normal = SubResource( 19 )
+custom_fonts/font = SubResource( 20 )
 text = "Buy"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -989,7 +1017,7 @@ margin_left = 16.0
 margin_top = 80.0
 margin_right = 496.0
 margin_bottom = 240.0
-custom_styles/panel = SubResource( 36 )
+custom_styles/panel = SubResource( 21 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1005,7 +1033,7 @@ size_flags_horizontal = 3
 margin_left = 16.0
 margin_right = 336.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 33 )
+custom_fonts/font = SubResource( 18 )
 text = "Placeholder"
 align = 1
 valign = 1
@@ -1017,10 +1045,10 @@ __meta__ = {
 margin_left = 352.0
 margin_right = 496.0
 margin_bottom = 64.0
-custom_styles/hover = SubResource( 34 )
-custom_styles/pressed = SubResource( 34 )
-custom_styles/normal = SubResource( 34 )
-custom_fonts/font = SubResource( 35 )
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/normal = SubResource( 19 )
+custom_fonts/font = SubResource( 20 )
 text = "Buy"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1031,7 +1059,7 @@ margin_left = 16.0
 margin_top = 80.0
 margin_right = 496.0
 margin_bottom = 240.0
-custom_styles/panel = SubResource( 36 )
+custom_styles/panel = SubResource( 21 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1047,7 +1075,7 @@ size_flags_horizontal = 3
 margin_left = 16.0
 margin_right = 336.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 33 )
+custom_fonts/font = SubResource( 18 )
 text = "Placeholder"
 align = 1
 valign = 1
@@ -1059,10 +1087,10 @@ __meta__ = {
 margin_left = 352.0
 margin_right = 496.0
 margin_bottom = 64.0
-custom_styles/hover = SubResource( 34 )
-custom_styles/pressed = SubResource( 34 )
-custom_styles/normal = SubResource( 34 )
-custom_fonts/font = SubResource( 35 )
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/normal = SubResource( 19 )
+custom_fonts/font = SubResource( 20 )
 text = "Buy"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1073,7 +1101,7 @@ margin_left = 16.0
 margin_top = 80.0
 margin_right = 496.0
 margin_bottom = 240.0
-custom_styles/panel = SubResource( 36 )
+custom_styles/panel = SubResource( 21 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1089,7 +1117,7 @@ size_flags_horizontal = 3
 margin_left = 16.0
 margin_right = 336.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 33 )
+custom_fonts/font = SubResource( 18 )
 text = "Placeholder"
 align = 1
 valign = 1
@@ -1101,10 +1129,10 @@ __meta__ = {
 margin_left = 352.0
 margin_right = 496.0
 margin_bottom = 64.0
-custom_styles/hover = SubResource( 34 )
-custom_styles/pressed = SubResource( 34 )
-custom_styles/normal = SubResource( 34 )
-custom_fonts/font = SubResource( 35 )
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/normal = SubResource( 19 )
+custom_fonts/font = SubResource( 20 )
 text = "Buy"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1115,7 +1143,7 @@ margin_left = 16.0
 margin_top = 80.0
 margin_right = 496.0
 margin_bottom = 240.0
-custom_styles/panel = SubResource( 36 )
+custom_styles/panel = SubResource( 21 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1169,7 +1197,7 @@ size_flags_horizontal = 3
 margin_left = 16.0
 margin_right = 336.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 33 )
+custom_fonts/font = SubResource( 18 )
 text = "Placeholder"
 align = 1
 valign = 1
@@ -1181,10 +1209,10 @@ __meta__ = {
 margin_left = 352.0
 margin_right = 496.0
 margin_bottom = 64.0
-custom_styles/hover = SubResource( 34 )
-custom_styles/pressed = SubResource( 34 )
-custom_styles/normal = SubResource( 34 )
-custom_fonts/font = SubResource( 35 )
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/normal = SubResource( 19 )
+custom_fonts/font = SubResource( 20 )
 text = "Buy"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1195,7 +1223,7 @@ margin_left = 16.0
 margin_top = 80.0
 margin_right = 496.0
 margin_bottom = 240.0
-custom_styles/panel = SubResource( 36 )
+custom_styles/panel = SubResource( 21 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1211,7 +1239,7 @@ size_flags_horizontal = 3
 margin_left = 16.0
 margin_right = 336.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 33 )
+custom_fonts/font = SubResource( 18 )
 text = "Placeholder"
 align = 1
 valign = 1
@@ -1223,10 +1251,10 @@ __meta__ = {
 margin_left = 352.0
 margin_right = 496.0
 margin_bottom = 64.0
-custom_styles/hover = SubResource( 34 )
-custom_styles/pressed = SubResource( 34 )
-custom_styles/normal = SubResource( 34 )
-custom_fonts/font = SubResource( 35 )
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/normal = SubResource( 19 )
+custom_fonts/font = SubResource( 20 )
 text = "Buy"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1237,7 +1265,7 @@ margin_left = 16.0
 margin_top = 80.0
 margin_right = 496.0
 margin_bottom = 240.0
-custom_styles/panel = SubResource( 36 )
+custom_styles/panel = SubResource( 21 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1253,7 +1281,7 @@ size_flags_horizontal = 3
 margin_left = 16.0
 margin_right = 336.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 33 )
+custom_fonts/font = SubResource( 18 )
 text = "Placeholder"
 align = 1
 valign = 1
@@ -1265,10 +1293,10 @@ __meta__ = {
 margin_left = 352.0
 margin_right = 496.0
 margin_bottom = 64.0
-custom_styles/hover = SubResource( 34 )
-custom_styles/pressed = SubResource( 34 )
-custom_styles/normal = SubResource( 34 )
-custom_fonts/font = SubResource( 35 )
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/normal = SubResource( 19 )
+custom_fonts/font = SubResource( 20 )
 text = "Buy"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1279,7 +1307,7 @@ margin_left = 16.0
 margin_top = 80.0
 margin_right = 496.0
 margin_bottom = 240.0
-custom_styles/panel = SubResource( 36 )
+custom_styles/panel = SubResource( 21 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1295,7 +1323,7 @@ size_flags_horizontal = 3
 margin_left = 16.0
 margin_right = 336.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 33 )
+custom_fonts/font = SubResource( 18 )
 text = "Placeholder"
 align = 1
 valign = 1
@@ -1307,10 +1335,10 @@ __meta__ = {
 margin_left = 352.0
 margin_right = 496.0
 margin_bottom = 64.0
-custom_styles/hover = SubResource( 34 )
-custom_styles/pressed = SubResource( 34 )
-custom_styles/normal = SubResource( 34 )
-custom_fonts/font = SubResource( 35 )
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/normal = SubResource( 19 )
+custom_fonts/font = SubResource( 20 )
 text = "Buy"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1321,7 +1349,7 @@ margin_left = 16.0
 margin_top = 80.0
 margin_right = 496.0
 margin_bottom = 240.0
-custom_styles/panel = SubResource( 36 )
+custom_styles/panel = SubResource( 21 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1337,7 +1365,7 @@ size_flags_horizontal = 3
 margin_left = 16.0
 margin_right = 336.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 33 )
+custom_fonts/font = SubResource( 18 )
 text = "Placeholder"
 align = 1
 valign = 1
@@ -1349,10 +1377,10 @@ __meta__ = {
 margin_left = 352.0
 margin_right = 496.0
 margin_bottom = 64.0
-custom_styles/hover = SubResource( 34 )
-custom_styles/pressed = SubResource( 34 )
-custom_styles/normal = SubResource( 34 )
-custom_fonts/font = SubResource( 35 )
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/normal = SubResource( 19 )
+custom_fonts/font = SubResource( 20 )
 text = "Buy"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1363,7 +1391,7 @@ margin_left = 16.0
 margin_top = 80.0
 margin_right = 496.0
 margin_bottom = 240.0
-custom_styles/panel = SubResource( 36 )
+custom_styles/panel = SubResource( 21 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1372,14 +1400,14 @@ __meta__ = {
 margin_top = 872.0
 margin_right = 576.0
 margin_bottom = 1080.0
-custom_styles/panel = SubResource( 30 )
+custom_styles/panel = SubResource( 22 )
 
 [node name="mt_coins" type="Panel" parent="menucanvas/menustore"]
 margin_top = 640.0
 margin_right = 576.0
 margin_bottom = 872.0
 rect_pivot_offset = Vector2( 416, -192 )
-custom_styles/panel = SubResource( 31 )
+custom_styles/panel = SubResource( 23 )
 
 [node name="mp_coinlabel" type="Label" parent="menucanvas/menustore/mt_coins"]
 margin_left = 64.0
@@ -1399,7 +1427,7 @@ margin_left = 64.0
 margin_top = 128.0
 margin_right = 512.0
 margin_bottom = 192.0
-custom_fonts/font = SubResource( 32 )
+custom_fonts/font = SubResource( 24 )
 custom_colors/font_color = Color( 1, 0.937255, 0, 1 )
 text = "0"
 align = 1
@@ -1423,7 +1451,7 @@ margin_left = 64.0
 margin_top = 320.0
 margin_right = 512.0
 margin_bottom = 384.0
-custom_fonts/font = SubResource( 32 )
+custom_fonts/font = SubResource( 24 )
 custom_colors/font_color = Color( 0.0235294, 1, 0, 1 )
 text = "0"
 align = 1
@@ -1462,7 +1490,7 @@ __meta__ = {
 margin_top = 128.0
 margin_right = 1920.0
 margin_bottom = 1080.0
-custom_styles/panel = SubResource( 18 )
+custom_styles/panel = SubResource( 25 )
 
 [node name="ms_g+d" type="Button" parent="menucanvas/menusettings"]
 margin_left = 128.0
@@ -1470,7 +1498,7 @@ margin_right = 448.0
 margin_bottom = 128.0
 custom_styles/hover = ExtResource( 28 )
 custom_styles/pressed = ExtResource( 30 )
-custom_styles/focus = SubResource( 19 )
+custom_styles/focus = SubResource( 26 )
 custom_styles/normal = ExtResource( 31 )
 custom_fonts/font = ExtResource( 29 )
 toggle_mode = true
@@ -1538,11 +1566,11 @@ margin_left = 520.0
 margin_top = 264.0
 margin_right = 1080.0
 margin_bottom = 376.0
-custom_styles/hover = SubResource( 20 )
-custom_styles/pressed = SubResource( 20 )
-custom_styles/focus = SubResource( 21 )
-custom_styles/normal = SubResource( 20 )
-custom_fonts/font = SubResource( 22 )
+custom_styles/hover = SubResource( 27 )
+custom_styles/pressed = SubResource( 27 )
+custom_styles/focus = SubResource( 28 )
+custom_styles/normal = SubResource( 27 )
+custom_fonts/font = SubResource( 29 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1567,7 +1595,7 @@ margin_right = 832.0
 margin_bottom = 128.0
 custom_styles/hover = ExtResource( 28 )
 custom_styles/pressed = ExtResource( 32 )
-custom_styles/focus = SubResource( 23 )
+custom_styles/focus = SubResource( 30 )
 custom_styles/normal = ExtResource( 31 )
 custom_fonts/font = ExtResource( 29 )
 toggle_mode = true
@@ -1685,7 +1713,7 @@ margin_right = 1408.0
 margin_bottom = 128.0
 custom_styles/hover = ExtResource( 28 )
 custom_styles/pressed = ExtResource( 33 )
-custom_styles/focus = SubResource( 24 )
+custom_styles/focus = SubResource( 31 )
 custom_styles/normal = ExtResource( 31 )
 custom_fonts/font = ExtResource( 29 )
 toggle_mode = true
@@ -1782,7 +1810,7 @@ margin_right = 1792.0
 margin_bottom = 128.0
 custom_styles/hover = ExtResource( 28 )
 custom_styles/pressed = ExtResource( 34 )
-custom_styles/focus = SubResource( 25 )
+custom_styles/focus = SubResource( 32 )
 custom_styles/normal = ExtResource( 31 )
 custom_fonts/font = ExtResource( 29 )
 toggle_mode = true
@@ -1800,11 +1828,11 @@ margin_top = 256.0
 margin_right = -832.0
 margin_bottom = 384.0
 theme = ExtResource( 22 )
-custom_styles/hover = SubResource( 26 )
-custom_styles/pressed = SubResource( 26 )
-custom_styles/focus = SubResource( 27 )
-custom_styles/normal = SubResource( 28 )
-custom_fonts/font = SubResource( 29 )
+custom_styles/hover = SubResource( 33 )
+custom_styles/pressed = SubResource( 33 )
+custom_styles/focus = SubResource( 34 )
+custom_styles/normal = SubResource( 35 )
+custom_fonts/font = SubResource( 36 )
 text = "Press"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1834,13 +1862,192 @@ __meta__ = {
 margin_right = 40.0
 margin_bottom = 40.0
 
+[node name="mh_headerpanel" type="Panel" parent="menucanvas/menuhelp/mh_cont1"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 704.0
+margin_bottom = 192.0
+custom_styles/panel = SubResource( 37 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mh_header" type="Label" parent="menucanvas/menuhelp/mh_cont1"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 704.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 38 )
+text = "Help Screen 1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mh_infopanel" type="Panel" parent="menucanvas/menuhelp/mh_cont1"]
+margin_left = 64.0
+margin_top = 192.0
+margin_right = 1856.0
+margin_bottom = 1024.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mh_info" type="Label" parent="menucanvas/menuhelp/mh_cont1"]
+margin_left = 64.0
+margin_top = 192.0
+margin_right = 1856.0
+margin_bottom = 1024.0
+custom_styles/normal = SubResource( 39 )
+custom_fonts/font = SubResource( 40 )
+text = "Placeholder Text for Prototype"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mh_next1" type="Button" parent="menucanvas/menuhelp/mh_cont1"]
+margin_left = 1472.0
+margin_top = 832.0
+margin_right = 1856.0
+margin_bottom = 1024.0
+custom_styles/hover = SubResource( 41 )
+custom_styles/pressed = SubResource( 42 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = SubResource( 43 )
+custom_fonts/font = ExtResource( 23 )
+keep_pressed_outside = true
+text = "Next"
+
 [node name="mh_cont2" type="Control" parent="menucanvas/menuhelp"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
+[node name="mh_headerpanel" type="Panel" parent="menucanvas/menuhelp/mh_cont2"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 704.0
+margin_bottom = 192.0
+custom_styles/panel = SubResource( 37 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mh_header" type="Label" parent="menucanvas/menuhelp/mh_cont2"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 704.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 38 )
+text = "Help Screen 2"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mh_infopanel" type="Panel" parent="menucanvas/menuhelp/mh_cont2"]
+margin_left = 64.0
+margin_top = 192.0
+margin_right = 1856.0
+margin_bottom = 1024.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mh_info" type="Label" parent="menucanvas/menuhelp/mh_cont2"]
+margin_left = 64.0
+margin_top = 192.0
+margin_right = 1856.0
+margin_bottom = 1024.0
+custom_styles/normal = SubResource( 39 )
+custom_fonts/font = SubResource( 40 )
+text = "Placeholder Text for Prototype"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mh_next2" type="Button" parent="menucanvas/menuhelp/mh_cont2"]
+margin_left = 1472.0
+margin_top = 832.0
+margin_right = 1856.0
+margin_bottom = 1024.0
+custom_styles/hover = SubResource( 41 )
+custom_styles/pressed = SubResource( 42 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = SubResource( 43 )
+custom_fonts/font = ExtResource( 23 )
+keep_pressed_outside = true
+text = "Next"
+
 [node name="mh_cont3" type="Control" parent="menucanvas/menuhelp"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
+
+[node name="mh_headerpanel" type="Panel" parent="menucanvas/menuhelp/mh_cont3"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 704.0
+margin_bottom = 192.0
+custom_styles/panel = SubResource( 37 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mh_header" type="Label" parent="menucanvas/menuhelp/mh_cont3"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 704.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 38 )
+text = "Help Screen 3"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mh_infopanel" type="Panel" parent="menucanvas/menuhelp/mh_cont3"]
+margin_left = 64.0
+margin_top = 192.0
+margin_right = 1856.0
+margin_bottom = 1024.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mh_info" type="Label" parent="menucanvas/menuhelp/mh_cont3"]
+margin_left = 64.0
+margin_top = 192.0
+margin_right = 1856.0
+margin_bottom = 1024.0
+custom_styles/normal = SubResource( 39 )
+custom_fonts/font = SubResource( 40 )
+text = "Placeholder Text for Prototype"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mh_next3" type="Button" parent="menucanvas/menuhelp/mh_cont3"]
+margin_left = 1472.0
+margin_top = 832.0
+margin_right = 1856.0
+margin_bottom = 1024.0
+custom_styles/hover = SubResource( 41 )
+custom_styles/pressed = SubResource( 42 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = SubResource( 43 )
+custom_fonts/font = ExtResource( 23 )
+keep_pressed_outside = true
+text = "Next"
 
 [node name="menucamera" type="Camera2D" parent="menucanvas"]
 visible = false
@@ -1855,8 +2062,8 @@ environment = ExtResource( 1 )
 [connection signal="pressed" from="menucanvas/menumain/mm_storebtn" to="." method="_on_mm_storebtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_settingsbtn" to="." method="_on_mm_settingsbtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_helpbtn" to="." method="_on_mm_helpbtn_pressed"]
-[connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn2_pressed"]
+[connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer1/mp_op1" to="." method="_on_mp_op1_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer2/mp_op2" to="." method="_on_mp_op2_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer3/mp_op3" to="." method="_on_mp_op3_pressed"]
@@ -1883,3 +2090,6 @@ environment = ExtResource( 1 )
 [connection signal="pressed" from="menucanvas/menusettings/ms_gameplay" to="." method="_on_ms_gameplay_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_gameplay/ms_gameplay_menu/ms_presshold" to="." method="_on_ms_presshold_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_back" to="." method="_on_ms_back_pressed"]
+[connection signal="pressed" from="menucanvas/menuhelp/mh_cont1/mh_next1" to="." method="_on_mh_next1_pressed"]
+[connection signal="pressed" from="menucanvas/menuhelp/mh_cont2/mh_next2" to="." method="_on_mh_next2_pressed"]
+[connection signal="pressed" from="menucanvas/menuhelp/mh_cont3/mh_next3" to="." method="_on_mh_next3_pressed"]
