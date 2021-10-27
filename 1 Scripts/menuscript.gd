@@ -280,3 +280,11 @@ func _on_mh_next3_pressed():
 	get_node("menucanvas/menuhelp/mh_cont2").visible = false
 	get_node("menucanvas/menuhelp/mh_cont3").visible = false
 	currentmenu_update(menumain)
+
+func _on_mp_start_pressed():
+	get_node("menucanvas/menuplay").visible = false
+	get_node("menucanvas/mockgame").visible = true
+
+func _on_mg_back_pressed():
+	get_node("menucanvas/mockgame").visible = false
+	currentmenu_update(menumain)

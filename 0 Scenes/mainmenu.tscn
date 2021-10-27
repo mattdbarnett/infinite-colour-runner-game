@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=2]
+[gd_scene load_steps=88 format=2]
 
 [ext_resource path="res://5 Misc/worldenv.tres" type="Environment" id=1]
 [ext_resource path="res://3 Fonts/1 Menus/0 Main/main_playbtn.tres" type="DynamicFont" id=2]
@@ -41,8 +41,13 @@
 [ext_resource path="res://2 Sprites/green.png" type="Texture" id=39]
 [ext_resource path="res://2 Sprites/yellow.png" type="Texture" id=40]
 [ext_resource path="res://2 Sprites/white.png" type="Texture" id=41]
+[ext_resource path="res://2 Sprites/mockgame.png" type="Texture" id=42]
 
 [sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="DynamicFont" id=44]
+size = 50
+font_data = ExtResource( 24 )
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
@@ -67,6 +72,10 @@ size = 50
 font_data = ExtResource( 24 )
 
 [sub_resource type="DynamicFont" id=12]
+size = 50
+font_data = ExtResource( 24 )
+
+[sub_resource type="DynamicFont" id=45]
 size = 50
 font_data = ExtResource( 24 )
 
@@ -307,6 +316,18 @@ __meta__ = {
 position = Vector2( 896, 816 )
 texture = ExtResource( 41 )
 
+[node name="Label" type="Label" parent="menucanvas/menumain"]
+margin_left = 1000.0
+margin_right = 1664.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 44 )
+text = "Prototype Test Version"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="menuplay" type="Control" parent="menucanvas"]
 visible = false
 __meta__ = {
@@ -344,7 +365,7 @@ custom_styles/focus = SubResource( 2 )
 custom_styles/normal = ExtResource( 9 )
 custom_fonts/font = ExtResource( 23 )
 toggle_mode = true
-text = "Normal"
+text = "Example 1"
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": "1"
@@ -366,7 +387,7 @@ custom_styles/focus = SubResource( 3 )
 custom_styles/normal = ExtResource( 9 )
 custom_fonts/font = ExtResource( 23 )
 toggle_mode = true
-text = "Normal"
+text = "Example 2"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -387,7 +408,7 @@ custom_styles/focus = SubResource( 4 )
 custom_styles/normal = ExtResource( 9 )
 custom_fonts/font = ExtResource( 23 )
 toggle_mode = true
-text = "Normal"
+text = "Example 3"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -408,7 +429,7 @@ custom_styles/focus = SubResource( 5 )
 custom_styles/normal = ExtResource( 9 )
 custom_fonts/font = ExtResource( 23 )
 toggle_mode = true
-text = "Normal"
+text = "Example 4"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -429,7 +450,7 @@ custom_styles/focus = SubResource( 6 )
 custom_styles/normal = ExtResource( 9 )
 custom_fonts/font = ExtResource( 23 )
 toggle_mode = true
-text = "Normal"
+text = "Example 5"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -450,7 +471,7 @@ custom_styles/focus = SubResource( 7 )
 custom_styles/normal = ExtResource( 9 )
 custom_fonts/font = ExtResource( 23 )
 toggle_mode = true
-text = "Normal"
+text = "Example 6"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -471,7 +492,7 @@ custom_styles/focus = SubResource( 8 )
 custom_styles/normal = ExtResource( 9 )
 custom_fonts/font = ExtResource( 23 )
 toggle_mode = true
-text = "Normal"
+text = "Example 7"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -574,6 +595,17 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label" type="Label" parent="menucanvas/menuplay"]
+margin_left = 512.0
+margin_top = 8.0
+margin_right = 1384.0
+margin_bottom = 121.0
+custom_fonts/font = SubResource( 45 )
+text = "Details of the currently selected
+gamemode will appear here."
+align = 1
+valign = 1
 
 [node name="menucustom" type="Control" parent="menucanvas"]
 visible = false
@@ -2049,6 +2081,30 @@ custom_fonts/font = ExtResource( 23 )
 keep_pressed_outside = true
 text = "Next"
 
+[node name="mockgame" type="Control" parent="menucanvas"]
+visible = false
+margin_right = 1920.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mockgame" type="Sprite" parent="menucanvas/mockgame"]
+position = Vector2( 960, 540 )
+texture = ExtResource( 42 )
+
+[node name="mg_back" type="Button" parent="menucanvas/mockgame"]
+margin_top = 888.0
+margin_right = 384.0
+margin_bottom = 1080.0
+custom_styles/hover = ExtResource( 16 )
+custom_styles/pressed = ExtResource( 15 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 23 )
+keep_pressed_outside = true
+text = "Back"
+
 [node name="menucamera" type="Camera2D" parent="menucanvas"]
 visible = false
 anchor_mode = 0
@@ -2072,6 +2128,7 @@ environment = ExtResource( 1 )
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer6/mp_op6" to="." method="_on_mp_op6_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer7/mp_op7" to="." method="_on_mp_op7_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_back" to="." method="_on_mp_back_pressed"]
+[connection signal="pressed" from="menucanvas/menuplay/mp_start" to="." method="_on_mp_start_pressed"]
 [connection signal="value_changed" from="menucanvas/menucustom/mc_colours/mc_sliderblue" to="." method="_on_mc_sliderblue_value_changed"]
 [connection signal="value_changed" from="menucanvas/menucustom/mc_colours/mc_sliderpurple" to="." method="_on_mc_sliderpurple_value_changed"]
 [connection signal="value_changed" from="menucanvas/menucustom/mc_colours/mc_slidergreen" to="." method="_on_mc_slidergreen_value_changed"]
@@ -2093,3 +2150,4 @@ environment = ExtResource( 1 )
 [connection signal="pressed" from="menucanvas/menuhelp/mh_cont1/mh_next1" to="." method="_on_mh_next1_pressed"]
 [connection signal="pressed" from="menucanvas/menuhelp/mh_cont2/mh_next2" to="." method="_on_mh_next2_pressed"]
 [connection signal="pressed" from="menucanvas/menuhelp/mh_cont3/mh_next3" to="." method="_on_mh_next3_pressed"]
+[connection signal="pressed" from="menucanvas/mockgame/mg_back" to="." method="_on_mg_back_pressed"]
