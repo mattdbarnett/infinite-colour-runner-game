@@ -68,7 +68,7 @@ func currentmenu_update(newcurrent):
 		menucustom:
 			get_node("menucanvas/menucustom/mc_back").grab_focus()
 		menustore:
-			pass
+			get_node("menucanvas/menustore/mt_back").grab_focus()
 		menusettings:
 			get_node("menucanvas/menusettings/ms_back").grab_focus()
 		menuhelp:
@@ -237,6 +237,9 @@ func _on_ms_gameplay_pressed():
 	settinggui.visible = false
 	settingsound.visible = false
 	settinggameplay.visible = true
+
+func _on_ms_fullscreen_pressed():
+	OS.window_fullscreen = !OS.window_fullscreen
 
 func _on_ms_presshold_pressed():
 	hold = !hold
