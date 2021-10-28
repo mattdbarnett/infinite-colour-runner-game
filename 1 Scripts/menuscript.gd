@@ -68,7 +68,7 @@ func currentmenu_update(newcurrent):
 		menucustom:
 			get_node("menucanvas/menucustom/mc_back").grab_focus()
 		menustore:
-			pass
+			get_node("menucanvas/menustore/mt_back").grab_focus()
 		menusettings:
 			get_node("menucanvas/menusettings/ms_back").grab_focus()
 		menuhelp:
@@ -257,6 +257,9 @@ func _on_ms_slidereffect_value_changed(value):
 	var slider = get_node("menucanvas/menusettings/ms_sound/ms_sound_menu/ms_slidereffect")
 	
 	label.text = str(slider.value) + "%"
+
+func _on_ms_fullscreen_pressed():
+	OS.window_fullscreen = !OS.window_fullscreen
 
 func _on_ms_back_pressed():
 	currentmenu_update(menumain)
