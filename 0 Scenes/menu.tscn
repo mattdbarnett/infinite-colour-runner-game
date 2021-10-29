@@ -46,6 +46,8 @@
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
+[sub_resource type="StyleBoxEmpty" id=2]
+
 [sub_resource type="StyleBoxEmpty" id=3]
 
 [sub_resource type="StyleBoxEmpty" id=4]
@@ -62,47 +64,45 @@
 
 [sub_resource type="StyleBoxEmpty" id=10]
 
-[sub_resource type="StyleBoxEmpty" id=11]
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=14]
-bg_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="StyleBoxFlat" id=20]
-bg_color = Color( 0, 0, 0, 1 )
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color( 1, 1, 1, 1 )
-
-[sub_resource type="StyleBoxFlat" id=22]
-bg_color = Color( 0, 0, 0, 1 )
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color( 1, 1, 1, 1 )
-
-[sub_resource type="StyleBoxFlat" id=23]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 20
 border_width_right = 20
 border_width_bottom = 20
 border_color = Color( 0.0235294, 1, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=24]
+[sub_resource type="StyleBoxFlat" id=15]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 20
 border_width_top = 20
 border_width_right = 20
 border_color = Color( 1, 0.937255, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=26]
+[sub_resource type="StyleBoxFlat" id=16]
 bg_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StyleBoxEmpty" id=27]
+[sub_resource type="StyleBoxEmpty" id=17]
 
-[sub_resource type="StyleBoxFlat" id=28]
+[sub_resource type="StyleBoxFlat" id=18]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 15
 border_width_top = 15
@@ -110,19 +110,19 @@ border_width_right = 15
 border_width_bottom = 15
 border_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="StyleBoxEmpty" id=29]
+[sub_resource type="StyleBoxEmpty" id=19]
 
-[sub_resource type="DynamicFont" id=30]
+[sub_resource type="DynamicFont" id=20]
 size = 50
 font_data = ExtResource( 34 )
 
-[sub_resource type="StyleBoxEmpty" id=31]
+[sub_resource type="StyleBoxEmpty" id=21]
 
-[sub_resource type="StyleBoxEmpty" id=32]
+[sub_resource type="StyleBoxEmpty" id=22]
 
-[sub_resource type="StyleBoxEmpty" id=33]
+[sub_resource type="StyleBoxEmpty" id=23]
 
-[sub_resource type="StyleBoxFlat" id=34]
+[sub_resource type="StyleBoxFlat" id=24]
 bg_color = Color( 0.956863, 0, 1, 1 )
 border_width_left = 15
 border_width_top = 15
@@ -130,9 +130,9 @@ border_width_right = 15
 border_width_bottom = 15
 border_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="StyleBoxEmpty" id=35]
+[sub_resource type="StyleBoxEmpty" id=25]
 
-[sub_resource type="StyleBoxFlat" id=36]
+[sub_resource type="StyleBoxFlat" id=26]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 15
 border_width_top = 15
@@ -140,20 +140,20 @@ border_width_right = 15
 border_width_bottom = 15
 border_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="DynamicFont" id=37]
+[sub_resource type="DynamicFont" id=27]
 size = 60
 font_data = ExtResource( 34 )
 
-[sub_resource type="StyleBoxFlat" id=38]
+[sub_resource type="StyleBoxFlat" id=28]
 bg_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=40]
+[sub_resource type="StyleBoxFlat" id=29]
 bg_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=42]
+[sub_resource type="StyleBoxFlat" id=30]
 bg_color = Color( 0.282353, 0, 1, 1 )
 
-[sub_resource type="StyleBoxFlat" id=43]
+[sub_resource type="StyleBoxFlat" id=31]
 bg_color = Color( 0.282353, 0, 1, 1 )
 border_width_left = 20
 border_width_top = 20
@@ -161,7 +161,7 @@ border_width_right = 20
 border_width_bottom = 20
 border_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="StyleBoxFlat" id=44]
+[sub_resource type="StyleBoxFlat" id=32]
 bg_color = Color( 0, 0, 0, 1 )
 
 [node name="menuroot" type="Node2D"]
@@ -178,8 +178,7 @@ __meta__ = {
 }
 
 [node name="mm_playbtn" type="Button" parent="menucanvas/menumain"]
-margin_left = 8.0
-margin_right = 1008.0
+margin_right = 1000.0
 margin_bottom = 352.0
 custom_styles/hover = ExtResource( 20 )
 custom_styles/pressed = ExtResource( 21 )
@@ -299,7 +298,7 @@ margin_right = 512.0
 margin_bottom = 640.0
 custom_styles/hover = ExtResource( 20 )
 custom_styles/pressed = ExtResource( 21 )
-custom_styles/focus = SubResource( 3 )
+custom_styles/focus = SubResource( 2 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 1 )
 toggle_mode = true
@@ -321,7 +320,7 @@ margin_right = 512.0
 margin_bottom = 640.0
 custom_styles/hover = ExtResource( 20 )
 custom_styles/pressed = ExtResource( 21 )
-custom_styles/focus = SubResource( 4 )
+custom_styles/focus = SubResource( 3 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 1 )
 toggle_mode = true
@@ -342,7 +341,7 @@ margin_right = 512.0
 margin_bottom = 640.0
 custom_styles/hover = ExtResource( 20 )
 custom_styles/pressed = ExtResource( 21 )
-custom_styles/focus = SubResource( 5 )
+custom_styles/focus = SubResource( 4 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 1 )
 toggle_mode = true
@@ -363,7 +362,7 @@ margin_right = 512.0
 margin_bottom = 640.0
 custom_styles/hover = ExtResource( 20 )
 custom_styles/pressed = ExtResource( 21 )
-custom_styles/focus = SubResource( 6 )
+custom_styles/focus = SubResource( 5 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 1 )
 toggle_mode = true
@@ -384,7 +383,7 @@ margin_right = 512.0
 margin_bottom = 640.0
 custom_styles/hover = ExtResource( 20 )
 custom_styles/pressed = ExtResource( 21 )
-custom_styles/focus = SubResource( 7 )
+custom_styles/focus = SubResource( 6 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 1 )
 toggle_mode = true
@@ -405,7 +404,7 @@ margin_right = 512.0
 margin_bottom = 640.0
 custom_styles/hover = ExtResource( 20 )
 custom_styles/pressed = ExtResource( 21 )
-custom_styles/focus = SubResource( 8 )
+custom_styles/focus = SubResource( 7 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 1 )
 toggle_mode = true
@@ -426,7 +425,7 @@ margin_right = 512.0
 margin_bottom = 640.0
 custom_styles/hover = ExtResource( 20 )
 custom_styles/pressed = ExtResource( 21 )
-custom_styles/focus = SubResource( 9 )
+custom_styles/focus = SubResource( 8 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 1 )
 toggle_mode = true
@@ -440,7 +439,7 @@ margin_right = 384.0
 margin_bottom = 192.0
 custom_styles/hover = ExtResource( 24 )
 custom_styles/pressed = ExtResource( 23 )
-custom_styles/focus = SubResource( 10 )
+custom_styles/focus = SubResource( 9 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 1 )
 keep_pressed_outside = true
@@ -453,7 +452,7 @@ margin_right = 1920.0
 margin_bottom = 952.0
 custom_styles/hover = ExtResource( 20 )
 custom_styles/pressed = ExtResource( 21 )
-custom_styles/focus = SubResource( 11 )
+custom_styles/focus = SubResource( 10 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 1 )
 text = "Start"
@@ -546,7 +545,7 @@ __meta__ = {
 margin_top = 384.0
 margin_right = 768.0
 margin_bottom = 1080.0
-custom_styles/panel = SubResource( 14 )
+custom_styles/panel = SubResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -726,7 +725,7 @@ margin_top = 768.0
 margin_right = 1536.0
 margin_bottom = 1080.0
 rect_pivot_offset = Vector2( -1200, -752 )
-custom_styles/panel = SubResource( 14 )
+custom_styles/panel = SubResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -828,7 +827,7 @@ margin_right = 384.0
 margin_bottom = 384.0
 custom_styles/hover = ExtResource( 24 )
 custom_styles/pressed = ExtResource( 23 )
-custom_styles/focus = SubResource( 10 )
+custom_styles/focus = SubResource( 9 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 1 )
 keep_pressed_outside = true
@@ -844,7 +843,7 @@ margin_right = 1920.0
 margin_bottom = 1080.0
 custom_styles/hover = ExtResource( 20 )
 custom_styles/pressed = ExtResource( 21 )
-custom_styles/focus = SubResource( 11 )
+custom_styles/focus = SubResource( 10 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 1 )
 text = "Start"
@@ -893,7 +892,7 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="menucanvas/menustore/mt_skins/ScrollContainer"]
-margin_right = 528.0
+margin_right = 512.0
 margin_bottom = 1296.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -920,9 +919,9 @@ __meta__ = {
 margin_left = 352.0
 margin_right = 496.0
 margin_bottom = 64.0
-custom_styles/hover = SubResource( 20 )
-custom_styles/pressed = SubResource( 20 )
-custom_styles/normal = SubResource( 20 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 12 )
 custom_fonts/font = ExtResource( 42 )
 text = "Buy"
 __meta__ = {
@@ -934,7 +933,7 @@ margin_left = 16.0
 margin_top = 80.0
 margin_right = 496.0
 margin_bottom = 240.0
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -962,9 +961,9 @@ __meta__ = {
 margin_left = 352.0
 margin_right = 496.0
 margin_bottom = 64.0
-custom_styles/hover = SubResource( 20 )
-custom_styles/pressed = SubResource( 20 )
-custom_styles/normal = SubResource( 20 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 12 )
 custom_fonts/font = ExtResource( 42 )
 text = "Buy"
 __meta__ = {
@@ -976,7 +975,7 @@ margin_left = 16.0
 margin_top = 80.0
 margin_right = 496.0
 margin_bottom = 240.0
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1004,9 +1003,9 @@ __meta__ = {
 margin_left = 352.0
 margin_right = 496.0
 margin_bottom = 64.0
-custom_styles/hover = SubResource( 20 )
-custom_styles/pressed = SubResource( 20 )
-custom_styles/normal = SubResource( 20 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 12 )
 custom_fonts/font = ExtResource( 42 )
 text = "Buy"
 __meta__ = {
@@ -1018,7 +1017,7 @@ margin_left = 16.0
 margin_top = 80.0
 margin_right = 496.0
 margin_bottom = 240.0
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1046,9 +1045,9 @@ __meta__ = {
 margin_left = 352.0
 margin_right = 496.0
 margin_bottom = 64.0
-custom_styles/hover = SubResource( 20 )
-custom_styles/pressed = SubResource( 20 )
-custom_styles/normal = SubResource( 20 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 12 )
 custom_fonts/font = ExtResource( 42 )
 text = "Buy"
 __meta__ = {
@@ -1060,7 +1059,7 @@ margin_left = 16.0
 margin_top = 80.0
 margin_right = 496.0
 margin_bottom = 240.0
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1088,9 +1087,9 @@ __meta__ = {
 margin_left = 352.0
 margin_right = 496.0
 margin_bottom = 64.0
-custom_styles/hover = SubResource( 20 )
-custom_styles/pressed = SubResource( 20 )
-custom_styles/normal = SubResource( 20 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 12 )
 custom_fonts/font = ExtResource( 42 )
 text = "Buy"
 __meta__ = {
@@ -1102,7 +1101,7 @@ margin_left = 16.0
 margin_top = 80.0
 margin_right = 496.0
 margin_bottom = 240.0
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1168,9 +1167,9 @@ __meta__ = {
 margin_left = 352.0
 margin_right = 496.0
 margin_bottom = 64.0
-custom_styles/hover = SubResource( 20 )
-custom_styles/pressed = SubResource( 20 )
-custom_styles/normal = SubResource( 20 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 12 )
 custom_fonts/font = ExtResource( 42 )
 text = "Buy"
 __meta__ = {
@@ -1182,7 +1181,7 @@ margin_left = 16.0
 margin_top = 80.0
 margin_right = 496.0
 margin_bottom = 240.0
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1210,9 +1209,9 @@ __meta__ = {
 margin_left = 352.0
 margin_right = 496.0
 margin_bottom = 64.0
-custom_styles/hover = SubResource( 20 )
-custom_styles/pressed = SubResource( 20 )
-custom_styles/normal = SubResource( 20 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 12 )
 custom_fonts/font = ExtResource( 42 )
 text = "Buy"
 __meta__ = {
@@ -1224,7 +1223,7 @@ margin_left = 16.0
 margin_top = 80.0
 margin_right = 496.0
 margin_bottom = 240.0
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1252,9 +1251,9 @@ __meta__ = {
 margin_left = 352.0
 margin_right = 496.0
 margin_bottom = 64.0
-custom_styles/hover = SubResource( 20 )
-custom_styles/pressed = SubResource( 20 )
-custom_styles/normal = SubResource( 20 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 12 )
 custom_fonts/font = ExtResource( 42 )
 text = "Buy"
 __meta__ = {
@@ -1266,7 +1265,7 @@ margin_left = 16.0
 margin_top = 80.0
 margin_right = 496.0
 margin_bottom = 240.0
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1294,9 +1293,9 @@ __meta__ = {
 margin_left = 352.0
 margin_right = 496.0
 margin_bottom = 64.0
-custom_styles/hover = SubResource( 20 )
-custom_styles/pressed = SubResource( 20 )
-custom_styles/normal = SubResource( 20 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 12 )
 custom_fonts/font = ExtResource( 42 )
 text = "Buy"
 __meta__ = {
@@ -1308,7 +1307,7 @@ margin_left = 16.0
 margin_top = 80.0
 margin_right = 496.0
 margin_bottom = 240.0
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1336,9 +1335,9 @@ __meta__ = {
 margin_left = 352.0
 margin_right = 496.0
 margin_bottom = 64.0
-custom_styles/hover = SubResource( 20 )
-custom_styles/pressed = SubResource( 20 )
-custom_styles/normal = SubResource( 20 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 12 )
 custom_fonts/font = ExtResource( 42 )
 text = "Buy"
 __meta__ = {
@@ -1350,7 +1349,7 @@ margin_left = 16.0
 margin_top = 80.0
 margin_right = 496.0
 margin_bottom = 240.0
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1359,14 +1358,14 @@ __meta__ = {
 margin_top = 872.0
 margin_right = 576.0
 margin_bottom = 1080.0
-custom_styles/panel = SubResource( 23 )
+custom_styles/panel = SubResource( 14 )
 
 [node name="mt_coins" type="Panel" parent="menucanvas/menustore"]
 margin_top = 640.0
 margin_right = 576.0
 margin_bottom = 872.0
 rect_pivot_offset = Vector2( 416, -192 )
-custom_styles/panel = SubResource( 24 )
+custom_styles/panel = SubResource( 15 )
 
 [node name="mp_coinlabel" type="Label" parent="menucanvas/menustore/mt_coins"]
 margin_left = 64.0
@@ -1424,7 +1423,7 @@ margin_right = 384.0
 margin_bottom = 192.0
 custom_styles/hover = ExtResource( 24 )
 custom_styles/pressed = ExtResource( 23 )
-custom_styles/focus = SubResource( 10 )
+custom_styles/focus = SubResource( 9 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 1 )
 keep_pressed_outside = true
@@ -1449,7 +1448,7 @@ __meta__ = {
 margin_top = 128.0
 margin_right = 1920.0
 margin_bottom = 1080.0
-custom_styles/panel = SubResource( 26 )
+custom_styles/panel = SubResource( 16 )
 
 [node name="ms_g+d" type="Button" parent="menucanvas/menusettings"]
 margin_left = 128.0
@@ -1457,7 +1456,7 @@ margin_right = 448.0
 margin_bottom = 128.0
 custom_styles/hover = ExtResource( 12 )
 custom_styles/pressed = ExtResource( 26 )
-custom_styles/focus = SubResource( 27 )
+custom_styles/focus = SubResource( 17 )
 custom_styles/normal = ExtResource( 31 )
 custom_fonts/font = ExtResource( 43 )
 toggle_mode = true
@@ -1525,11 +1524,11 @@ margin_left = 520.0
 margin_top = 264.0
 margin_right = 1080.0
 margin_bottom = 376.0
-custom_styles/hover = SubResource( 28 )
-custom_styles/pressed = SubResource( 28 )
-custom_styles/focus = SubResource( 29 )
-custom_styles/normal = SubResource( 28 )
-custom_fonts/font = SubResource( 30 )
+custom_styles/hover = SubResource( 18 )
+custom_styles/pressed = SubResource( 18 )
+custom_styles/focus = SubResource( 19 )
+custom_styles/normal = SubResource( 18 )
+custom_fonts/font = SubResource( 20 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1554,7 +1553,7 @@ margin_right = 832.0
 margin_bottom = 128.0
 custom_styles/hover = ExtResource( 12 )
 custom_styles/pressed = ExtResource( 18 )
-custom_styles/focus = SubResource( 31 )
+custom_styles/focus = SubResource( 21 )
 custom_styles/normal = ExtResource( 31 )
 custom_fonts/font = ExtResource( 43 )
 toggle_mode = true
@@ -1672,7 +1671,7 @@ margin_right = 1408.0
 margin_bottom = 128.0
 custom_styles/hover = ExtResource( 12 )
 custom_styles/pressed = ExtResource( 19 )
-custom_styles/focus = SubResource( 32 )
+custom_styles/focus = SubResource( 22 )
 custom_styles/normal = ExtResource( 31 )
 custom_fonts/font = ExtResource( 43 )
 toggle_mode = true
@@ -1769,7 +1768,7 @@ margin_right = 1792.0
 margin_bottom = 128.0
 custom_styles/hover = ExtResource( 12 )
 custom_styles/pressed = ExtResource( 28 )
-custom_styles/focus = SubResource( 33 )
+custom_styles/focus = SubResource( 23 )
 custom_styles/normal = ExtResource( 31 )
 custom_fonts/font = ExtResource( 43 )
 toggle_mode = true
@@ -1787,11 +1786,11 @@ margin_top = 256.0
 margin_right = -832.0
 margin_bottom = 384.0
 theme = ExtResource( 11 )
-custom_styles/hover = SubResource( 34 )
-custom_styles/pressed = SubResource( 34 )
-custom_styles/focus = SubResource( 35 )
-custom_styles/normal = SubResource( 36 )
-custom_fonts/font = SubResource( 37 )
+custom_styles/hover = SubResource( 24 )
+custom_styles/pressed = SubResource( 24 )
+custom_styles/focus = SubResource( 25 )
+custom_styles/normal = SubResource( 26 )
+custom_fonts/font = SubResource( 27 )
 text = "Press"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1803,7 +1802,7 @@ margin_right = 384.0
 margin_bottom = 1080.0
 custom_styles/hover = ExtResource( 24 )
 custom_styles/pressed = ExtResource( 23 )
-custom_styles/focus = SubResource( 10 )
+custom_styles/focus = SubResource( 9 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 1 )
 keep_pressed_outside = true
@@ -1826,7 +1825,7 @@ margin_left = 64.0
 margin_top = 64.0
 margin_right = 704.0
 margin_bottom = 192.0
-custom_styles/panel = SubResource( 38 )
+custom_styles/panel = SubResource( 28 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1858,7 +1857,7 @@ margin_left = 64.0
 margin_top = 192.0
 margin_right = 1856.0
 margin_bottom = 1024.0
-custom_styles/normal = SubResource( 40 )
+custom_styles/normal = SubResource( 29 )
 custom_fonts/font = ExtResource( 3 )
 text = "Placeholder Text for Prototype"
 align = 1
@@ -1872,10 +1871,10 @@ margin_left = 1472.0
 margin_top = 832.0
 margin_right = 1856.0
 margin_bottom = 1024.0
-custom_styles/hover = SubResource( 42 )
-custom_styles/pressed = SubResource( 43 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/normal = SubResource( 44 )
+custom_styles/hover = SubResource( 30 )
+custom_styles/pressed = SubResource( 31 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = SubResource( 32 )
 custom_fonts/font = ExtResource( 1 )
 keep_pressed_outside = true
 text = "Next"
@@ -1890,7 +1889,7 @@ margin_left = 64.0
 margin_top = 64.0
 margin_right = 704.0
 margin_bottom = 192.0
-custom_styles/panel = SubResource( 38 )
+custom_styles/panel = SubResource( 28 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1922,7 +1921,7 @@ margin_left = 64.0
 margin_top = 192.0
 margin_right = 1856.0
 margin_bottom = 1024.0
-custom_styles/normal = SubResource( 40 )
+custom_styles/normal = SubResource( 29 )
 custom_fonts/font = ExtResource( 3 )
 text = "Placeholder Text for Prototype"
 align = 1
@@ -1936,10 +1935,10 @@ margin_left = 1472.0
 margin_top = 832.0
 margin_right = 1856.0
 margin_bottom = 1024.0
-custom_styles/hover = SubResource( 42 )
-custom_styles/pressed = SubResource( 43 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/normal = SubResource( 44 )
+custom_styles/hover = SubResource( 30 )
+custom_styles/pressed = SubResource( 31 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = SubResource( 32 )
 custom_fonts/font = ExtResource( 1 )
 keep_pressed_outside = true
 text = "Next"
@@ -1954,7 +1953,7 @@ margin_left = 64.0
 margin_top = 64.0
 margin_right = 704.0
 margin_bottom = 192.0
-custom_styles/panel = SubResource( 38 )
+custom_styles/panel = SubResource( 28 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1986,7 +1985,7 @@ margin_left = 64.0
 margin_top = 192.0
 margin_right = 1856.0
 margin_bottom = 1024.0
-custom_styles/normal = SubResource( 40 )
+custom_styles/normal = SubResource( 29 )
 custom_fonts/font = ExtResource( 3 )
 text = "Placeholder Text for Prototype"
 align = 1
@@ -2000,10 +1999,10 @@ margin_left = 1472.0
 margin_top = 832.0
 margin_right = 1856.0
 margin_bottom = 1024.0
-custom_styles/hover = SubResource( 42 )
-custom_styles/pressed = SubResource( 43 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/normal = SubResource( 44 )
+custom_styles/hover = SubResource( 30 )
+custom_styles/pressed = SubResource( 31 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = SubResource( 32 )
 custom_fonts/font = ExtResource( 1 )
 keep_pressed_outside = true
 text = "Next"
