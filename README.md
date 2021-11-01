@@ -3,7 +3,7 @@
 
 ## To-Do:
 
-###Create the Player Character
+### Create the Player Character
 1. Create a player character scene.
 2. Simulate physics and movement for the player character - constant movement to the right and falling up/down dependent on gravity.
 3. Create game-scene where the player character scene is deployed.
