@@ -1970,6 +1970,7 @@ environment = ExtResource( 9 )
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer6/mp_op6" to="." method="_on_mp_op6_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer7/mp_op7" to="." method="_on_mp_op7_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_back" to="." method="_on_mp_back_pressed"]
+[connection signal="pressed" from="menucanvas/menuplay/mp_start" to="." method="_on_mp_start_pressed"]
 [connection signal="value_changed" from="menucanvas/menucustom/mc_colours/mc_sliderblue" to="." method="_on_mc_sliderblue_value_changed"]
 [connection signal="value_changed" from="menucanvas/menucustom/mc_colours/mc_sliderpurple" to="." method="_on_mc_sliderpurple_value_changed"]
 [connection signal="value_changed" from="menucanvas/menucustom/mc_colours/mc_slidergreen" to="." method="_on_mc_slidergreen_value_changed"]

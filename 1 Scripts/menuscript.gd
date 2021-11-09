@@ -138,6 +138,9 @@ func _on_mp_op6_pressed():
 func _on_mp_op7_pressed():
 	togglemodecheck(6)
 
+func _on_mp_start_pressed():
+	get_tree().change_scene("res://0 Scenes/game.tscn")
+
 """
 Custom Menu Signals
 """
