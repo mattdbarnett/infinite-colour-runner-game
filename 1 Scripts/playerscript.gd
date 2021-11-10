@@ -17,6 +17,10 @@ func _ready():
 	pass 
 
 func _process(delta):
+	
+	if is_on_wall():
+		playerDeath()
+	
 	motion.y += grav
 	motion.x = xspeed
 	
@@ -29,3 +33,6 @@ func _process(delta):
 		grav = gravdown
 	
 	motion = move_and_slide(motion, UP)
+
+func playerDeath():
+	get_tree().reload_current_scene()

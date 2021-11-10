@@ -7,7 +7,7 @@
 1. ~~Create a player character scene.~~
 2. ~~Simulate physics and movement for the player character - constant movement to the right and falling up/down dependent on gravity.~~
 3. ~~Create game-scene where the player character scene is deployed.~~
-4. Ensure the player character dies when a solid wall is hit and movement is halted - causing the game to end.
+4. ~~Ensure the player character dies when a solid wall is hit and movement is halted - causing the game to end.~~
 5. Ensure the player character dies when touching red.
 6. Allow for the game-gravity to change upon player input, allowing user-caused movement.
 
