@@ -23,6 +23,8 @@ func _process(delta):
 	
 	playerInput()
 	
+	playerTouch()
+	
 	if is_on_wall():
 		playerDeath()
 	
@@ -37,6 +39,17 @@ func playerInput():
 		grav = gravup
 	else:
 		grav = gravdown
+
+func playerTouch():
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		match collision.collider.name:
+			"RedLBody": 
+				playerDeath()
+				print("touched red")
+			_:
+				pass
+				print("not red")
 
 func playerDeath():
 	get_tree().reload_current_scene()
