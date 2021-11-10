@@ -13,17 +13,23 @@ var isGravUp = false
 
 var motion = Vector2()
 
-func _ready():
-	pass 
+#func _ready():
+#	pass 
 
 func _process(delta):
-	
-	if is_on_wall():
-		playerDeath()
 	
 	motion.y += grav
 	motion.x = xspeed
 	
+	playerInput()
+	
+	if is_on_wall():
+		playerDeath()
+	
+	motion = move_and_slide(motion, UP)
+
+func playerInput():
+	#User input changes gravity
 	if (is_on_floor() or is_on_ceiling()) && Input.is_action_just_pressed("move"):
 		isGravUp = !isGravUp
 	
@@ -31,8 +37,6 @@ func _process(delta):
 		grav = gravup
 	else:
 		grav = gravdown
-	
-	motion = move_and_slide(motion, UP)
 
 func playerDeath():
 	get_tree().reload_current_scene()
