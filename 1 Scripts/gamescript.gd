@@ -2,6 +2,7 @@ extends Node
 
 var fterrain = Array() #Contains all floor piece positions
 var cterrain = Array() #Contains all ceiling piece positions
+var randomlist = [-32, 32]
 var screensize
 
 var texture = preload("res://2 Sprites/black.png")
@@ -29,6 +30,7 @@ func _process(delta):
 func floor_gen():
 	var floor_width = 512 #Size of each piece
 	var floor_slices = 2 #Ensures straight line between floors on y axis
+	var random = randomlist[randi() % randomlist.size()]
 	
 	var start = fterrain[-1] #The start is startf_y
 	var poly = PoolVector2Array() #The shape of the floor piece
@@ -54,7 +56,7 @@ func floor_gen():
 			
 			if piecePart == 0 and piece == 0:
 				#If this is the first section of the piece, define/create height
-				floor_point.y = start.y + height * cos(1 * PI / floor_slices * piecePart)
+				floor_point.y = start.y + height * cos(1 * PI / floor_slices * piecePart) + random
 				
 				#Limits floor from going too low
 				if floor_point.y < 90:
@@ -86,6 +88,7 @@ func floor_gen():
 func ceiling_gen():
 	var ceiling_width = 512
 	var ceiling_slices = 2
+	var random = randomlist[randi() % randomlist.size()]
 	
 	var start = cterrain[-1]
 	var poly = PoolVector2Array()
@@ -109,7 +112,7 @@ func ceiling_gen():
 				
 			if piecePart == 0 and piece == 0:
 				#If this is the first section of the piece, define/create height
-				ceiling_point.y = start.y + height * cos(1 * PI / ceiling_slices * piecePart)
+				ceiling_point.y = start.y + height * cos(1 * PI / ceiling_slices * piecePart) + random
 				
 				if ceiling_point.y > -90:
 					ceiling_point.y += -64
