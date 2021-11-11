@@ -84,4 +84,51 @@ func floor_gen():
 	add_child(ground)
 
 func ceiling_gen():
-	pass
+	var ceiling_width = 512
+	var ceiling_slices = 2
+	
+	var start = cterrain[-1]
+	var poly = PoolVector2Array()
+	var height = randi() % 50
+	var lasty = 0
+	var lastx = 0
+	for piece in range(ceiling_slices):
+		start.y -= height
+		for piecePart in range(0, ceiling_slices):
+			
+			var ceiling_point = Vector2()
+			
+			ceiling_point.y = lasty
+			
+			ceiling_point.x = lastx
+			
+			if piecePart == 0:
+				#If this is the first section of the piece, define/create position
+				ceiling_point.x = start.x + piecePart + ceiling_width * piece
+				lastx = ceiling_point.x
+				
+			if piecePart == 0 and piece == 0:
+				#If this is the first section of the piece, define/create height
+				ceiling_point.y = start.y + height * cos(1 * PI / ceiling_slices * piecePart)
+				
+				if ceiling_point.y > -90:
+					ceiling_point.y += -64
+					
+				if ceiling_point.y < -400:
+					ceiling_point.y += 64
+				
+				lasty = ceiling_point.y 
+				
+			cterrain.append(ceiling_point)
+			poly.append(ceiling_point)
+		start.y += height
+	var shape = CollisionPolygon2D.new()
+	var ground = Polygon2D.new()
+	var type = $LBody
+	type.add_child(shape)
+	poly.append(Vector2(cterrain[-1].x, -screensize.y*2))
+	poly.append(Vector2(start.x, -screensize.y*2))
+	shape.polygon = poly
+	ground.polygon = poly
+	ground.texture = texture
+	add_child(ground)
