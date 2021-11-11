@@ -5,6 +5,16 @@ var cterrain = Array() #Contains all ceiling piece positions
 var randomlist = [-32, 32]
 var screensize
 
+var floor_width = 512 #Size of each piece
+var floor_slices = 2 #Ensures straight line between floors on y axis
+
+var ceiling_width = 512
+var ceiling_slices = 2
+
+var shape
+var ground
+var type
+
 var texture = preload("res://2 Sprites/black.png")
 
 # Called when the node enters the scene tree for the first time.
@@ -28,8 +38,6 @@ func _process(delta):
 		ceiling_gen()
 
 func floor_gen():
-	var floor_width = 512 #Size of each piece
-	var floor_slices = 2 #Ensures straight line between floors on y axis
 	var random = randomlist[randi() % randomlist.size()]
 	
 	var start = fterrain[-1] #The start is startf_y
@@ -71,9 +79,9 @@ func floor_gen():
 			fterrain.append(floor_point)
 			poly.append(floor_point)
 		start.y += height
-	var shape = CollisionPolygon2D.new() #The collision shape for the floor
-	var ground = Polygon2D.new() #The visual shape for the floor
-	var type = $LBody
+	shape = CollisionPolygon2D.new() #The collision shape for the floor
+	ground = Polygon2D.new() #The visual shape for the floor
+	type = $LBody
 	type.add_child(shape) #Adds the collision to the level
 	#Below closes the shape collision and visual shown from the start of the floor
 	#to the bottom of the level
@@ -86,8 +94,6 @@ func floor_gen():
 	add_child(ground)
 
 func ceiling_gen():
-	var ceiling_width = 512
-	var ceiling_slices = 2
 	var random = randomlist[randi() % randomlist.size()]
 	
 	var start = cterrain[-1]
@@ -125,9 +131,9 @@ func ceiling_gen():
 			cterrain.append(ceiling_point)
 			poly.append(ceiling_point)
 		start.y += height
-	var shape = CollisionPolygon2D.new()
-	var ground = Polygon2D.new()
-	var type = $LBody
+	shape = CollisionPolygon2D.new()
+	ground = Polygon2D.new()
+	type = $LBody
 	type.add_child(shape)
 	poly.append(Vector2(cterrain[-1].x, -screensize.y*2))
 	poly.append(Vector2(start.x, -screensize.y*2))
