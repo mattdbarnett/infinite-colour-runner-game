@@ -20,7 +20,8 @@ var ftype
 var ctype
 var randomTypeList
 	
-var texturelist = {}
+var typedict = {}
+var typelist = Array()
 var texture = preload("res://2 Sprites/black.png")
 var texturered = preload("res://2 Sprites/red.png")
 
@@ -28,6 +29,10 @@ onready var globalsettings = get_node("/root/globalsettings")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	typedict = {
+		texture: $LBody,
+		texturered: $RedLBody
+	}
 	randomize()
 	screensize = get_viewport().get_visible_rect().size
 	#Create a random starting point on y axis for both ceiling and floor.
@@ -44,15 +49,19 @@ func _ready():
 			print("ERROR - NO GAMEMODE DETECTED")
 		"PLACEHOLDER":
 			for i in range(19):
-				texturelist.append({$LBody: texture})
-			texturelist.append({$RedLBody: texturered})
+				typelist.append(texture)
+			typelist.append(texturered)
+	
+	for i in range(3):
+		floor_gen(texture)
+		ceiling_gen(texture)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	if fterrain[-1].x < $Player.position.x + screensize.x:
-		ftype = texturelist[randi() % texturelist.size()]
-		ctype = texturelist[randi() % texturelist.size()]
+	if fterrain[-1].x < $player.position.x + screensize.x:
+		ftype = typelist[randi() % typelist.size()]
+		ctype = typelist[randi() % typelist.size()]
 		if ftype != texture and ctype != texture:
 			rng.randomize()
 			var randTypeChoice = rng.randi_range(0, 1)
@@ -108,7 +117,7 @@ func floor_gen(ftype):
 		start.y += height
 	shape = CollisionPolygon2D.new() #The collision shape for the floor
 	ground = Polygon2D.new() #The visual shape for the floor
-	type = $LBody
+	type = typedict[ftype]
 	type.add_child(shape) #Adds the collision to the level
 	#Below closes the shape collision and visual shown from the start of the floor
 	#to the bottom of the level
@@ -117,7 +126,7 @@ func floor_gen(ftype):
 	#Below sets the closed shape to be shown visually and in collisions.
 	shape.polygon = poly
 	ground.polygon = poly
-	ground.texture = texture
+	ground.texture = ftype
 	add_child(ground)
 
 func ceiling_gen(ctype):
@@ -160,11 +169,11 @@ func ceiling_gen(ctype):
 		start.y += height
 	shape = CollisionPolygon2D.new()
 	ground = Polygon2D.new()
-	type = $LBody
+	type = typedict[ctype]
 	type.add_child(shape)
 	poly.append(Vector2(cterrain[-1].x, -screensize.y*2))
 	poly.append(Vector2(start.x, -screensize.y*2))
 	shape.polygon = poly
 	ground.polygon = poly
-	ground.texture = texture
+	ground.texture = ctype
 	add_child(ground)
