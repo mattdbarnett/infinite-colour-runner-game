@@ -15,7 +15,12 @@ var shape
 var ground
 var type
 
-var texturelist = Array()
+var rng = RandomNumberGenerator.new()
+var ftype
+var ctype
+var randomTypeList
+	
+var texturelist = {}
 var texture = preload("res://2 Sprites/black.png")
 var texturered = preload("res://2 Sprites/red.png")
 
@@ -39,19 +44,27 @@ func _ready():
 			print("ERROR - NO GAMEMODE DETECTED")
 		"PLACEHOLDER":
 			for i in range(19):
-				texturelist.append(texture)
-			texturelist.append(texturered)
+				texturelist.append({$LBody: texture})
+			texturelist.append({$RedLBody: texturered})
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
+	if fterrain[-1].x < $Player.position.x + screensize.x:
+		ftype = texturelist[randi() % texturelist.size()]
+		ctype = texturelist[randi() % texturelist.size()]
+		if ftype != texture and ctype != texture:
+			rng.randomize()
+			var randTypeChoice = rng.randi_range(0, 1)
+			if randTypeChoice == 0:	ftype = texture; else: ctype = texture
+	
 	if fterrain[-1].x < $player.position.x + screensize.x:
-		floor_gen()
+		floor_gen(ftype)
 	
 	if cterrain[-1].x < $player.position.x + screensize.x:
-		ceiling_gen()
+		ceiling_gen(ctype)
 
-func floor_gen():
+func floor_gen(ftype):
 	var random = randomlist[randi() % randomlist.size()]
 	
 	var start = fterrain[-1] #The start is startf_y
@@ -107,7 +120,7 @@ func floor_gen():
 	ground.texture = texture
 	add_child(ground)
 
-func ceiling_gen():
+func ceiling_gen(ctype):
 	var random = randomlist[randi() % randomlist.size()]
 	
 	var start = cterrain[-1]
