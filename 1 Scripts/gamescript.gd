@@ -15,7 +15,11 @@ var shape
 var ground
 var type
 
+var texturelist = Array()
 var texture = preload("res://2 Sprites/black.png")
+var texturered = preload("res://2 Sprites/red.png")
+
+onready var globalsettings = get_node("/root/globalsettings")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,6 +31,16 @@ func _ready():
 	#Add the starting points to arrays so that they are started from.
 	fterrain.append(Vector2(0, startf_y))
 	cterrain.append(Vector2(0, startc_y))
+	
+	globalsettings.gamemode = "PLACEHOLDER"
+	
+	match globalsettings.gamemode:
+		"EMPTY":
+			print("ERROR - NO GAMEMODE DETECTED")
+		"PLACEHOLDER":
+			for i in range(19):
+				texturelist.append(texture)
+			texturelist.append(texturered)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

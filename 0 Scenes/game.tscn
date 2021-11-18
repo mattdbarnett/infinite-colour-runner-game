@@ -22,3 +22,5 @@ drag_margin_bottom = 0.9
 environment = ExtResource( 3 )
 
 [node name="LBody" type="StaticBody2D" parent="."]
+
+[node name="RedLBody" type="StaticBody2D" parent="."]

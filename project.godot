@@ -14,6 +14,10 @@ config/name="Autumn Semester Project"
 run/main_scene="res://0 Scenes/menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+globalsettings="*res://1 Scripts/globalscript.gd"
+
 [display]
 
 window/size/width=1920
