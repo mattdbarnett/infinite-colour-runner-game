@@ -59,6 +59,15 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
+	texture_gen()
+	
+	if fterrain[-1].x < $player.position.x + screensize.x:
+		floor_gen(ftype)
+	
+	if cterrain[-1].x < $player.position.x + screensize.x:
+		ceiling_gen(ctype)
+
+func texture_gen():
 	if fterrain[-1].x < $player.position.x + screensize.x:
 		ftype = typelist[randi() % typelist.size()]
 		ctype = typelist[randi() % typelist.size()]
@@ -67,12 +76,6 @@ func _process(delta):
 			var randTypeChoice = rng.randi_range(0, 1)
 			if randTypeChoice == 0:	ftype = texture; else: ctype = texture
 	
-	if fterrain[-1].x < $player.position.x + screensize.x:
-		floor_gen(ftype)
-	
-	if cterrain[-1].x < $player.position.x + screensize.x:
-		ceiling_gen(ctype)
-
 func floor_gen(ftype):
 	var random = randomlist[randi() % randomlist.size()]
 	

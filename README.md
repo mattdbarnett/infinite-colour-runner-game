@@ -7,7 +7,7 @@
 1. ~~Create infinite terrain for the player to travel through.~~
 2. ~~Ensure there is both a floor and a ceiling for the player to switch between.~~
 3. ~~Create height/size variations in the generated terrain.~~
-4. Ensure the qualities of each terrain-piece are randomly chosen.
+4. ~~Ensure the qualities of each terrain-piece are randomly chosen.~~
 
 ## Finished:
 
