@@ -4,11 +4,11 @@ extends KinematicBody2D
 #Basic movement vars
 const UP = Vector2(0, -1)
 
-var xspeed = 700
+var xspeed = 600
 
-var grav = 30
-var gravup = -30
-var gravdown = 30
+var grav = 40
+var gravup = -40
+var gravdown = 40
 var isGravUp = false
 
 var motion = Vector2()

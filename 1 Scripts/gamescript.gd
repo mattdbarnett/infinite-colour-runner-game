@@ -18,6 +18,7 @@ var type
 var rng = RandomNumberGenerator.new()
 var ftype
 var ctype
+var lastTypeUnique = true #if true, can't be another colour piece
 var randomTypeList
 	
 var typedict = {}
@@ -48,9 +49,10 @@ func _ready():
 		"EMPTY":
 			print("ERROR - NO GAMEMODE DETECTED")
 		"PLACEHOLDER":
-			for i in range(19):
+			for i in range(20):
 				typelist.append(texture)
-			typelist.append(texturered)
+			for i in range(5):
+				typelist.append(texturered)
 	
 	for i in range(3):
 		floor_gen(texture)
@@ -59,22 +61,27 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	texture_gen()
-	
 	if fterrain[-1].x < $player.position.x + screensize.x:
+		texture_gen()
 		floor_gen(ftype)
 	
 	if cterrain[-1].x < $player.position.x + screensize.x:
 		ceiling_gen(ctype)
 
 func texture_gen():
-	if fterrain[-1].x < $player.position.x + screensize.x:
+	if lastTypeUnique == false:
 		ftype = typelist[randi() % typelist.size()]
 		ctype = typelist[randi() % typelist.size()]
+		if ftype != texture or ctype != texture:
+			lastTypeUnique = true
 		if ftype != texture and ctype != texture:
 			rng.randomize()
 			var randTypeChoice = rng.randi_range(0, 1)
 			if randTypeChoice == 0:	ftype = texture; else: ctype = texture
+	else:
+		ftype = texture
+		ctype = texture
+		lastTypeUnique = false
 	
 func floor_gen(ftype):
 	var random = randomlist[randi() % randomlist.size()]
