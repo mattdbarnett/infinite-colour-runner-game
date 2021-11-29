@@ -25,6 +25,7 @@ var typedict = {}
 var typelist = Array()
 var texture = preload("res://2 Sprites/black.png")
 var texturered = preload("res://2 Sprites/red.png")
+var textureblue = preload("res://2 Sprites/blue.png")
 
 onready var globalsettings = get_node("/root/globalsettings")
 
@@ -32,7 +33,8 @@ onready var globalsettings = get_node("/root/globalsettings")
 func _ready():
 	typedict = {
 		texture: $LBody,
-		texturered: $RedLBody
+		texturered: $RedLBody,
+		textureblue: $BlueLBody
 	}
 	randomize()
 	screensize = get_viewport().get_visible_rect().size
@@ -43,12 +45,17 @@ func _ready():
 	fterrain.append(Vector2(0, startf_y))
 	cterrain.append(Vector2(0, startc_y))
 	
-	globalsettings.gamemode = "PLACEHOLDER"
-	
 	match globalsettings.gamemode:
 		"Standard":
 			for i in range(20):
 				typelist.append(texture)
+			for i in range(6):
+				typelist.append(texturered)
+		"Take It Slow":
+			for i in range(30):
+				typelist.append(texture)
+			for i in range(10):
+				typelist.append(textureblue)
 			for i in range(6):
 				typelist.append(texturered)
 		_:

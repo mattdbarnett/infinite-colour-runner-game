@@ -255,15 +255,15 @@ rect_min_size = Vector2( 640, 0 )
 [node name="mp_op2" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer2"]
 margin_left = 128.0
 margin_top = 256.0
-margin_right = 512.0
+margin_right = 508.0
 margin_bottom = 640.0
 custom_styles/hover = ExtResource( 20 )
 custom_styles/pressed = ExtResource( 21 )
 custom_styles/focus = ExtResource( 48 )
 custom_styles/normal = ExtResource( 2 )
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 3 )
 toggle_mode = true
-text = "Normal"
+text = "Take It Slow"
 __meta__ = {
 "_edit_use_anchors_": false
 }

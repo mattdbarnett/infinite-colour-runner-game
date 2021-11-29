@@ -122,6 +122,7 @@ func _on_mp_op1_pressed():
 	togglemodecheck(0)
 
 func _on_mp_op2_pressed():
+	globalsettings.gamemode = "Take It Slow"
 	togglemodecheck(1)
 
 func _on_mp_op3_pressed():
