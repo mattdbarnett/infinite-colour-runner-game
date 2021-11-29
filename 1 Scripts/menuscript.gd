@@ -130,6 +130,7 @@ func _on_mp_op3_pressed():
 	togglemodecheck(2)
 
 func _on_mp_op4_pressed():
+	globalsettings.gamemode = "Lava"
 	togglemodecheck(3)
 
 func _on_mp_op5_pressed():

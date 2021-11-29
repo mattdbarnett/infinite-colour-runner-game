@@ -75,7 +75,6 @@ func playerEffects():
 		xspeed = purplex
 	else:
 		xspeed = basex
-		
 	
 func playerDeath():
 	get_tree().reload_current_scene()

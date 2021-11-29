@@ -69,6 +69,11 @@ func _ready():
 				typelist.append(textureblue)
 			for i in range(4):
 				typelist.append(texturered) 
+		"Lava":
+			for i in range(30):
+				typelist.append(texture)
+			for i in range(30):
+				typelist.append(texturered) 
 		_:
 			for i in range(20):
 				typelist.append(texture)
