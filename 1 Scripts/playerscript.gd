@@ -17,6 +17,9 @@ var motion = Vector2()
 var bluex = 300
 var bluemode = false
 
+var purplex = -300
+var purplemode = false
+
 #func _ready():
 #	pass 
 
@@ -54,14 +57,25 @@ func playerTouch():
 				playerDeath()
 			"BlueLBody":
 				bluemode = true
+			"PurpleLBody":
+				purplemode = true
 			_:
-				bluemode = false
+				pass
+		
+		if collision.collider.name != "BlueLBody":
+			bluemode = false
+		
+		if collision.collider.name != "PurpleLBody":
+			purplemode = false
 
 func playerEffects():
 	if bluemode == true:
 		xspeed = bluex
+	elif purplemode == true:
+		xspeed = purplex
 	else:
 		xspeed = basex
+		
 	
 func playerDeath():
 	get_tree().reload_current_scene()
