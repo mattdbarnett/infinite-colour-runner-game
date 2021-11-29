@@ -118,6 +118,7 @@ func togglemodecheck(num):
 	mpbuttons[num].pressed = true
 
 func _on_mp_op1_pressed():
+	globalsettings.gamemode = "Standard"
 	togglemodecheck(0)
 
 func _on_mp_op2_pressed():

@@ -46,12 +46,15 @@ func _ready():
 	globalsettings.gamemode = "PLACEHOLDER"
 	
 	match globalsettings.gamemode:
-		"EMPTY":
-			print("ERROR - NO GAMEMODE DETECTED")
-		"PLACEHOLDER":
+		"Standard":
 			for i in range(20):
 				typelist.append(texture)
-			for i in range(5):
+			for i in range(6):
+				typelist.append(texturered)
+		_:
+			for i in range(20):
+				typelist.append(texture)
+			for i in range(6):
 				typelist.append(texturered)
 	
 	for i in range(3):
