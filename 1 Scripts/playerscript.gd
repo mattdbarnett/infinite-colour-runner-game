@@ -4,7 +4,8 @@ extends KinematicBody2D
 #Basic movement vars
 const UP = Vector2(0, -1)
 
-var xspeed = 700
+var basex = 700
+var xspeed = basex
 
 var grav = 40
 var gravup = -40
@@ -12,6 +13,9 @@ var gravdown = 40
 var isGravUp = false
 
 var motion = Vector2()
+
+var bluex = 300
+var bluemode = false
 
 #func _ready():
 #	pass 
@@ -24,6 +28,8 @@ func _process(delta):
 	playerInput()
 	
 	playerTouch()
+	
+	playerEffects()
 	
 	motion = move_and_slide(motion, UP)
 
@@ -46,8 +52,16 @@ func playerTouch():
 		match collision.collider.name:
 			"RedLBody": 
 				playerDeath()
+			"BlueLBody":
+				bluemode = true
 			_:
-				pass
+				bluemode = false
 
+func playerEffects():
+	if bluemode == true:
+		xspeed = bluex
+	else:
+		xspeed = basex
+	
 func playerDeath():
 	get_tree().reload_current_scene()
