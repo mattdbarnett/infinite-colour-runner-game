@@ -126,6 +126,7 @@ func _on_mp_op2_pressed():
 	togglemodecheck(1)
 
 func _on_mp_op3_pressed():
+	globalsettings.gamemode = "Reverse"
 	togglemodecheck(2)
 
 func _on_mp_op4_pressed():

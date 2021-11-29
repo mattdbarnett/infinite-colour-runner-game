@@ -26,6 +26,7 @@ var typelist = Array()
 var texture = preload("res://2 Sprites/black.png")
 var texturered = preload("res://2 Sprites/red.png")
 var textureblue = preload("res://2 Sprites/blue.png")
+var texturepurple = preload("res://2 Sprites/purple.png")
 
 onready var globalsettings = get_node("/root/globalsettings")
 
@@ -34,7 +35,8 @@ func _ready():
 	typedict = {
 		texture: $LBody,
 		texturered: $RedLBody,
-		textureblue: $BlueLBody
+		textureblue: $BlueLBody,
+		texturepurple: $PurpleLBody
 	}
 	randomize()
 	screensize = get_viewport().get_visible_rect().size
@@ -52,12 +54,21 @@ func _ready():
 			for i in range(6):
 				typelist.append(texturered)
 		"Take It Slow":
-			for i in range(30):
+			for i in range(20):
 				typelist.append(texture)
 			for i in range(10):
 				typelist.append(textureblue)
 			for i in range(6):
 				typelist.append(texturered)
+		"Reverse":
+			for i in range(30):
+				typelist.append(texture)
+			for i in range(12):
+				typelist.append(texturepurple)
+			for i in range(4):
+				typelist.append(textureblue)
+			for i in range(4):
+				typelist.append(texturered) 
 		_:
 			for i in range(20):
 				typelist.append(texture)
