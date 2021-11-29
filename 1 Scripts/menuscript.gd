@@ -111,6 +111,7 @@ func _on_mp_back_pressed():
 	currentmenu_update(menumain)
 
 func togglemodecheck(num):
+	$menucanvas/menuplay/mp_start.disabled = false
 	for but in mpbuttons:
 		but.pressed = false
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://3 Fonts/1 Variations/s70.tres" type="DynamicFont" id=1]
 [ext_resource path="res://4 Styling/0 Const/norm.tres" type="StyleBox" id=2]
@@ -48,6 +48,7 @@
 [ext_resource path="res://4 Styling/5 Medium/pink_med.tres" type="StyleBox" id=46]
 [ext_resource path="res://4 Styling/5 Medium/norm_med.tres" type="StyleBox" id=47]
 [ext_resource path="res://4 Styling/0 Const/emptyfocus.tres" type="StyleBox" id=48]
+[ext_resource path="res://4 Styling/0 Const/norm_disabled.tres" type="StyleBox" id=49]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -108,7 +109,6 @@ script = ExtResource( 10 )
 layer = 5
 
 [node name="menumain" type="Control" parent="menucanvas"]
-visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 theme = ExtResource( 11 )
@@ -205,6 +205,7 @@ position = Vector2( 896, 816 )
 texture = ExtResource( 35 )
 
 [node name="menuplay" type="Control" parent="menucanvas"]
+visible = false
 theme = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -392,8 +393,26 @@ margin_bottom = 952.0
 custom_styles/hover = ExtResource( 20 )
 custom_styles/pressed = ExtResource( 21 )
 custom_styles/focus = ExtResource( 48 )
+custom_styles/disabled = ExtResource( 49 )
 custom_styles/normal = ExtResource( 2 )
 custom_fonts/font = ExtResource( 1 )
+disabled = true
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_start" type="Button" parent="menucanvas/menuplay/mp_start"]
+margin_left = 1472.0
+margin_top = 768.0
+margin_right = 1920.0
+margin_bottom = 952.0
+custom_styles/hover = ExtResource( 20 )
+custom_styles/pressed = ExtResource( 21 )
+custom_styles/focus = ExtResource( 48 )
+custom_styles/normal = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+disabled = true
 text = "Start"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1971,6 +1990,7 @@ environment = ExtResource( 9 )
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer7/mp_op7" to="." method="_on_mp_op7_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_back" to="." method="_on_mp_back_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_start" to="." method="_on_mp_start_pressed"]
+[connection signal="pressed" from="menucanvas/menuplay/mp_start/mp_start" to="." method="_on_mp_start_pressed"]
 [connection signal="value_changed" from="menucanvas/menucustom/mc_colours/mc_sliderblue" to="." method="_on_mc_sliderblue_value_changed"]
 [connection signal="value_changed" from="menucanvas/menucustom/mc_colours/mc_sliderpurple" to="." method="_on_mc_sliderpurple_value_changed"]
 [connection signal="value_changed" from="menucanvas/menucustom/mc_colours/mc_slidergreen" to="." method="_on_mc_slidergreen_value_changed"]
