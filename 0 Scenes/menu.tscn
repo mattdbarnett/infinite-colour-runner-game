@@ -370,7 +370,7 @@ custom_styles/focus = ExtResource( 48 )
 custom_styles/normal = ExtResource( 2 )
 custom_fonts/font = ExtResource( 1 )
 toggle_mode = true
-text = "Normal"
+text = "Gravity"
 __meta__ = {
 "_edit_use_anchors_": false
 }

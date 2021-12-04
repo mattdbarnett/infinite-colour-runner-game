@@ -8,9 +8,11 @@ const staticx = 700
 var basex = 700
 var xspeed = 700
 
+const staticy = 40
 var grav = 40
-var gravup = -40
-var gravdown = 40
+var gravchange = grav
+var gravup = -gravchange
+var gravdown = gravchange
 var isGravUp = false
 
 var motion = Vector2()
@@ -22,13 +24,17 @@ var purplex = -300
 var purplemode = false
 
 var greenmode = false
+
+var yellowmode = false
+var yellowtoggle = false
+
 #func _ready():
 #	pass 
 
 func _process(delta):
 	
-	print(xspeed)
-	
+	print(grav)
+
 	motion.y += grav
 	motion.x = xspeed
 	
@@ -65,8 +71,11 @@ func playerTouch():
 				purplemode = true
 			"GreenLBody":
 				greenmode = true
+			"YellowLBody":
+				yellowmode = true
 			_:
-				pass
+				if yellowmode == true:
+					yellowtoggle = !yellowtoggle
 		
 		if collision.collider.name != "BlueLBody":
 			bluemode = false
@@ -76,7 +85,10 @@ func playerTouch():
 		
 		if collision.collider.name != "GreenLBody":
 			greenmode = false
-
+		
+		if collision.collider.name != "YellowLBody":
+			yellowmode = false
+		
 func playerEffects():
 	if bluemode == true:
 		xspeed = bluex
@@ -87,6 +99,13 @@ func playerEffects():
 	elif greenmode == true:
 		xspeed += 1
 		basex = xspeed
+	elif yellowmode == true:
+		if yellowtoggle == false:
+			gravchange += 1
+		elif yellowtoggle == true:
+			gravchange -= 1
+		gravup = -gravchange
+		gravdown = gravchange
 	else:
 		xspeed = basex
 	

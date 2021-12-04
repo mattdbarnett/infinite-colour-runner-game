@@ -135,14 +135,15 @@ func _on_mp_op4_pressed():
 	togglemodecheck(3)
 
 func _on_mp_op5_pressed():
-	globalsettings.gamemode = "Zoomy"
+	globalsettings.gamemode = "Rapid"
 	togglemodecheck(4)
 
 func _on_mp_op6_pressed():
-	globalsettings.gamemode = "Fluctant"
+	globalsettings.gamemode = "Fluctuant"
 	togglemodecheck(5)
 
 func _on_mp_op7_pressed():
+	globalsettings.gamemode = "Gravity"
 	togglemodecheck(6)
 
 func _on_mp_start_pressed():
