@@ -328,7 +328,7 @@ custom_styles/focus = ExtResource( 48 )
 custom_styles/normal = ExtResource( 2 )
 custom_fonts/font = ExtResource( 1 )
 toggle_mode = true
-text = "Zoom-y"
+text = "Zoomy"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -349,7 +349,7 @@ custom_styles/focus = ExtResource( 48 )
 custom_styles/normal = ExtResource( 2 )
 custom_fonts/font = ExtResource( 1 )
 toggle_mode = true
-text = "Normal"
+text = "Fluctant"
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -4,6 +4,7 @@ extends KinematicBody2D
 #Basic movement vars
 const UP = Vector2(0, -1)
 
+const staticx = 700
 var basex = 700
 var xspeed = 700
 
@@ -79,10 +80,10 @@ func playerTouch():
 func playerEffects():
 	if bluemode == true:
 		xspeed = bluex
-		basex = 700
+		basex = staticx
 	elif purplemode == true:
 		xspeed = purplex
-		basex = 700
+		basex = staticx
 	elif greenmode == true:
 		xspeed += 1
 		basex = xspeed

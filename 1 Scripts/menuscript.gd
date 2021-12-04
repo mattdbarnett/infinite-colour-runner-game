@@ -139,6 +139,7 @@ func _on_mp_op5_pressed():
 	togglemodecheck(4)
 
 func _on_mp_op6_pressed():
+	globalsettings.gamemode = "Fluctant"
 	togglemodecheck(5)
 
 func _on_mp_op7_pressed():

@@ -81,6 +81,13 @@ func _ready():
 				typelist.append(texture)
 			for i in range(10):
 				typelist.append(texturegreen)
+		"Fluctant":
+			for i in range(30):
+				typelist.append(texture)
+			for i in range(10):
+				typelist.append(textureblue)
+			for i in range(10):
+				typelist.append(texturegreen)
 		_:
 			for i in range(20):
 				typelist.append(texture)
