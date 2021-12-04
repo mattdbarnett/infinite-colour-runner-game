@@ -5,7 +5,7 @@ extends KinematicBody2D
 const UP = Vector2(0, -1)
 
 var basex = 700
-var xspeed = basex
+var xspeed = 700
 
 var grav = 40
 var gravup = -40
@@ -20,10 +20,13 @@ var bluemode = false
 var purplex = -300
 var purplemode = false
 
+var greenmode = false
 #func _ready():
 #	pass 
 
 func _process(delta):
+	
+	print(xspeed)
 	
 	motion.y += grav
 	motion.x = xspeed
@@ -59,6 +62,8 @@ func playerTouch():
 				bluemode = true
 			"PurpleLBody":
 				purplemode = true
+			"GreenLBody":
+				greenmode = true
 			_:
 				pass
 		
@@ -67,12 +72,20 @@ func playerTouch():
 		
 		if collision.collider.name != "PurpleLBody":
 			purplemode = false
+		
+		if collision.collider.name != "GreenLBody":
+			greenmode = false
 
 func playerEffects():
 	if bluemode == true:
 		xspeed = bluex
+		basex = 700
 	elif purplemode == true:
 		xspeed = purplex
+		basex = 700
+	elif greenmode == true:
+		xspeed += 1
+		basex = xspeed
 	else:
 		xspeed = basex
 	

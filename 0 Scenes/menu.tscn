@@ -216,6 +216,7 @@ margin_right = 1920.0
 margin_bottom = 1080.0
 theme = ExtResource( 11 )
 follow_focus = true
+scroll_horizontal = 100
 scroll_vertical_enabled = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -279,8 +280,8 @@ margin_left = 128.0
 margin_top = 256.0
 margin_right = 512.0
 margin_bottom = 640.0
-custom_styles/hover = ExtResource( 20 )
-custom_styles/pressed = ExtResource( 21 )
+custom_styles/hover = ExtResource( 25 )
+custom_styles/pressed = ExtResource( 17 )
 custom_styles/focus = ExtResource( 48 )
 custom_styles/normal = ExtResource( 2 )
 custom_fonts/font = ExtResource( 1 )
@@ -300,8 +301,8 @@ margin_left = 128.0
 margin_top = 256.0
 margin_right = 512.0
 margin_bottom = 640.0
-custom_styles/hover = ExtResource( 20 )
-custom_styles/pressed = ExtResource( 21 )
+custom_styles/hover = ExtResource( 24 )
+custom_styles/pressed = ExtResource( 23 )
 custom_styles/focus = ExtResource( 48 )
 custom_styles/normal = ExtResource( 2 )
 custom_fonts/font = ExtResource( 1 )
@@ -327,7 +328,7 @@ custom_styles/focus = ExtResource( 48 )
 custom_styles/normal = ExtResource( 2 )
 custom_fonts/font = ExtResource( 1 )
 toggle_mode = true
-text = "Normal"
+text = "Zoom-y"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1979,8 +1980,8 @@ environment = ExtResource( 9 )
 [connection signal="pressed" from="menucanvas/menumain/mm_storebtn" to="." method="_on_mm_storebtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_settingsbtn" to="." method="_on_mm_settingsbtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_helpbtn" to="." method="_on_mm_helpbtn_pressed"]
-[connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn2_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn_pressed"]
+[connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn2_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer1/mp_op1" to="." method="_on_mp_op1_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer2/mp_op2" to="." method="_on_mp_op2_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer3/mp_op3" to="." method="_on_mp_op3_pressed"]

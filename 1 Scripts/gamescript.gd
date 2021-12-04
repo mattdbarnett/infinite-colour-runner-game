@@ -27,6 +27,7 @@ var texture = preload("res://2 Sprites/black.png")
 var texturered = preload("res://2 Sprites/red.png")
 var textureblue = preload("res://2 Sprites/blue.png")
 var texturepurple = preload("res://2 Sprites/purple.png")
+var texturegreen = preload("res://2 Sprites/green.png")
 
 onready var globalsettings = get_node("/root/globalsettings")
 
@@ -36,7 +37,8 @@ func _ready():
 		texture: $LBody,
 		texturered: $RedLBody,
 		textureblue: $BlueLBody,
-		texturepurple: $PurpleLBody
+		texturepurple: $PurpleLBody,
+		texturegreen: $GreenLBody
 	}
 	randomize()
 	screensize = get_viewport().get_visible_rect().size
@@ -74,6 +76,11 @@ func _ready():
 				typelist.append(texture)
 			for i in range(30):
 				typelist.append(texturered) 
+		"Zoomy":
+			for i in range(30):
+				typelist.append(texture)
+			for i in range(10):
+				typelist.append(texturegreen)
 		_:
 			for i in range(20):
 				typelist.append(texture)

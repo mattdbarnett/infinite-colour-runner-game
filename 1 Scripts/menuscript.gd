@@ -135,6 +135,7 @@ func _on_mp_op4_pressed():
 	togglemodecheck(3)
 
 func _on_mp_op5_pressed():
+	globalsettings.gamemode = "Zoomy"
 	togglemodecheck(4)
 
 func _on_mp_op6_pressed():
