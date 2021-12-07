@@ -24,7 +24,11 @@ onready var mpbuttons = [
 	get_node("menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer4/mp_op4"),
 	get_node("menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer5/mp_op5"),
 	get_node("menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer6/mp_op6"),
-	get_node("menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer7/mp_op7")
+	get_node("menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer7/mp_op7"),
+	get_node("menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer8/mp_op8"),
+	get_node("menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer9/mp_op9"),
+	get_node("menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer10/mp_op10")
+	
 ]
 
 #Settings Menu Vars
@@ -145,6 +149,19 @@ func _on_mp_op6_pressed():
 func _on_mp_op7_pressed():
 	globalsettings.gamemode = "Gravity"
 	togglemodecheck(6)
+
+func _on_mp_op8_pressed():
+	globalsettings.gamemode = "Powerup"
+	togglemodecheck(7)
+
+func _on_mp_op9_pressed():
+	globalsettings.gamemode = "Lunacy"
+	togglemodecheck(8)
+
+func _on_mp_op10_pressed():
+	globalsettings.gamemode = "Rainbow"
+	togglemodecheck(9)
+
 
 func _on_mp_start_pressed():
 	get_tree().change_scene("res://0 Scenes/game.tscn")

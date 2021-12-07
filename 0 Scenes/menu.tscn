@@ -375,6 +375,69 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="mp_btncontainer8" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
+margin_left = 3864.0
+margin_right = 4504.0
+rect_min_size = Vector2( 640, 0 )
+
+[node name="mp_op8" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer8"]
+margin_left = 128.0
+margin_top = 256.0
+margin_right = 512.0
+margin_bottom = 640.0
+custom_styles/hover = ExtResource( 20 )
+custom_styles/pressed = ExtResource( 21 )
+custom_styles/focus = ExtResource( 48 )
+custom_styles/normal = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+toggle_mode = true
+text = "Powerup"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_btncontainer9" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
+margin_left = 3864.0
+margin_right = 4504.0
+rect_min_size = Vector2( 640, 0 )
+
+[node name="mp_op9" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer9"]
+margin_left = 128.0
+margin_top = 256.0
+margin_right = 512.0
+margin_bottom = 640.0
+custom_styles/hover = ExtResource( 20 )
+custom_styles/pressed = ExtResource( 21 )
+custom_styles/focus = ExtResource( 48 )
+custom_styles/normal = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+toggle_mode = true
+text = "Lunacy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_btncontainer10" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
+margin_left = 3864.0
+margin_right = 4504.0
+rect_min_size = Vector2( 640, 0 )
+
+[node name="mp_op10" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer10"]
+margin_left = 128.0
+margin_top = 256.0
+margin_right = 512.0
+margin_bottom = 640.0
+custom_styles/hover = ExtResource( 20 )
+custom_styles/pressed = ExtResource( 21 )
+custom_styles/focus = ExtResource( 48 )
+custom_styles/normal = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+toggle_mode = true
+text = "Rainbow"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="mp_back" type="Button" parent="menucanvas/menuplay"]
 margin_right = 384.0
 margin_bottom = 192.0
@@ -1980,8 +2043,8 @@ environment = ExtResource( 9 )
 [connection signal="pressed" from="menucanvas/menumain/mm_storebtn" to="." method="_on_mm_storebtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_settingsbtn" to="." method="_on_mm_settingsbtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_helpbtn" to="." method="_on_mm_helpbtn_pressed"]
-[connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn2_pressed"]
+[connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer1/mp_op1" to="." method="_on_mp_op1_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer2/mp_op2" to="." method="_on_mp_op2_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer3/mp_op3" to="." method="_on_mp_op3_pressed"]
@@ -1989,6 +2052,9 @@ environment = ExtResource( 9 )
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer5/mp_op5" to="." method="_on_mp_op5_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer6/mp_op6" to="." method="_on_mp_op6_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer7/mp_op7" to="." method="_on_mp_op7_pressed"]
+[connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer8/mp_op8" to="." method="_on_mp_op8_pressed"]
+[connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer9/mp_op9" to="." method="_on_mp_op9_pressed"]
+[connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer10/mp_op10" to="." method="_on_mp_op10_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_back" to="." method="_on_mp_back_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_start" to="." method="_on_mp_start_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_start/mp_start" to="." method="_on_mp_start_pressed"]

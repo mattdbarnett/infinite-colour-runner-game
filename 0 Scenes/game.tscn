@@ -32,3 +32,5 @@ environment = ExtResource( 3 )
 [node name="GreenLBody" type="StaticBody2D" parent="."]
 
 [node name="YellowLBody" type="StaticBody2D" parent="."]
+
+[node name="PinkLBody" type="StaticBody2D" parent="."]
