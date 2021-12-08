@@ -58,6 +58,9 @@ func playerInput():
 		grav = gravup
 	else:
 		grav = gravdown
+	
+	if Input.is_action_just_pressed("esc"):
+		get_tree().change_scene("res://0 Scenes/menu.tscn")
 
 func playerTouch():
 	if is_on_wall():
