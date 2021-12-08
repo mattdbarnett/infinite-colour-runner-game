@@ -28,8 +28,11 @@ var greenmode = false
 var yellowmode = false
 var yellowtoggle = false
 
-#func _ready():
-#	pass 
+onready var powerupTimer = get_node("Camera2D/TimerPowerup")
+onready var powerupBar = get_node("Camera2D/CanvasLayer/Powerup")
+
+func _ready():
+	powerupTimer.start()
 
 func _process(delta):
 	
@@ -111,3 +114,6 @@ func playerEffects():
 	
 func playerDeath():
 	get_tree().reload_current_scene()
+
+func _on_TimerPowerup_timeout():
+	powerupBar.value += 0.5
