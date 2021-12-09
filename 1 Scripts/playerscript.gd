@@ -30,14 +30,15 @@ var yellowtoggle = false
 
 onready var powerupTimer = get_node("Camera2D/TimerPowerup")
 onready var powerupBar = get_node("Camera2D/CanvasLayer/Powerup")
+var powerupValue = 0
+var powerupMode = false
 
 func _ready():
 	powerupTimer.start()
 
 func _process(delta):
 	
-	print(grav)
-
+	powerupBar.value = powerupValue
 	motion.y += grav
 	motion.x = xspeed
 	
@@ -61,6 +62,14 @@ func playerInput():
 	
 	if Input.is_action_just_pressed("esc"):
 		get_tree().change_scene("res://0 Scenes/menu.tscn")
+	
+	if powerupValue > 99.5:
+		powerupTimer.stop()
+	
+	if Input.is_action_just_pressed("powerup"):
+		if powerupValue > 99.5:
+			powerupValue = 0
+			powerupTimer.start()
 
 func playerTouch():
 	if is_on_wall():
@@ -119,4 +128,4 @@ func playerDeath():
 	get_tree().reload_current_scene()
 
 func _on_TimerPowerup_timeout():
-	powerupBar.value += 0.5
+	powerupValue += 0.5
