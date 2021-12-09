@@ -22,14 +22,9 @@ var powerupCurrent = "base"
 var modeCurrent 
 
 var bluex = 300
-var bluemode = false
 
 var purplex = -300
-var purplemode = false
 
-var greenmode = false
-
-var yellowmode = false
 var yellowtoggle = false
 
 onready var powerdownTimer = get_node("Camera2D/TimerPowerdown")
@@ -82,28 +77,17 @@ func playerTouch():
 			"RedLBody": 
 				playerDeath()
 			"BlueLBody":
-				bluemode = true
+				modeCurrent = "blue"
 			"PurpleLBody":
-				purplemode = true
+				modeCurrent = "purple"
 			"GreenLBody":
-				greenmode = true
+				modeCurrent = "green"
 			"YellowLBody":
-				yellowmode = true
+				modeCurrent = "yellow"
 			_:
-				if yellowmode == true:
+				if modeCurrent == "yellow":
 					yellowtoggle = !yellowtoggle
-		
-		if collision.collider.name != "BlueLBody":
-			bluemode = false
-		
-		if collision.collider.name != "PurpleLBody":
-			purplemode = false
-		
-		if collision.collider.name != "GreenLBody":
-			greenmode = false
-		
-		if collision.collider.name != "YellowLBody":
-			yellowmode = false
+				modeCurrent = "base"
 		
 func playerEffects():
 	
@@ -113,6 +97,7 @@ func playerEffects():
 		powerupTimer.stop()
 	
 	if powerupBool == true:
+		modeCurrent = "powerup"
 		match powerupCurrent:
 			"base":
 				basex = 200
@@ -123,26 +108,32 @@ func playerEffects():
 			powerupTimer.start()
 		else:
 			powerdownTimer.start()
+
 	#Terrian Effects
 	
-	if bluemode == true:
-		xspeed = bluex
-		basex = staticx
-	elif purplemode == true:
-		xspeed = purplex
-		basex = staticx
-	elif greenmode == true:
-		xspeed += 1
-		basex = xspeed
-	elif yellowmode == true:
-		if yellowtoggle == false:
-			gravchange += 1
-		elif yellowtoggle == true:
-			gravchange -= 1
-		gravup = -gravchange
-		gravdown = gravchange
-	else:
-		xspeed = basex
+	match modeCurrent:
+		"blue":
+			xspeed = bluex
+			basex = staticx
+		"purple":
+			xspeed = purplex
+			basex = staticx
+		"green":
+			xspeed += 1
+			basex = xspeed
+		"yellow":
+			if yellowtoggle == false:
+				gravchange += 1
+			elif yellowtoggle == true:
+				gravchange -= 1
+			gravup = -gravchange
+			gravdown = gravchange
+		"pink":
+			pass
+		"powerup":
+			pass
+		_:
+			xspeed = basex
 	
 func playerDeath():
 	get_tree().reload_current_scene()
