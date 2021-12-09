@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://1 Scripts/gamescript.gd" type="Script" id=1]
 [ext_resource path="res://0 Scenes/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://5 Misc/worldenv.tres" type="Environment" id=3]
 [ext_resource path="res://3 Fonts/1 Variations/s32.tres" type="DynamicFont" id=4]
 [ext_resource path="res://4 Styling/2 Panels/gui_panel.tres" type="StyleBox" id=5]
+[ext_resource path="res://3 Fonts/1 Variations/s27.tres" type="DynamicFont" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.956863, 0, 1, 1 )
@@ -28,6 +29,8 @@ drag_margin_top = 0.9
 drag_margin_right = 0.9
 drag_margin_bottom = 0.9
 
+[node name="TimerScore" type="Timer" parent="player/Camera2D"]
+
 [node name="TimerPowerup" type="Timer" parent="player/Camera2D"]
 wait_time = 0.03
 
@@ -48,7 +51,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Panel" type="Panel" parent="player/Camera2D/CanvasLayer"]
+[node name="scorePanel" type="Panel" parent="player/Camera2D/CanvasLayer"]
 margin_left = 528.0
 margin_top = 56.0
 margin_right = 912.0
@@ -56,6 +59,31 @@ margin_bottom = 136.0
 custom_styles/panel = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": true
+}
+
+[node name="nameLabel" type="Label" parent="player/Camera2D/CanvasLayer/scorePanel"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 152.0
+margin_bottom = 72.0
+custom_fonts/font = ExtResource( 6 )
+text = "Score:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="valueLabel" type="Label" parent="player/Camera2D/CanvasLayer/scorePanel"]
+margin_left = 152.0
+margin_top = 8.0
+margin_right = 376.0
+margin_bottom = 72.0
+custom_fonts/font = ExtResource( 6 )
+text = "PLACEHOLDER"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
 }
 
 [node name="gameenv" type="WorldEnvironment" parent="."]
@@ -75,5 +103,6 @@ environment = ExtResource( 3 )
 
 [node name="PinkLBody" type="StaticBody2D" parent="."]
 
+[connection signal="timeout" from="player/Camera2D/TimerScore" to="player" method="_on_TimerScore_timeout"]
 [connection signal="timeout" from="player/Camera2D/TimerPowerup" to="player" method="_on_TimerPowerup_timeout"]
 [connection signal="timeout" from="player/Camera2D/TimerPowerdown" to="player" method="_on_TimerPowerdown_timeout"]

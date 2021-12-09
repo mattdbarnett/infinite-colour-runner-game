@@ -27,6 +27,10 @@ var purplex = -300
 
 var yellowtoggle = false
 
+onready var scoreTimer = get_node("Camera2D/TimerScore")
+onready var scoreLabel = get_node("Camera2D/CanvasLayer/scorePanel/valueLabel")
+var score = 0
+
 onready var powerdownTimer = get_node("Camera2D/TimerPowerdown")
 onready var powerupTimer = get_node("Camera2D/TimerPowerup")
 onready var powerupBar = get_node("Camera2D/CanvasLayer/Powerup")
@@ -35,9 +39,11 @@ var powerupMode = false
 
 func _ready():
 	powerupTimer.start()
+	scoreTimer.start()
 
 func _process(delta):
 	
+	scoreLabel.text = str(score)
 	powerupBar.value = powerupValue
 	motion.y += grav
 	motion.x = xspeed
@@ -154,3 +160,6 @@ func _on_TimerPowerup_timeout():
 
 func _on_TimerPowerdown_timeout():
 	powerupValue -= 0.1
+
+func _on_TimerScore_timeout():
+	score += 1
