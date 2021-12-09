@@ -17,6 +17,10 @@ var isGravUp = false
 
 var motion = Vector2()
 
+var powerupBool = false
+var powerupCurrent = "base"
+var modeCurrent 
+
 var bluex = 300
 var bluemode = false
 
@@ -28,6 +32,7 @@ var greenmode = false
 var yellowmode = false
 var yellowtoggle = false
 
+onready var powerdownTimer = get_node("Camera2D/TimerPowerdown")
 onready var powerupTimer = get_node("Camera2D/TimerPowerup")
 onready var powerupBar = get_node("Camera2D/CanvasLayer/Powerup")
 var powerupValue = 0
@@ -63,13 +68,9 @@ func playerInput():
 	if Input.is_action_just_pressed("esc"):
 		get_tree().change_scene("res://0 Scenes/menu.tscn")
 	
-	if powerupValue > 99.5:
-		powerupTimer.stop()
-	
 	if Input.is_action_just_pressed("powerup"):
-		if powerupValue > 99.5:
-			powerupValue = 0
-			powerupTimer.start()
+		if powerupValue >= 100:
+			powerupBool = true
 
 func playerTouch():
 	if is_on_wall():
@@ -105,6 +106,25 @@ func playerTouch():
 			yellowmode = false
 		
 func playerEffects():
+	
+	#Powerup Effects
+	
+	if powerupValue == 100:
+		powerupTimer.stop()
+	
+	if powerupBool == true:
+		match powerupCurrent:
+			"base":
+				basex = 200
+		if powerupStatus() == "EMPTY": 
+			powerupBool = false
+			basex = staticx
+			powerdownTimer.stop()
+			powerupTimer.start()
+		else:
+			powerdownTimer.start()
+	#Terrian Effects
+	
 	if bluemode == true:
 		xspeed = bluex
 		basex = staticx
@@ -127,5 +147,14 @@ func playerEffects():
 func playerDeath():
 	get_tree().reload_current_scene()
 
+func powerupStatus():
+	if powerupValue == 100:
+		return "FULL"
+	elif powerupValue < 1:
+		return "EMPTY"
+
 func _on_TimerPowerup_timeout():
-	powerupValue += 0.5
+	powerupValue += 0.1
+
+func _on_TimerPowerdown_timeout():
+	powerupValue -= 0.1

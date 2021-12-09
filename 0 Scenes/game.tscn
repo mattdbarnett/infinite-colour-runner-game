@@ -29,7 +29,10 @@ drag_margin_right = 0.9
 drag_margin_bottom = 0.9
 
 [node name="TimerPowerup" type="Timer" parent="player/Camera2D"]
-wait_time = 0.1
+wait_time = 0.03
+
+[node name="TimerPowerdown" type="Timer" parent="player/Camera2D"]
+wait_time = 0.005
 
 [node name="CanvasLayer" type="CanvasLayer" parent="player/Camera2D"]
 
@@ -73,3 +76,4 @@ environment = ExtResource( 3 )
 [node name="PinkLBody" type="StaticBody2D" parent="."]
 
 [connection signal="timeout" from="player/Camera2D/TimerPowerup" to="player" method="_on_TimerPowerup_timeout"]
+[connection signal="timeout" from="player/Camera2D/TimerPowerdown" to="player" method="_on_TimerPowerdown_timeout"]
