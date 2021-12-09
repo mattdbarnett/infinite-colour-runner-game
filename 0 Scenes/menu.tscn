@@ -216,7 +216,6 @@ margin_right = 1920.0
 margin_bottom = 1080.0
 theme = ExtResource( 11 )
 follow_focus = true
-scroll_horizontal = 100
 scroll_vertical_enabled = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -376,8 +375,8 @@ __meta__ = {
 }
 
 [node name="mp_btncontainer8" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
-margin_left = 3864.0
-margin_right = 4504.0
+margin_left = 4508.0
+margin_right = 5148.0
 rect_min_size = Vector2( 640, 0 )
 
 [node name="mp_op8" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer8"]
@@ -397,8 +396,8 @@ __meta__ = {
 }
 
 [node name="mp_btncontainer9" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
-margin_left = 3864.0
-margin_right = 4504.0
+margin_left = 5152.0
+margin_right = 5792.0
 rect_min_size = Vector2( 640, 0 )
 
 [node name="mp_op9" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer9"]
@@ -418,8 +417,8 @@ __meta__ = {
 }
 
 [node name="mp_btncontainer10" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
-margin_left = 3864.0
-margin_right = 4504.0
+margin_left = 5796.0
+margin_right = 6436.0
 rect_min_size = Vector2( 640, 0 )
 
 [node name="mp_op10" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer10"]
@@ -458,22 +457,6 @@ custom_styles/hover = ExtResource( 20 )
 custom_styles/pressed = ExtResource( 21 )
 custom_styles/focus = ExtResource( 48 )
 custom_styles/disabled = ExtResource( 49 )
-custom_styles/normal = ExtResource( 2 )
-custom_fonts/font = ExtResource( 1 )
-disabled = true
-text = "Start"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="mp_start" type="Button" parent="menucanvas/menuplay/mp_start"]
-margin_left = 1472.0
-margin_top = 768.0
-margin_right = 1920.0
-margin_bottom = 952.0
-custom_styles/hover = ExtResource( 20 )
-custom_styles/pressed = ExtResource( 21 )
-custom_styles/focus = ExtResource( 48 )
 custom_styles/normal = ExtResource( 2 )
 custom_fonts/font = ExtResource( 1 )
 disabled = true
@@ -2057,7 +2040,6 @@ environment = ExtResource( 9 )
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer10/mp_op10" to="." method="_on_mp_op10_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_back" to="." method="_on_mp_back_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_start" to="." method="_on_mp_start_pressed"]
-[connection signal="pressed" from="menucanvas/menuplay/mp_start/mp_start" to="." method="_on_mp_start_pressed"]
 [connection signal="value_changed" from="menucanvas/menucustom/mc_colours/mc_sliderblue" to="." method="_on_mc_sliderblue_value_changed"]
 [connection signal="value_changed" from="menucanvas/menucustom/mc_colours/mc_sliderpurple" to="." method="_on_mc_sliderpurple_value_changed"]
 [connection signal="value_changed" from="menucanvas/menucustom/mc_colours/mc_slidergreen" to="." method="_on_mc_slidergreen_value_changed"]

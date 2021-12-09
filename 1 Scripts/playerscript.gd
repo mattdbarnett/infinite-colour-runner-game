@@ -30,7 +30,7 @@ var yellowtoggle = false
 onready var powerdownTimer = get_node("Camera2D/TimerPowerdown")
 onready var powerupTimer = get_node("Camera2D/TimerPowerup")
 onready var powerupBar = get_node("Camera2D/CanvasLayer/Powerup")
-var powerupValue = 0
+var powerupValue = 50
 var powerupMode = false
 
 func _ready():
@@ -87,27 +87,20 @@ func playerTouch():
 			_:
 				if modeCurrent == "yellow":
 					yellowtoggle = !yellowtoggle
-				modeCurrent = "base"
+				if modeCurrent != "powerup":
+					modeCurrent = "base"
+				
 		
 func playerEffects():
 	
 	#Powerup Effects
 	
-	if powerupValue == 100:
+	if powerupValue >= 100:
 		powerupTimer.stop()
+		powerupValue = 100
 	
 	if powerupBool == true:
 		modeCurrent = "powerup"
-		match powerupCurrent:
-			"base":
-				basex = 200
-		if powerupStatus() == "EMPTY": 
-			powerupBool = false
-			basex = staticx
-			powerdownTimer.stop()
-			powerupTimer.start()
-		else:
-			powerdownTimer.start()
 
 	#Terrian Effects
 	
@@ -131,7 +124,19 @@ func playerEffects():
 		"pink":
 			pass
 		"powerup":
-			pass
+			xspeed = 200
+			basex = staticx
+			if powerupStatus() == "EMPTY" or Input.is_action_just_released("powerup"): 
+				powerupBool = false
+				basex = staticx
+				powerdownTimer.stop()
+				powerupTimer.start()
+				modeCurrent = "base"
+				powerupValue -= 10
+				if powerupValue < 0:
+					powerupValue = 0
+			else:
+				powerdownTimer.start()
 		_:
 			xspeed = basex
 	

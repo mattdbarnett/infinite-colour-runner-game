@@ -29,6 +29,7 @@ var textureblue = preload("res://2 Sprites/blue.png")
 var texturepurple = preload("res://2 Sprites/purple.png")
 var texturegreen = preload("res://2 Sprites/green.png")
 var textureyellow = preload("res://2 Sprites/yellow.png")
+var texturepink = preload("res://2 Sprites/pink.png")
 
 onready var globalsettings = get_node("/root/globalsettings")
 
@@ -40,7 +41,8 @@ func _ready():
 		textureblue: $BlueLBody,
 		texturepurple: $PurpleLBody,
 		texturegreen: $GreenLBody,
-		textureyellow: $YellowLBody
+		textureyellow: $YellowLBody,
+		texturepink: $PinkLBody
 	}
 	randomize()
 	screensize = get_viewport().get_visible_rect().size
