@@ -104,6 +104,30 @@ func _ready():
 				typelist.append(texture)
 			for i in range(6):
 				typelist.append(texturepink)
+		"Lunacy":
+			for i in range(30):
+				typelist.append(texture)
+			for i in range(10):
+				typelist.append(texturegreen)
+			for i in range(10):
+				typelist.append(textureyellow)
+			for i in range(5):
+				typelist.append(texturepink)
+		"Rainbow":
+			for i in range(30):
+				typelist.append(texture)
+			for i in range(10):
+				typelist.append(textureblue)
+			for i in range(10):
+				typelist.append(texturered)
+			for i in range(10):
+				typelist.append(texturepurple)
+			for i in range(10):
+				typelist.append(texturegreen)
+			for i in range(10):
+				typelist.append(textureyellow)
+			for i in range(10):
+				typelist.append(texturepink)
 		_:
 			for i in range(20):
 				typelist.append(texture)

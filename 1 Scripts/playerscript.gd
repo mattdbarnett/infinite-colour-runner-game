@@ -143,9 +143,9 @@ func playerEffects():
 			timerScoreReset()
 		"yellow":
 			if yellowtoggle == false:
-				gravchange += 1
+				gravchange += 0.5
 			elif yellowtoggle == true:
-				gravchange -= 1
+				gravchange -= 0.5
 			gravup = -gravchange
 			gravdown = gravchange
 			
