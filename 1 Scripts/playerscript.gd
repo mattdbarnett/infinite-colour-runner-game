@@ -17,6 +17,7 @@ var isGravUp = false
 
 var motion = Vector2()
 
+var touchingCurrent 
 var powerupBool = false
 var powerupCurrent = "base"
 var modeCurrent 
@@ -26,6 +27,8 @@ var bluex = 300
 var purplex = -300
 
 var yellowtoggle = false
+
+var isPowerupPink = false
 
 var scoreIncrement = 1
 
@@ -73,6 +76,7 @@ func playerInput():
 	
 	if Input.is_action_just_pressed("powerup"):
 		if powerupValue >= 100:
+			isPowerupPink = false
 			powerupBool = true
 
 func playerTouch():
@@ -85,18 +89,26 @@ func playerTouch():
 			"RedLBody": 
 				playerDeath()
 			"BlueLBody":
+				touchingCurrent = "blue"
 				modeCurrent = "blue"
 			"PurpleLBody":
 				modeCurrent = "purple"
+				touchingCurrent = "purple"
 			"GreenLBody":
 				modeCurrent = "green"
+				touchingCurrent = "green"
 			"YellowLBody":
 				modeCurrent = "yellow"
+				touchingCurrent = "yellow"
+			"PinkLBody":
+				modeCurrent = "pink"
+				touchingCurrent = "pink"
 			_:
 				if modeCurrent == "yellow":
 					yellowtoggle = !yellowtoggle
 				if modeCurrent != "powerup":
 					modeCurrent = "base"
+				touchingCurrent = "base"
 				
 		
 func playerEffects():
@@ -128,8 +140,7 @@ func playerEffects():
 			xspeed += 1
 			basex = xspeed
 			
-			scoreIncrement = 1
-			scoreTimer.wait_time = 1
+			timerScoreReset()
 		"yellow":
 			if yellowtoggle == false:
 				gravchange += 1
@@ -138,14 +149,21 @@ func playerEffects():
 			gravup = -gravchange
 			gravdown = gravchange
 			
-			scoreIncrement = 1
-			scoreTimer.wait_time = 1
+			timerScoreReset()
 		"pink":
-			scoreIncrement = 1
-			scoreTimer.wait_time = 1
+			powerupValue = 100
+			isPowerupPink = true
+			xspeed = 200
+			basex = staticx
+			modeCurrent = "powerup"
+			timerScoreReset()
 		"powerup":
 			xspeed = 200
 			basex = staticx
+			
+			if isPowerupPink == true and touchingCurrent != "pink":
+				powerupValue = 0
+			
 			if powerupStatus() == "EMPTY" or Input.is_action_just_released("powerup"): 
 				powerupBool = false
 				basex = staticx
@@ -162,8 +180,7 @@ func playerEffects():
 		_:
 			xspeed = basex
 			
-			scoreIncrement = 1
-			scoreTimer.wait_time = 1
+			timerScoreReset()
 	
 func playerDeath():
 	get_tree().reload_current_scene()
@@ -179,6 +196,10 @@ func _on_TimerPowerup_timeout():
 
 func _on_TimerPowerdown_timeout():
 	powerupValue -= 0.1
+
+func timerScoreReset():
+	scoreIncrement = 1
+	scoreTimer.wait_time = 1
 
 func _on_TimerScore_timeout():
 	score += scoreIncrement

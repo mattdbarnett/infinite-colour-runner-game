@@ -99,6 +99,11 @@ func _ready():
 				typelist.append(textureyellow)
 			for i in range(4):
 				typelist.append(texturered)
+		"Powerup":
+			for i in range(30):
+				typelist.append(texture)
+			for i in range(6):
+				typelist.append(texturepink)
 		_:
 			for i in range(20):
 				typelist.append(texture)
