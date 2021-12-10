@@ -44,6 +44,7 @@ onready var settinggui = get_node("menucanvas/menusettings/ms_gui/ms_gui_menu")
 onready var settingsound = get_node("menucanvas/menusettings/ms_sound/ms_sound_menu")
 onready var settinggameplay = get_node("menucanvas/menusettings/ms_gameplay/ms_gameplay_menu")
 
+onready var fullscreenbutton = get_node("menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_fullscreen")
 onready var resolution = get_node("menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_resolution")
 
 onready var hold = false
@@ -57,7 +58,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	fullscreenCheck()
 
 """
 Menu Update Signals
@@ -287,7 +288,16 @@ func _on_ms_slidereffect_value_changed(value):
 	label.text = str(slider.value) + "%"
 
 func _on_ms_fullscreen_pressed():
-	OS.window_fullscreen = !OS.window_fullscreen
+	globalsettings.fullscreen()
+
+func fullscreenCheck():
+	if Input.is_action_just_released("fullscreen"):
+		globalsettings.fullscreen()
+	
+	if OS.window_fullscreen == true:
+		fullscreenbutton.pressed = true
+	else:
+		fullscreenbutton.pressed = false
 
 func _on_ms_back_pressed():
 	currentmenu_update(menumain)
