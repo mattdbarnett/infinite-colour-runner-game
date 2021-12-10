@@ -48,7 +48,7 @@ func _ready():
 
 func _process(delta):
 	
-	scoreLabel.text = str(score)
+	scoreLabel.text = str(int(score))
 	powerupBar.value = powerupValue
 	motion.y += grav
 	motion.x = xspeed
@@ -129,13 +129,12 @@ func playerEffects():
 			xspeed = bluex
 			basex = staticx
 			
-			scoreTimer.wait_time = 2
+			scoreIncrement = 0.5
 		"purple":
 			xspeed = purplex
 			basex = staticx
 			
 			scoreIncrement = -1
-			scoreTimer.wait_time = 2
 		"green":
 			xspeed += 1
 			basex = xspeed
