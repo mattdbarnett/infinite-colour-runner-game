@@ -156,7 +156,7 @@ func playerEffects():
 			xspeed = 200
 			basex = staticx
 			modeCurrent = "powerup"
-			timerScoreReset()
+			scoreIncrement = 0
 		"powerup":
 			xspeed = 200
 			basex = staticx

@@ -222,13 +222,18 @@ __meta__ = {
 }
 
 [node name="mp_hboxcont" type="HBoxContainer" parent="menucanvas/menuplay/mp_scollcont"]
-margin_right = 6436.0
+margin_right = 7720.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mp_btncontainer1" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
+[node name="mp_placeholdercont" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
 margin_right = 640.0
+rect_min_size = Vector2( 640, 0 )
+
+[node name="mp_btncontainer1" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
+margin_left = 644.0
+margin_right = 1284.0
 rect_min_size = Vector2( 640, 0 )
 
 [node name="mp_op1" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer1"]
@@ -253,8 +258,8 @@ position = Vector2( 192, 416 )
 texture = ExtResource( 36 )
 
 [node name="mp_btncontainer2" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
-margin_left = 644.0
-margin_right = 1284.0
+margin_left = 1288.0
+margin_right = 1928.0
 rect_min_size = Vector2( 640, 0 )
 
 [node name="mp_op2" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer2"]
@@ -282,8 +287,8 @@ position = Vector2( 156, 416 )
 texture = ExtResource( 37 )
 
 [node name="mp_btncontainer3" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
-margin_left = 1288.0
-margin_right = 1928.0
+margin_left = 1932.0
+margin_right = 2572.0
 rect_min_size = Vector2( 640, 0 )
 
 [node name="mp_op3" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer3"]
@@ -315,8 +320,8 @@ position = Vector2( 256, 416 )
 texture = ExtResource( 36 )
 
 [node name="mp_btncontainer4" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
-margin_left = 1932.0
-margin_right = 2572.0
+margin_left = 2576.0
+margin_right = 3216.0
 rect_min_size = Vector2( 640, 0 )
 
 [node name="mp_op4" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer4"]
@@ -340,8 +345,8 @@ position = Vector2( 192, 416 )
 texture = ExtResource( 36 )
 
 [node name="mp_btncontainer5" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
-margin_left = 2576.0
-margin_right = 3216.0
+margin_left = 3220.0
+margin_right = 3860.0
 rect_min_size = Vector2( 640, 0 )
 
 [node name="mp_op5" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer5"]
@@ -365,8 +370,8 @@ position = Vector2( 188, 416 )
 texture = ExtResource( 41 )
 
 [node name="mp_btncontainer6" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
-margin_left = 3220.0
-margin_right = 3860.0
+margin_left = 3864.0
+margin_right = 4504.0
 rect_min_size = Vector2( 640, 0 )
 
 [node name="mp_op6" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer6"]
@@ -394,8 +399,8 @@ position = Vector2( 220, 416 )
 texture = ExtResource( 37 )
 
 [node name="mp_btncontainer7" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
-margin_left = 3864.0
-margin_right = 4504.0
+margin_left = 4508.0
+margin_right = 5148.0
 rect_min_size = Vector2( 640, 0 )
 
 [node name="mp_op7" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer7"]
@@ -423,8 +428,8 @@ position = Vector2( 224, 416 )
 texture = ExtResource( 36 )
 
 [node name="mp_btncontainer8" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
-margin_left = 4508.0
-margin_right = 5148.0
+margin_left = 5152.0
+margin_right = 5792.0
 rect_min_size = Vector2( 640, 0 )
 
 [node name="mp_op8" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer8"]
@@ -443,9 +448,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="pink" type="Sprite" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer8/mp_op8"]
+position = Vector2( 188, 416 )
+texture = ExtResource( 38 )
+
 [node name="mp_btncontainer9" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
-margin_left = 5152.0
-margin_right = 5792.0
+margin_left = 5796.0
+margin_right = 6436.0
 rect_min_size = Vector2( 640, 0 )
 
 [node name="mp_op9" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer9"]
@@ -464,10 +473,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="pink" type="Sprite" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer9/mp_op9"]
+position = Vector2( 128, 416 )
+texture = ExtResource( 38 )
+
+[node name="yellow" type="Sprite" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer9/mp_op9"]
+position = Vector2( 192, 416 )
+texture = ExtResource( 39 )
+
+[node name="green" type="Sprite" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer9/mp_op9"]
+position = Vector2( 256, 416 )
+texture = ExtResource( 41 )
+
 [node name="mp_btncontainer10" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
-margin_left = 5796.0
-margin_right = 6436.0
-rect_min_size = Vector2( 640, 0 )
+margin_left = 6440.0
+margin_right = 7720.0
+rect_min_size = Vector2( 1280, 0 )
 
 [node name="mp_op10" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer10"]
 margin_left = 128.0
@@ -484,6 +505,30 @@ text = "Rainbow"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="pink" type="Sprite" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer10/mp_op10"]
+position = Vector2( 32, 416 )
+texture = ExtResource( 38 )
+
+[node name="yellow" type="Sprite" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer10/mp_op10"]
+position = Vector2( 96, 416 )
+texture = ExtResource( 39 )
+
+[node name="green" type="Sprite" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer10/mp_op10"]
+position = Vector2( 160, 416 )
+texture = ExtResource( 41 )
+
+[node name="purple" type="Sprite" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer10/mp_op10"]
+position = Vector2( 224, 416 )
+texture = ExtResource( 40 )
+
+[node name="blue" type="Sprite" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer10/mp_op10"]
+position = Vector2( 288, 416 )
+texture = ExtResource( 37 )
+
+[node name="red" type="Sprite" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer10/mp_op10"]
+position = Vector2( 352, 416 )
+texture = ExtResource( 36 )
 
 [node name="mp_back" type="Button" parent="menucanvas/menuplay"]
 margin_right = 384.0
@@ -2074,8 +2119,8 @@ environment = ExtResource( 9 )
 [connection signal="pressed" from="menucanvas/menumain/mm_storebtn" to="." method="_on_mm_storebtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_settingsbtn" to="." method="_on_mm_settingsbtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_helpbtn" to="." method="_on_mm_helpbtn_pressed"]
-[connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn2_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn_pressed"]
+[connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn2_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer1/mp_op1" to="." method="_on_mp_op1_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer2/mp_op2" to="." method="_on_mp_op2_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer3/mp_op3" to="." method="_on_mp_op3_pressed"]
