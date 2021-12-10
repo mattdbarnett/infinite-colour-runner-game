@@ -27,6 +27,8 @@ var purplex = -300
 
 var yellowtoggle = false
 
+var scoreIncrement = 1
+
 onready var scoreTimer = get_node("Camera2D/TimerScore")
 onready var scoreLabel = get_node("Camera2D/CanvasLayer/scorePanel/valueLabel")
 var score = 0
@@ -114,12 +116,20 @@ func playerEffects():
 		"blue":
 			xspeed = bluex
 			basex = staticx
+			
+			scoreTimer.wait_time = 2
 		"purple":
 			xspeed = purplex
 			basex = staticx
+			
+			scoreIncrement = -1
+			scoreTimer.wait_time = 2
 		"green":
 			xspeed += 1
 			basex = xspeed
+			
+			scoreIncrement = 1
+			scoreTimer.wait_time = 1
 		"yellow":
 			if yellowtoggle == false:
 				gravchange += 1
@@ -127,8 +137,12 @@ func playerEffects():
 				gravchange -= 1
 			gravup = -gravchange
 			gravdown = gravchange
+			
+			scoreIncrement = 1
+			scoreTimer.wait_time = 1
 		"pink":
-			pass
+			scoreIncrement = 1
+			scoreTimer.wait_time = 1
 		"powerup":
 			xspeed = 200
 			basex = staticx
@@ -143,8 +157,13 @@ func playerEffects():
 					powerupValue = 0
 			else:
 				powerdownTimer.start()
+			
+			scoreIncrement = 0
 		_:
 			xspeed = basex
+			
+			scoreIncrement = 1
+			scoreTimer.wait_time = 1
 	
 func playerDeath():
 	get_tree().reload_current_scene()
@@ -162,4 +181,4 @@ func _on_TimerPowerdown_timeout():
 	powerupValue -= 0.1
 
 func _on_TimerScore_timeout():
-	score += 1
+	score += scoreIncrement
