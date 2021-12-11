@@ -2142,6 +2142,7 @@ environment = ExtResource( 9 )
 [connection signal="value_changed" from="menucanvas/menucustom/mc_spdgrav/mc_lbl_spd/mc_sliderspd" to="." method="_on_mc_sliderspd_value_changed"]
 [connection signal="value_changed" from="menucanvas/menucustom/mc_spdgrav/mc_lbl_grav/mc_slidergrav" to="." method="_on_mc_slidergrav_value_changed"]
 [connection signal="pressed" from="menucanvas/menucustom/mc_back" to="." method="_on_mc_back_pressed"]
+[connection signal="pressed" from="menucanvas/menucustom/mc_start" to="." method="_on_mc_start_pressed"]
 [connection signal="pressed" from="menucanvas/menustore/mt_back" to="." method="_on_mt_back_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_g+d" to="." method="_on_ms_gd_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_fullscreen" to="." method="_on_ms_fullscreen_pressed"]

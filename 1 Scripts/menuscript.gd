@@ -223,6 +223,10 @@ func _on_mc_slidergrav_value_changed(value):
 	
 	label.text = str(slider.value) + "%"
 
+func _on_mc_start_pressed():
+	globalsettings.gamemode = "Custom"
+	get_tree().change_scene("res://0 Scenes/game.tscn")
+
 """
 Store Menu Signals
 """
