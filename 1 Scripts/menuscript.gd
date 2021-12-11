@@ -59,6 +59,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	fullscreenCheck()
+	holdmodeCheck()
 
 """
 Menu Update Signals
@@ -268,11 +269,12 @@ func _on_ms_gameplay_pressed():
 	settinggameplay.visible = true
 
 func _on_ms_presshold_pressed():
-	hold = !hold
-	
-	if hold == false:
+	globalsettings.holdmode = !globalsettings.holdmode
+
+func holdmodeCheck():
+	if globalsettings.holdmode == false:
 		pressholdbtn.text = "Press"
-	elif hold == true:
+	elif globalsettings.holdmode == true:
 		pressholdbtn.text = "Hold"
 
 func _on_ms_slidermusic_value_changed(value):

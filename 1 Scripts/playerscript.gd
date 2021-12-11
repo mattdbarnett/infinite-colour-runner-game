@@ -32,6 +32,8 @@ var isPowerupPink = false
 
 var scoreIncrement = 1
 
+var currentHold = false
+
 onready var scoreTimer = get_node("Camera2D/TimerScore")
 onready var scoreLabel = get_node("Camera2D/CanvasLayer/scorePanel/valueLabel")
 var score = 0
@@ -74,6 +76,22 @@ func playerInput():
 	if Input.is_action_just_pressed("esc"):
 		get_tree().change_scene("res://0 Scenes/menu.tscn")
 	
+	#Hold-mode input
+	if globalsettings.holdmode == true:
+		
+		if Input.is_action_pressed("move"):
+			currentHold = true
+		else:
+			currentHold = false
+		
+		if is_on_floor() or is_on_ceiling():
+			if currentHold == true:
+				if is_on_floor():
+					isGravUp = true
+				if is_on_ceiling():
+					isGravUp = false
+		
+	#Powerup inout
 	if Input.is_action_just_pressed("powerup"):
 		if powerupValue >= 100:
 			isPowerupPink = false
