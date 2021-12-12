@@ -109,6 +109,7 @@ script = ExtResource( 10 )
 layer = 5
 
 [node name="menumain" type="Control" parent="menucanvas"]
+visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 theme = ExtResource( 11 )
@@ -205,7 +206,6 @@ position = Vector2( 896, 816 )
 texture = ExtResource( 35 )
 
 [node name="menuplay" type="Control" parent="menucanvas"]
-visible = false
 theme = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -216,13 +216,15 @@ margin_right = 1920.0
 margin_bottom = 1080.0
 theme = ExtResource( 11 )
 follow_focus = true
+scroll_horizontal = 1000
 scroll_vertical_enabled = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="mp_hboxcont" type="HBoxContainer" parent="menucanvas/menuplay/mp_scollcont"]
-margin_right = 7720.0
+margin_left = -1000.0
+margin_right = 6720.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -560,9 +562,415 @@ __meta__ = {
 
 [node name="mp_infopanel" type="Panel" parent="menucanvas/menuplay"]
 margin_left = 512.0
-margin_right = 1384.0
+margin_right = 1344.0
 margin_bottom = 128.0
 custom_styles/panel = ExtResource( 27 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="red" type="Sprite" parent="menucanvas/menuplay/mp_infopanel"]
+position = Vector2( 96, 64 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 36 )
+
+[node name="blue" type="Sprite" parent="menucanvas/menuplay/mp_infopanel"]
+position = Vector2( 224, 64 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 37 )
+
+[node name="purple" type="Sprite" parent="menucanvas/menuplay/mp_infopanel"]
+position = Vector2( 352, 64 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 40 )
+
+[node name="green" type="Sprite" parent="menucanvas/menuplay/mp_infopanel"]
+position = Vector2( 480, 64 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 41 )
+
+[node name="yellow" type="Sprite" parent="menucanvas/menuplay/mp_infopanel"]
+position = Vector2( 608, 64 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 39 )
+
+[node name="pink" type="Sprite" parent="menucanvas/menuplay/mp_infopanel"]
+position = Vector2( 736, 64 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 38 )
+
+[node name="mp_info1" type="Control" parent="menucanvas/menuplay/mp_infopanel"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 144, 96 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info1_red" type="Label" parent="menucanvas/menuplay/mp_infopanel/mp_info1"]
+margin_left = 64.0
+margin_top = 32.0
+margin_right = 128.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 43 )
+text = "20%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info2" type="Control" parent="menucanvas/menuplay/mp_infopanel"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 144, 96 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info2_red" type="Label" parent="menucanvas/menuplay/mp_infopanel/mp_info2"]
+margin_left = 64.0
+margin_top = 32.0
+margin_right = 128.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 43 )
+text = "12.5%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info2_blue" type="Label" parent="menucanvas/menuplay/mp_infopanel/mp_info2"]
+margin_left = 192.0
+margin_top = 32.0
+margin_right = 256.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 43 )
+text = "25%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info3" type="Control" parent="menucanvas/menuplay/mp_infopanel"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 144, 96 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info3_red" type="Label" parent="menucanvas/menuplay/mp_infopanel/mp_info3"]
+margin_left = 64.0
+margin_top = 32.0
+margin_right = 128.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 43 )
+text = "8%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info3_blue" type="Label" parent="menucanvas/menuplay/mp_infopanel/mp_info3"]
+margin_left = 192.0
+margin_top = 32.0
+margin_right = 256.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 43 )
+text = "8%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info3_purple" type="Label" parent="menucanvas/menuplay/mp_infopanel/mp_info3"]
+margin_left = 320.0
+margin_top = 32.0
+margin_right = 384.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 43 )
+text = "24%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info4" type="Control" parent="menucanvas/menuplay/mp_infopanel"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 144, 96 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info4_red" type="Label" parent="menucanvas/menuplay/mp_infopanel/mp_info4"]
+margin_left = 64.0
+margin_top = 32.0
+margin_right = 128.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 43 )
+text = "50%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info5" type="Control" parent="menucanvas/menuplay/mp_infopanel"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 144, 96 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info5_green" type="Label" parent="menucanvas/menuplay/mp_infopanel/mp_info5"]
+margin_left = 448.0
+margin_top = 32.0
+margin_right = 512.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 43 )
+text = "25%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info6" type="Control" parent="menucanvas/menuplay/mp_infopanel"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 144, 96 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info6_blue" type="Label" parent="menucanvas/menuplay/mp_infopanel/mp_info6"]
+margin_left = 192.0
+margin_top = 32.0
+margin_right = 256.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 43 )
+text = "20%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info6_green" type="Label" parent="menucanvas/menuplay/mp_infopanel/mp_info6"]
+margin_left = 448.0
+margin_top = 32.0
+margin_right = 512.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 43 )
+text = "20%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info7" type="Control" parent="menucanvas/menuplay/mp_infopanel"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 144, 96 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info7_red" type="Label" parent="menucanvas/menuplay/mp_infopanel/mp_info7"]
+margin_left = 64.0
+margin_top = 32.0
+margin_right = 128.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 43 )
+text = "10%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info7_yellow" type="Label" parent="menucanvas/menuplay/mp_infopanel/mp_info7"]
+margin_left = 576.0
+margin_top = 32.0
+margin_right = 640.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 43 )
+text = "15%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info8" type="Control" parent="menucanvas/menuplay/mp_infopanel"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 144, 96 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info8_pink" type="Label" parent="menucanvas/menuplay/mp_infopanel/mp_info8"]
+margin_left = 704.0
+margin_top = 32.0
+margin_right = 768.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 43 )
+text = "15%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info9" type="Control" parent="menucanvas/menuplay/mp_infopanel"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 144, 96 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info9_green" type="Label" parent="menucanvas/menuplay/mp_infopanel/mp_info9"]
+margin_left = 448.0
+margin_top = 32.0
+margin_right = 512.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 43 )
+text = "15%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info9_yellow" type="Label" parent="menucanvas/menuplay/mp_infopanel/mp_info9"]
+margin_left = 576.0
+margin_top = 32.0
+margin_right = 640.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 43 )
+text = "15%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info9_pink" type="Label" parent="menucanvas/menuplay/mp_infopanel/mp_info9"]
+margin_left = 704.0
+margin_top = 32.0
+margin_right = 768.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 43 )
+text = "10%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info10" type="Control" parent="menucanvas/menuplay/mp_infopanel"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 144, 96 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info10_red" type="Label" parent="menucanvas/menuplay/mp_infopanel/mp_info10"]
+margin_left = 64.0
+margin_top = 32.0
+margin_right = 128.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 43 )
+text = "10%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info10_blue" type="Label" parent="menucanvas/menuplay/mp_infopanel/mp_info10"]
+margin_left = 192.0
+margin_top = 32.0
+margin_right = 256.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 43 )
+text = "10%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info10_purple" type="Label" parent="menucanvas/menuplay/mp_infopanel/mp_info10"]
+margin_left = 320.0
+margin_top = 32.0
+margin_right = 384.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 43 )
+text = "10%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info10_green" type="Label" parent="menucanvas/menuplay/mp_infopanel/mp_info10"]
+margin_left = 448.0
+margin_top = 32.0
+margin_right = 512.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 43 )
+text = "10%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info10_yellow" type="Label" parent="menucanvas/menuplay/mp_infopanel/mp_info10"]
+margin_left = 576.0
+margin_top = 32.0
+margin_right = 640.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 43 )
+text = "10%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_info10_pink" type="Label" parent="menucanvas/menuplay/mp_infopanel/mp_info10"]
+margin_left = 704.0
+margin_top = 32.0
+margin_right = 768.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 43 )
+text = "10%"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2119,8 +2527,8 @@ environment = ExtResource( 9 )
 [connection signal="pressed" from="menucanvas/menumain/mm_storebtn" to="." method="_on_mm_storebtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_settingsbtn" to="." method="_on_mm_settingsbtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_helpbtn" to="." method="_on_mm_helpbtn_pressed"]
-[connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn2_pressed"]
+[connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer1/mp_op1" to="." method="_on_mp_op1_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer2/mp_op2" to="." method="_on_mp_op2_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer3/mp_op3" to="." method="_on_mp_op3_pressed"]

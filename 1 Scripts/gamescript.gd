@@ -57,14 +57,14 @@ func _ready():
 		"Standard":
 			for i in range(20):
 				typelist.append(texture)
-			for i in range(6):
+			for i in range(5):
 				typelist.append(texturered)
 		"Take It Slow":
-			for i in range(20):
+			for i in range(25):
 				typelist.append(texture)
 			for i in range(10):
 				typelist.append(textureblue)
-			for i in range(6):
+			for i in range(5):
 				typelist.append(texturered)
 		"Reverse":
 			for i in range(30):
@@ -100,12 +100,12 @@ func _ready():
 			for i in range(4):
 				typelist.append(texturered)
 		"Powerup":
-			for i in range(30):
+			for i in range(34):
 				typelist.append(texture)
 			for i in range(6):
 				typelist.append(texturepink)
 		"Lunacy":
-			for i in range(30):
+			for i in range(25):
 				typelist.append(texture)
 			for i in range(10):
 				typelist.append(texturegreen)
@@ -114,7 +114,7 @@ func _ready():
 			for i in range(5):
 				typelist.append(texturepink)
 		"Rainbow":
-			for i in range(30):
+			for i in range(40):
 				typelist.append(texture)
 			for i in range(10):
 				typelist.append(textureblue)
