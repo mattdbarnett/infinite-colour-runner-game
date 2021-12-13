@@ -109,7 +109,6 @@ script = ExtResource( 10 )
 layer = 5
 
 [node name="menumain" type="Control" parent="menucanvas"]
-visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 theme = ExtResource( 11 )
@@ -206,6 +205,7 @@ position = Vector2( 896, 816 )
 texture = ExtResource( 35 )
 
 [node name="menuplay" type="Control" parent="menucanvas"]
+visible = false
 theme = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -216,15 +216,13 @@ margin_right = 1920.0
 margin_bottom = 1080.0
 theme = ExtResource( 11 )
 follow_focus = true
-scroll_horizontal = 1000
 scroll_vertical_enabled = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="mp_hboxcont" type="HBoxContainer" parent="menucanvas/menuplay/mp_scollcont"]
-margin_left = -1000.0
-margin_right = 6720.0
+margin_right = 7720.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -570,31 +568,37 @@ __meta__ = {
 }
 
 [node name="red" type="Sprite" parent="menucanvas/menuplay/mp_infopanel"]
+visible = false
 position = Vector2( 96, 64 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 36 )
 
 [node name="blue" type="Sprite" parent="menucanvas/menuplay/mp_infopanel"]
+visible = false
 position = Vector2( 224, 64 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 37 )
 
 [node name="purple" type="Sprite" parent="menucanvas/menuplay/mp_infopanel"]
+visible = false
 position = Vector2( 352, 64 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 40 )
 
 [node name="green" type="Sprite" parent="menucanvas/menuplay/mp_infopanel"]
+visible = false
 position = Vector2( 480, 64 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 41 )
 
 [node name="yellow" type="Sprite" parent="menucanvas/menuplay/mp_infopanel"]
+visible = false
 position = Vector2( 608, 64 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 39 )
 
 [node name="pink" type="Sprite" parent="menucanvas/menuplay/mp_infopanel"]
+visible = false
 position = Vector2( 736, 64 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 38 )
@@ -974,6 +978,14 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="mp_infobase" type="Label" parent="menucanvas/menuplay/mp_infopanel"]
+margin_right = 832.0
+margin_bottom = 128.0
+custom_fonts/font = ExtResource( 3 )
+text = "Select a Gamemode"
+align = 1
+valign = 1
 
 [node name="mp_coinpanel" type="Panel" parent="menucanvas/menuplay"]
 margin_left = 1664.0
