@@ -131,11 +131,17 @@ func _ready():
 				typelist.append(texturepink)
 		"Custom":
 			customDataGet = globalsettings.customData
+			globalsettings.globalgrav = 40 * (customDataGet.gravityvalue/100)
+			get_node("player").setGrav()
+			get_node("player").staticx = 700 * (customDataGet.speedvalue/100)
+			get_node("player").basex = 700 * (customDataGet.speedvalue/100)
 			var sum = 0
 			for value in customDataGet:
 				sum += int(value)
 			customDataSum = sum - customDataGet.speedvalue - customDataGet.gravityvalue
-			for i in range(customDataSum + 20):
+			for i in range(20):
+				typelist.append(texture)
+			for i in range(customDataSum):
 				typelist.append(texture)
 			for i in range(customDataGet.bluevalue):
 				typelist.append(textureblue)

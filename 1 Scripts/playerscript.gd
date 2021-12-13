@@ -4,12 +4,11 @@ extends KinematicBody2D
 #Basic movement vars
 const UP = Vector2(0, -1)
 
-const staticx = 700
+var staticx = 700
 var basex = 700
 var xspeed = 700
 
-const staticy = 40
-var grav = 40
+var grav = globalsettings.globalgrav
 var gravchange = grav
 var gravup = -gravchange
 var gravdown = gravchange
@@ -49,7 +48,7 @@ func _ready():
 	scoreTimer.start()
 
 func _process(delta):
-	
+
 	scoreLabel.text = str(int(score))
 	powerupBar.value = powerupValue
 	motion.y += grav
@@ -207,6 +206,13 @@ func powerupStatus():
 		return "FULL"
 	elif powerupValue < 1:
 		return "EMPTY"
+
+func setGrav():
+	grav = globalsettings.globalgrav
+	gravchange = grav
+	gravup = -gravchange
+	gravdown = gravchange
+	isGravUp = false
 
 func _on_TimerPowerup_timeout():
 	powerupValue += 0.1

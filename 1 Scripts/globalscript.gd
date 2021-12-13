@@ -1,6 +1,6 @@
 extends Node
 
-
+var globalgrav = 40;
 var gamemode;
 var holdmode;
 

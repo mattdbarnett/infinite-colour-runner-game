@@ -151,6 +151,7 @@ Main Menu Signals
 """
 
 func _on_mm_playbtn_pressed():
+	globalsettings.globalgrav = 40
 	currentmenu_update(menuplay)
 
 func _on_mm_custombtn_pressed():
@@ -326,7 +327,6 @@ func _on_mc_start_pressed():
 	customDataGet.speedvalue = speedslider.value
 	customDataGet.gravityvalue = gravslider.value
 	globalsettings.customData = customDataGet
-	print("done")
 	globalsettings.gamemode = "Custom"
 	get_tree().change_scene("res://0 Scenes/game.tscn")
 
