@@ -8,7 +8,7 @@ var staticx = 700
 var basex = 700
 var xspeed = 700
 
-var grav = globalsettings.globalgrav
+var grav = 40
 var gravchange = grav
 var gravup = -gravchange
 var gravdown = gravchange
