@@ -4,6 +4,17 @@ extends Node
 var gamemode;
 var holdmode;
 
+var customData = {
+	"redvalue": 0,
+	"bluevalue": 0,
+	"purplevalue": 0,
+	"greenvalue": 0,
+	"yellowvalue": 0,
+	"pinkvalue": 0,
+	"speedvalue": 100,
+	"gravityvalue": 100
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

@@ -55,6 +55,44 @@ onready var mpinfos = [
 	mpinfo1, mpinfo2, mpinfo3, mpinfo4, mpinfo5, mpinfo6, mpinfo7, mpinfo8, mpinfo9, mpinfo10, mpinfobase
 ]
 
+
+#Custom Menu Vars
+
+onready var bluelabel = get_node("menucanvas/menucustom/mc_colours/mc_sliderblue/mc_lblval")
+onready var blueslider = get_node("menucanvas/menucustom/mc_colours/mc_sliderblue")
+
+onready var purplelabel = get_node("menucanvas/menucustom/mc_colours/mc_sliderpurple/mc_lblval")
+onready var purpleslider =  get_node("menucanvas/menucustom/mc_colours/mc_sliderpurple")
+
+onready var greenlabel = get_node("menucanvas/menucustom/mc_colours/mc_slidergreen/mc_lblval")
+onready var greenslider =  get_node("menucanvas/menucustom/mc_colours/mc_slidergreen")
+
+onready var yellowlabel = get_node("menucanvas/menucustom/mc_colours/mc_slideryellow/mc_lblval")
+onready var yellowslider =  get_node("menucanvas/menucustom/mc_colours/mc_slideryellow")
+
+onready var pinklabel = get_node("menucanvas/menucustom/mc_colours/mc_sliderpink/mc_lblval")
+onready var pinkslider =  get_node("menucanvas/menucustom/mc_colours/mc_sliderpink")
+
+onready var redlabel = get_node("menucanvas/menucustom/mc_colours/mc_sliderred/mc_lblval")
+onready var redslider =  get_node("menucanvas/menucustom/mc_colours/mc_sliderred")
+
+onready var speedlabel = get_node("menucanvas/menucustom/mc_spdgrav/mc_lbl_spd/mc_sliderspd/mc_lblval")
+onready var speedslider = get_node("menucanvas/menucustom/mc_spdgrav/mc_lbl_spd/mc_sliderspd")
+
+onready var gravlabel = get_node("menucanvas/menucustom/mc_spdgrav/mc_lbl_grav/mc_slidergrav/mc_lblval")
+onready var gravslider = get_node("menucanvas/menucustom/mc_spdgrav/mc_lbl_grav/mc_slidergrav")
+
+var customDataGet = {
+	"redvalue": 0,
+	"bluevalue": 0,
+	"purplevalue": 0,
+	"greenvalue": 0,
+	"yellowvalue": 0,
+	"pinkvalue": 0,
+	"speedvalue": 100,
+	"gravityvalue": 100
+}
+
 #Settings Menu Vars
 onready var msbuttons = [
 	get_node("menucanvas/menusettings/ms_g+d"),
@@ -254,55 +292,39 @@ Custom Menu Signals
 func _on_mc_back_pressed():
 	currentmenu_update(menumain)
 
-func _on_mc_sliderblue_value_changed(value):
-	var label = get_node("menucanvas/menucustom/mc_colours/mc_sliderblue/mc_lblval")
-	var slider = get_node("menucanvas/menucustom/mc_colours/mc_sliderblue")
-	
-	label.text = str(slider.value) + "%"
+func _on_mc_sliderblue_value_changed(value):	
+	bluelabel.text = str(blueslider.value) + "%"
 
 func _on_mc_sliderpurple_value_changed(value):
-	var label = get_node("menucanvas/menucustom/mc_colours/mc_sliderpurple/mc_lblval")
-	var slider = get_node("menucanvas/menucustom/mc_colours/mc_sliderpurple")
-	
-	label.text = str(slider.value) + "%"
+	purplelabel.text = str(purpleslider.value) + "%"
 
 func _on_mc_slidergreen_value_changed(value):
-	var label = get_node("menucanvas/menucustom/mc_colours/mc_slidergreen/mc_lblval")
-	var slider = get_node("menucanvas/menucustom/mc_colours/mc_slidergreen")
-	
-	label.text = str(slider.value) + "%"
+	greenlabel.text = str(greenslider.value) + "%"
 
 func _on_mc_slideryellow_value_changed(value):
-	var label = get_node("menucanvas/menucustom/mc_colours/mc_slideryellow/mc_lblval")
-	var slider = get_node("menucanvas/menucustom/mc_colours/mc_slideryellow")
-	
-	label.text = str(slider.value) + "%"
+	yellowlabel.text = str(yellowslider.value) + "%"
 
 func _on_mc_sliderpink_value_changed(value):
-	var label = get_node("menucanvas/menucustom/mc_colours/mc_sliderpink/mc_lblval")
-	var slider = get_node("menucanvas/menucustom/mc_colours/mc_sliderpink")
-	
-	label.text = str(slider.value) + "%"
+	pinklabel.text = str(pinkslider.value) + "%"
 
 func _on_mc_sliderred_value_changed(value):
-	var label = get_node("menucanvas/menucustom/mc_colours/mc_sliderred/mc_lblval")
-	var slider = get_node("menucanvas/menucustom/mc_colours/mc_sliderred")
-	
-	label.text = str(slider.value) + "%"
+	redlabel.text = str(redslider.value) + "%"
 
 func _on_mc_sliderspd_value_changed(value):
-	var label = get_node("menucanvas/menucustom/mc_spdgrav/mc_lbl_spd/mc_sliderspd/mc_lblval")
-	var slider = get_node("menucanvas/menucustom/mc_spdgrav/mc_lbl_spd/mc_sliderspd")
-	
-	label.text = str(slider.value) + "%"
+	speedlabel.text = str(speedslider.value) + "%"
 
 func _on_mc_slidergrav_value_changed(value):
-	var label = get_node("menucanvas/menucustom/mc_spdgrav/mc_lbl_grav/mc_slidergrav/mc_lblval")
-	var slider = get_node("menucanvas/menucustom/mc_spdgrav/mc_lbl_grav/mc_slidergrav")
-	
-	label.text = str(slider.value) + "%"
+	gravlabel.text = str(gravslider.value) + "%"
 
 func _on_mc_start_pressed():
+	customDataGet.redvalue = redslider.value
+	customDataGet.bluevalue = blueslider.value
+	customDataGet.purplevalue = purpleslider.value
+	customDataGet.greenvalue = greenslider.value
+	customDataGet.yellowvalue = yellowslider.value
+	customDataGet.pinkvalue = pinkslider.value
+	customDataGet.speedvalue = speedslider.value
+	customDataGet.gravityvalue = gravslider.value
 	globalsettings.gamemode = "Custom"
 	get_tree().change_scene("res://0 Scenes/game.tscn")
 
