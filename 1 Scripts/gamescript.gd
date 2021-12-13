@@ -32,7 +32,8 @@ var textureyellow = preload("res://2 Sprites/yellow.png")
 var texturepink = preload("res://2 Sprites/pink.png")
 
 onready var globalsettings = get_node("/root/globalsettings")
-
+var customDataGet
+var customDataSum = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	typedict = {
@@ -127,6 +128,26 @@ func _ready():
 			for i in range(10):
 				typelist.append(textureyellow)
 			for i in range(10):
+				typelist.append(texturepink)
+		"Custom":
+			customDataGet = globalsettings.customData
+			var sum = 0
+			for value in customDataGet:
+				sum += int(value)
+			customDataSum = sum - customDataGet.speedvalue - customDataGet.gravityvalue
+			for i in range(customDataSum + 20):
+				typelist.append(texture)
+			for i in range(customDataGet.bluevalue):
+				typelist.append(textureblue)
+			for i in range(customDataGet.redvalue):
+				typelist.append(texturered)
+			for i in range(customDataGet.purplevalue):
+				typelist.append(texturepurple)
+			for i in range(customDataGet.greenvalue):
+				typelist.append(texturegreen)
+			for i in range(customDataGet.yellowvalue):
+				typelist.append(textureyellow)
+			for i in range(customDataGet.pinkvalue):
 				typelist.append(texturepink)
 		_:
 			for i in range(20):
