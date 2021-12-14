@@ -199,6 +199,9 @@ func playerEffects():
 			timerScoreReset()
 	
 func playerDeath():
+	if globalsettings.gamemode != "Custom":
+		score = int(score/5)
+		globalsettings.currency += score
 	get_tree().reload_current_scene()
 
 func powerupStatus():

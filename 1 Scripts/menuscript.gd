@@ -117,6 +117,7 @@ func _ready():
 	get_node("menucanvas/menumain/mm_playbtn").grab_focus()
 	resolution.add_item("1366x768")
 	resolution.add_item("1920x1080")
+	get_node("menucanvas/menuplay/mp_coinpanel/mp_coinvalue").text = str(globalsettings.currency)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
