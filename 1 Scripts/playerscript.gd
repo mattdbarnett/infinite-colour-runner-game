@@ -200,6 +200,9 @@ func playerEffects():
 	
 func playerDeath():
 	if globalsettings.gamemode != "Custom":
+		if score > globalsettings.highscore:
+			globalsettings.highscore = score
+		
 		score = int(score/5)
 		globalsettings.currency += score
 	get_tree().reload_current_scene()

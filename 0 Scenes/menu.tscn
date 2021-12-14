@@ -1029,7 +1029,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mp_coinlabel" type="Label" parent="menucanvas/menuplay/mp_scorepanel"]
+[node name="mp_scorelabel" type="Label" parent="menucanvas/menuplay/mp_scorepanel"]
 margin_left = 88.0
 margin_top = 64.0
 margin_right = 343.0
@@ -1038,7 +1038,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "High-Score:"
 align = 1
 
-[node name="mp_coinvalue2" type="Label" parent="menucanvas/menuplay/mp_scorepanel"]
+[node name="mp_scorevalue" type="Label" parent="menucanvas/menuplay/mp_scorepanel"]
 margin_left = 24.0
 margin_top = 168.0
 margin_right = 384.0
