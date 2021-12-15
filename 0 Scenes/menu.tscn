@@ -110,7 +110,6 @@ script = ExtResource( 10 )
 layer = 5
 
 [node name="menumain" type="Control" parent="menucanvas"]
-visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 theme = ExtResource( 11 )
@@ -1377,6 +1376,7 @@ position = Vector2( 704, 368 )
 texture = ExtResource( 35 )
 
 [node name="menustore" type="Control" parent="menucanvas"]
+visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 rect_pivot_offset = Vector2( -16, 408 )
@@ -1401,7 +1401,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mt_tthemescrollcont" type="ScrollContainer" parent="menucanvas/menustore/mt_skins"]
+[node name="mt_themescrollcont" type="ScrollContainer" parent="menucanvas/menustore/mt_skins"]
 margin_top = 128.0
 margin_right = 528.0
 margin_bottom = 1080.0
@@ -1411,19 +1411,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mt_hboxscrollcont" type="VBoxContainer" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont"]
-margin_right = 512.0
+[node name="mt_hboxscrollcont" type="VBoxContainer" parent="menucanvas/menustore/mt_skins/mt_themescrollcont"]
+margin_right = 528.0
 margin_bottom = 1296.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="mt_item1" type="Control" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont"]
+[node name="mt_item1" type="Control" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont"]
 margin_right = 512.0
 margin_bottom = 256.0
 rect_min_size = Vector2( 512, 256 )
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item1"]
+[node name="Label" type="Label" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item1"]
 margin_left = 16.0
 margin_right = 272.0
 margin_bottom = 64.0
@@ -1435,7 +1435,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item1"]
+[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item1"]
 margin_left = 272.0
 margin_right = 496.0
 margin_bottom = 64.0
@@ -1448,7 +1448,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item1"]
+[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item1"]
 margin_left = 16.0
 margin_top = 80.0
 margin_right = 496.0
@@ -1458,37 +1458,37 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ghost1" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item1/Panel"]
+[node name="ghost1" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item1/Panel"]
 position = Vector2( 384, 80 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 35 )
 
-[node name="ghost2" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item1/Panel"]
+[node name="ghost2" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item1/Panel"]
 modulate = Color( 1, 1, 1, 0.305882 )
 position = Vector2( 288, 80 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 35 )
 
-[node name="ghost3" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item1/Panel"]
+[node name="ghost3" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item1/Panel"]
 modulate = Color( 1, 1, 1, 0.0588235 )
 position = Vector2( 192, 80 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 35 )
 
-[node name="ghost4" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item1/Panel"]
+[node name="ghost4" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item1/Panel"]
 modulate = Color( 1, 1, 1, 0.027451 )
 position = Vector2( 96, 80 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 35 )
 
-[node name="mt_item2" type="Control" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont"]
+[node name="mt_item2" type="Control" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont"]
 margin_top = 260.0
 margin_right = 512.0
 margin_bottom = 516.0
 rect_min_size = Vector2( 512, 256 )
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item2"]
+[node name="Label" type="Label" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item2"]
 margin_left = 16.0
 margin_top = -4.0
 margin_right = 272.0
@@ -1501,7 +1501,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item2"]
+[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item2"]
 margin_left = 272.0
 margin_top = -4.0
 margin_right = 496.0
@@ -1515,7 +1515,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item2"]
+[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item2"]
 margin_left = 16.0
 margin_top = 76.0
 margin_right = 496.0
@@ -1525,44 +1525,44 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="snake1" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item2/Panel"]
+[node name="snake1" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item2/Panel"]
 position = Vector2( 408, 96 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 35 )
 
-[node name="snake2" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item2/Panel"]
+[node name="snake2" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item2/Panel"]
 position = Vector2( 344, 88 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 35 )
 
-[node name="snake3" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item2/Panel"]
+[node name="snake3" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item2/Panel"]
 position = Vector2( 280, 80 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 35 )
 
-[node name="snake4" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item2/Panel"]
+[node name="snake4" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item2/Panel"]
 position = Vector2( 216, 72 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 35 )
 
-[node name="snake5" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item2/Panel"]
+[node name="snake5" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item2/Panel"]
 position = Vector2( 152, 64 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 35 )
 
-[node name="snake6" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item2/Panel"]
+[node name="snake6" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item2/Panel"]
 position = Vector2( 88.0001, 56 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 35 )
 
-[node name="mt_item3" type="Control" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont"]
+[node name="mt_item3" type="Control" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont"]
 margin_top = 520.0
 margin_right = 512.0
 margin_bottom = 776.0
 rect_min_size = Vector2( 512, 256 )
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3"]
+[node name="Label" type="Label" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item3"]
 margin_left = 16.0
 margin_top = -8.0
 margin_right = 272.0
@@ -1575,7 +1575,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3"]
+[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item3"]
 margin_left = 272.0
 margin_top = -8.0
 margin_right = 496.0
@@ -1589,7 +1589,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3"]
+[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item3"]
 margin_left = 16.0
 margin_top = 72.0
 margin_right = 496.0
@@ -1599,112 +1599,104 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="white" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+[node name="white" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
 process_priority = -1
 modulate = Color( 1, 1, 1, 0.0470588 )
 position = Vector2( 240, 80 )
 scale = Vector2( 15, 5 )
 texture = ExtResource( 35 )
 
-[node name="smoke1" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+[node name="smoke1" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
 process_priority = 1
 position = Vector2( 384, 80 )
 scale = Vector2( 2, 2 )
 z_index = 1
 texture = ExtResource( 35 )
 
-[node name="smoke2" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+[node name="smoke2" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
 modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
 self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
 position = Vector2( 359.5, 84 )
 scale = Vector2( 0.765626, 0.875 )
 texture = ExtResource( 50 )
 
-[node name="smoke3" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+[node name="smoke3" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
 modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
 self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
 position = Vector2( 352, 64 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 50 )
 
-[node name="smoke4" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+[node name="smoke4" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
 modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
 self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
 position = Vector2( 312, 88 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 50 )
 
-[node name="smoke5" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+[node name="smoke5" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
 modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
 self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
 position = Vector2( 272, 72 )
 scale = Vector2( 1.25, 1 )
 texture = ExtResource( 50 )
 
-[node name="smoke6" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+[node name="smoke6" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
 modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
 self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
 position = Vector2( 248, 96 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 50 )
 
-[node name="smoke7" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+[node name="smoke7" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
 modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
 self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
 position = Vector2( 200, 64 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 50 )
 
-[node name="smoke8" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+[node name="smoke8" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
 modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
 self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
 position = Vector2( 184, 104 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 50 )
 
-[node name="smoke9" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+[node name="smoke9" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
 modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
 self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
 position = Vector2( 144, 56 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 50 )
 
-[node name="smoke10" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+[node name="smoke10" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
 modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
 self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
 position = Vector2( 104, 104 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 50 )
 
-[node name="smoke11" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+[node name="smoke11" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
 modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
 self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
 position = Vector2( 72.0001, 72 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 50 )
 
-[node name="mt_item4" type="Control" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont"]
+[node name="mt_item4" type="Control" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont"]
 margin_top = 780.0
 margin_right = 512.0
 margin_bottom = 1036.0
 rect_min_size = Vector2( 512, 256 )
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item4"]
+[node name="Label" type="Label" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item4"]
 margin_left = 16.0
 margin_top = -12.0
-margin_right = 336.0
+margin_right = 272.0
 margin_bottom = 52.0
 custom_fonts/font = ExtResource( 3 )
-text = "Placeholder"
+text = "Flames"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item4"]
-margin_left = 352.0
+[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item4"]
+margin_left = 272.0
 margin_top = -12.0
 margin_right = 496.0
 margin_bottom = 52.0
@@ -1712,12 +1704,12 @@ custom_styles/hover = ExtResource( 32 )
 custom_styles/pressed = ExtResource( 32 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 42 )
-text = "Buy"
+text = "500 Gold"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item4"]
+[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item4"]
 margin_left = 16.0
 margin_top = 68.0
 margin_right = 496.0
@@ -1727,47 +1719,171 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mt_item5" type="Control" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont"]
+[node name="flames1" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item4/Panel"]
+process_priority = 1
+position = Vector2( 384, 80 )
+scale = Vector2( 2, 2 )
+z_index = 1
+texture = ExtResource( 35 )
+
+[node name="flames2" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item4/Panel"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 336, 88 )
+scale = Vector2( 2, 2.0625 )
+texture = ExtResource( 39 )
+
+[node name="flames3" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item4/Panel"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 272, 124 )
+scale = Vector2( 2, 1.75 )
+texture = ExtResource( 39 )
+
+[node name="flames4" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item4/Panel"]
+modulate = Color( 1, 1, 1, 0.0980392 )
+position = Vector2( 272, 64 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 39 )
+
+[node name="flames5" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item4/Panel"]
+modulate = Color( 1, 1, 1, 0.0980392 )
+position = Vector2( 208, 104 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 39 )
+
+[node name="flames6" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item4/Panel"]
+modulate = Color( 1, 1, 1, 0.0980392 )
+position = Vector2( 208, 104 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 36 )
+
+[node name="flames7" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item4/Panel"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 208, 48 )
+scale = Vector2( 2, 1.5 )
+texture = ExtResource( 36 )
+
+[node name="flames9" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item4/Panel"]
+modulate = Color( 1, 1, 1, 0.0980392 )
+position = Vector2( 272, 64 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 36 )
+
+[node name="flames10" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item4/Panel"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 144, 72 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 36 )
+
+[node name="flames11" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item4/Panel"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 80, 88 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 36 )
+
+[node name="flames12" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item4/Panel"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 144, 128 )
+scale = Vector2( 2, 1.5 )
+texture = ExtResource( 36 )
+
+[node name="mt_item5" type="Control" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont"]
 margin_top = 1040.0
 margin_right = 512.0
 margin_bottom = 1296.0
 rect_min_size = Vector2( 512, 256 )
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item5"]
+[node name="Label" type="Label" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item5"]
 margin_left = 16.0
-margin_right = 336.0
-margin_bottom = 64.0
+margin_top = -16.0
+margin_right = 272.0
+margin_bottom = 48.0
 custom_fonts/font = ExtResource( 3 )
-text = "Placeholder"
+text = "Rainbow"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item5"]
-margin_left = 352.0
+[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item5"]
+margin_left = 272.0
+margin_top = -16.0
 margin_right = 496.0
-margin_bottom = 64.0
+margin_bottom = 48.0
 custom_styles/hover = ExtResource( 32 )
 custom_styles/pressed = ExtResource( 32 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 42 )
-text = "Buy"
+text = "1000 Gold"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item5"]
+[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item5"]
 margin_left = 16.0
-margin_top = 80.0
+margin_top = 64.0
 margin_right = 496.0
-margin_bottom = 240.0
+margin_bottom = 224.0
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="rainbow1" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item5/Panel"]
+process_priority = 1
+position = Vector2( 384, 80 )
+scale = Vector2( 2, 2 )
+z_index = 1
+texture = ExtResource( 35 )
+
+[node name="pink" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item5/Panel"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 340, 80 )
+scale = Vector2( 1.25, 2.99999 )
+texture = ExtResource( 38 )
+
+[node name="purple" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item5/Panel"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 300, 80 )
+scale = Vector2( 1.24999, 2.99999 )
+texture = ExtResource( 40 )
+
+[node name="blue" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item5/Panel"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 260, 80 )
+scale = Vector2( 1.25, 2.99999 )
+texture = ExtResource( 37 )
+
+[node name="green" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item5/Panel"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 220, 80 )
+scale = Vector2( 1.25, 3 )
+texture = ExtResource( 41 )
+
+[node name="yellow" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item5/Panel"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 180, 80 )
+scale = Vector2( 1.25, 3 )
+texture = ExtResource( 39 )
+
+[node name="orange1" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item5/Panel"]
+modulate = Color( 1, 1, 1, 0.0980392 )
+position = Vector2( 140, 80 )
+scale = Vector2( 1.25, 3 )
+texture = ExtResource( 39 )
+
+[node name="orange2" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item5/Panel"]
+modulate = Color( 1, 1, 1, 0.0980392 )
+position = Vector2( 140, 80 )
+scale = Vector2( 1.25, 3 )
+texture = ExtResource( 36 )
+
+[node name="orange3" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item5/Panel"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 100, 80 )
+scale = Vector2( 1.25, 3 )
+texture = ExtResource( 36 )
 
 [node name="mt_themes" type="Panel" parent="menucanvas/menustore"]
 margin_left = 864.0
@@ -1800,7 +1916,7 @@ __meta__ = {
 }
 
 [node name="mt_hboxscrollcont" type="VBoxContainer" parent="menucanvas/menustore/mt_themes/mt_themescrollcont"]
-margin_right = 512.0
+margin_right = 528.0
 margin_bottom = 1296.0
 grow_horizontal = 2
 grow_vertical = 2
