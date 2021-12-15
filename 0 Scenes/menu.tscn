@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://3 Fonts/1 Variations/s70.tres" type="DynamicFont" id=1]
 [ext_resource path="res://4 Styling/0 Const/norm.tres" type="StyleBox" id=2]
@@ -49,6 +49,7 @@
 [ext_resource path="res://4 Styling/5 Medium/norm_med.tres" type="StyleBox" id=47]
 [ext_resource path="res://4 Styling/0 Const/emptyfocus.tres" type="StyleBox" id=48]
 [ext_resource path="res://4 Styling/0 Const/norm_disabled.tres" type="StyleBox" id=49]
+[ext_resource path="res://2 Sprites/black.png" type="Texture" id=50]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -109,6 +110,7 @@ script = ExtResource( 10 )
 layer = 5
 
 [node name="menumain" type="Control" parent="menucanvas"]
+visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 theme = ExtResource( 11 )
@@ -1375,7 +1377,6 @@ position = Vector2( 704, 368 )
 texture = ExtResource( 35 )
 
 [node name="menustore" type="Control" parent="menucanvas"]
-visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 rect_pivot_offset = Vector2( -16, 408 )
@@ -1393,7 +1394,7 @@ margin_bottom = 1080.0
 margin_right = 528.0
 margin_bottom = 128.0
 custom_fonts/font = ExtResource( 3 )
-text = "Skins"
+text = "Trails"
 align = 1
 valign = 1
 __meta__ = {
@@ -1402,7 +1403,7 @@ __meta__ = {
 
 [node name="mt_tthemescrollcont" type="ScrollContainer" parent="menucanvas/menustore/mt_skins"]
 margin_top = 128.0
-margin_right = 512.0
+margin_right = 528.0
 margin_bottom = 1080.0
 theme = ExtResource( 11 )
 scroll_horizontal_enabled = false
@@ -1424,10 +1425,10 @@ size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item1"]
 margin_left = 16.0
-margin_right = 336.0
+margin_right = 272.0
 margin_bottom = 64.0
 custom_fonts/font = ExtResource( 3 )
-text = "Placeholder"
+text = "Ghost"
 align = 1
 valign = 1
 __meta__ = {
@@ -1435,14 +1436,14 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item1"]
-margin_left = 352.0
+margin_left = 272.0
 margin_right = 496.0
 margin_bottom = 64.0
 custom_styles/hover = ExtResource( 32 )
 custom_styles/pressed = ExtResource( 32 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 42 )
-text = "Buy"
+text = "25 Gold"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1457,6 +1458,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ghost1" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item1/Panel"]
+position = Vector2( 384, 80 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+
+[node name="ghost2" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item1/Panel"]
+modulate = Color( 1, 1, 1, 0.305882 )
+position = Vector2( 288, 80 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+
+[node name="ghost3" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item1/Panel"]
+modulate = Color( 1, 1, 1, 0.0588235 )
+position = Vector2( 192, 80 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+
+[node name="ghost4" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item1/Panel"]
+modulate = Color( 1, 1, 1, 0.027451 )
+position = Vector2( 96, 80 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+
 [node name="mt_item2" type="Control" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont"]
 margin_top = 260.0
 margin_right = 512.0
@@ -1466,10 +1490,11 @@ size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item2"]
 margin_left = 16.0
-margin_right = 336.0
-margin_bottom = 64.0
+margin_top = -4.0
+margin_right = 272.0
+margin_bottom = 60.0
 custom_fonts/font = ExtResource( 3 )
-text = "Placeholder"
+text = "Snake"
 align = 1
 valign = 1
 __meta__ = {
@@ -1477,27 +1502,58 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item2"]
-margin_left = 352.0
+margin_left = 272.0
+margin_top = -4.0
 margin_right = 496.0
-margin_bottom = 64.0
+margin_bottom = 60.0
 custom_styles/hover = ExtResource( 32 )
 custom_styles/pressed = ExtResource( 32 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 42 )
-text = "Buy"
+text = "75 Gold"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Panel" type="Panel" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item2"]
 margin_left = 16.0
-margin_top = 80.0
+margin_top = 76.0
 margin_right = 496.0
-margin_bottom = 240.0
+margin_bottom = 236.0
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="snake1" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item2/Panel"]
+position = Vector2( 408, 96 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+
+[node name="snake2" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item2/Panel"]
+position = Vector2( 344, 88 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+
+[node name="snake3" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item2/Panel"]
+position = Vector2( 280, 80 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+
+[node name="snake4" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item2/Panel"]
+position = Vector2( 216, 72 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+
+[node name="snake5" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item2/Panel"]
+position = Vector2( 152, 64 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+
+[node name="snake6" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item2/Panel"]
+position = Vector2( 88.0001, 56 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
 
 [node name="mt_item3" type="Control" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont"]
 margin_top = 520.0
@@ -1508,10 +1564,11 @@ size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3"]
 margin_left = 16.0
-margin_right = 336.0
-margin_bottom = 64.0
+margin_top = -8.0
+margin_right = 272.0
+margin_bottom = 56.0
 custom_fonts/font = ExtResource( 3 )
-text = "Placeholder"
+text = "Smoke"
 align = 1
 valign = 1
 __meta__ = {
@@ -1519,27 +1576,112 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3"]
-margin_left = 352.0
+margin_left = 272.0
+margin_top = -8.0
 margin_right = 496.0
-margin_bottom = 64.0
+margin_bottom = 56.0
 custom_styles/hover = ExtResource( 32 )
 custom_styles/pressed = ExtResource( 32 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 42 )
-text = "Buy"
+text = "150 Gold"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Panel" type="Panel" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3"]
 margin_left = 16.0
-margin_top = 80.0
+margin_top = 72.0
 margin_right = 496.0
-margin_bottom = 240.0
+margin_bottom = 232.0
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="white" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+process_priority = -1
+modulate = Color( 1, 1, 1, 0.0470588 )
+position = Vector2( 240, 80 )
+scale = Vector2( 15, 5 )
+texture = ExtResource( 35 )
+
+[node name="smoke1" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+process_priority = 1
+position = Vector2( 384, 80 )
+scale = Vector2( 2, 2 )
+z_index = 1
+texture = ExtResource( 35 )
+
+[node name="smoke2" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
+self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
+position = Vector2( 359.5, 84 )
+scale = Vector2( 0.765626, 0.875 )
+texture = ExtResource( 50 )
+
+[node name="smoke3" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
+self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
+position = Vector2( 352, 64 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 50 )
+
+[node name="smoke4" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
+self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
+position = Vector2( 312, 88 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 50 )
+
+[node name="smoke5" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
+self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
+position = Vector2( 272, 72 )
+scale = Vector2( 1.25, 1 )
+texture = ExtResource( 50 )
+
+[node name="smoke6" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
+self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
+position = Vector2( 248, 96 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 50 )
+
+[node name="smoke7" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
+self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
+position = Vector2( 200, 64 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 50 )
+
+[node name="smoke8" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
+self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
+position = Vector2( 184, 104 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 50 )
+
+[node name="smoke9" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
+self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
+position = Vector2( 144, 56 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 50 )
+
+[node name="smoke10" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
+self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
+position = Vector2( 104, 104 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 50 )
+
+[node name="smoke11" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
+self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
+position = Vector2( 72.0001, 72 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 50 )
 
 [node name="mt_item4" type="Control" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont"]
 margin_top = 780.0
@@ -1550,8 +1692,9 @@ size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item4"]
 margin_left = 16.0
+margin_top = -12.0
 margin_right = 336.0
-margin_bottom = 64.0
+margin_bottom = 52.0
 custom_fonts/font = ExtResource( 3 )
 text = "Placeholder"
 align = 1
@@ -1562,8 +1705,9 @@ __meta__ = {
 
 [node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item4"]
 margin_left = 352.0
+margin_top = -12.0
 margin_right = 496.0
-margin_bottom = 64.0
+margin_bottom = 52.0
 custom_styles/hover = ExtResource( 32 )
 custom_styles/pressed = ExtResource( 32 )
 custom_styles/normal = ExtResource( 32 )
@@ -1575,9 +1719,9 @@ __meta__ = {
 
 [node name="Panel" type="Panel" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item4"]
 margin_left = 16.0
-margin_top = 80.0
+margin_top = 68.0
 margin_right = 496.0
-margin_bottom = 240.0
+margin_bottom = 228.0
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1638,7 +1782,7 @@ __meta__ = {
 margin_right = 528.0
 margin_bottom = 128.0
 custom_fonts/font = ExtResource( 3 )
-text = "Themes"
+text = "Backgrounds"
 align = 1
 valign = 1
 __meta__ = {
@@ -1656,7 +1800,7 @@ __meta__ = {
 }
 
 [node name="mt_hboxscrollcont" type="VBoxContainer" parent="menucanvas/menustore/mt_themes/mt_themescrollcont"]
-margin_right = 528.0
+margin_right = 512.0
 margin_bottom = 1296.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -2539,8 +2683,8 @@ environment = ExtResource( 9 )
 [connection signal="pressed" from="menucanvas/menumain/mm_storebtn" to="." method="_on_mm_storebtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_settingsbtn" to="." method="_on_mm_settingsbtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_helpbtn" to="." method="_on_mm_helpbtn_pressed"]
-[connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn2_pressed"]
+[connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer1/mp_op1" to="." method="_on_mp_op1_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer2/mp_op2" to="." method="_on_mp_op2_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer3/mp_op3" to="." method="_on_mp_op3_pressed"]
