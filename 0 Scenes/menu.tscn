@@ -111,7 +111,6 @@ script = ExtResource( 10 )
 layer = 5
 
 [node name="menumain" type="Control" parent="menucanvas"]
-visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 theme = ExtResource( 11 )
@@ -1378,6 +1377,7 @@ position = Vector2( 704, 368 )
 texture = ExtResource( 35 )
 
 [node name="menustore" type="Control" parent="menucanvas"]
+visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 rect_pivot_offset = Vector2( -16, 408 )
@@ -1413,7 +1413,7 @@ __meta__ = {
 }
 
 [node name="mt_hboxscrollcont" type="VBoxContainer" parent="menucanvas/menustore/mt_skins/mt_themescrollcont"]
-margin_right = 512.0
+margin_right = 528.0
 margin_bottom = 1296.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1502,7 +1502,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item2"]
+[node name="mt_but2" type="Button" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item2"]
 margin_left = 272.0
 margin_top = -4.0
 margin_right = 496.0
@@ -1576,7 +1576,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item3"]
+[node name="mt_but3" type="Button" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item3"]
 margin_left = 272.0
 margin_top = -8.0
 margin_right = 496.0
@@ -1696,7 +1696,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item4"]
+[node name="mt_but4" type="Button" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item4"]
 margin_left = 272.0
 margin_top = -12.0
 margin_right = 496.0
@@ -1806,7 +1806,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item5"]
+[node name="mt_but5" type="Button" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item5"]
 margin_left = 272.0
 margin_top = -16.0
 margin_right = 496.0
@@ -1915,7 +1915,7 @@ __meta__ = {
 }
 
 [node name="mt_hboxscrollcont" type="VBoxContainer" parent="menucanvas/menustore/mt_themes/mt_themescrollcont"]
-margin_right = 512.0
+margin_right = 528.0
 margin_bottom = 1296.0
 grow_horizontal = 2
 grow_vertical = 2

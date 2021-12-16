@@ -46,6 +46,8 @@ var powerupMode = false
 func _ready():
 	powerupTimer.start()
 	scoreTimer.start()
+	
+	playerTrail()
 
 func _process(delta):
 
@@ -206,6 +208,11 @@ func playerDeath():
 		score = int(score/5)
 		globalsettings.currency += score
 	get_tree().reload_current_scene()
+
+func playerTrail():
+	match globalsettings.currentTrail:
+		"ghost":
+			get_node("sprite/trail_ghost").visible = true
 
 func powerupStatus():
 	if powerupValue == 100:

@@ -3,7 +3,7 @@ extends Node
 var globalgrav = 40;
 var gamemode;
 var holdmode;
-var currency = 0;
+var currency = 900;
 var highscore = 0;
 var currentTrail = "none" #none/ghost/snake/smoke/flames/rainbowv
 var noMoney = false;

@@ -93,6 +93,23 @@ var customDataGet = {
 	"gravityvalue": 100
 }
 
+#Store Menu Vars
+onready var storeScore = get_node("menucanvas/menustore/mt_score/mp_scorevalue")
+onready var storeCoins = get_node("menucanvas/menustore/mt_coins/mp_coinvalue")
+
+onready var storeTrailGhostButton = get_node("menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item1/mt_but1")
+onready var storeTrailSnakeButton = get_node("menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item2/mt_but2")
+onready var storeTrailSmokeButton = get_node("menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item3/mt_but3")
+onready var storeTrailFlamesButton = get_node("menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item4/mt_but4")
+onready var storeTrailRainbowButton = get_node("menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item5/mt_but5")
+
+var storeTrailNames = [
+	"ghost", "snake", "smoke", "flames", "rainbow"
+]
+
+var storeTrailPrices = [
+	25, 75, 150, 500, 1000
+]
 #Settings Menu Vars
 onready var msbuttons = [
 	get_node("menucanvas/menusettings/ms_g+d"),
@@ -117,10 +134,10 @@ func _ready():
 	get_node("menucanvas/menumain/mm_playbtn").grab_focus()
 	resolution.add_item("1366x768")
 	resolution.add_item("1920x1080")
-	get_node("menucanvas/menustore/mt_score/mp_scorevalue").text = str(globalsettings.highscore)
-	get_node("menucanvas/menuplay/mp_scorepanel/mp_scorevalue").text = str(globalsettings.highscore)
-	get_node("menucanvas/menustore/mt_coins/mp_coinvalue").text = str(globalsettings.currency)
-	get_node("menucanvas/menuplay/mp_coinpanel/mp_coinvalue").text = str(globalsettings.currency)
+	
+	updateStats()
+	
+	storeInitalise()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -128,6 +145,11 @@ func _process(delta):
 	holdmodeCheck()
 	noMoneyCheck()
 
+func updateStats():
+	storeScore.text = str(globalsettings.highscore)
+	get_node("menucanvas/menuplay/mp_scorepanel/mp_scorevalue").text = str(globalsettings.highscore)
+	storeCoins.text = str(globalsettings.currency)
+	get_node("menucanvas/menuplay/mp_coinpanel/mp_coinvalue").text = str(globalsettings.currency)
 """
 Menu Update Signals
 """
@@ -339,13 +361,31 @@ func _on_mc_start_pressed():
 Store Menu Signals
 """
 
+func storeInitalise():
+	var storeTrailList = [
+	storeTrailGhostButton, storeTrailSnakeButton, storeTrailSmokeButton, storeTrailFlamesButton, storeTrailRainbowButton
+	]
+	for i in range(storeTrailList.size()):
+		storeUpdateTrails(storeTrailList[i], storeTrailNames[i], storeTrailPrices[i])
+
+func storeUpdateTrails(button, mode, price):
+	if globalsettings.trailsBought[mode] == true:
+		if globalsettings.currentTrail == mode:
+			button.text = "Equipped"
+		else:
+			button.text = "Unequipped"
+	else:
+		button.text = str(price) + " Coins" 
+
 func noMoneyCheck():
 	if globalsettings.noMoney == true:
 		get_node("menucanvas/menustore/mt_moneydialog").popup_centered_clamped()
 		globalsettings.noMoney = false
 
 func _on_mt_but1_pressed():
-	globalsettings.buyTrail("ghost", 25)
+	globalsettings.buyTrail(storeTrailNames[0], storeTrailPrices[0])
+	updateStats()
+	storeUpdateTrails(storeTrailGhostButton, storeTrailNames[0], storeTrailPrices[0])
 
 func _on_mt_back_pressed():
 	currentmenu_update(menumain)
