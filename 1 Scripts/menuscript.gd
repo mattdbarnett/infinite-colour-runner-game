@@ -137,7 +137,7 @@ func _ready():
 	
 	updateStats()
 	
-	storeInitalise()
+	updateStore()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -361,14 +361,14 @@ func _on_mc_start_pressed():
 Store Menu Signals
 """
 
-func storeInitalise():
+func updateStore():
 	var storeTrailList = [
 	storeTrailGhostButton, storeTrailSnakeButton, storeTrailSmokeButton, storeTrailFlamesButton, storeTrailRainbowButton
 	]
 	for i in range(storeTrailList.size()):
-		storeUpdateTrails(storeTrailList[i], storeTrailNames[i], storeTrailPrices[i])
+		updateStoreTrail(storeTrailList[i], storeTrailNames[i], storeTrailPrices[i])
 
-func storeUpdateTrails(button, mode, price):
+func updateStoreTrail(button, mode, price):
 	if globalsettings.trailsBought[mode] == true:
 		if globalsettings.currentTrail == mode:
 			button.text = "Equipped"
@@ -382,10 +382,25 @@ func noMoneyCheck():
 		get_node("menucanvas/menustore/mt_moneydialog").popup_centered_clamped()
 		globalsettings.noMoney = false
 
-func _on_mt_but1_pressed():
-	globalsettings.buyTrail(storeTrailNames[0], storeTrailPrices[0])
+func buyTrailAttempt(num):
+	globalsettings.buyTrail(storeTrailNames[num], storeTrailPrices[num])
 	updateStats()
-	storeUpdateTrails(storeTrailGhostButton, storeTrailNames[0], storeTrailPrices[0])
+	updateStore()
+	
+func _on_mt_but1_pressed():
+	buyTrailAttempt(0)
+
+func _on_mt_but2_pressed():
+	buyTrailAttempt(1)
+
+func _on_mt_but3_pressed():
+	buyTrailAttempt(2)
+
+func _on_mt_but4_pressed():
+	buyTrailAttempt(3)
+
+func _on_mt_but5_pressed():
+	buyTrailAttempt(4)
 
 func _on_mt_back_pressed():
 	currentmenu_update(menumain)
@@ -483,3 +498,4 @@ func _on_mh_next3_pressed():
 	get_node("menucanvas/menuhelp/mh_cont2").visible = false
 	get_node("menucanvas/menuhelp/mh_cont3").visible = false
 	currentmenu_update(menumain)
+

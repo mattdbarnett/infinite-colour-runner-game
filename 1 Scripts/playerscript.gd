@@ -213,6 +213,14 @@ func playerTrail():
 	match globalsettings.currentTrail:
 		"ghost":
 			get_node("sprite/trail_ghost").visible = true
+		"snake":
+			get_node("sprite/trail_snake").visible = true
+		"smoke":
+			get_node("sprite/trail_smoke").visible = true
+		"flames":
+			get_node("sprite/trail_flames").visible = true
+		"rainbow":
+			get_node("sprite/trail_rainbow").visible = true
 
 func powerupStatus():
 	if powerupValue == 100:

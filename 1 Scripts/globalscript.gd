@@ -1,11 +1,9 @@
 extends Node
 
+#--Temp Vars
+
 var globalgrav = 40;
 var gamemode;
-var holdmode;
-var currency = 900;
-var highscore = 0;
-var currentTrail = "none" #none/ghost/snake/smoke/flames/rainbowv
 var noMoney = false;
 
 var customData = {
@@ -18,6 +16,13 @@ var customData = {
 	"speedvalue": 100,
 	"gravityvalue": 100
 }
+
+#--Locally Saved Vars
+
+var holdmode;
+var currency = 1025;
+var highscore = 0;
+var currentTrail = "none" #none/ghost/snake/smoke/flames/rainbow
 
 var trailsBought = {
 	"ghost": false,
