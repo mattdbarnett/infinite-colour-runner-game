@@ -117,13 +117,16 @@ func _ready():
 	get_node("menucanvas/menumain/mm_playbtn").grab_focus()
 	resolution.add_item("1366x768")
 	resolution.add_item("1920x1080")
+	get_node("menucanvas/menustore/mt_score/mp_scorevalue").text = str(globalsettings.highscore)
 	get_node("menucanvas/menuplay/mp_scorepanel/mp_scorevalue").text = str(globalsettings.highscore)
+	get_node("menucanvas/menustore/mt_coins/mp_coinvalue").text = str(globalsettings.currency)
 	get_node("menucanvas/menuplay/mp_coinpanel/mp_coinvalue").text = str(globalsettings.currency)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	fullscreenCheck()
 	holdmodeCheck()
+	noMoneyCheck()
 
 """
 Menu Update Signals
@@ -335,6 +338,14 @@ func _on_mc_start_pressed():
 """
 Store Menu Signals
 """
+
+func noMoneyCheck():
+	if globalsettings.noMoney == true:
+		get_node("menucanvas/menustore/mt_moneydialog").popup_centered_clamped()
+		globalsettings.noMoney = false
+
+func _on_mt_but1_pressed():
+	globalsettings.buyTrail("ghost", 25)
 
 func _on_mt_back_pressed():
 	currentmenu_update(menumain)

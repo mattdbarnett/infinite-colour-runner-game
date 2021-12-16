@@ -5,6 +5,8 @@ var gamemode;
 var holdmode;
 var currency = 0;
 var highscore = 0;
+var currentTrail = "none" #none/ghost/snake/smoke/flames/rainbowv
+var noMoney = false;
 
 var customData = {
 	"redvalue": 0,
@@ -15,6 +17,14 @@ var customData = {
 	"pinkvalue": 0,
 	"speedvalue": 100,
 	"gravityvalue": 100
+}
+
+var trailsBought = {
+	"ghost": false,
+	"snake": false,
+	"smoke": false,
+	"flames": false,
+	"rainbow": false
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -28,3 +38,13 @@ func _ready():
 
 func fullscreen():
 	OS.window_fullscreen = !OS.window_fullscreen
+
+func buyTrail(trail, price):
+	if trailsBought[trail] == true:
+		currentTrail = trail
+	elif currency >= price:
+		currency -= price
+		trailsBought[trail] = true
+		currentTrail = trail
+	else:
+		noMoney = true

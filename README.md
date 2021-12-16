@@ -1,16 +1,16 @@
-# Autumn Semester Project
+# Godot Autumn Semester Project
 
+A basic, procedurally generated side-scrolling game for my third year of undergrad.
 
-## To-Do:
+## Installation Instructions
 
-### Allow the user to customise their game experience with different options and modes
-1. ~~Give the user different pre-set gamemodes to choose from.~~
-2. ~~Allow the user to start a game from the custom menu.~~
-3. ~~Give functionality to the different options on the custom menu.~~
-4. ~~Allow for some form of adjustment of gameplay from the settings menu.~~
+Currently there is no executable release for the project, though the latest stable build in main will run without error in the Godot IDE.
 
-## Finished:
+## Overall Plans/Aims
 
-1. Finished menu prototype for Week 4.
-2. Created basics for player scene, user led-movement and player interaction with the game-world.
-3. Made a 2D procedurally-generated game-space, where different parts of the world have different qualities.
+1. ~~Finished menu prototype for Week 4.~~
+2. ~~Created basics for player scene, user led-movement and player interaction with the game-world.~~
+3. ~~Made a 2D procedurally-generated game-space, where different parts of the world have different qualities.~~
+4. ~~Give the user a range of methods to play - including a custom-made experience and pre-set gamemoeds.~~
+5. Allow for the collection of in-game currency that can be used in an in-application score.
+6. Create a help screen for new users.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://3 Fonts/1 Variations/s70.tres" type="DynamicFont" id=1]
 [ext_resource path="res://4 Styling/0 Const/norm.tres" type="StyleBox" id=2]
@@ -50,6 +50,7 @@
 [ext_resource path="res://4 Styling/0 Const/emptyfocus.tres" type="StyleBox" id=48]
 [ext_resource path="res://4 Styling/0 Const/norm_disabled.tres" type="StyleBox" id=49]
 [ext_resource path="res://2 Sprites/black.png" type="Texture" id=50]
+[ext_resource path="res://4 Styling/4 Small/blue_small_hover.tres" type="StyleBox" id=51]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -110,6 +111,7 @@ script = ExtResource( 10 )
 layer = 5
 
 [node name="menumain" type="Control" parent="menucanvas"]
+visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 theme = ExtResource( 11 )
@@ -1376,7 +1378,6 @@ position = Vector2( 704, 368 )
 texture = ExtResource( 35 )
 
 [node name="menustore" type="Control" parent="menucanvas"]
-visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 rect_pivot_offset = Vector2( -16, 408 )
@@ -1412,7 +1413,7 @@ __meta__ = {
 }
 
 [node name="mt_hboxscrollcont" type="VBoxContainer" parent="menucanvas/menustore/mt_skins/mt_themescrollcont"]
-margin_right = 528.0
+margin_right = 512.0
 margin_bottom = 1296.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1435,11 +1436,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item1"]
+[node name="mt_but1" type="Button" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item1"]
 margin_left = 272.0
 margin_right = 496.0
 margin_bottom = 64.0
-custom_styles/hover = ExtResource( 32 )
+custom_styles/hover = ExtResource( 51 )
 custom_styles/pressed = ExtResource( 32 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 42 )
@@ -1506,7 +1507,7 @@ margin_left = 272.0
 margin_top = -4.0
 margin_right = 496.0
 margin_bottom = 60.0
-custom_styles/hover = ExtResource( 32 )
+custom_styles/hover = ExtResource( 51 )
 custom_styles/pressed = ExtResource( 32 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 42 )
@@ -1580,7 +1581,7 @@ margin_left = 272.0
 margin_top = -8.0
 margin_right = 496.0
 margin_bottom = 56.0
-custom_styles/hover = ExtResource( 32 )
+custom_styles/hover = ExtResource( 51 )
 custom_styles/pressed = ExtResource( 32 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 42 )
@@ -1700,7 +1701,7 @@ margin_left = 272.0
 margin_top = -12.0
 margin_right = 496.0
 margin_bottom = 52.0
-custom_styles/hover = ExtResource( 32 )
+custom_styles/hover = ExtResource( 51 )
 custom_styles/pressed = ExtResource( 32 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 42 )
@@ -1723,7 +1724,6 @@ __meta__ = {
 process_priority = 1
 position = Vector2( 384, 80 )
 scale = Vector2( 2, 2 )
-z_index = 1
 texture = ExtResource( 35 )
 
 [node name="flames2" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item4/Panel"]
@@ -1811,7 +1811,7 @@ margin_left = 272.0
 margin_top = -16.0
 margin_right = 496.0
 margin_bottom = 48.0
-custom_styles/hover = ExtResource( 32 )
+custom_styles/hover = ExtResource( 51 )
 custom_styles/pressed = ExtResource( 32 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 42 )
@@ -1834,7 +1834,6 @@ __meta__ = {
 process_priority = 1
 position = Vector2( 384, 80 )
 scale = Vector2( 2, 2 )
-z_index = 1
 texture = ExtResource( 35 )
 
 [node name="pink" type="Sprite" parent="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item5/Panel"]
@@ -1916,7 +1915,7 @@ __meta__ = {
 }
 
 [node name="mt_hboxscrollcont" type="VBoxContainer" parent="menucanvas/menustore/mt_themes/mt_themescrollcont"]
-margin_right = 528.0
+margin_right = 512.0
 margin_bottom = 1296.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -2138,6 +2137,33 @@ margin_top = 872.0
 margin_right = 576.0
 margin_bottom = 1080.0
 custom_styles/panel = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_scorelabel" type="Label" parent="menucanvas/menustore/mt_score"]
+margin_left = 64.0
+margin_top = 24.0
+margin_right = 512.0
+margin_bottom = 88.0
+custom_fonts/font = ExtResource( 3 )
+text = "High Score:"
+align = 1
+valign = 1
+
+[node name="mp_scorevalue" type="Label" parent="menucanvas/menustore/mt_score"]
+margin_left = 64.0
+margin_top = 88.0
+margin_right = 512.0
+margin_bottom = 152.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.0235294, 1, 0, 1 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="mt_coins" type="Panel" parent="menucanvas/menustore"]
 margin_top = 640.0
@@ -2173,30 +2199,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mp_scorelabel" type="Label" parent="menucanvas/menustore/mt_coins"]
-margin_left = 64.0
-margin_top = 256.0
-margin_right = 512.0
-margin_bottom = 320.0
-custom_fonts/font = ExtResource( 3 )
-text = "High Score:"
-align = 1
-valign = 1
-
-[node name="mp_scorevalue2" type="Label" parent="menucanvas/menustore/mt_coins"]
-margin_left = 64.0
-margin_top = 320.0
-margin_right = 512.0
-margin_bottom = 384.0
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0.0235294, 1, 0, 1 )
-text = "0"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="mt_back" type="Button" parent="menucanvas/menustore"]
 margin_right = 384.0
 margin_bottom = 192.0
@@ -2211,7 +2213,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="mt_moneydialog" type="AcceptDialog" parent="menucanvas/menustore"]
+margin_top = 16.0
+margin_right = 388.0
+margin_bottom = 264.0
+theme = ExtResource( 11 )
+popup_exclusive = true
+window_title = "Oops!"
+dialog_text = "You don't have enough gold to make this purchase!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="mt_player" type="Sprite" parent="menucanvas/menustore"]
+visible = false
 position = Vector2( 96, 208 )
 texture = ExtResource( 35 )
 
@@ -2823,6 +2838,7 @@ environment = ExtResource( 9 )
 [connection signal="value_changed" from="menucanvas/menucustom/mc_spdgrav/mc_lbl_grav/mc_slidergrav" to="." method="_on_mc_slidergrav_value_changed"]
 [connection signal="pressed" from="menucanvas/menucustom/mc_back" to="." method="_on_mc_back_pressed"]
 [connection signal="pressed" from="menucanvas/menucustom/mc_start" to="." method="_on_mc_start_pressed"]
+[connection signal="pressed" from="menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item1/mt_but1" to="." method="_on_mt_but1_pressed"]
 [connection signal="pressed" from="menucanvas/menustore/mt_back" to="." method="_on_mt_back_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_g+d" to="." method="_on_ms_gd_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_fullscreen" to="." method="_on_ms_fullscreen_pressed"]
