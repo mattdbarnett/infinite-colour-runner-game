@@ -124,6 +124,7 @@ script = ExtResource( 10 )
 layer = 5
 
 [node name="menumain" type="Control" parent="menucanvas"]
+visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 theme = ExtResource( 11 )
@@ -1390,7 +1391,6 @@ position = Vector2( 704, 368 )
 texture = ExtResource( 35 )
 
 [node name="menustore" type="Control" parent="menucanvas"]
-visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 rect_pivot_offset = Vector2( -16, 408 )
@@ -1403,6 +1403,9 @@ __meta__ = {
 margin_left = 1392.0
 margin_right = 1920.0
 margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="mt_skinlabel" type="Label" parent="menucanvas/menustore/mt_trails"]
 margin_right = 528.0
@@ -1426,8 +1429,8 @@ __meta__ = {
 }
 
 [node name="mt_hboxscrollcont" type="VBoxContainer" parent="menucanvas/menustore/mt_trails/mt_themescrollcont"]
-margin_right = 528.0
-margin_bottom = 1296.0
+margin_right = 512.0
+margin_bottom = 1280.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -1802,8 +1805,8 @@ texture = ExtResource( 36 )
 [node name="mt_item5" type="Control" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont"]
 margin_top = 1040.0
 margin_right = 512.0
-margin_bottom = 1296.0
-rect_min_size = Vector2( 512, 256 )
+margin_bottom = 1280.0
+rect_min_size = Vector2( 512, 240 )
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item5"]
@@ -1928,7 +1931,7 @@ __meta__ = {
 }
 
 [node name="mt_hboxscrollcont" type="VBoxContainer" parent="menucanvas/menustore/mt_themes/mt_themescrollcont"]
-margin_right = 528.0
+margin_right = 512.0
 margin_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1970,12 +1973,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="plane" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item1"]
+position = Vector2( 264, 152 )
+scale = Vector2( 0.226563, 142.125 )
+texture = SubResource( 5 )
+
 [node name="border" type="Node2D" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item1"]
 
 [node name="bordertop" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item1/border"]
 position = Vector2( 264, 85 )
 scale = Vector2( 14.5, 0.31 )
-z_index = 1
 texture = ExtResource( 35 )
 __meta__ = {
 "_edit_lock_": true
@@ -1984,7 +1991,6 @@ __meta__ = {
 [node name="borderbot" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item1/border"]
 position = Vector2( 264, 219 )
 scale = Vector2( 14.5, 0.31 )
-z_index = 1
 texture = ExtResource( 35 )
 __meta__ = {
 "_edit_lock_": true
@@ -1993,7 +1999,6 @@ __meta__ = {
 [node name="borderleft" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item1/border"]
 position = Vector2( 37, 152 )
 scale = Vector2( 0.31, 3.905 )
-z_index = 1
 texture = ExtResource( 35 )
 __meta__ = {
 "_edit_lock_": true
@@ -2002,16 +2007,10 @@ __meta__ = {
 [node name="borderright" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item1/border"]
 position = Vector2( 491, 152 )
 scale = Vector2( 0.31, 3.9375 )
-z_index = 1
 texture = ExtResource( 35 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="plane" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item1"]
-position = Vector2( 264, 152 )
-scale = Vector2( 0.226563, 142.125 )
-texture = SubResource( 5 )
 
 [node name="mt_item2" type="Control" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont"]
 margin_top = 260.0
@@ -2047,13 +2046,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="fade" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item2"]
+position = Vector2( 264, 132 )
+scale = Vector2( 0.226563, 144 )
+texture = ExtResource( 52 )
+
 [node name="border" type="Node2D" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item2"]
 position = Vector2( 0, -20 )
 
 [node name="bordertop" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item2/border"]
 position = Vector2( 264, 85 )
 scale = Vector2( 14.5, 0.31 )
-z_index = 1
 texture = ExtResource( 35 )
 __meta__ = {
 "_edit_lock_": true
@@ -2062,7 +2065,6 @@ __meta__ = {
 [node name="borderbot" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item2/border"]
 position = Vector2( 264, 219 )
 scale = Vector2( 14.5, 0.31 )
-z_index = 1
 texture = ExtResource( 35 )
 __meta__ = {
 "_edit_lock_": true
@@ -2071,7 +2073,6 @@ __meta__ = {
 [node name="borderleft" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item2/border"]
 position = Vector2( 37, 152 )
 scale = Vector2( 0.31, 3.905 )
-z_index = 1
 texture = ExtResource( 35 )
 __meta__ = {
 "_edit_lock_": true
@@ -2080,16 +2081,10 @@ __meta__ = {
 [node name="borderright" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item2/border"]
 position = Vector2( 491, 152 )
 scale = Vector2( 0.31, 3.9375 )
-z_index = 1
 texture = ExtResource( 35 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="fade" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item2"]
-position = Vector2( 264, 132 )
-scale = Vector2( 0.226563, 144 )
-texture = ExtResource( 52 )
 
 [node name="mt_item3" type="Control" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont"]
 margin_top = 520.0
@@ -2125,13 +2120,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="disco" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item3"]
+position = Vector2( 264, 112 )
+scale = Vector2( 0.4375, 128 )
+texture = ExtResource( 54 )
+
 [node name="border" type="Node2D" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item3"]
 position = Vector2( 0, -40 )
 
 [node name="bordertop" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item3/border"]
 position = Vector2( 264, 85 )
 scale = Vector2( 14.5, 0.31 )
-z_index = 1
 texture = ExtResource( 35 )
 __meta__ = {
 "_edit_lock_": true
@@ -2140,7 +2139,6 @@ __meta__ = {
 [node name="borderbot" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item3/border"]
 position = Vector2( 264, 219 )
 scale = Vector2( 14.5, 0.31 )
-z_index = 1
 texture = ExtResource( 35 )
 __meta__ = {
 "_edit_lock_": true
@@ -2149,7 +2147,6 @@ __meta__ = {
 [node name="borderleft" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item3/border"]
 position = Vector2( 37, 152 )
 scale = Vector2( 0.31, 3.905 )
-z_index = 1
 texture = ExtResource( 35 )
 __meta__ = {
 "_edit_lock_": true
@@ -2158,16 +2155,10 @@ __meta__ = {
 [node name="borderright" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item3/border"]
 position = Vector2( 491, 152 )
 scale = Vector2( 0.31, 3.9375 )
-z_index = 1
 texture = ExtResource( 35 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="fade" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item3"]
-position = Vector2( 264, 112 )
-scale = Vector2( 0.4375, 128 )
-texture = ExtResource( 54 )
 
 [node name="mt_score" type="Panel" parent="menucanvas/menustore"]
 margin_top = 872.0
