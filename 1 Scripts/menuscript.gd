@@ -97,11 +97,11 @@ var customDataGet = {
 onready var storeScore = get_node("menucanvas/menustore/mt_score/mp_scorevalue")
 onready var storeCoins = get_node("menucanvas/menustore/mt_coins/mp_coinvalue")
 
-onready var storeTrailGhostButton = get_node("menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item1/mt_but1")
-onready var storeTrailSnakeButton = get_node("menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item2/mt_but2")
-onready var storeTrailSmokeButton = get_node("menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item3/mt_but3")
-onready var storeTrailFlamesButton = get_node("menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item4/mt_but4")
-onready var storeTrailRainbowButton = get_node("menucanvas/menustore/mt_skins/mt_themescrollcont/mt_hboxscrollcont/mt_item5/mt_but5")
+onready var storeTrailGhostButton = get_node("menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item1/mt_but1")
+onready var storeTrailSnakeButton = get_node("menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item2/mt_but2")
+onready var storeTrailSmokeButton = get_node("menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item3/mt_but3")
+onready var storeTrailFlamesButton = get_node("menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item4/mt_but4")
+onready var storeTrailRainbowButton = get_node("menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item5/mt_but5")
 
 var storeTrailNames = [
 	"ghost", "snake", "smoke", "flames", "rainbow"
