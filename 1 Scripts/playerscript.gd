@@ -48,6 +48,8 @@ func _ready():
 	scoreTimer.start()
 	
 	playerTrail()
+	
+	playerBg()
 
 func _process(delta):
 
@@ -221,6 +223,15 @@ func playerTrail():
 			get_node("sprite/trail_flames").visible = true
 		"rainbow":
 			get_node("sprite/trail_rainbow").visible = true
+
+func playerBg():
+	match globalsettings.currentBg:
+		"plain":
+			get_node("sprite/backgrounds/bg_plain").visible = true
+		"fade":
+			get_node("sprite/backgrounds/bg_fade").visible = true
+		"disco":
+			get_node("sprite/backgrounds/bg_rainbowlayer/bg_rainbow").visible = true
 
 func powerupStatus():
 	if powerupValue == 100:

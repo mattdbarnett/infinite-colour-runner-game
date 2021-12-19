@@ -5,6 +5,7 @@ extends Node
 var globalgrav = 40;
 var gamemode;
 var noMoney = false;
+var noScore = false;
 
 var customData = {
 	"redvalue": 0,
@@ -21,7 +22,7 @@ var customData = {
 
 var holdmode;
 var currency = 1025;
-var highscore = 0;
+var highscore = 500;
 var currentTrail = "none" #none/ghost/snake/smoke/flames/rainbow
 
 var trailsBought = {
@@ -30,6 +31,14 @@ var trailsBought = {
 	"smoke": false,
 	"flames": false,
 	"rainbow": false
+}
+
+var currentBg = "plain" #plain/fade/disco
+
+var bgsUnlocked = {
+	"plain": true,
+	"fade": false,
+	"disco": false
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -53,3 +62,12 @@ func buyTrail(trail, price):
 		currentTrail = trail
 	else:
 		noMoney = true
+
+func unlockBg(bg, neededscore):
+	if bgsUnlocked[bg] == true:
+		currentBg = bg
+	elif highscore >= neededscore:
+		bgsUnlocked[bg] = true
+		currentBg = bg
+	else:
+		noScore = true

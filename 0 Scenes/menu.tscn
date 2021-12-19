@@ -124,7 +124,6 @@ script = ExtResource( 10 )
 layer = 5
 
 [node name="menumain" type="Control" parent="menucanvas"]
-visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 theme = ExtResource( 11 )
@@ -1391,6 +1390,7 @@ position = Vector2( 704, 368 )
 texture = ExtResource( 35 )
 
 [node name="menustore" type="Control" parent="menucanvas"]
+visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 rect_pivot_offset = Vector2( -16, 408 )
@@ -1429,7 +1429,7 @@ __meta__ = {
 }
 
 [node name="mt_hboxscrollcont" type="VBoxContainer" parent="menucanvas/menustore/mt_trails/mt_themescrollcont"]
-margin_right = 512.0
+margin_right = 528.0
 margin_bottom = 1280.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1931,7 +1931,7 @@ __meta__ = {
 }
 
 [node name="mt_hboxscrollcont" type="VBoxContainer" parent="menucanvas/menustore/mt_themes/mt_themescrollcont"]
-margin_right = 512.0
+margin_right = 528.0
 margin_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1960,11 +1960,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mt_but1" type="Button" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item1"]
+[node name="mt_but1_bgs" type="Button" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item1"]
 margin_left = 224.0
 margin_right = 496.0
 margin_bottom = 64.0
-custom_styles/hover = ExtResource( 32 )
+custom_styles/hover = ExtResource( 51 )
 custom_styles/pressed = ExtResource( 32 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 43 )
@@ -2032,12 +2032,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mt_but2" type="Button" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item2"]
+[node name="mt_but2_bgs" type="Button" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item2"]
 margin_left = 224.0
 margin_top = -20.0
 margin_right = 493.0
 margin_bottom = 44.0
-custom_styles/hover = ExtResource( 32 )
+custom_styles/hover = ExtResource( 51 )
 custom_styles/pressed = ExtResource( 32 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 43 )
@@ -2106,12 +2106,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mt_but3" type="Button" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item3"]
+[node name="mt_but3_bgs" type="Button" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item3"]
 margin_left = 224.0
 margin_top = -40.0
 margin_right = 496.0
 margin_bottom = 24.0
-custom_styles/hover = ExtResource( 32 )
+custom_styles/hover = ExtResource( 51 )
 custom_styles/pressed = ExtResource( 32 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 43 )
@@ -2879,6 +2879,9 @@ __meta__ = {
 [connection signal="pressed" from="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item3/mt_but3" to="." method="_on_mt_but3_pressed"]
 [connection signal="pressed" from="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item4/mt_but4" to="." method="_on_mt_but4_pressed"]
 [connection signal="pressed" from="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item5/mt_but5" to="." method="_on_mt_but5_pressed"]
+[connection signal="pressed" from="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item1/mt_but1_bgs" to="." method="_on_mt_but1_bgs_pressed"]
+[connection signal="pressed" from="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item2/mt_but2_bgs" to="." method="_on_mt_but2_bgs_pressed"]
+[connection signal="pressed" from="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item3/mt_but3_bgs" to="." method="_on_mt_but3_bgs_pressed"]
 [connection signal="pressed" from="menucanvas/menustore/mt_back" to="." method="_on_mt_back_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_g+d" to="." method="_on_ms_gd_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_fullscreen" to="." method="_on_ms_fullscreen_pressed"]

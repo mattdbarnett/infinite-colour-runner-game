@@ -110,6 +110,19 @@ var storeTrailNames = [
 var storeTrailPrices = [
 	25, 75, 150, 500, 1000
 ]
+
+onready var storeBGPlainButton = get_node("menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item1/mt_but1_bgs")
+onready var storeBGFadeButton = get_node("menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item2/mt_but2_bgs")
+onready var storeBGDiscoButton = get_node("menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item3/mt_but3_bgs")
+
+var storeBGNames = [
+	"plain", "fade", "disco"
+]
+
+var storeBGScoresNeeded = [
+	0, 100, 500
+]
+
 #Settings Menu Vars
 onready var msbuttons = [
 	get_node("menucanvas/menusettings/ms_g+d"),
@@ -144,6 +157,7 @@ func _process(delta):
 	fullscreenCheck()
 	holdmodeCheck()
 	noMoneyCheck()
+	noScoreCheck()
 
 func updateStats():
 	storeScore.text = str(globalsettings.highscore)
@@ -362,11 +376,18 @@ Store Menu Signals
 """
 
 func updateStore():
+	#Trails
 	var storeTrailList = [
 	storeTrailGhostButton, storeTrailSnakeButton, storeTrailSmokeButton, storeTrailFlamesButton, storeTrailRainbowButton
 	]
 	for i in range(storeTrailList.size()):
 		updateStoreTrail(storeTrailList[i], storeTrailNames[i], storeTrailPrices[i])
+	#Backgrounds
+	var storeBGList = [
+	storeBGPlainButton, storeBGFadeButton, storeBGDiscoButton
+	]
+	for i in range (storeBGList.size()):
+		updateStoreBg(storeBGList[i], storeBGNames[i], storeBGScoresNeeded[i])
 
 func updateStoreTrail(button, mode, price):
 	if globalsettings.trailsBought[mode] == true:
@@ -377,16 +398,36 @@ func updateStoreTrail(button, mode, price):
 	else:
 		button.text = str(price) + " Coins" 
 
+func updateStoreBg(button, mode, scoreneeded):
+	if globalsettings.bgsUnlocked[mode] == true:
+		if globalsettings.currentBg == mode:
+			button.text = "Equipped"
+		else:
+			button.text = "Unequipped"
+	else:
+		button.text = "Score Over " + str(scoreneeded)
+
 func noMoneyCheck():
 	if globalsettings.noMoney == true:
 		get_node("menucanvas/menustore/mt_moneydialog").popup_centered_clamped()
 		globalsettings.noMoney = false
 
+func noScoreCheck():
+	if globalsettings.noScore == true:
+		get_node("menucanvas/menustore/mt_moneydialog").popup_centered_clamped()
+		globalsettings.noScore = false
+
 func buyTrailAttempt(num):
 	globalsettings.buyTrail(storeTrailNames[num], storeTrailPrices[num])
 	updateStats()
 	updateStore()
-	
+
+func unlockBGAttempt(num):
+	globalsettings.unlockBg(storeBGNames[num], storeBGScoresNeeded[num])
+	updateStore()
+
+#Trail Buttons
+
 func _on_mt_but1_pressed():
 	buyTrailAttempt(0)
 
@@ -401,6 +442,17 @@ func _on_mt_but4_pressed():
 
 func _on_mt_but5_pressed():
 	buyTrailAttempt(4)
+
+#Background Buttons
+
+func _on_mt_but1_bgs_pressed():
+	unlockBGAttempt(0)
+
+func _on_mt_but2_bgs_pressed():
+	unlockBGAttempt(1)
+
+func _on_mt_but3_bgs_pressed():
+	unlockBGAttempt(2)
 
 func _on_mt_back_pressed():
 	currentmenu_update(menumain)
@@ -498,4 +550,3 @@ func _on_mh_next3_pressed():
 	get_node("menucanvas/menuhelp/mh_cont2").visible = false
 	get_node("menucanvas/menuhelp/mh_cont3").visible = false
 	currentmenu_update(menumain)
-
