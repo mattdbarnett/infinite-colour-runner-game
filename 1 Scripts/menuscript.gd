@@ -139,6 +139,8 @@ onready var settinggameplay = get_node("menucanvas/menusettings/ms_gameplay/ms_g
 onready var fullscreenbutton = get_node("menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_fullscreen")
 onready var resolution = get_node("menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_resolution")
 
+onready var spdgravbutton = get_node("menucanvas/menusettings/ms_gui/ms_gui_menu/ms_spdgrav")
+
 onready var hold = false
 onready var pressholdbtn = get_node("menucanvas/menusettings/ms_gameplay/ms_gameplay_menu/ms_presshold")
 
@@ -154,6 +156,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	spdgravCheck()
 	fullscreenCheck()
 	holdmodeCheck()
 	noMoneyCheck()
@@ -527,6 +530,15 @@ func fullscreenCheck():
 		fullscreenbutton.pressed = true
 	else:
 		fullscreenbutton.pressed = false
+
+func _on_ms_spdgrav_pressed():
+	globalsettings.spdgravInfo = !globalsettings.spdgravInfo
+
+func spdgravCheck():
+	if globalsettings.spdgravInfo == true:
+		spdgravbutton.pressed = true
+	else:
+		spdgravbutton.pressed = false
 
 func _on_ms_back_pressed():
 	currentmenu_update(menumain)

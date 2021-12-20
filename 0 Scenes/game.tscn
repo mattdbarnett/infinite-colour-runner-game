@@ -87,6 +87,87 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="speed+gravPanels" type="Node2D" parent="player/Camera2D/CanvasLayer"]
+visible = false
+position = Vector2( 64, 56 )
+
+[node name="gravPanel" type="Panel" parent="player/Camera2D/CanvasLayer/speed+gravPanels"]
+anchor_left = 25.6
+anchor_right = 23.9365
+anchor_bottom = -0.387037
+margin_left = 1480.0
+margin_right = 1792.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 312, 64 )
+custom_styles/panel = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="nameLabel" type="Label" parent="player/Camera2D/CanvasLayer/speed+gravPanels/gravPanel"]
+margin_left = 152.0
+margin_top = 8.0
+margin_right = 304.0
+margin_bottom = 56.0
+custom_fonts/font = ExtResource( 6 )
+text = "Gravity"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="valueLabel" type="Label" parent="player/Camera2D/CanvasLayer/speed+gravPanels/gravPanel"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 160.0
+margin_bottom = 56.0
+custom_fonts/font = ExtResource( 6 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="speedPanel" type="Panel" parent="player/Camera2D/CanvasLayer/speed+gravPanels"]
+anchor_left = -11.4
+anchor_right = -13.0635
+anchor_bottom = -0.387037
+margin_right = 312.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 312, 64 )
+custom_styles/panel = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="nameLabel" type="Label" parent="player/Camera2D/CanvasLayer/speed+gravPanels/speedPanel"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 160.0
+margin_bottom = 56.0
+custom_fonts/font = ExtResource( 6 )
+text = "Speed"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="valueLabel" type="Label" parent="player/Camera2D/CanvasLayer/speed+gravPanels/speedPanel"]
+margin_left = 152.0
+margin_top = 8.0
+margin_right = 304.0
+margin_bottom = 56.0
+custom_fonts/font = ExtResource( 6 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="gameenv" type="WorldEnvironment" parent="."]
 environment = ExtResource( 3 )
 

@@ -21,6 +21,7 @@ var customData = {
 #--Locally Saved Vars
 
 var holdmode;
+var spdgravInfo = false;
 var currency = 1025;
 var highscore = 500;
 var currentTrail = "none" #none/ghost/snake/smoke/flames/rainbow

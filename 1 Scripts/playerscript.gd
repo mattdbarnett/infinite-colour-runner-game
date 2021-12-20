@@ -33,6 +33,8 @@ var scoreIncrement = 1
 
 var currentHold = false
 
+onready var speedGravPanels = get_node("Camera2D/CanvasLayer/speed+gravPanels")
+
 onready var scoreTimer = get_node("Camera2D/TimerScore")
 onready var scoreLabel = get_node("Camera2D/CanvasLayer/scorePanel/valueLabel")
 var score = 0
@@ -50,6 +52,8 @@ func _ready():
 	playerTrail()
 	
 	playerBg()
+	
+	playerUI()
 
 func _process(delta):
 
@@ -201,7 +205,13 @@ func playerEffects():
 			xspeed = basex
 			
 			timerScoreReset()
+
+	#Effects Gui
 	
+	get_node(str(speedGravPanels.get_path()) + "/speedPanel/valueLabel").text = str(xspeed)
+	
+	get_node(str(speedGravPanels.get_path()) + "/gravPanel/valueLabel").text = str(int(gravchange))
+
 func playerDeath():
 	if globalsettings.gamemode != "Custom":
 		if score > globalsettings.highscore:
@@ -232,6 +242,10 @@ func playerBg():
 			get_node("sprite/backgrounds/bg_fade").visible = true
 		"disco":
 			get_node("sprite/backgrounds/bg_rainbowlayer/bg_rainbow").visible = true
+
+func playerUI():
+	if globalsettings.spdgravInfo == true:
+		speedGravPanels.visible = true
 
 func powerupStatus():
 	if powerupValue == 100:
