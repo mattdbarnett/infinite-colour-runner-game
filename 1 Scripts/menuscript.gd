@@ -153,12 +153,20 @@ func _ready():
 	updateStats()
 	
 	updateStore()
+	
+	# -- Settings Checks
+	# - Gui Checks
+	spdgravCheck()
+	# - Gameplay Checks
+	holdmodeCheck()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	spdgravCheck()
+	
+	# Changes button status and allows for fullscreen change through f key
 	fullscreenCheck()
-	holdmodeCheck()
+	
+	# Store Checks for when a purchase is made without enough currency
 	noMoneyCheck()
 	noScoreCheck()
 
@@ -500,6 +508,10 @@ func _on_ms_gameplay_pressed():
 
 func _on_ms_presshold_pressed():
 	globalsettings.holdmode = !globalsettings.holdmode
+	if globalsettings.holdmode == false:
+		pressholdbtn.text = "Press"
+	elif globalsettings.holdmode == true:
+		pressholdbtn.text = "Hold"
 
 func holdmodeCheck():
 	if globalsettings.holdmode == false:
@@ -519,17 +531,20 @@ func _on_ms_slidereffect_value_changed(value):
 	
 	label.text = str(slider.value) + "%"
 
+# Fullscreen Settings Functions
+
 func _on_ms_fullscreen_pressed():
 	globalsettings.fullscreen()
 
 func fullscreenCheck():
 	if Input.is_action_just_released("fullscreen"):
 		globalsettings.fullscreen()
-	
 	if OS.window_fullscreen == true:
 		fullscreenbutton.pressed = true
 	else:
 		fullscreenbutton.pressed = false
+
+# Speed and Gravity Info Settings Functions
 
 func _on_ms_spdgrav_pressed():
 	globalsettings.spdgravInfo = !globalsettings.spdgravInfo
