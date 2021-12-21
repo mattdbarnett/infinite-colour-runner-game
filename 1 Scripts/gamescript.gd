@@ -36,6 +36,8 @@ var customDataGet
 var customDataSum = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if globalsettings.fpsInfo == true:
+		get_node("player/Camera2D/CanvasLayer/fpsLabel").visible = true
 	typedict = {
 		texture: $LBody,
 		texturered: $RedLBody,
@@ -168,9 +170,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	if Input.is_action_just_released("fullscreen"):
-		globalsettings.fullscreen()
-	
+	extraFeatures()
+		
 	if fterrain[-1].x < $player.position.x + screensize.x:
 		texture_gen()
 		floor_gen(ftype)
@@ -297,3 +298,13 @@ func ceiling_gen(ctype):
 	ground.polygon = poly
 	ground.texture = ctype
 	add_child(ground)
+
+func extraFeatures():
+	
+	#Keep FPS label updated
+	if globalsettings.fpsInfo == true:
+		get_node("player/Camera2D/CanvasLayer/fpsLabel").text = str(Engine.get_frames_per_second())
+	
+	#Allow fullscreen to be switched mid-game
+	if Input.is_action_just_released("fullscreen"):
+		globalsettings.fullscreen()

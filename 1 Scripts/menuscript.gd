@@ -140,6 +140,7 @@ onready var fullscreenbutton = get_node("menucanvas/menusettings/ms_g+d/ms_g+d_m
 onready var resolution = get_node("menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_resolution")
 
 onready var spdgravbutton = get_node("menucanvas/menusettings/ms_gui/ms_gui_menu/ms_spdgrav")
+onready var fpsbutton = get_node("menucanvas/menusettings/ms_gui/ms_gui_menu/ms_fps")
 
 onready var hold = false
 onready var pressholdbtn = get_node("menucanvas/menusettings/ms_gameplay/ms_gameplay_menu/ms_presshold")
@@ -157,6 +158,7 @@ func _ready():
 	# -- Settings Checks
 	# - Gui Checks
 	spdgravCheck()
+	fpsCheck()
 	# - Gameplay Checks
 	holdmodeCheck()
 
@@ -552,6 +554,17 @@ func _on_ms_spdgrav_pressed():
 func spdgravCheck():
 	if globalsettings.spdgravInfo == true:
 		spdgravbutton.pressed = true
+	else:
+		spdgravbutton.pressed = false
+
+# FPS Info Functions
+
+func _on_ms_fps_pressed():
+	globalsettings.fpsInfo = !globalsettings.fpsInfo
+
+func fpsCheck():
+	if globalsettings.fpsInfo == true:
+		fpsbutton.pressed = true
 	else:
 		spdgravbutton.pressed = false
 

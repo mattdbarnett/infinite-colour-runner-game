@@ -92,7 +92,8 @@ visible = false
 position = Vector2( 64, 56 )
 
 [node name="gravPanel" type="Panel" parent="player/Camera2D/CanvasLayer/speed+gravPanels"]
-anchor_left = 25.6
+anchor_left = 23.9365
+anchor_top = -0.387037
 anchor_right = 23.9365
 anchor_bottom = -0.387037
 margin_left = 1480.0
@@ -131,7 +132,8 @@ __meta__ = {
 }
 
 [node name="speedPanel" type="Panel" parent="player/Camera2D/CanvasLayer/speed+gravPanels"]
-anchor_left = -11.4
+anchor_left = -13.0635
+anchor_top = -0.387037
 anchor_right = -13.0635
 anchor_bottom = -0.387037
 margin_right = 312.0
@@ -164,6 +166,19 @@ custom_fonts/font = ExtResource( 6 )
 text = "0"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fpsLabel" type="Label" parent="player/Camera2D/CanvasLayer"]
+visible = false
+margin_left = 1688.0
+margin_top = 8.0
+margin_right = 1912.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 4 )
+text = "FPS"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
