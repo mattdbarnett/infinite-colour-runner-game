@@ -2887,6 +2887,7 @@ __meta__ = {
 [connection signal="pressed" from="menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_fullscreen" to="." method="_on_ms_fullscreen_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_gui" to="." method="_on_ms_gui_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_gui/ms_gui_menu/ms_spdgrav" to="." method="_on_ms_spdgrav_pressed"]
+[connection signal="pressed" from="menucanvas/menusettings/ms_gui/ms_gui_menu/ms_movebox" to="." method="_on_ms_movebox_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_gui/ms_gui_menu/ms_fps" to="." method="_on_ms_fps_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_sound" to="." method="_on_ms_sound_pressed"]
 [connection signal="value_changed" from="menucanvas/menusettings/ms_sound/ms_sound_menu/ms_slidermusic" to="." method="_on_ms_slidermusic_value_changed"]

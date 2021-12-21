@@ -34,6 +34,7 @@ var scoreIncrement = 1
 var currentHold = false
 
 onready var speedGravPanels = get_node("Camera2D/CanvasLayer/speed+gravPanels")
+onready var movePanel = get_node("Camera2D/CanvasLayer/movePanel")
 
 onready var scoreTimer = get_node("Camera2D/TimerScore")
 onready var scoreLabel = get_node("Camera2D/CanvasLayer/scorePanel/valueLabel")
@@ -53,7 +54,7 @@ func _ready():
 	
 	playerBg()
 	
-	playerUI()
+	playerUIInitalise()
 
 func _process(delta):
 
@@ -67,6 +68,8 @@ func _process(delta):
 	playerTouch()
 	
 	playerEffects()
+	
+	playerUIConst()
 	
 	motion = move_and_slide(motion, UP)
 
@@ -206,11 +209,20 @@ func playerEffects():
 			
 			timerScoreReset()
 
-	#Effects Gui
+func playerUIConst():
+	
+	# Speed + Gravity Panels
 	
 	get_node(str(speedGravPanels.get_path()) + "/speedPanel/valueLabel").text = str(xspeed)
 	
 	get_node(str(speedGravPanels.get_path()) + "/gravPanel/valueLabel").text = str(int(gravchange))
+	
+	# Move Panel
+	
+	if (is_on_floor() or is_on_ceiling()):
+		movePanel.get_stylebox("panel", "").set_bg_color("#00FF21")
+	else:
+		movePanel.get_stylebox("panel", "").set_bg_color("#000000")
 
 func playerDeath():
 	if globalsettings.gamemode != "Custom":
@@ -243,9 +255,12 @@ func playerBg():
 		"disco":
 			get_node("sprite/backgrounds/bg_rainbowlayer/bg_rainbow").visible = true
 
-func playerUI():
+func playerUIInitalise():
 	if globalsettings.spdgravInfo == true:
 		speedGravPanels.visible = true
+	
+	if globalsettings.moveInfo == true:
+		movePanel.visible = true
 
 func powerupStatus():
 	if powerupValue == 100:

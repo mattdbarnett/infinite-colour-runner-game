@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://1 Scripts/gamescript.gd" type="Script" id=1]
 [ext_resource path="res://0 Scenes/player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://3 Fonts/1 Variations/s32.tres" type="DynamicFont" id=4]
 [ext_resource path="res://4 Styling/2 Panels/gui_panel.tres" type="StyleBox" id=5]
 [ext_resource path="res://3 Fonts/1 Variations/s27.tres" type="DynamicFont" id=6]
+[ext_resource path="res://4 Styling/4 Small/norm_small.tres" type="StyleBox" id=7]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.956863, 0, 1, 1 )
@@ -83,6 +84,17 @@ margin_bottom = 72.0
 custom_fonts/font = ExtResource( 6 )
 text = "0"
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="movePanel" type="Panel" parent="player/Camera2D/CanvasLayer"]
+visible = false
+margin_left = 64.0
+margin_top = 888.0
+margin_right = 192.0
+margin_bottom = 1016.0
+custom_styles/panel = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
