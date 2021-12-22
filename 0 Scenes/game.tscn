@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://1 Scripts/gamescript.gd" type="Script" id=1]
 [ext_resource path="res://0 Scenes/player.tscn" type="PackedScene" id=2]
@@ -6,7 +6,8 @@
 [ext_resource path="res://3 Fonts/1 Variations/s32.tres" type="DynamicFont" id=4]
 [ext_resource path="res://4 Styling/2 Panels/gui_panel.tres" type="StyleBox" id=5]
 [ext_resource path="res://3 Fonts/1 Variations/s27.tres" type="DynamicFont" id=6]
-[ext_resource path="res://4 Styling/4 Small/norm_small.tres" type="StyleBox" id=7]
+[ext_resource path="res://4 Styling/4 Small/norm_small_move.tres" type="StyleBox" id=7]
+[ext_resource path="res://4 Styling/4 Small/norm_small_status.tres" type="StyleBox" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.956863, 0, 1, 1 )
@@ -98,6 +99,23 @@ custom_styles/panel = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="statusPanel" type="Panel" parent="player/Camera2D/CanvasLayer"]
+visible = false
+margin_left = 1728.0
+margin_top = 888.0
+margin_right = 1856.0
+margin_bottom = 1016.0
+custom_styles/panel = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="statusArrow" type="Polygon2D" parent="player/Camera2D/CanvasLayer/statusPanel"]
+position = Vector2( 64, 64 )
+scale = Vector2( 0.9, 0.868056 )
+offset = Vector2( -1800, -880 )
+polygon = PoolVector2Array( 1800, 833.92, 1760, 920, 1800, 896, 1840, 920 )
 
 [node name="speed+gravPanels" type="Node2D" parent="player/Camera2D/CanvasLayer"]
 visible = false

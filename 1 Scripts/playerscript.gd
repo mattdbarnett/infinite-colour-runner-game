@@ -35,6 +35,8 @@ var currentHold = false
 
 onready var speedGravPanels = get_node("Camera2D/CanvasLayer/speed+gravPanels")
 onready var movePanel = get_node("Camera2D/CanvasLayer/movePanel")
+onready var statusPanel = get_node("Camera2D/CanvasLayer/statusPanel")
+onready var statusArrow = get_node("Camera2D/CanvasLayer/statusPanel/statusArrow")
 
 onready var scoreTimer = get_node("Camera2D/TimerScore")
 onready var scoreLabel = get_node("Camera2D/CanvasLayer/scorePanel/valueLabel")
@@ -213,17 +215,37 @@ func playerUIConst():
 	
 	# Speed + Gravity Panels
 	
-	get_node(str(speedGravPanels.get_path()) + "/speedPanel/valueLabel").text = str(xspeed)
-	
-	get_node(str(speedGravPanels.get_path()) + "/gravPanel/valueLabel").text = str(int(gravchange))
+	if globalsettings.spdgravInfo == true:
+		get_node(str(speedGravPanels.get_path()) + "/speedPanel/valueLabel").text = str(xspeed)
+		get_node(str(speedGravPanels.get_path()) + "/gravPanel/valueLabel").text = str(int(gravchange))
 	
 	# Move Panel
 	
-	if (is_on_floor() or is_on_ceiling()):
-		movePanel.get_stylebox("panel", "").set_bg_color("#00FF21")
-	else:
-		movePanel.get_stylebox("panel", "").set_bg_color("#000000")
-
+	if globalsettings.moveInfo == true:
+		if (is_on_floor() or is_on_ceiling()):
+			movePanel.get_stylebox("panel", "").set_bg_color("#00FF21")
+		else:
+			movePanel.get_stylebox("panel", "").set_bg_color("#000000")
+	
+	# Status Panel
+	print(modeCurrent)
+	if globalsettings.statusInfo == true:
+		match modeCurrent:
+			"base": statusPanel.get_stylebox("panel", "").set_bg_color("#000000")
+			"blue": statusPanel.get_stylebox("panel", "").set_bg_color("#0016ff")
+			"purple": statusPanel.get_stylebox("panel", "").set_bg_color("#4800ff")
+			"green": statusPanel.get_stylebox("panel", "").set_bg_color("#06ff00")
+			"yellow": statusPanel.get_stylebox("panel", "").set_bg_color("#ffef00")
+			"pink": statusPanel.get_stylebox("panel", "").set_bg_color("#f400ff")
+			"powerup": statusPanel.get_stylebox("panel", "").set_bg_color("#f400ff")
+		if modeCurrent == "yellow":
+			statusArrow.visible = true
+			if yellowtoggle == false:
+				statusArrow.rotation_degrees = 0
+			elif yellowtoggle == true:
+				statusArrow.rotation_degrees = 180
+		else:
+			statusArrow.visible = false
 func playerDeath():
 	if globalsettings.gamemode != "Custom":
 		if score > globalsettings.highscore:
@@ -261,6 +283,9 @@ func playerUIInitalise():
 	
 	if globalsettings.moveInfo == true:
 		movePanel.visible = true
+	
+	if globalsettings.statusInfo == true:
+		statusPanel.visible = true
 
 func powerupStatus():
 	if powerupValue == 100:

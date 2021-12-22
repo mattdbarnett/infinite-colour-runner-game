@@ -142,6 +142,7 @@ onready var resolution = get_node("menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms
 onready var spdgravbutton = get_node("menucanvas/menusettings/ms_gui/ms_gui_menu/ms_spdgrav")
 onready var fpsbutton = get_node("menucanvas/menusettings/ms_gui/ms_gui_menu/ms_fps")
 onready var movebutton = get_node("menucanvas/menusettings/ms_gui/ms_gui_menu/ms_movebox")
+onready var statusbutton = get_node("menucanvas/menusettings/ms_gui/ms_gui_menu/ms_status")
 
 onready var hold = false
 onready var pressholdbtn = get_node("menucanvas/menusettings/ms_gameplay/ms_gameplay_menu/ms_presshold")
@@ -161,6 +162,7 @@ func _ready():
 	spdgravCheck()
 	fpsCheck()
 	moveCheck()
+	statusCheck()
 	# - Gameplay Checks
 	holdmodeCheck()
 
@@ -571,7 +573,7 @@ func fpsCheck():
 	else:
 		spdgravbutton.pressed = false
 
-#Move Box Info Functions
+# Move Box Info Functions
 
 func _on_ms_movebox_pressed():
 	globalsettings.moveInfo = !globalsettings.moveInfo
@@ -581,6 +583,17 @@ func moveCheck():
 		movebutton.pressed = true
 	else:
 		movebutton.pressed = false
+
+# Status Box Info Functions
+
+func _on_ms_status_pressed():
+	globalsettings.statusInfo = !globalsettings.statusInfo
+
+func statusCheck():
+	if globalsettings.statusInfo == true:
+		statusbutton.pressed = true
+	else:
+		statusbutton.pressed = false
 
 func _on_ms_back_pressed():
 	currentmenu_update(menumain)

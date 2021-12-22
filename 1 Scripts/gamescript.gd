@@ -221,7 +221,7 @@ func floor_gen(ftype):
 			
 			if piecePart == 0 and piece == 0:
 				#If this is the first section of the piece, define/create height
-				floor_point.y = start.y + height * cos(1 * PI / floor_slices * piecePart) + random
+				floor_point.y = start.y + height * cos(1 / floor_slices * piecePart) + random
 				
 				#Limits floor from going too low
 				if floor_point.y < 90:
@@ -275,7 +275,7 @@ func ceiling_gen(ctype):
 				
 			if piecePart == 0 and piece == 0:
 				#If this is the first section of the piece, define/create height
-				ceiling_point.y = start.y + height * cos(1 * PI / ceiling_slices * piecePart) + random
+				ceiling_point.y = start.y + height * cos(1 / ceiling_slices * piecePart) + random
 				
 				if ceiling_point.y > -90:
 					ceiling_point.y += -64
