@@ -23,6 +23,10 @@ globalsettings="*res://1 Scripts/globalscript.gd"
 window/size/width=1920
 window/size/height=1080
 
+[global]
+
+vsync=false
+
 [input]
 
 move={

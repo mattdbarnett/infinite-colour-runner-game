@@ -137,6 +137,7 @@ onready var settingsound = get_node("menucanvas/menusettings/ms_sound/ms_sound_m
 onready var settinggameplay = get_node("menucanvas/menusettings/ms_gameplay/ms_gameplay_menu")
 
 onready var fullscreenbutton = get_node("menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_fullscreen")
+onready var vsyncbutton = get_node("menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_vsync")
 onready var resolution = get_node("menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_resolution")
 
 onready var spdgravbutton = get_node("menucanvas/menusettings/ms_gui/ms_gui_menu/ms_spdgrav")
@@ -158,6 +159,7 @@ func _ready():
 	updateStore()
 	
 	# -- Settings Checks
+	# - Graphics Checks
 	# - Gui Checks
 	spdgravCheck()
 	fpsCheck()
@@ -550,6 +552,23 @@ func fullscreenCheck():
 		fullscreenbutton.pressed = true
 	else:
 		fullscreenbutton.pressed = false
+
+# VSync Settings Functions
+
+func _on_ms_vsync_pressed():
+	globalsettings.vsync = !globalsettings.vsync
+	
+	# --- reference start: https://godotengine.org/qa/27123/set-vsync-from-code-2-1-4
+	var vsync = !OS.is_vsync_enabled()
+	OS.set_use_vsync(vsync)
+	# reference end ---
+	
+
+func vsyncCheck():
+	if globalsettings.vsync == true:
+		vsyncbutton.pressed = true
+	else:
+		vsyncbutton.pressed = false
 
 # Speed and Gravity Info Settings Functions
 
