@@ -155,7 +155,7 @@ process_material = SubResource( 5 )
 
 [node name="trail_ghost" type="Particles2D" parent="sprite"]
 visible = false
-amount = 20
+amount = 4
 preprocess = 10.0
 speed_scale = 2.0
 local_coords = false
