@@ -97,6 +97,7 @@ var customDataGet = {
 onready var storeScore = get_node("menucanvas/menustore/mt_score/mp_scorevalue")
 onready var storeCoins = get_node("menucanvas/menustore/mt_coins/mp_coinvalue")
 
+onready var storeTrailNoneButton = get_node("menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item0/mt_but0")
 onready var storeTrailGhostButton = get_node("menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item1/mt_but1")
 onready var storeTrailSnakeButton = get_node("menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item2/mt_but2")
 onready var storeTrailSmokeButton = get_node("menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item3/mt_but3")
@@ -104,11 +105,11 @@ onready var storeTrailFlamesButton = get_node("menucanvas/menustore/mt_trails/mt
 onready var storeTrailRainbowButton = get_node("menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item5/mt_but5")
 
 var storeTrailNames = [
-	"ghost", "snake", "smoke", "flames", "rainbow"
+	"none", "ghost", "snake", "smoke", "flames", "rainbow"
 ]
 
 var storeTrailPrices = [
-	25, 75, 150, 500, 1000
+	0, 25, 75, 150, 500, 1000
 ]
 
 onready var storeBGPlainButton = get_node("menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item1/mt_but1_bgs")
@@ -407,7 +408,7 @@ Store Menu Signals
 func updateStore():
 	#Trails
 	var storeTrailList = [
-	storeTrailGhostButton, storeTrailSnakeButton, storeTrailSmokeButton, storeTrailFlamesButton, storeTrailRainbowButton
+	storeTrailNoneButton, storeTrailGhostButton, storeTrailSnakeButton, storeTrailSmokeButton, storeTrailFlamesButton, storeTrailRainbowButton
 	]
 	for i in range(storeTrailList.size()):
 		updateStoreTrail(storeTrailList[i], storeTrailNames[i], storeTrailPrices[i])
@@ -460,20 +461,23 @@ func unlockBGAttempt(num):
 
 #Trail Buttons
 
-func _on_mt_but1_pressed():
+func _on_mt_but0_pressed():
 	buyTrailAttempt(0)
 
-func _on_mt_but2_pressed():
+func _on_mt_but1_pressed():
 	buyTrailAttempt(1)
 
-func _on_mt_but3_pressed():
+func _on_mt_but2_pressed():
 	buyTrailAttempt(2)
 
-func _on_mt_but4_pressed():
+func _on_mt_but3_pressed():
 	buyTrailAttempt(3)
 
-func _on_mt_but5_pressed():
+func _on_mt_but4_pressed():
 	buyTrailAttempt(4)
+
+func _on_mt_but5_pressed():
+	buyTrailAttempt(5)
 
 #Background Buttons
 
@@ -676,3 +680,5 @@ func _on_mh_next3_pressed():
 	get_node("menucanvas/menuhelp/mh_cont2").visible = false
 	get_node("menucanvas/menuhelp/mh_cont3").visible = false
 	currentmenu_update(menumain)
+
+

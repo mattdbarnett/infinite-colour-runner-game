@@ -33,6 +33,7 @@ var highscore = 0;
 var currentTrail = "none" #none/ghost/snake/smoke/flames/rainbow
 
 var trailsBought = {
+	"none": true,
 	"ghost": false,
 	"snake": false,
 	"smoke": false,
