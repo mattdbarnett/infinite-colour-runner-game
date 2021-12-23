@@ -139,6 +139,8 @@ onready var settinggameplay = get_node("menucanvas/menusettings/ms_gameplay/ms_g
 onready var fullscreenbutton = get_node("menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_fullscreen")
 onready var vsyncbutton = get_node("menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_vsync")
 onready var resolution = get_node("menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_resolution")
+var resWidth = 0;
+var resHeight = 0;
 
 onready var spdgravbutton = get_node("menucanvas/menusettings/ms_gui/ms_gui_menu/ms_spdgrav")
 onready var fpsbutton = get_node("menucanvas/menusettings/ms_gui/ms_gui_menu/ms_fps")
@@ -151,6 +153,7 @@ onready var pressholdbtn = get_node("menucanvas/menusettings/ms_gameplay/ms_game
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("menucanvas/menumain/mm_playbtn").grab_focus()
+	resolution.add_item("Default")
 	resolution.add_item("1366x768")
 	resolution.add_item("1920x1080")
 	
@@ -160,6 +163,8 @@ func _ready():
 	
 	# -- Settings Checks
 	# - Graphics Checks
+	vsyncCheck()
+	resolutionCheck()
 	# - Gui Checks
 	spdgravCheck()
 	fpsCheck()
@@ -552,6 +557,34 @@ func fullscreenCheck():
 		fullscreenbutton.pressed = true
 	else:
 		fullscreenbutton.pressed = false
+	resolutionCheck()
+
+# Resoltion Settings Functions
+
+func _on_ms_resolution_item_selected(index):
+
+	match index:
+		1:
+			resWidth = 1366
+			resHeight = 768
+		2:
+			resWidth = 1920
+			resHeight = 1080
+	
+	if index != 0:
+		OS.window_fullscreen = false
+		OS.window_size = Vector2(resWidth, resHeight)
+	
+
+func resolutionCheck():
+	
+	match OS.window_size:
+		Vector2(1920, 1080):
+			resolution.select(2)
+		Vector2(1366, 768):
+			resolution.select(1)
+		_:
+			resolution.select(0)
 
 # VSync Settings Functions
 
