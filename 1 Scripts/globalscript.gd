@@ -18,16 +18,18 @@ var customData = {
 	"gravityvalue": 100
 }
 
+var save_dict
+
 #--Locally Saved Vars
 
-var holdmode;
+var holdmode = false;
 var spdgravInfo = false;
 var fpsInfo = false;
 var moveInfo = false;
 var statusInfo = false;
 var vsync = true;
-var currency = 1025;
-var highscore = 500;
+var currency = 0;
+var highscore = 0;
 var currentTrail = "none" #none/ghost/snake/smoke/flames/rainbow
 
 var trailsBought = {
@@ -48,7 +50,7 @@ var bgsUnlocked = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	load_game()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -76,3 +78,76 @@ func unlockBg(bg, neededscore):
 		currentBg = bg
 	else:
 		noScore = true
+
+func save():
+	save_dict = {
+		#Settings
+		"holdmode" : holdmode,
+		"vsync" : vsync,
+		"spdgravInfo" : spdgravInfo,
+		"fpsInfo" : fpsInfo,
+		"moveInfo" : moveInfo,
+		"statusInfo" : statusInfo,
+
+		#Records
+		"currency" : currency,
+		"highscore" : highscore,
+		
+		#Purchases
+		"currentTrail" : currentTrail,
+		"currentBg" : currentBg,
+		"trailsBought-none" : true,
+		"trailsBought-ghost" : trailsBought["ghost"],
+		"trailsBought-snake" : trailsBought["snake"],
+		"trailsBought-smoke" : trailsBought["smoke"],
+		"trailsBought-flames" : trailsBought["flames"],
+		"trailsBought-rainbow" : trailsBought["rainbow"],
+		"bgsUnlocked-plain" : true,
+		"bgsUnlocked-fade" : bgsUnlocked["fade"],
+		"bgsUnlocked-disco" : bgsUnlocked["disco"],
+	}
+	return save_dict
+
+func save_game():
+	var save_game = File.new()
+	save_game.open("user://savegame.save", File.WRITE)
+	var save_dict = save()
+	for i in save_dict.keys():
+		#save_game.store_line(to_json(i))
+		save_game.store_line(to_json(save_dict[i]))
+	save_game.close()
+
+func load_game():
+	var save_game = File.new()
+	if not save_game.file_exists("user://savegame.save"):
+		return
+	
+	save_game.open("user://savegame.save", File.READ)
+	save()
+	for i in save_dict.keys():
+		var data = parse_json(save_game.get_line())
+		save_dict[i] = data
+	
+	#Settings Vars
+	holdmode = save_dict["holdmode"]
+	vsync = save_dict["vsync"]
+	spdgravInfo = save_dict["spdgravInfo"]
+	fpsInfo = save_dict["fpsInfo"]
+	moveInfo = save_dict["moveInfo"]
+	statusInfo = save_dict["statusInfo"]
+	
+	#Record Vars
+	currency = save_dict["currency"]
+	highscore = save_dict["highscore"]
+	
+	#Purchase Vars
+	currentTrail = save_dict["currentTrail"]
+	currentBg = save_dict["currentBg"]
+	
+	for i in trailsBought.keys():
+		trailsBought[i] = save_dict["trailsBought-" + i]
+	
+	for i in bgsUnlocked.keys():
+		bgsUnlocked[i] = save_dict["bgsUnlocked-" + i]
+	
+	save_game.close()

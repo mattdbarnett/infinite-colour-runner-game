@@ -246,6 +246,7 @@ func playerUIConst():
 				statusArrow.rotation_degrees = 180
 		else:
 			statusArrow.visible = false
+
 func playerDeath():
 	if globalsettings.gamemode != "Custom":
 		if score > globalsettings.highscore:

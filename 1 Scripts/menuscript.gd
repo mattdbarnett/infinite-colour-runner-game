@@ -152,6 +152,7 @@ onready var pressholdbtn = get_node("menucanvas/menusettings/ms_gameplay/ms_game
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	get_node("menucanvas/menumain/mm_playbtn").grab_focus()
 	resolution.add_item("Default")
 	resolution.add_item("1366x768")
@@ -172,6 +173,8 @@ func _ready():
 	statusCheck()
 	# - Gameplay Checks
 	holdmodeCheck()
+	globalsettings.save_game()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -236,6 +239,7 @@ func _on_mm_helpbtn_pressed():
 	get_node("menucanvas/menuhelp/mh_cont3").visible = false
 
 func _on_mm_quitbtn_pressed():
+	globalsettings.save_game()
 	get_tree().quit()
 
 """
@@ -413,6 +417,7 @@ func updateStore():
 	]
 	for i in range (storeBGList.size()):
 		updateStoreBg(storeBGList[i], storeBGNames[i], storeBGScoresNeeded[i])
+	globalsettings.save_game()
 
 func updateStoreTrail(button, mode, price):
 	if globalsettings.trailsBought[mode] == true:
@@ -422,6 +427,7 @@ func updateStoreTrail(button, mode, price):
 			button.text = "Unequipped"
 	else:
 		button.text = str(price) + " Coins" 
+	globalsettings.save()
 
 func updateStoreBg(button, mode, scoreneeded):
 	if globalsettings.bgsUnlocked[mode] == true:
@@ -431,6 +437,7 @@ func updateStoreBg(button, mode, scoreneeded):
 			button.text = "Unequipped"
 	else:
 		button.text = "Score Over " + str(scoreneeded)
+	globalsettings.save()
 
 func noMoneyCheck():
 	if globalsettings.noMoney == true:
