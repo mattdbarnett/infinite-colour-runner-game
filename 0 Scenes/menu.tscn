@@ -2247,7 +2247,18 @@ margin_right = 388.0
 margin_bottom = 264.0
 theme = ExtResource( 11 )
 window_title = "Oops!"
-dialog_text = "You don't have enough gold to make this purchase!"
+dialog_text = "You don't have enough coins to make this purchase!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mt_pointdialog" type="AcceptDialog" parent="menucanvas/menustore"]
+margin_top = 16.0
+margin_right = 388.0
+margin_bottom = 264.0
+theme = ExtResource( 11 )
+window_title = "Oops!"
+dialog_text = "Your score isn't high enough to make this purchase!"
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -446,7 +446,7 @@ func noMoneyCheck():
 
 func noScoreCheck():
 	if globalsettings.noScore == true:
-		get_node("menucanvas/menustore/mt_moneydialog").popup_centered_clamped()
+		get_node("menucanvas/menustore/mt_pointdialog").popup_centered_clamped()
 		globalsettings.noScore = false
 
 func buyTrailAttempt(num):
