@@ -30,6 +30,14 @@ onready var mpbuttons = [
 	get_node("menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer10/mp_op10")
 ]
 
+onready var mpbuttonscorelabels = [
+	
+]
+
+onready var mpbuttonscorevalues = [
+	0, 3, 5, 7, 10, 20, 25, 50, 75, 100
+]
+
 onready var mpcolours_red = get_node("menucanvas/menuplay/mp_infopanel/red")
 onready var mpcolours_blue = get_node("menucanvas/menuplay/mp_infopanel/blue")
 onready var mpcolours_purple = get_node("menucanvas/menuplay/mp_infopanel/purple")
@@ -158,6 +166,8 @@ func _ready():
 	resolution.add_item("Default")
 	resolution.add_item("1366x768")
 	resolution.add_item("1920x1080")
+	
+	updateProgression()
 	
 	updateStats()
 	
@@ -353,6 +363,16 @@ func _on_mp_op10_pressed():
 	globalsettings.gamemode = "Rainbow"
 	togglemodecheck(9)
 
+func updateProgression():
+	for i in range(mpbuttons.size()):
+		if globalsettings.highscore >= mpbuttonscorevalues[i]:
+			mpbuttons[i].disabled = false
+		else:
+			mpbuttons[i].disabled = true
+	
+	if globalsettings.highscore < 100:
+		get_node("menucanvas/menumain/mm_custombtn").disabled = true
+	
 
 func _on_mp_start_pressed():
 	get_tree().change_scene("res://0 Scenes/game.tscn")

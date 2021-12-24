@@ -1,8 +1,9 @@
-[gd_resource type="Theme" load_steps=23 format=2]
+[gd_resource type="Theme" load_steps=24 format=2]
 
 [ext_resource path="res://3 Fonts/0 Const/mainfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://3 Fonts/0 Const/pixel font-7.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://4 Styling/2 Panels/popup_panel.tres" type="StyleBox" id=3]
+[ext_resource path="res://4 Styling/0 Const/norm_disabled.tres" type="StyleBox" id=4]
 [ext_resource path="res://4 Styling/0 Const/norm.tres" type="StyleBox" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=1]
@@ -86,7 +87,7 @@ Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
 Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 Button/constants/hseparation = 2
 Button/fonts/font = null
-Button/styles/disabled = null
+Button/styles/disabled = ExtResource( 4 )
 Button/styles/focus = null
 Button/styles/hover = ExtResource( 5 )
 Button/styles/normal = ExtResource( 5 )
