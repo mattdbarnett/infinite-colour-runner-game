@@ -272,6 +272,19 @@ __meta__ = {
 position = Vector2( 192, 416 )
 texture = ExtResource( 36 )
 
+[node name="mp_score" type="Label" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer1/mp_op1"]
+margin_left = -4.0
+margin_top = 448.0
+margin_right = 380.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 42 )
+text = "Score 0 To Unlock"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="mp_btncontainer2" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
 margin_left = 1288.0
 margin_right = 1928.0
@@ -282,6 +295,7 @@ margin_left = 128.0
 margin_top = 256.0
 margin_right = 508.0
 margin_bottom = 640.0
+rect_pivot_offset = Vector2( -952, 344 )
 custom_styles/hover = ExtResource( 20 )
 custom_styles/pressed = ExtResource( 21 )
 custom_styles/focus = ExtResource( 48 )
@@ -300,6 +314,19 @@ texture = ExtResource( 36 )
 [node name="blue" type="Sprite" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer2/mp_op2"]
 position = Vector2( 156, 416 )
 texture = ExtResource( 37 )
+
+[node name="mp_score" type="Label" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer2/mp_op2"]
+margin_left = -4.0
+margin_top = 448.0
+margin_right = 380.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 42 )
+text = "Score 3 To Unlock"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="mp_btncontainer3" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
 margin_left = 1932.0
@@ -334,6 +361,19 @@ texture = ExtResource( 37 )
 position = Vector2( 256, 416 )
 texture = ExtResource( 36 )
 
+[node name="mp_score" type="Label" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer3/mp_op3"]
+margin_left = -4.0
+margin_top = 448.0
+margin_right = 380.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 42 )
+text = "Score 5 To Unlock"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="mp_btncontainer4" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
 margin_left = 2576.0
 margin_right = 3216.0
@@ -359,6 +399,19 @@ __meta__ = {
 position = Vector2( 192, 416 )
 texture = ExtResource( 36 )
 
+[node name="mp_score" type="Label" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer4/mp_op4"]
+margin_left = -4.0
+margin_top = 448.0
+margin_right = 380.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 42 )
+text = "Score 7 To Unlock"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="mp_btncontainer5" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
 margin_left = 3220.0
 margin_right = 3860.0
@@ -383,6 +436,19 @@ __meta__ = {
 [node name="green" type="Sprite" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer5/mp_op5"]
 position = Vector2( 188, 416 )
 texture = ExtResource( 41 )
+
+[node name="mp_score" type="Label" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer5/mp_op5"]
+margin_left = -4.0
+margin_top = 448.0
+margin_right = 380.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 42 )
+text = "Score 10 To Unlock"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="mp_btncontainer6" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
 margin_left = 3864.0
@@ -413,6 +479,19 @@ texture = ExtResource( 41 )
 position = Vector2( 220, 416 )
 texture = ExtResource( 37 )
 
+[node name="mp_score" type="Label" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer6/mp_op6"]
+margin_left = -4.0
+margin_top = 448.0
+margin_right = 380.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 42 )
+text = "Score 20 To Unlock"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="mp_btncontainer7" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
 margin_left = 4508.0
 margin_right = 5148.0
@@ -442,6 +521,19 @@ texture = ExtResource( 39 )
 position = Vector2( 224, 416 )
 texture = ExtResource( 36 )
 
+[node name="mp_score" type="Label" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer7/mp_op7"]
+margin_left = -4.0
+margin_top = 448.0
+margin_right = 380.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 42 )
+text = "Score 25 To Unlock"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="mp_btncontainer8" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
 margin_left = 5152.0
 margin_right = 5792.0
@@ -466,6 +558,19 @@ __meta__ = {
 [node name="pink" type="Sprite" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer8/mp_op8"]
 position = Vector2( 188, 416 )
 texture = ExtResource( 38 )
+
+[node name="mp_score" type="Label" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer8/mp_op8"]
+margin_left = -4.0
+margin_top = 448.0
+margin_right = 380.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 42 )
+text = "Score 50 To Unlock"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="mp_btncontainer9" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
 margin_left = 5796.0
@@ -499,6 +604,19 @@ texture = ExtResource( 39 )
 [node name="green" type="Sprite" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer9/mp_op9"]
 position = Vector2( 256, 416 )
 texture = ExtResource( 41 )
+
+[node name="mp_score" type="Label" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer9/mp_op9"]
+margin_left = -4.0
+margin_top = 448.0
+margin_right = 380.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 42 )
+text = "Score 75 To Unlock"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="mp_btncontainer10" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
 margin_left = 6440.0
@@ -545,6 +663,19 @@ texture = ExtResource( 37 )
 [node name="red" type="Sprite" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer10/mp_op10"]
 position = Vector2( 352, 416 )
 texture = ExtResource( 36 )
+
+[node name="mp_score" type="Label" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer10/mp_op10"]
+margin_left = -4.0
+margin_top = 448.0
+margin_right = 380.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 42 )
+text = "Score 100 To Unlock"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="mp_back" type="Button" parent="menucanvas/menuplay"]
 margin_right = 384.0

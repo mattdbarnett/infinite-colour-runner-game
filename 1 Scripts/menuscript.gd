@@ -367,8 +367,10 @@ func updateProgression():
 	for i in range(mpbuttons.size()):
 		if globalsettings.highscore >= mpbuttonscorevalues[i]:
 			mpbuttons[i].disabled = false
+			get_node(str(mpbuttons[i].get_path()) + "/mp_score").visible = false
 		else:
 			mpbuttons[i].disabled = true
+			get_node(str(mpbuttons[i].get_path()) + "/mp_score").visible = true
 	
 	if globalsettings.highscore < 100:
 		get_node("menucanvas/menumain/mm_custombtn").disabled = true
