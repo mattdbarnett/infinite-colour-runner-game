@@ -23,6 +23,7 @@ var save_dict
 
 #--Locally Saved Vars
 
+var firstrun = true;
 var holdmode = false;
 var spdgravInfo = false;
 var fpsInfo = false;
@@ -83,6 +84,9 @@ func unlockBg(bg, neededscore):
 
 func save():
 	save_dict = {
+		#Flags
+		"firstrun" : firstrun,
+		
 		#Settings
 		"holdmode" : holdmode,
 		"vsync" : vsync,
@@ -129,6 +133,9 @@ func load_game():
 	for i in save_dict.keys():
 		var data = parse_json(save_game.get_line())
 		save_dict[i] = data
+	
+	#Flag Vars
+	firstrun = save_dict["firstrun"]
 	
 	#Settings Vars
 	holdmode = save_dict["holdmode"]

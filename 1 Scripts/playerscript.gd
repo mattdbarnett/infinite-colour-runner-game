@@ -228,7 +228,6 @@ func playerUIConst():
 			movePanel.get_stylebox("panel", "").set_bg_color("#000000")
 	
 	# Status Panel
-	print(modeCurrent)
 	if globalsettings.statusInfo == true:
 		match modeCurrent:
 			"base": statusPanel.get_stylebox("panel", "").set_bg_color("#000000")

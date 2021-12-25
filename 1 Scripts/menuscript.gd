@@ -209,12 +209,6 @@ func updateStats():
 	storeCoins.text = str(globalsettings.currency)
 	get_node("menucanvas/menuplay/mp_coinpanel/mp_coinvalue").text = str(globalsettings.currency)
 
-func _unhandled_input(event):
-	if menuwelcome.visible == true:
-		if event is InputEventKey:
-			menuwelcome.visible = false
-			menumain.visible = true
-
 """
 Menu Update Signals
 """
@@ -237,6 +231,16 @@ func currentmenu_update(newcurrent):
 	newcurrent.visible = true
 	currentmenu.visible = false
 	currentmenu = newcurrent
+
+func _unhandled_input(event):
+	if menuwelcome.visible == true:
+		if event is InputEventKey:
+			menuwelcome.visible = false
+			if globalsettings.firstrun == true:
+				currentmenu_update(menuhelp)
+				globalsettings.firstrun = false
+			else:
+				menumain.visible = true
 
 """
 Main Menu Signals

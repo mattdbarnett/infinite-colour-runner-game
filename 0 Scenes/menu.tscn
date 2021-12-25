@@ -113,7 +113,7 @@ font_data = ExtResource( 34 )
 [sub_resource type="StyleBoxFlat" id=16]
 bg_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=19]
+[sub_resource type="StyleBoxFlat" id=17]
 bg_color = Color( 0.956863, 0, 1, 1 )
 border_width_left = 20
 border_width_top = 20
@@ -121,12 +121,12 @@ border_width_right = 20
 border_width_bottom = 20
 border_color = Color( 0.8, 0.8, 0.8, 0 )
 
-[sub_resource type="Gradient" id=17]
+[sub_resource type="Gradient" id=18]
 offsets = PoolRealArray( 0 )
 colors = PoolColorArray( 0.192157, 0.192157, 0.192157, 1 )
 
-[sub_resource type="GradientTexture" id=18]
-gradient = SubResource( 17 )
+[sub_resource type="GradientTexture" id=19]
+gradient = SubResource( 18 )
 
 [node name="menuroot" type="Node2D"]
 script = ExtResource( 10 )
@@ -2892,7 +2892,6 @@ __meta__ = {
 }
 
 [node name="mh_cont1" type="Control" parent="menucanvas/menuhelp"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -3258,7 +3257,7 @@ margin_left = 1008.0
 margin_top = 56.0
 margin_right = 1392.0
 margin_bottom = 136.0
-custom_styles/fg = SubResource( 19 )
+custom_styles/fg = SubResource( 17 )
 custom_styles/bg = ExtResource( 56 )
 custom_fonts/font = ExtResource( 42 )
 value = 72.0
@@ -3307,7 +3306,7 @@ environment = ExtResource( 9 )
 position = Vector2( 960, 539.875 )
 scale = Vector2( 0.9375, 1080.25 )
 z_index = -1
-texture = SubResource( 18 )
+texture = SubResource( 19 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -3318,8 +3317,8 @@ __meta__ = {
 [connection signal="pressed" from="menucanvas/menumain/mm_storebtn" to="." method="_on_mm_storebtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_settingsbtn" to="." method="_on_mm_settingsbtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_helpbtn" to="." method="_on_mm_helpbtn_pressed"]
-[connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn2_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn_pressed"]
+[connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn2_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer1/mp_op1" to="." method="_on_mp_op1_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer2/mp_op2" to="." method="_on_mp_op2_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer3/mp_op3" to="." method="_on_mp_op3_pressed"]
