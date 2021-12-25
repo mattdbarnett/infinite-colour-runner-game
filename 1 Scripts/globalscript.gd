@@ -2,6 +2,7 @@ extends Node
 
 #--Temp Vars
 
+var firstload = true
 var globalgrav = 40;
 var gamemode;
 var noMoney = false;

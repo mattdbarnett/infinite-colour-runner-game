@@ -5,6 +5,7 @@ Variable Initalisation
 """
 
 #Menu Node Variables
+onready var menuwelcome = get_node("menucanvas/menuwelcome")
 onready var menumain = get_node("menucanvas/menumain")
 onready var menuplay = get_node("menucanvas/menuplay")
 onready var menucustom = get_node("menucanvas/menucustom")
@@ -162,6 +163,11 @@ onready var pressholdbtn = get_node("menucanvas/menusettings/ms_gameplay/ms_game
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
+	if globalsettings.firstload == true:
+		menuwelcome.visible = true
+		menumain.visible = false
+		globalsettings.firstload = false
+	
 	get_node("menucanvas/menumain/mm_playbtn").grab_focus()
 	resolution.add_item("Default")
 	resolution.add_item("1366x768")
@@ -189,7 +195,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
+
 	# Changes button status and allows for fullscreen change through f key
 	fullscreenCheck()
 	
@@ -202,6 +208,12 @@ func updateStats():
 	get_node("menucanvas/menuplay/mp_scorepanel/mp_scorevalue").text = str(globalsettings.highscore)
 	storeCoins.text = str(globalsettings.currency)
 	get_node("menucanvas/menuplay/mp_coinpanel/mp_coinvalue").text = str(globalsettings.currency)
+
+func _unhandled_input(event):
+	if menuwelcome.visible == true:
+		if event is InputEventKey:
+			menuwelcome.visible = false
+			menumain.visible = true
 
 """
 Menu Update Signals
@@ -702,5 +714,3 @@ func _on_mh_next3_pressed():
 	get_node("menucanvas/menuhelp/mh_cont2").visible = false
 	get_node("menucanvas/menuhelp/mh_cont3").visible = false
 	currentmenu_update(menumain)
-
-

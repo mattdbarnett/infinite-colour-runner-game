@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://3 Fonts/1 Variations/s70.tres" type="DynamicFont" id=1]
 [ext_resource path="res://4 Styling/0 Const/norm.tres" type="StyleBox" id=2]
@@ -56,6 +56,7 @@
 [ext_resource path="res://4 Styling/7 Gradients/rainbow.tres" type="Texture" id=54]
 [ext_resource path="res://3 Fonts/1 Variations/s19.tres" type="DynamicFont" id=55]
 [ext_resource path="res://4 Styling/2 Panels/gui_panel.tres" type="StyleBox" id=56]
+[ext_resource path="res://3 Fonts/2 Special/welcome.tres" type="DynamicFont" id=57]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -132,6 +133,56 @@ script = ExtResource( 10 )
 
 [node name="menucanvas" type="CanvasLayer" parent="."]
 layer = 5
+
+[node name="menuwelcome" type="Control" parent="menucanvas"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mw_welcomepanel" type="Panel" parent="menucanvas/menuwelcome"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+
+[node name="mw_welcomeback" type="Label" parent="menucanvas/menuwelcome"]
+margin_left = -16.0
+margin_top = -8.0
+margin_right = 1904.0
+margin_bottom = 824.0
+custom_fonts/font = ExtResource( 57 )
+custom_colors/font_color = Color( 0.956863, 0, 1, 1 )
+text = "Upwn"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mw_welcomelabel" type="Label" parent="menucanvas/menuwelcome"]
+margin_right = 1920.0
+margin_bottom = 832.0
+custom_fonts/font = ExtResource( 57 )
+text = "Upwn"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mw_welcomepress" type="Label" parent="menucanvas/menuwelcome"]
+margin_top = 832.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+custom_fonts/font = ExtResource( 44 )
+text = "~ Press any key to continue ~"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="menumain" type="Control" parent="menucanvas"]
 margin_right = 1920.0
@@ -3261,6 +3312,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[connection signal="gui_input" from="menucanvas/menuwelcome" to="." method="_on_menuwelcome_gui_input"]
 [connection signal="pressed" from="menucanvas/menumain/mm_playbtn" to="." method="_on_mm_playbtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_custombtn" to="." method="_on_mm_custombtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_storebtn" to="." method="_on_mm_storebtn_pressed"]
