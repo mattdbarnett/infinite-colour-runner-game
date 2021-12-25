@@ -58,7 +58,7 @@ func _ready():
 	
 	playerUIInitalise()
 
-func _process(delta):
+func _physics_process(delta):
 
 	scoreLabel.text = str(int(score))
 	powerupBar.value = powerupValue
