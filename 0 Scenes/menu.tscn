@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://3 Fonts/1 Variations/s70.tres" type="DynamicFont" id=1]
 [ext_resource path="res://4 Styling/0 Const/norm.tres" type="StyleBox" id=2]
@@ -57,6 +57,7 @@
 [ext_resource path="res://3 Fonts/1 Variations/s19.tres" type="DynamicFont" id=55]
 [ext_resource path="res://4 Styling/2 Panels/gui_panel.tres" type="StyleBox" id=56]
 [ext_resource path="res://3 Fonts/2 Special/welcome.tres" type="DynamicFont" id=57]
+[ext_resource path="res://0 Scenes/transition.tscn" type="PackedScene" id=58]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -131,11 +132,16 @@ gradient = SubResource( 18 )
 [node name="menuroot" type="Node2D"]
 script = ExtResource( 10 )
 
+[node name="transitioncanvas" type="CanvasLayer" parent="."]
+layer = 6
+
+[node name="ColorRect" parent="transitioncanvas" instance=ExtResource( 58 )]
+visible = false
+
 [node name="menucanvas" type="CanvasLayer" parent="."]
 layer = 5
 
 [node name="menuwelcome" type="Control" parent="menucanvas"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 theme = ExtResource( 11 )
@@ -185,6 +191,7 @@ __meta__ = {
 }
 
 [node name="menumain" type="Control" parent="menucanvas"]
+visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 theme = ExtResource( 11 )
@@ -3318,7 +3325,6 @@ __meta__ = {
 [connection signal="pressed" from="menucanvas/menumain/mm_settingsbtn" to="." method="_on_mm_settingsbtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_helpbtn" to="." method="_on_mm_helpbtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn_pressed"]
-[connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn2_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer1/mp_op1" to="." method="_on_mp_op1_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer2/mp_op2" to="." method="_on_mp_op2_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer3/mp_op3" to="." method="_on_mp_op3_pressed"]

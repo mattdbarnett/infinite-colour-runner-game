@@ -140,6 +140,7 @@ func load_game():
 	#Settings Vars
 	holdmode = save_dict["holdmode"]
 	vsync = save_dict["vsync"]
+	OS.set_use_vsync(vsync)
 	spdgravInfo = save_dict["spdgravInfo"]
 	fpsInfo = save_dict["fpsInfo"]
 	moveInfo = save_dict["moveInfo"]

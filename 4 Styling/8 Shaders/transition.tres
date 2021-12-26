@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://4 Styling/8 Shaders/transition.shader" type="Shader" id=1]
+[ext_resource path="res://2 Sprites/shards.png" type="Texture" id=2]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/cutoff = 0.0
+shader_param/smooth_size = 0.01
+shader_param/color = null
+shader_param/mask = ExtResource( 2 )
