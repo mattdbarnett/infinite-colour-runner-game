@@ -34,13 +34,13 @@
 [ext_resource path="res://4 Styling/4 Small/norm_small.tres" type="StyleBox" id=32]
 [ext_resource path="res://4 Styling/2 Panels/coin_panel.tres" type="StyleBox" id=33]
 [ext_resource path="res://3 Fonts/0 Const/pixel font-7.ttf" type="DynamicFontData" id=34]
-[ext_resource path="res://2 Sprites/white.png" type="Texture" id=35]
-[ext_resource path="res://2 Sprites/red.png" type="Texture" id=36]
-[ext_resource path="res://2 Sprites/blue.png" type="Texture" id=37]
-[ext_resource path="res://2 Sprites/pink.png" type="Texture" id=38]
-[ext_resource path="res://2 Sprites/yellow.png" type="Texture" id=39]
-[ext_resource path="res://2 Sprites/purple.png" type="Texture" id=40]
-[ext_resource path="res://2 Sprites/green.png" type="Texture" id=41]
+[ext_resource path="res://2 Sprites/0 Basic/white.png" type="Texture" id=35]
+[ext_resource path="res://2 Sprites/0 Basic/red.png" type="Texture" id=36]
+[ext_resource path="res://2 Sprites/0 Basic/blue.png" type="Texture" id=37]
+[ext_resource path="res://2 Sprites/0 Basic/pink.png" type="Texture" id=38]
+[ext_resource path="res://2 Sprites/0 Basic/yellow.png" type="Texture" id=39]
+[ext_resource path="res://2 Sprites/0 Basic/purple.png" type="Texture" id=40]
+[ext_resource path="res://2 Sprites/0 Basic/green.png" type="Texture" id=41]
 [ext_resource path="res://3 Fonts/1 Variations/s32.tres" type="DynamicFont" id=42]
 [ext_resource path="res://3 Fonts/1 Variations/s27.tres" type="DynamicFont" id=43]
 [ext_resource path="res://3 Fonts/1 Variations/s80.tres" type="DynamicFont" id=44]
@@ -49,7 +49,7 @@
 [ext_resource path="res://4 Styling/5 Medium/norm_med.tres" type="StyleBox" id=47]
 [ext_resource path="res://4 Styling/0 Const/emptyfocus.tres" type="StyleBox" id=48]
 [ext_resource path="res://4 Styling/0 Const/norm_disabled.tres" type="StyleBox" id=49]
-[ext_resource path="res://2 Sprites/black.png" type="Texture" id=50]
+[ext_resource path="res://2 Sprites/0 Basic/black.png" type="Texture" id=50]
 [ext_resource path="res://4 Styling/4 Small/blue_small_hover.tres" type="StyleBox" id=51]
 [ext_resource path="res://4 Styling/7 Gradients/fade.tres" type="Texture" id=52]
 [ext_resource path="res://4 Styling/7 Gradients/plain.tres" type="Gradient" id=53]
@@ -141,6 +141,7 @@ layer = 6
 layer = 5
 
 [node name="menuwelcome" type="Control" parent="menucanvas"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 theme = ExtResource( 11 )
@@ -190,7 +191,6 @@ __meta__ = {
 }
 
 [node name="menumain" type="Control" parent="menucanvas"]
-visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 theme = ExtResource( 11 )

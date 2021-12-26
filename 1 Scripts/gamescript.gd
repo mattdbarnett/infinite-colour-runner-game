@@ -23,13 +23,13 @@ var randomTypeList
 	
 var typedict = {}
 var typelist = Array()
-var texture = preload("res://2 Sprites/black.png")
-var texturered = preload("res://2 Sprites/red.png")
-var textureblue = preload("res://2 Sprites/blue.png")
-var texturepurple = preload("res://2 Sprites/purple.png")
-var texturegreen = preload("res://2 Sprites/green.png")
-var textureyellow = preload("res://2 Sprites/yellow.png")
-var texturepink = preload("res://2 Sprites/pink.png")
+var texture = preload("res://2 Sprites/0 Basic/black.png")
+var texturered = preload("res://2 Sprites/0 Basic/red.png")
+var textureblue = preload("res://2 Sprites/0 Basic/blue.png")
+var texturepurple = preload("res://2 Sprites/0 Basic/purple.png")
+var texturegreen = preload("res://2 Sprites/0 Basic/green.png")
+var textureyellow = preload("res://2 Sprites/0 Basic/yellow.png")
+var texturepink = preload("res://2 Sprites/0 Basic/pink.png")
 
 onready var globalsettings = get_node("/root/globalsettings")
 var customDataGet

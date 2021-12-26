@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=2]
 
 [ext_resource path="res://4 Styling/8 Shaders/transition.shader" type="Shader" id=1]
-[ext_resource path="res://2 Sprites/fadeattempt2.png" type="Texture" id=2]
+[ext_resource path="res://2 Sprites/1 Transitions/fadeattempt2.png" type="Texture" id=2]
 
 [resource]
 shader = ExtResource( 1 )

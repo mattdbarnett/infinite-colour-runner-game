@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=2]
 
-[ext_resource path="res://2 Sprites/white.png" type="Texture" id=1]
+[ext_resource path="res://2 Sprites/0 Basic/white.png" type="Texture" id=1]
 [ext_resource path="res://1 Scripts/playerscript.gd" type="Script" id=2]
 [ext_resource path="res://4 Styling/7 Gradients/fade.tres" type="Texture" id=3]
 [ext_resource path="res://4 Styling/7 Gradients/plain.tres" type="Gradient" id=4]

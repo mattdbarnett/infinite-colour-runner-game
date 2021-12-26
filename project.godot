@@ -12,7 +12,7 @@ config_version=4
 
 config/name="Autumn Semester Project"
 run/main_scene="res://0 Scenes/menu.tscn"
-boot_splash/image="res://2 Sprites/loading.png"
+boot_splash/image="res://2 Sprites/2 Misc/loading.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
