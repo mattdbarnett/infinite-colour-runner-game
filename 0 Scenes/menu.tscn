@@ -135,8 +135,7 @@ script = ExtResource( 10 )
 [node name="transitioncanvas" type="CanvasLayer" parent="."]
 layer = 6
 
-[node name="ColorRect" parent="transitioncanvas" instance=ExtResource( 58 )]
-visible = false
+[node name="transitionroot" parent="transitioncanvas" instance=ExtResource( 58 )]
 
 [node name="menucanvas" type="CanvasLayer" parent="."]
 layer = 5

@@ -13,6 +13,8 @@ onready var menustore = get_node("menucanvas/menustore")
 onready var menusettings = get_node("menucanvas/menusettings")
 onready var menuhelp = get_node("menucanvas/menuhelp")
 
+onready var transitionroot = get_node("transitioncanvas/transitionroot")
+
 #Main Menu Vars
 onready var currentmenu = menumain
 
@@ -202,6 +204,9 @@ func _process(delta):
 	# Store Checks for when a purchase is made without enough currency
 	noMoneyCheck()
 	noScoreCheck()
+	
+	#Checks if a the player has just finished transitioning into a new menu
+	transitionedOut()
 
 func updateStats():
 	storeScore.text = str(globalsettings.highscore)
@@ -227,9 +232,9 @@ func currentmenu_update(newcurrent):
 			get_node("menucanvas/menusettings/ms_back").grab_focus()
 		menuhelp:
 			pass
-			
-	newcurrent.visible = true
+	
 	currentmenu.visible = false
+	newcurrent.visible = true
 	currentmenu = newcurrent
 
 func _unhandled_input(event):
@@ -240,7 +245,11 @@ func _unhandled_input(event):
 				currentmenu_update(menuhelp)
 				globalsettings.firstrun = false
 			else:
-				menumain.visible = true
+				currentmenu_update(menumain)
+
+func transitionedOut():
+	if transitionroot.transitionedOut == true:
+		currentmenu_update(menuplay)
 
 """
 Main Menu Signals
@@ -248,7 +257,7 @@ Main Menu Signals
 
 func _on_mm_playbtn_pressed():
 	globalsettings.globalgrav = 40
-	currentmenu_update(menuplay)
+	transitionroot.play("transition_in", "transition_out", menuplay)
 
 func _on_mm_custombtn_pressed():
 	currentmenu_update(menucustom)

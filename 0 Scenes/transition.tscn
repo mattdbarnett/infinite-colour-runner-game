@@ -1,8 +1,19 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://4 Styling/8 Shaders/transition.tres" type="Material" id=1]
+[ext_resource path="res://4 Styling/8 Shaders/0 Transitions/transition_in.tres" type="Animation" id=2]
+[ext_resource path="res://4 Styling/8 Shaders/0 Transitions/transition_out.tres" type="Animation" id=3]
+[ext_resource path="res://1 Scripts/transitionscript.gd" type="Script" id=4]
 
-[node name="ColorRect" type="ColorRect"]
+[node name="transitionroot" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
 material = ExtResource( 1 )
 margin_right = 1920.0
 margin_bottom = 1080.0
@@ -11,4 +22,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+anims/transition_in = ExtResource( 2 )
+anims/transition_out = ExtResource( 3 )
+
+[connection signal="animation_finished" from="ColorRect/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
