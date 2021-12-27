@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fadeattempt2.png-7a1b41926a08034589046054d9b41b3c.stex"
+path="res://.import/transition3.png-2acedb2e72d1f5e2afd58e6269578569.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2 Sprites/1 Transitions/fadeattempt2.png"
-dest_files=[ "res://.import/fadeattempt2.png-7a1b41926a08034589046054d9b41b3c.stex" ]
+source_file="res://2 Sprites/1 Transitions/transition3.png"
+dest_files=[ "res://.import/transition3.png-2acedb2e72d1f5e2afd58e6269578569.stex" ]
 
 [params]
 
