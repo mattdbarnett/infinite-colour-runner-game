@@ -35,11 +35,18 @@ func play(transitionIn, transitionOut, menu):
 	changeMask()
 	player.play(transitionOut)
 
-func transitionIn():
+func transitionIn(mode):
 	rect.visible = true
 	changeMask()
-	currentIn = "Just In"
+	currentIn = mode
 	player.play("transition_in")
+
+func transitionOut(mode, menu):
+	rect.visible = true
+	changeMask()
+	currentIn = mode
+	currentMenu = menu
+	player.play("transition_out")
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == currentOut:
@@ -51,7 +58,9 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	elif anim_name == currentIn:
 		transitionedOut = false
 		rect.visible = false
-	elif currentIn == "Just In":
+	elif currentIn == "1Way":
 		transitionArray += usedTransitions
 		usedTransitions.clear()
 		rect.visible = false
+	
+	shaderMat.set_shader_param("smooth_size", 0.001)

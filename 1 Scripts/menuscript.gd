@@ -181,7 +181,6 @@ func _ready():
 	
 	updateStore()
 	
-	print("MENU READY")
 	# -- Settings Checks
 	# - Graphics Checks
 	vsyncCheck()
@@ -242,7 +241,7 @@ func _unhandled_input(event):
 	if menuwelcome.visible == true:
 		if event is InputEventKey:
 			menuwelcome.visible = false
-			transitionroot.transitionIn()
+			transitionroot.transitionIn("1Way")
 			if globalsettings.firstrun == true:
 				currentmenu_update(menuhelp)
 				globalsettings.firstrun = false
@@ -269,10 +268,10 @@ func _on_mm_storebtn_pressed():
 	transitionroot.play("transition_in", "transition_out", menustore)
 
 func _on_mm_settingsbtn_pressed():
-	currentmenu_update(menusettings)
+	transitionroot.play("fade_in", "transition_out", menusettings)
 
 func _on_mm_helpbtn_pressed():
-	currentmenu_update(menuhelp)
+	transitionroot.play("fade_in", "transition_out", menuhelp)
 	get_node("menucanvas/menuhelp/mh_cont1").visible = true
 	get_node("menucanvas/menuhelp/mh_cont2").visible = false
 	get_node("menucanvas/menuhelp/mh_cont3").visible = false
@@ -670,7 +669,6 @@ func _on_ms_spdgrav_pressed():
 	globalsettings.spdgravInfo = !globalsettings.spdgravInfo
 
 func spdgravCheck():
-	print(globalsettings.spdgravInfo)
 	if globalsettings.spdgravInfo == true:
 		spdgravbutton.pressed = true
 	else:
@@ -710,7 +708,7 @@ func statusCheck():
 		statusbutton.pressed = false
 
 func _on_ms_back_pressed():
-	currentmenu_update(menumain)
+	transitionroot.play("transition_in", "fade_out", menumain)
 
 """
 Help Menu Signals
@@ -727,7 +725,4 @@ func _on_mh_next2_pressed():
 	get_node("menucanvas/menuhelp/mh_cont3").visible = true
 
 func _on_mh_next3_pressed():
-	get_node("menucanvas/menuhelp/mh_cont1").visible = true
-	get_node("menucanvas/menuhelp/mh_cont2").visible = false
-	get_node("menucanvas/menuhelp/mh_cont3").visible = false
-	currentmenu_update(menumain)
+	transitionroot.play("transition_in", "fade_out", menumain)

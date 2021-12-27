@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://4 Styling/8 Shaders/transition.tres" type="Material" id=1]
 [ext_resource path="res://4 Styling/8 Shaders/0 Transitions/transition_in.tres" type="Animation" id=2]
 [ext_resource path="res://4 Styling/8 Shaders/0 Transitions/transition_out.tres" type="Animation" id=3]
 [ext_resource path="res://1 Scripts/transitionscript.gd" type="Script" id=4]
+[ext_resource path="res://4 Styling/8 Shaders/0 Transitions/fade_out.tres" type="Animation" id=5]
+[ext_resource path="res://4 Styling/8 Shaders/0 Transitions/fade_in.tres" type="Animation" id=6]
 
 [node name="transitionroot" type="Control"]
 margin_right = 40.0
@@ -23,6 +25,8 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+anims/fade_in = ExtResource( 5 )
+anims/fade_out = ExtResource( 6 )
 anims/transition_in = ExtResource( 2 )
 anims/transition_out = ExtResource( 3 )
 
