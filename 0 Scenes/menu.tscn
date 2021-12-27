@@ -136,6 +136,8 @@ script = ExtResource( 10 )
 layer = 6
 
 [node name="transitionroot" parent="transitioncanvas" instance=ExtResource( 58 )]
+visible = false
+mouse_filter = 2
 
 [node name="menucanvas" type="CanvasLayer" parent="."]
 layer = 5
@@ -191,6 +193,7 @@ __meta__ = {
 }
 
 [node name="menumain" type="Control" parent="menucanvas"]
+visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 theme = ExtResource( 11 )
@@ -298,13 +301,15 @@ margin_right = 1920.0
 margin_bottom = 1080.0
 theme = ExtResource( 11 )
 follow_focus = true
+scroll_horizontal = 5800
 scroll_vertical_enabled = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="mp_hboxcont" type="HBoxContainer" parent="menucanvas/menuplay/mp_scollcont"]
-margin_right = 7720.0
+margin_left = -5800.0
+margin_right = 1920.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -701,7 +706,6 @@ custom_styles/focus = ExtResource( 48 )
 custom_styles/normal = ExtResource( 2 )
 custom_fonts/font = ExtResource( 1 )
 toggle_mode = true
-button_mask = 0
 text = "Rainbow"
 __meta__ = {
 "_edit_use_anchors_": false

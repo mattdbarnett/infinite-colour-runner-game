@@ -297,6 +297,7 @@ func togglemodecheck(num):
 	colourpanelcheck(currentmode)
 	
 	mpbuttons[num].pressed = true
+	print(str(mpbuttons[num]) + " PRESSED")
 
 func colourpanelcheck(num):
 	
