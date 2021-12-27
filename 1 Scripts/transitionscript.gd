@@ -36,6 +36,11 @@ func play(transitionIn, transitionOut, menu):
 	changeMask()
 	player.play(transitionOut)
 
+func transitionIn():
+	rect.visible = true
+	changeMask()
+	currentIn = "Just In"
+	player.play("transition_in")
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == currentOut:
@@ -46,4 +51,8 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		player.play(currentIn)
 	elif anim_name == currentIn:
 		transitionedOut = false
+		rect.visible = false
+	elif currentIn == "Just In":
+		transitionArray += usedTransitions
+		usedTransitions.clear()
 		rect.visible = false

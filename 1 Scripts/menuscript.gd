@@ -241,6 +241,7 @@ func _unhandled_input(event):
 	if menuwelcome.visible == true:
 		if event is InputEventKey:
 			menuwelcome.visible = false
+			transitionroot.transitionIn()
 			if globalsettings.firstrun == true:
 				currentmenu_update(menuhelp)
 				globalsettings.firstrun = false
@@ -249,8 +250,9 @@ func _unhandled_input(event):
 
 func transitionedOut():
 	if transitionroot.transitionedOut == true:
-		currentmenu_update(menuplay)
+		currentmenu_update(transitionroot.currentMenu)
 
+	
 """
 Main Menu Signals
 """
@@ -260,10 +262,10 @@ func _on_mm_playbtn_pressed():
 	transitionroot.play("transition_in", "transition_out", menuplay)
 
 func _on_mm_custombtn_pressed():
-	currentmenu_update(menucustom)
+	transitionroot.play("transition_in", "transition_out", menucustom)
 
 func _on_mm_storebtn_pressed():
-	currentmenu_update(menustore)
+	transitionroot.play("transition_in", "transition_out", menustore)
 
 func _on_mm_settingsbtn_pressed():
 	currentmenu_update(menusettings)
@@ -283,7 +285,7 @@ Play Menu Signals
 """
 
 func _on_mp_back_pressed():
-	currentmenu_update(menumain)
+	transitionroot.play("transition_in", "transition_out", menumain)
 
 func togglemodecheck(num):
 	$menucanvas/menuplay/mp_start.disabled = false
@@ -409,7 +411,7 @@ Custom Menu Signals
 """
 
 func _on_mc_back_pressed():
-	currentmenu_update(menumain)
+	transitionroot.play("transition_in", "transition_out", menumain)
 
 func _on_mc_sliderblue_value_changed(value):	
 	bluelabel.text = str(blueslider.value) + "%"
@@ -538,7 +540,7 @@ func _on_mt_but3_bgs_pressed():
 	unlockBGAttempt(2)
 
 func _on_mt_back_pressed():
-	currentmenu_update(menumain)
+	transitionroot.play("transition_in", "transition_out", menumain)
 
 """
 Settings Menu Signals
