@@ -181,6 +181,7 @@ func _ready():
 	
 	updateStore()
 	
+	print("MENU READY")
 	# -- Settings Checks
 	# - Graphics Checks
 	vsyncCheck()
@@ -297,7 +298,6 @@ func togglemodecheck(num):
 	colourpanelcheck(currentmode)
 	
 	mpbuttons[num].pressed = true
-	print(str(mpbuttons[num]) + " PRESSED")
 
 func colourpanelcheck(num):
 	
@@ -670,6 +670,7 @@ func _on_ms_spdgrav_pressed():
 	globalsettings.spdgravInfo = !globalsettings.spdgravInfo
 
 func spdgravCheck():
+	print(globalsettings.spdgravInfo)
 	if globalsettings.spdgravInfo == true:
 		spdgravbutton.pressed = true
 	else:
@@ -684,7 +685,7 @@ func fpsCheck():
 	if globalsettings.fpsInfo == true:
 		fpsbutton.pressed = true
 	else:
-		spdgravbutton.pressed = false
+		fpsbutton.pressed = false
 
 # Move Box Info Functions
 

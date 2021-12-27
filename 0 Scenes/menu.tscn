@@ -136,14 +136,12 @@ script = ExtResource( 10 )
 layer = 6
 
 [node name="transitionroot" parent="transitioncanvas" instance=ExtResource( 58 )]
-visible = false
 mouse_filter = 2
 
 [node name="menucanvas" type="CanvasLayer" parent="."]
 layer = 5
 
 [node name="menuwelcome" type="Control" parent="menucanvas"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 theme = ExtResource( 11 )
@@ -301,15 +299,14 @@ margin_right = 1920.0
 margin_bottom = 1080.0
 theme = ExtResource( 11 )
 follow_focus = true
-scroll_horizontal = 5800
+scroll_horizontal = 100
 scroll_vertical_enabled = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="mp_hboxcont" type="HBoxContainer" parent="menucanvas/menuplay/mp_scollcont"]
-margin_left = -5800.0
-margin_right = 1920.0
+margin_right = 7720.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

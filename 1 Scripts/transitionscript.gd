@@ -25,7 +25,6 @@ func changeMask():
 	currentTransition = transitionArray[randi() % transitionArray.size()]
 	transitionArray.erase(currentTransition)
 	usedTransitions.append(currentTransition)
-	print(transitionArray)
 	shaderMat.set_shader_param("mask", currentTransition)
 
 func play(transitionIn, transitionOut, menu):
