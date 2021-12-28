@@ -20,12 +20,13 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Autumn Semester Project"
+config/name="Upwn"
 run/main_scene="res://0 Scenes/menu.tscn"
 boot_splash/image="res://2 Sprites/2 Misc/loading.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
-config/icon="res://icon.png"
+config/icon="res://2 Sprites/2 Misc/icon.png"
+config/windows_native_icon="res://2 Sprites/2 Misc/icon.ico"
 
 [autoload]
 

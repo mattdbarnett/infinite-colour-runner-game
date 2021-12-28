@@ -159,13 +159,18 @@ onready var fpsbutton = get_node("menucanvas/menusettings/ms_gui/ms_gui_menu/ms_
 onready var movebutton = get_node("menucanvas/menusettings/ms_gui/ms_gui_menu/ms_movebox")
 onready var statusbutton = get_node("menucanvas/menusettings/ms_gui/ms_gui_menu/ms_status")
 
-onready var hold = false
 onready var pressholdbtn = get_node("menucanvas/menusettings/ms_gameplay/ms_gameplay_menu/ms_presshold")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	menuwelcome.visible = true
+	if globalsettings.firstload == true:
+		menuwelcome.visible = true
+		globalsettings.firstload = false
+	else:
+		transitionroot.transitionIn("transition_in", null)
+		menumain.visible = true
+		currentmenu = menumain
 	
 	get_node("menucanvas/menumain/mm_playbtn").grab_focus()
 	resolution.add_item("Default")
