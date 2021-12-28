@@ -33,6 +33,8 @@ var scoreIncrement = 1
 
 var currentHold = false
 
+onready var gameroot = get_node("..")
+
 onready var speedGravPanels = get_node("Camera2D/CanvasLayer/speed+gravPanels")
 onready var movePanel = get_node("Camera2D/CanvasLayer/movePanel")
 onready var statusPanel = get_node("Camera2D/CanvasLayer/statusPanel")
@@ -84,9 +86,6 @@ func playerInput():
 		grav = gravup
 	else:
 		grav = gravdown
-	
-	if Input.is_action_just_pressed("esc"):
-		get_tree().change_scene("res://0 Scenes/menu.tscn")
 	
 	#Hold-mode input
 	if globalsettings.holdmode == true:
@@ -253,7 +252,9 @@ func playerDeath():
 		
 		score = int(score/5)
 		globalsettings.currency += score
-	get_tree().reload_current_scene()
+	
+	if gameroot.ending != true:
+		get_tree().reload_current_scene()
 
 func playerTrail():
 	match globalsettings.currentTrail:

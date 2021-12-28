@@ -35,18 +35,20 @@ func play(transitionIn, transitionOut, menu):
 	changeMask()
 	player.play(transitionOut)
 
-func transitionIn(mode):
+func transitionIn(transition, mode):
 	rect.visible = true
 	changeMask()
 	currentIn = mode
-	player.play("transition_in")
+	player.play(transition)
 
-func transitionOut(mode, menu):
+func transitionOut(transition, mode):
 	rect.visible = true
 	changeMask()
 	currentIn = mode
-	currentMenu = menu
-	player.play("transition_out")
+	player.play(transition)
+
+func resetSmooth():
+	shaderMat.set_shader_param("smooth_size", 0.001)
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == currentOut:
@@ -58,9 +60,16 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	elif anim_name == currentIn:
 		transitionedOut = false
 		rect.visible = false
-	elif currentIn == "1Way":
+	elif currentIn == "Welcome":
 		transitionArray += usedTransitions
 		usedTransitions.clear()
 		rect.visible = false
+	else:
+		rect.visible = false
 	
-	shaderMat.set_shader_param("smooth_size", 0.001)
+	if currentIn == "Game":
+		get_tree().change_scene("res://0 Scenes/game.tscn")
+	elif currentIn == "Quit":
+		get_tree().change_scene("res://0 Scenes/menu.tscn")
+
+	resetSmooth()

@@ -142,6 +142,7 @@ mouse_filter = 2
 layer = 5
 
 [node name="menuwelcome" type="Control" parent="menucanvas"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 theme = ExtResource( 11 )
@@ -191,7 +192,6 @@ __meta__ = {
 }
 
 [node name="menumain" type="Control" parent="menucanvas"]
-visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 theme = ExtResource( 11 )

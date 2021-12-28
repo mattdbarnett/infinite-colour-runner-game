@@ -31,11 +31,17 @@ var texturegreen = preload("res://2 Sprites/0 Basic/green.png")
 var textureyellow = preload("res://2 Sprites/0 Basic/yellow.png")
 var texturepink = preload("res://2 Sprites/0 Basic/pink.png")
 
+onready var transitionroot = get_node("transitioncanvas/transitionroot")
+
 onready var globalsettings = get_node("/root/globalsettings")
 var customDataGet
 var customDataSum = 0
+
+var ending = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	transitionroot.transitionIn("fade_in", null)
 	if globalsettings.fpsInfo == true:
 		get_node("player/Camera2D/CanvasLayer/fpsLabel").visible = true
 	typedict = {
@@ -308,3 +314,7 @@ func extraFeatures():
 	#Allow fullscreen to be switched mid-game
 	if Input.is_action_just_released("fullscreen"):
 		globalsettings.fullscreen()
+	
+	if Input.is_action_just_pressed("esc"):
+		ending = true
+		transitionroot.transitionOut("fade_out", "Quit")

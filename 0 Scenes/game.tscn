@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://1 Scripts/gamescript.gd" type="Script" id=1]
 [ext_resource path="res://0 Scenes/player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://3 Fonts/1 Variations/s27.tres" type="DynamicFont" id=6]
 [ext_resource path="res://4 Styling/4 Small/norm_small_move.tres" type="StyleBox" id=7]
 [ext_resource path="res://4 Styling/4 Small/norm_small_status.tres" type="StyleBox" id=8]
+[ext_resource path="res://0 Scenes/transition.tscn" type="PackedScene" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.956863, 0, 1, 1 )
@@ -229,6 +230,12 @@ environment = ExtResource( 3 )
 [node name="YellowLBody" type="StaticBody2D" parent="."]
 
 [node name="PinkLBody" type="StaticBody2D" parent="."]
+
+[node name="transitioncanvas" type="CanvasLayer" parent="."]
+layer = 6
+
+[node name="transitionroot" parent="transitioncanvas" instance=ExtResource( 9 )]
+mouse_filter = 2
 
 [connection signal="timeout" from="player/Camera2D/TimerScore" to="player" method="_on_TimerScore_timeout"]
 [connection signal="timeout" from="player/Camera2D/TimerPowerup" to="player" method="_on_TimerPowerup_timeout"]

@@ -169,6 +169,8 @@ func _ready():
 		menuwelcome.visible = true
 		menumain.visible = false
 		globalsettings.firstload = false
+	else:
+		transitionroot.transitionIn("transition_in", null)
 	
 	get_node("menucanvas/menumain/mm_playbtn").grab_focus()
 	resolution.add_item("Default")
@@ -240,13 +242,13 @@ func currentmenu_update(newcurrent):
 func _unhandled_input(event):
 	if menuwelcome.visible == true:
 		if event is InputEventKey:
-			menuwelcome.visible = false
-			transitionroot.transitionIn("1Way")
+			transitionroot.resetSmooth()
+			currentmenu = menuwelcome
 			if globalsettings.firstrun == true:
-				currentmenu_update(menuhelp)
+				transitionroot.play("fade_in", "fade_out", menuplay)
 				globalsettings.firstrun = false
 			else:
-				currentmenu_update(menumain)
+				transitionroot.play("transition_in", "fade_out", menumain)
 
 func transitionedOut():
 	if transitionroot.transitionedOut == true:
@@ -404,7 +406,7 @@ func updateProgression():
 	
 
 func _on_mp_start_pressed():
-	get_tree().change_scene("res://0 Scenes/game.tscn")
+	transitionroot.transitionOut("transition_out", "Game")
 
 """
 Custom Menu Signals
@@ -448,7 +450,7 @@ func _on_mc_start_pressed():
 	customDataGet.gravityvalue = gravslider.value
 	globalsettings.customData = customDataGet
 	globalsettings.gamemode = "Custom"
-	get_tree().change_scene("res://0 Scenes/game.tscn")
+	transitionroot.transitionOut("transition_out", "Game")
 
 """
 Store Menu Signals
