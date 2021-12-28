@@ -165,12 +165,7 @@ onready var pressholdbtn = get_node("menucanvas/menusettings/ms_gameplay/ms_game
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	if globalsettings.firstload == true:
-		menuwelcome.visible = true
-		menumain.visible = false
-		globalsettings.firstload = false
-	else:
-		transitionroot.transitionIn("transition_in", null)
+	menuwelcome.visible = true
 	
 	get_node("menucanvas/menumain/mm_playbtn").grab_focus()
 	resolution.add_item("Default")
@@ -244,10 +239,11 @@ func _unhandled_input(event):
 		if event is InputEventKey:
 			transitionroot.resetSmooth()
 			currentmenu = menuwelcome
+			print(transitionroot.animationPlaying)
 			if globalsettings.firstrun == true:
-				transitionroot.play("fade_in", "fade_out", menuplay)
+				transitionroot.play("fade_in", "fade_out", menuhelp)
 				globalsettings.firstrun = false
-			else:
+			elif transitionroot.animationPlaying == false:
 				transitionroot.play("transition_in", "fade_out", menumain)
 
 func transitionedOut():

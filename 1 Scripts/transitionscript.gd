@@ -6,6 +6,7 @@ var currentIn;
 var currentOut;
 var currentMenu;
 var transitionedOut = false
+var animationPlaying = false
 var menu = load("res://1 Scripts/menuscript.gd")
 
 var shaderMat = load("res://4 Styling/8 Shaders/transition.tres")
@@ -72,4 +73,9 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	elif currentIn == "Quit":
 		get_tree().change_scene("res://0 Scenes/menu.tscn")
 
+	animationPlaying = false
 	resetSmooth()
+
+
+func _on_AnimationPlayer_animation_started(anim_name):
+	animationPlaying = true
