@@ -117,7 +117,7 @@ func save():
 func save_game():
 	var save_game = File.new()
 	save_game.open("user://savegame.save", File.WRITE)
-	var save_dict = save()
+	save_dict = save()
 	for i in save_dict.keys():
 		#save_game.store_line(to_json(i))
 		save_game.store_line(to_json(save_dict[i]))

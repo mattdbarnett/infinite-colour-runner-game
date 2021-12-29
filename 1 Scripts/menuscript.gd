@@ -198,7 +198,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 
 	# Changes button status and allows for fullscreen change through f key
 	fullscreenCheck()
@@ -416,28 +416,28 @@ Custom Menu Signals
 func _on_mc_back_pressed():
 	transitionroot.play("transition_in", "transition_out", menumain)
 
-func _on_mc_sliderblue_value_changed(value):	
+func _on_mc_sliderblue_value_changed():	
 	bluelabel.text = str(blueslider.value) + "%"
 
-func _on_mc_sliderpurple_value_changed(value):
+func _on_mc_sliderpurple_value_changed():
 	purplelabel.text = str(purpleslider.value) + "%"
 
-func _on_mc_slidergreen_value_changed(value):
+func _on_mc_slidergreen_value_changed():
 	greenlabel.text = str(greenslider.value) + "%"
 
-func _on_mc_slideryellow_value_changed(value):
+func _on_mc_slideryellow_value_changed():
 	yellowlabel.text = str(yellowslider.value) + "%"
 
-func _on_mc_sliderpink_value_changed(value):
+func _on_mc_sliderpink_value_changed():
 	pinklabel.text = str(pinkslider.value) + "%"
 
-func _on_mc_sliderred_value_changed(value):
+func _on_mc_sliderred_value_changed():
 	redlabel.text = str(redslider.value) + "%"
 
-func _on_mc_sliderspd_value_changed(value):
+func _on_mc_sliderspd_value_changed():
 	speedlabel.text = str(speedslider.value) + "%"
 
-func _on_mc_slidergrav_value_changed(value):
+func _on_mc_slidergrav_value_changed():
 	gravlabel.text = str(gravslider.value) + "%"
 
 func _on_mc_start_pressed():
@@ -596,13 +596,13 @@ func holdmodeCheck():
 	elif globalsettings.holdmode == true:
 		pressholdbtn.text = "Hold"
 
-func _on_ms_slidermusic_value_changed(value):
+func _on_ms_slidermusic_value_changed():
 	var label = get_node("menucanvas/menusettings/ms_sound/ms_sound_menu/ms_slidermusic/ms_lblval")
 	var slider = get_node("menucanvas/menusettings/ms_sound/ms_sound_menu/ms_slidermusic")
 	
 	label.text = str(slider.value) + "%"
 
-func _on_ms_slidereffect_value_changed(value):
+func _on_ms_slidereffect_value_changed():
 	var label = get_node("menucanvas/menusettings/ms_sound/ms_sound_menu/ms_slidereffect/ms_lblval")
 	var slider = get_node("menucanvas/menusettings/ms_sound/ms_sound_menu/ms_slidereffect")
 	

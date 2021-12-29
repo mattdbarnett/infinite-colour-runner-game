@@ -64,78 +64,78 @@ func _ready():
 	
 	match globalsettings.gamemode:
 		"Standard":
-			for i in range(20):
+			for _i in range(20):
 				typelist.append(texture)
-			for i in range(5):
+			for _i in range(5):
 				typelist.append(texturered)
 		"Take It Slow":
-			for i in range(25):
+			for _i in range(25):
 				typelist.append(texture)
-			for i in range(10):
+			for _i in range(10):
 				typelist.append(textureblue)
-			for i in range(5):
+			for _i in range(5):
 				typelist.append(texturered)
 		"Reverse":
-			for i in range(30):
+			for _i in range(30):
 				typelist.append(texture)
-			for i in range(12):
+			for _i in range(12):
 				typelist.append(texturepurple)
-			for i in range(4):
+			for _i in range(4):
 				typelist.append(textureblue)
-			for i in range(4):
+			for _i in range(4):
 				typelist.append(texturered) 
 		"Lava":
-			for i in range(30):
+			for _i in range(30):
 				typelist.append(texture)
-			for i in range(30):
+			for _i in range(30):
 				typelist.append(texturered) 
 		"Rapid":
-			for i in range(30):
+			for _i in range(30):
 				typelist.append(texture)
-			for i in range(10):
+			for _i in range(10):
 				typelist.append(texturegreen)
 		"Fluctuant":
-			for i in range(30):
+			for _i in range(30):
 				typelist.append(texture)
-			for i in range(10):
+			for _i in range(10):
 				typelist.append(textureblue)
-			for i in range(10):
+			for _i in range(10):
 				typelist.append(texturegreen)
 		"Gravity":
-			for i in range(30):
+			for _i in range(30):
 				typelist.append(texture)
-			for i in range(6):
+			for _i in range(6):
 				typelist.append(textureyellow)
-			for i in range(4):
+			for _i in range(4):
 				typelist.append(texturered)
 		"Powerup":
-			for i in range(34):
+			for _i in range(34):
 				typelist.append(texture)
-			for i in range(6):
+			for _i in range(6):
 				typelist.append(texturepink)
 		"Lunacy":
-			for i in range(25):
+			for _i in range(25):
 				typelist.append(texture)
-			for i in range(10):
+			for _i in range(10):
 				typelist.append(texturegreen)
-			for i in range(10):
+			for _i in range(10):
 				typelist.append(textureyellow)
-			for i in range(5):
+			for _i in range(5):
 				typelist.append(texturepink)
 		"Rainbow":
-			for i in range(40):
+			for _i in range(40):
 				typelist.append(texture)
-			for i in range(10):
+			for _i in range(10):
 				typelist.append(textureblue)
-			for i in range(10):
+			for _i in range(10):
 				typelist.append(texturered)
-			for i in range(10):
+			for _i in range(10):
 				typelist.append(texturepurple)
-			for i in range(10):
+			for _i in range(10):
 				typelist.append(texturegreen)
-			for i in range(10):
+			for _i in range(10):
 				typelist.append(textureyellow)
-			for i in range(10):
+			for _i in range(10):
 				typelist.append(texturepink)
 		"Custom":
 			customDataGet = globalsettings.customData

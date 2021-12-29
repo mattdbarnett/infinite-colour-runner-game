@@ -7,7 +7,6 @@ var currentOut;
 var currentMenu;
 var transitionedOut = false
 var animationPlaying = false
-var menu = load("res://1 Scripts/menuscript.gd")
 
 var shaderMat = load("res://4 Styling/8 Shaders/transition.tres")
 const transition1 = preload("res://2 Sprites/1 Transitions/transition1.png")
@@ -69,9 +68,11 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		rect.visible = false
 	
 	if currentIn == "Game":
-		get_tree().change_scene("res://0 Scenes/game.tscn")
+		if get_tree().change_scene("res://0 Scenes/game.tscn") != OK:
+			print ("An unexpected error occured when trying to switch to the game scene")
 	elif currentIn == "Quit":
-		get_tree().change_scene("res://0 Scenes/menu.tscn")
+		if get_tree().change_scene("res://0 Scenes/menu.tscn") != OK:
+			print ("An unexpected error occured when trying to switch to the menu scene")
 
 	animationPlaying = false
 	resetSmooth()
@@ -79,3 +80,4 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 func _on_AnimationPlayer_animation_started(anim_name):
 	animationPlaying = true
+	return anim_name
