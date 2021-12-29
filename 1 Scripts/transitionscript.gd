@@ -4,6 +4,7 @@ onready var rect = get_node("ColorRect")
 onready var player = get_node("ColorRect/AnimationPlayer")
 var currentIn;
 var currentOut;
+var currentMode;
 var currentMenu;
 var transitionedOut = false
 var animationPlaying = false
@@ -38,13 +39,13 @@ func play(transitionIn, transitionOut, menu):
 func transitionIn(transition, mode):
 	rect.visible = true
 	changeMask()
-	currentIn = mode
+	currentMode = mode
 	player.play(transition)
 
 func transitionOut(transition, mode):
 	rect.visible = true
 	changeMask()
-	currentIn = mode
+	currentMode = mode
 	player.play(transition)
 
 func resetSmooth():
@@ -60,17 +61,17 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	elif anim_name == currentIn:
 		transitionedOut = false
 		rect.visible = false
-	elif currentIn == "Welcome":
+	elif currentMode == "Welcome":
 		transitionArray += usedTransitions
 		usedTransitions.clear()
 		rect.visible = false
 	else:
 		rect.visible = false
 	
-	if currentIn == "Game":
+	if currentMode == "Game":
 		if get_tree().change_scene("res://0 Scenes/game.tscn") != OK:
 			print ("An unexpected error occured when trying to switch to the game scene")
-	elif currentIn == "Quit":
+	elif currentMode == "Quit":
 		if get_tree().change_scene("res://0 Scenes/menu.tscn") != OK:
 			print ("An unexpected error occured when trying to switch to the menu scene")
 

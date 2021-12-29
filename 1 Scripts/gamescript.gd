@@ -147,34 +147,34 @@ func _ready():
 			for value in customDataGet:
 				sum += int(value)
 			customDataSum = sum - customDataGet.speedvalue - customDataGet.gravityvalue
-			for i in range(20):
+			for _i in range(20):
 				typelist.append(texture)
-			for i in range(customDataSum):
+			for _i in range(customDataSum):
 				typelist.append(texture)
-			for i in range(customDataGet.bluevalue):
+			for _i in range(customDataGet.bluevalue):
 				typelist.append(textureblue)
-			for i in range(customDataGet.redvalue):
+			for _i in range(customDataGet.redvalue):
 				typelist.append(texturered)
-			for i in range(customDataGet.purplevalue):
+			for _i in range(customDataGet.purplevalue):
 				typelist.append(texturepurple)
-			for i in range(customDataGet.greenvalue):
+			for _i in range(customDataGet.greenvalue):
 				typelist.append(texturegreen)
-			for i in range(customDataGet.yellowvalue):
+			for _i in range(customDataGet.yellowvalue):
 				typelist.append(textureyellow)
-			for i in range(customDataGet.pinkvalue):
+			for _i in range(customDataGet.pinkvalue):
 				typelist.append(texturepink)
 		_:
-			for i in range(20):
+			for _i in range(20):
 				typelist.append(texture)
-			for i in range(6):
+			for _i in range(6):
 				typelist.append(texturered)
 	
-	for i in range(3):
+	for _i in range(3):
 		floor_gen(texture)
 		ceiling_gen(texture)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	
 	extraFeatures()
 		
@@ -200,7 +200,7 @@ func texture_gen():
 		ctype = texture
 		lastTypeUnique = false
 	
-func floor_gen(ftype):
+func floor_gen(ftypeinp):
 	var random = randomlist[randi() % randomlist.size()]
 	
 	var start = fterrain[-1] #The start is startf_y
@@ -244,7 +244,7 @@ func floor_gen(ftype):
 		start.y += height
 	shape = CollisionPolygon2D.new() #The collision shape for the floor
 	ground = Polygon2D.new() #The visual shape for the floor
-	type = typedict[ftype]
+	type = typedict[ftypeinp]
 	type.add_child(shape) #Adds the collision to the level
 	#Below closes the shape collision and visual shown from the start of the floor
 	#to the bottom of the level
@@ -253,10 +253,10 @@ func floor_gen(ftype):
 	#Below sets the closed shape to be shown visually and in collisions.
 	shape.polygon = poly
 	ground.polygon = poly
-	ground.texture = ftype
+	ground.texture = ftypeinp
 	add_child(ground)
 
-func ceiling_gen(ctype):
+func ceiling_gen(ctypeinp):
 	var random = randomlist[randi() % randomlist.size()]
 	
 	var start = cterrain[-1]
@@ -296,13 +296,13 @@ func ceiling_gen(ctype):
 		start.y += height
 	shape = CollisionPolygon2D.new()
 	ground = Polygon2D.new()
-	type = typedict[ctype]
+	type = typedict[ctypeinp]
 	type.add_child(shape)
 	poly.append(Vector2(cterrain[-1].x, -screensize.y*2))
 	poly.append(Vector2(start.x, -screensize.y*2))
 	shape.polygon = poly
 	ground.polygon = poly
-	ground.texture = ctype
+	ground.texture = ctypeinp
 	add_child(ground)
 
 func extraFeatures():

@@ -60,7 +60,7 @@ func _ready():
 	
 	playerUIInitalise()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 
 	scoreLabel.text = str(int(score))
 	powerupBar.value = powerupValue
@@ -254,7 +254,8 @@ func playerDeath():
 		globalsettings.currency += score
 	
 	if gameroot.ending != true:
-		get_tree().reload_current_scene()
+		if get_tree().reload_current_scene() != OK:
+			print ("An unexpected error occured when trying to restart the scene")
 
 func playerTrail():
 	match globalsettings.currentTrail:
