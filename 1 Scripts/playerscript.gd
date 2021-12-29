@@ -33,6 +33,13 @@ var scoreIncrement = 1
 
 var currentHold = false
 
+onready var gameroot = get_node("..")
+
+onready var speedGravPanels = get_node("Camera2D/CanvasLayer/speed+gravPanels")
+onready var movePanel = get_node("Camera2D/CanvasLayer/movePanel")
+onready var statusPanel = get_node("Camera2D/CanvasLayer/statusPanel")
+onready var statusArrow = get_node("Camera2D/CanvasLayer/statusPanel/statusArrow")
+
 onready var scoreTimer = get_node("Camera2D/TimerScore")
 onready var scoreLabel = get_node("Camera2D/CanvasLayer/scorePanel/valueLabel")
 var score = 0
@@ -46,8 +53,14 @@ var powerupMode = false
 func _ready():
 	powerupTimer.start()
 	scoreTimer.start()
+	
+	playerTrail()
+	
+	playerBg()
+	
+	playerUIInitalise()
 
-func _process(delta):
+func _physics_process(delta):
 
 	scoreLabel.text = str(int(score))
 	powerupBar.value = powerupValue
@@ -60,6 +73,8 @@ func _process(delta):
 	
 	playerEffects()
 	
+	playerUIConst()
+	
 	motion = move_and_slide(motion, UP)
 
 func playerInput():
@@ -71,9 +86,6 @@ func playerInput():
 		grav = gravup
 	else:
 		grav = gravdown
-	
-	if Input.is_action_just_pressed("esc"):
-		get_tree().change_scene("res://0 Scenes/menu.tscn")
 	
 	#Hold-mode input
 	if globalsettings.holdmode == true:
@@ -197,9 +209,84 @@ func playerEffects():
 			xspeed = basex
 			
 			timerScoreReset()
+
+func playerUIConst():
 	
+	# Speed + Gravity Panels
+	
+	if globalsettings.spdgravInfo == true:
+		get_node(str(speedGravPanels.get_path()) + "/speedPanel/valueLabel").text = str(xspeed)
+		get_node(str(speedGravPanels.get_path()) + "/gravPanel/valueLabel").text = str(int(gravchange))
+	
+	# Move Panel
+	
+	if globalsettings.moveInfo == true:
+		if (is_on_floor() or is_on_ceiling()):
+			movePanel.get_stylebox("panel", "").set_bg_color("#00FF21")
+		else:
+			movePanel.get_stylebox("panel", "").set_bg_color("#000000")
+	
+	# Status Panel
+	if globalsettings.statusInfo == true:
+		match modeCurrent:
+			"base": statusPanel.get_stylebox("panel", "").set_bg_color("#000000")
+			"blue": statusPanel.get_stylebox("panel", "").set_bg_color("#0016ff")
+			"purple": statusPanel.get_stylebox("panel", "").set_bg_color("#4800ff")
+			"green": statusPanel.get_stylebox("panel", "").set_bg_color("#06ff00")
+			"yellow": statusPanel.get_stylebox("panel", "").set_bg_color("#ffef00")
+			"pink": statusPanel.get_stylebox("panel", "").set_bg_color("#f400ff")
+			"powerup": statusPanel.get_stylebox("panel", "").set_bg_color("#f400ff")
+		if modeCurrent == "yellow":
+			statusArrow.visible = true
+			if yellowtoggle == false:
+				statusArrow.rotation_degrees = 0
+			elif yellowtoggle == true:
+				statusArrow.rotation_degrees = 180
+		else:
+			statusArrow.visible = false
+
 func playerDeath():
-	get_tree().reload_current_scene()
+	if globalsettings.gamemode != "Custom":
+		if score > globalsettings.highscore:
+			globalsettings.highscore = score
+		
+		score = int(score/5)
+		globalsettings.currency += score
+	
+	if gameroot.ending != true:
+		get_tree().reload_current_scene()
+
+func playerTrail():
+	match globalsettings.currentTrail:
+		"ghost":
+			get_node("sprite/trail_ghost").visible = true
+		"snake":
+			get_node("sprite/trail_snake").visible = true
+		"smoke":
+			get_node("sprite/trail_smoke").visible = true
+		"flames":
+			get_node("sprite/trail_flames").visible = true
+		"rainbow":
+			get_node("sprite/trail_rainbow").visible = true
+
+func playerBg():
+	match globalsettings.currentBg:
+		"plain":
+			get_node("sprite/backgrounds/bg_plain").visible = true
+		"fade":
+			get_node("sprite/backgrounds/bg_fade").visible = true
+		"disco":
+			get_node("sprite/backgrounds/bg_rainbowlayer/bg_rainbow").visible = true
+
+func playerUIInitalise():
+	if globalsettings.spdgravInfo == true:
+		speedGravPanels.visible = true
+	
+	if globalsettings.moveInfo == true:
+		movePanel.visible = true
+	
+	if globalsettings.statusInfo == true:
+		statusPanel.visible = true
 
 func powerupStatus():
 	if powerupValue == 100:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://3 Fonts/1 Variations/s70.tres" type="DynamicFont" id=1]
 [ext_resource path="res://4 Styling/0 Const/norm.tres" type="StyleBox" id=2]
@@ -34,13 +34,13 @@
 [ext_resource path="res://4 Styling/4 Small/norm_small.tres" type="StyleBox" id=32]
 [ext_resource path="res://4 Styling/2 Panels/coin_panel.tres" type="StyleBox" id=33]
 [ext_resource path="res://3 Fonts/0 Const/pixel font-7.ttf" type="DynamicFontData" id=34]
-[ext_resource path="res://2 Sprites/white.png" type="Texture" id=35]
-[ext_resource path="res://2 Sprites/red.png" type="Texture" id=36]
-[ext_resource path="res://2 Sprites/blue.png" type="Texture" id=37]
-[ext_resource path="res://2 Sprites/pink.png" type="Texture" id=38]
-[ext_resource path="res://2 Sprites/yellow.png" type="Texture" id=39]
-[ext_resource path="res://2 Sprites/purple.png" type="Texture" id=40]
-[ext_resource path="res://2 Sprites/green.png" type="Texture" id=41]
+[ext_resource path="res://2 Sprites/0 Basic/white.png" type="Texture" id=35]
+[ext_resource path="res://2 Sprites/0 Basic/red.png" type="Texture" id=36]
+[ext_resource path="res://2 Sprites/0 Basic/blue.png" type="Texture" id=37]
+[ext_resource path="res://2 Sprites/0 Basic/pink.png" type="Texture" id=38]
+[ext_resource path="res://2 Sprites/0 Basic/yellow.png" type="Texture" id=39]
+[ext_resource path="res://2 Sprites/0 Basic/purple.png" type="Texture" id=40]
+[ext_resource path="res://2 Sprites/0 Basic/green.png" type="Texture" id=41]
 [ext_resource path="res://3 Fonts/1 Variations/s32.tres" type="DynamicFont" id=42]
 [ext_resource path="res://3 Fonts/1 Variations/s27.tres" type="DynamicFont" id=43]
 [ext_resource path="res://3 Fonts/1 Variations/s80.tres" type="DynamicFont" id=44]
@@ -49,6 +49,15 @@
 [ext_resource path="res://4 Styling/5 Medium/norm_med.tres" type="StyleBox" id=47]
 [ext_resource path="res://4 Styling/0 Const/emptyfocus.tres" type="StyleBox" id=48]
 [ext_resource path="res://4 Styling/0 Const/norm_disabled.tres" type="StyleBox" id=49]
+[ext_resource path="res://2 Sprites/0 Basic/black.png" type="Texture" id=50]
+[ext_resource path="res://4 Styling/4 Small/blue_small_hover.tres" type="StyleBox" id=51]
+[ext_resource path="res://4 Styling/7 Gradients/fade.tres" type="Texture" id=52]
+[ext_resource path="res://4 Styling/7 Gradients/plain.tres" type="Gradient" id=53]
+[ext_resource path="res://4 Styling/7 Gradients/rainbow.tres" type="Texture" id=54]
+[ext_resource path="res://3 Fonts/1 Variations/s19.tres" type="DynamicFont" id=55]
+[ext_resource path="res://4 Styling/2 Panels/gui_panel.tres" type="StyleBox" id=56]
+[ext_resource path="res://3 Fonts/2 Special/welcome.tres" type="DynamicFont" id=57]
+[ext_resource path="res://0 Scenes/transition.tscn" type="PackedScene" id=58]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -58,36 +67,37 @@ bg_color = Color( 0, 0, 0, 1 )
 [sub_resource type="StyleBoxEmpty" id=3]
 
 [sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0, 0, 0, 1 )
+bg_color = Color( 0, 0, 0, 0 )
 border_width_left = 10
 border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
 border_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="GradientTexture" id=5]
+gradient = ExtResource( 53 )
+
+[sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 20
 border_width_right = 20
 border_width_bottom = 20
 border_color = Color( 0.0235294, 1, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 20
 border_width_top = 20
 border_width_right = 20
 border_color = Color( 1, 0.937255, 0, 1 )
 
-[sub_resource type="StyleBoxEmpty" id=7]
-
 [sub_resource type="StyleBoxEmpty" id=8]
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="DynamicFont" id=10]
 size = 50
 font_data = ExtResource( 34 )
-
-[sub_resource type="StyleBoxEmpty" id=10]
 
 [sub_resource type="StyleBoxEmpty" id=11]
 
@@ -95,20 +105,94 @@ font_data = ExtResource( 34 )
 
 [sub_resource type="StyleBoxEmpty" id=13]
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="DynamicFont" id=15]
 size = 60
 font_data = ExtResource( 34 )
 
-[sub_resource type="StyleBoxFlat" id=15]
+[sub_resource type="StyleBoxFlat" id=16]
 bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.956863, 0, 1, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.8, 0.8, 0.8, 0 )
+
+[sub_resource type="Gradient" id=18]
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 0.192157, 0.192157, 0.192157, 1 )
+
+[sub_resource type="GradientTexture" id=19]
+gradient = SubResource( 18 )
 
 [node name="menuroot" type="Node2D"]
 script = ExtResource( 10 )
 
+[node name="transitioncanvas" type="CanvasLayer" parent="."]
+layer = 6
+
+[node name="transitionroot" parent="transitioncanvas" instance=ExtResource( 58 )]
+mouse_filter = 2
+
 [node name="menucanvas" type="CanvasLayer" parent="."]
 layer = 5
 
+[node name="menuwelcome" type="Control" parent="menucanvas"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mw_welcomepanel" type="Panel" parent="menucanvas/menuwelcome"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+
+[node name="mw_welcomeback" type="Label" parent="menucanvas/menuwelcome"]
+margin_left = -16.0
+margin_top = -8.0
+margin_right = 1904.0
+margin_bottom = 824.0
+custom_fonts/font = ExtResource( 57 )
+custom_colors/font_color = Color( 0.956863, 0, 1, 1 )
+text = "Upwn"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mw_welcomelabel" type="Label" parent="menucanvas/menuwelcome"]
+margin_right = 1920.0
+margin_bottom = 832.0
+custom_fonts/font = ExtResource( 57 )
+text = "Upwn"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mw_welcomepress" type="Label" parent="menucanvas/menuwelcome"]
+margin_top = 832.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+custom_fonts/font = ExtResource( 44 )
+text = "~ Press any key to continue ~"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="menumain" type="Control" parent="menucanvas"]
+visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 theme = ExtResource( 11 )
@@ -216,6 +300,7 @@ margin_right = 1920.0
 margin_bottom = 1080.0
 theme = ExtResource( 11 )
 follow_focus = true
+scroll_horizontal = 100
 scroll_vertical_enabled = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -257,6 +342,19 @@ __meta__ = {
 position = Vector2( 192, 416 )
 texture = ExtResource( 36 )
 
+[node name="mp_score" type="Label" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer1/mp_op1"]
+margin_left = -4.0
+margin_top = 448.0
+margin_right = 380.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 42 )
+text = "Score 0 To Unlock"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="mp_btncontainer2" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
 margin_left = 1288.0
 margin_right = 1928.0
@@ -267,6 +365,7 @@ margin_left = 128.0
 margin_top = 256.0
 margin_right = 508.0
 margin_bottom = 640.0
+rect_pivot_offset = Vector2( -952, 344 )
 custom_styles/hover = ExtResource( 20 )
 custom_styles/pressed = ExtResource( 21 )
 custom_styles/focus = ExtResource( 48 )
@@ -286,15 +385,28 @@ texture = ExtResource( 36 )
 position = Vector2( 156, 416 )
 texture = ExtResource( 37 )
 
+[node name="mp_score" type="Label" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer2/mp_op2"]
+margin_left = -4.0
+margin_top = 448.0
+margin_right = 380.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 42 )
+text = "Score 3 To Unlock"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="mp_btncontainer3" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
 margin_left = 1932.0
 margin_right = 2572.0
 rect_min_size = Vector2( 640, 0 )
 
 [node name="mp_op3" type="Button" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer3"]
-margin_left = 128.0
+margin_left = 124.0
 margin_top = 256.0
-margin_right = 512.0
+margin_right = 508.0
 margin_bottom = 640.0
 custom_styles/hover = ExtResource( 25 )
 custom_styles/pressed = ExtResource( 17 )
@@ -318,6 +430,19 @@ texture = ExtResource( 37 )
 [node name="red" type="Sprite" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer3/mp_op3"]
 position = Vector2( 256, 416 )
 texture = ExtResource( 36 )
+
+[node name="mp_score" type="Label" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer3/mp_op3"]
+margin_left = -4.0
+margin_top = 448.0
+margin_right = 380.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 42 )
+text = "Score 5 To Unlock"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="mp_btncontainer4" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
 margin_left = 2576.0
@@ -344,6 +469,19 @@ __meta__ = {
 position = Vector2( 192, 416 )
 texture = ExtResource( 36 )
 
+[node name="mp_score" type="Label" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer4/mp_op4"]
+margin_left = -4.0
+margin_top = 448.0
+margin_right = 380.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 42 )
+text = "Score 7 To Unlock"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="mp_btncontainer5" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
 margin_left = 3220.0
 margin_right = 3860.0
@@ -368,6 +506,19 @@ __meta__ = {
 [node name="green" type="Sprite" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer5/mp_op5"]
 position = Vector2( 188, 416 )
 texture = ExtResource( 41 )
+
+[node name="mp_score" type="Label" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer5/mp_op5"]
+margin_left = -4.0
+margin_top = 448.0
+margin_right = 380.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 42 )
+text = "Score 10 To Unlock"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="mp_btncontainer6" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
 margin_left = 3864.0
@@ -398,6 +549,19 @@ texture = ExtResource( 41 )
 position = Vector2( 220, 416 )
 texture = ExtResource( 37 )
 
+[node name="mp_score" type="Label" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer6/mp_op6"]
+margin_left = -4.0
+margin_top = 448.0
+margin_right = 380.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 42 )
+text = "Score 20 To Unlock"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="mp_btncontainer7" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
 margin_left = 4508.0
 margin_right = 5148.0
@@ -427,6 +591,19 @@ texture = ExtResource( 39 )
 position = Vector2( 224, 416 )
 texture = ExtResource( 36 )
 
+[node name="mp_score" type="Label" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer7/mp_op7"]
+margin_left = -4.0
+margin_top = 448.0
+margin_right = 380.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 42 )
+text = "Score 25 To Unlock"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="mp_btncontainer8" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
 margin_left = 5152.0
 margin_right = 5792.0
@@ -451,6 +628,19 @@ __meta__ = {
 [node name="pink" type="Sprite" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer8/mp_op8"]
 position = Vector2( 188, 416 )
 texture = ExtResource( 38 )
+
+[node name="mp_score" type="Label" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer8/mp_op8"]
+margin_left = -4.0
+margin_top = 448.0
+margin_right = 380.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 42 )
+text = "Score 50 To Unlock"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="mp_btncontainer9" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
 margin_left = 5796.0
@@ -484,6 +674,19 @@ texture = ExtResource( 39 )
 [node name="green" type="Sprite" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer9/mp_op9"]
 position = Vector2( 256, 416 )
 texture = ExtResource( 41 )
+
+[node name="mp_score" type="Label" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer9/mp_op9"]
+margin_left = -4.0
+margin_top = 448.0
+margin_right = 380.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 42 )
+text = "Score 75 To Unlock"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="mp_btncontainer10" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
 margin_left = 6440.0
@@ -529,6 +732,19 @@ texture = ExtResource( 37 )
 [node name="red" type="Sprite" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer10/mp_op10"]
 position = Vector2( 352, 416 )
 texture = ExtResource( 36 )
+
+[node name="mp_score" type="Label" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer10/mp_op10"]
+margin_left = -4.0
+margin_top = 448.0
+margin_right = 380.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 42 )
+text = "Score 100 To Unlock"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="mp_back" type="Button" parent="menucanvas/menuplay"]
 margin_right = 384.0
@@ -1029,7 +1245,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mp_coinlabel" type="Label" parent="menucanvas/menuplay/mp_scorepanel"]
+[node name="mp_scorelabel" type="Label" parent="menucanvas/menuplay/mp_scorepanel"]
 margin_left = 88.0
 margin_top = 64.0
 margin_right = 343.0
@@ -1038,7 +1254,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "High-Score:"
 align = 1
 
-[node name="mp_coinvalue2" type="Label" parent="menucanvas/menuplay/mp_scorepanel"]
+[node name="mp_scorevalue" type="Label" parent="menucanvas/menuplay/mp_scorepanel"]
 margin_left = 24.0
 margin_top = 168.0
 margin_right = 384.0
@@ -1384,25 +1600,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mt_skins" type="Panel" parent="menucanvas/menustore"]
+[node name="mt_trails" type="Panel" parent="menucanvas/menustore"]
 margin_left = 1392.0
 margin_right = 1920.0
 margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="mt_skinlabel" type="Label" parent="menucanvas/menustore/mt_skins"]
+[node name="mt_skinlabel" type="Label" parent="menucanvas/menustore/mt_trails"]
 margin_right = 528.0
 margin_bottom = 128.0
 custom_fonts/font = ExtResource( 3 )
-text = "Skins"
+text = "Trails"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mt_tthemescrollcont" type="ScrollContainer" parent="menucanvas/menustore/mt_skins"]
+[node name="mt_themescrollcont" type="ScrollContainer" parent="menucanvas/menustore/mt_trails"]
 margin_top = 128.0
-margin_right = 512.0
+margin_right = 528.0
 margin_bottom = 1080.0
 theme = ExtResource( 11 )
 scroll_horizontal_enabled = false
@@ -1410,44 +1629,47 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mt_hboxscrollcont" type="VBoxContainer" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont"]
-margin_right = 512.0
-margin_bottom = 1296.0
+[node name="mt_hboxscrollcont" type="VBoxContainer" parent="menucanvas/menustore/mt_trails/mt_themescrollcont"]
+margin_right = 528.0
+margin_bottom = 1540.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="mt_item1" type="Control" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont"]
+[node name="mt_item0" type="Control" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont"]
 margin_right = 512.0
 margin_bottom = 256.0
 rect_min_size = Vector2( 512, 256 )
 size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label" type="Label" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item1"]
+[node name="Label" type="Label" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item0"]
 margin_left = 16.0
-margin_right = 336.0
+margin_right = 272.0
 margin_bottom = 64.0
 custom_fonts/font = ExtResource( 3 )
-text = "Placeholder"
+text = "None"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item1"]
-margin_left = 352.0
-margin_right = 496.0
+[node name="mt_but0" type="Button" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item0"]
+margin_left = 280.0
+margin_right = 504.0
 margin_bottom = 64.0
-custom_styles/hover = ExtResource( 32 )
+custom_styles/hover = ExtResource( 51 )
 custom_styles/pressed = ExtResource( 32 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 42 )
-text = "Buy"
+text = "0 Coins"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item1"]
+[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item0"]
 margin_left = 16.0
 margin_top = 80.0
 margin_right = 496.0
@@ -1457,39 +1679,44 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mt_item2" type="Control" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont"]
+[node name="none1" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item0/Panel"]
+position = Vector2( 240, 80 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+
+[node name="mt_item1" type="Control" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont"]
 margin_top = 260.0
 margin_right = 512.0
 margin_bottom = 516.0
 rect_min_size = Vector2( 512, 256 )
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item2"]
+[node name="Label" type="Label" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item1"]
 margin_left = 16.0
-margin_right = 336.0
+margin_right = 272.0
 margin_bottom = 64.0
 custom_fonts/font = ExtResource( 3 )
-text = "Placeholder"
+text = "Ghost"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item2"]
-margin_left = 352.0
+[node name="mt_but1" type="Button" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item1"]
+margin_left = 272.0
 margin_right = 496.0
 margin_bottom = 64.0
-custom_styles/hover = ExtResource( 32 )
+custom_styles/hover = ExtResource( 51 )
 custom_styles/pressed = ExtResource( 32 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 42 )
-text = "Buy"
+text = "25 Gold"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item2"]
+[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item1"]
 margin_left = 16.0
 margin_top = 80.0
 margin_right = 496.0
@@ -1499,131 +1726,430 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mt_item3" type="Control" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont"]
+[node name="ghost1" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item1/Panel"]
+position = Vector2( 384, 80 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+
+[node name="ghost2" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item1/Panel"]
+modulate = Color( 1, 1, 1, 0.305882 )
+position = Vector2( 288, 80 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+
+[node name="ghost3" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item1/Panel"]
+modulate = Color( 1, 1, 1, 0.0588235 )
+position = Vector2( 192, 80 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+
+[node name="ghost4" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item1/Panel"]
+modulate = Color( 1, 1, 1, 0.027451 )
+position = Vector2( 96, 80 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+
+[node name="mt_item2" type="Control" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont"]
 margin_top = 520.0
 margin_right = 512.0
 margin_bottom = 776.0
 rect_min_size = Vector2( 512, 256 )
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3"]
+[node name="Label" type="Label" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item2"]
 margin_left = 16.0
-margin_right = 336.0
-margin_bottom = 64.0
+margin_top = -4.0
+margin_right = 272.0
+margin_bottom = 60.0
 custom_fonts/font = ExtResource( 3 )
-text = "Placeholder"
+text = "Snake"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3"]
-margin_left = 352.0
+[node name="mt_but2" type="Button" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item2"]
+margin_left = 272.0
+margin_top = -4.0
 margin_right = 496.0
-margin_bottom = 64.0
-custom_styles/hover = ExtResource( 32 )
+margin_bottom = 60.0
+custom_styles/hover = ExtResource( 51 )
 custom_styles/pressed = ExtResource( 32 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 42 )
-text = "Buy"
+text = "75 Gold"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item3"]
+[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item2"]
 margin_left = 16.0
-margin_top = 80.0
+margin_top = 76.0
 margin_right = 496.0
-margin_bottom = 240.0
+margin_bottom = 236.0
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mt_item4" type="Control" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont"]
+[node name="snake1" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item2/Panel"]
+position = Vector2( 408, 96 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+
+[node name="snake2" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item2/Panel"]
+position = Vector2( 344, 88 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+
+[node name="snake3" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item2/Panel"]
+position = Vector2( 280, 80 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+
+[node name="snake4" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item2/Panel"]
+position = Vector2( 216, 72 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+
+[node name="snake5" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item2/Panel"]
+position = Vector2( 152, 64 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+
+[node name="snake6" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item2/Panel"]
+position = Vector2( 88.0001, 56 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+
+[node name="mt_item3" type="Control" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont"]
 margin_top = 780.0
 margin_right = 512.0
 margin_bottom = 1036.0
 rect_min_size = Vector2( 512, 256 )
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item4"]
+[node name="Label" type="Label" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item3"]
 margin_left = 16.0
-margin_right = 336.0
-margin_bottom = 64.0
+margin_top = -8.0
+margin_right = 272.0
+margin_bottom = 56.0
 custom_fonts/font = ExtResource( 3 )
-text = "Placeholder"
+text = "Smoke"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item4"]
-margin_left = 352.0
+[node name="mt_but3" type="Button" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item3"]
+margin_left = 272.0
+margin_top = -8.0
 margin_right = 496.0
-margin_bottom = 64.0
-custom_styles/hover = ExtResource( 32 )
+margin_bottom = 56.0
+custom_styles/hover = ExtResource( 51 )
 custom_styles/pressed = ExtResource( 32 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 42 )
-text = "Buy"
+text = "150 Gold"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item4"]
+[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item3"]
 margin_left = 16.0
-margin_top = 80.0
+margin_top = 72.0
 margin_right = 496.0
-margin_bottom = 240.0
+margin_bottom = 232.0
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mt_item5" type="Control" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont"]
+[node name="white" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+process_priority = -1
+modulate = Color( 1, 1, 1, 0.0470588 )
+position = Vector2( 240, 80 )
+scale = Vector2( 15, 5 )
+texture = ExtResource( 35 )
+
+[node name="smoke1" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+process_priority = 1
+position = Vector2( 384, 80 )
+scale = Vector2( 2, 2 )
+z_index = 1
+texture = ExtResource( 35 )
+
+[node name="smoke2" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
+self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
+position = Vector2( 359.5, 84 )
+scale = Vector2( 0.765626, 0.875 )
+texture = ExtResource( 50 )
+
+[node name="smoke3" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
+self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
+position = Vector2( 352, 64 )
+texture = ExtResource( 50 )
+
+[node name="smoke4" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
+self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
+position = Vector2( 312, 88 )
+texture = ExtResource( 50 )
+
+[node name="smoke5" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
+self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
+position = Vector2( 272, 72 )
+scale = Vector2( 1.25, 1 )
+texture = ExtResource( 50 )
+
+[node name="smoke6" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
+self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
+position = Vector2( 248, 96 )
+texture = ExtResource( 50 )
+
+[node name="smoke7" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
+self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
+position = Vector2( 200, 64 )
+texture = ExtResource( 50 )
+
+[node name="smoke8" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
+self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
+position = Vector2( 184, 104 )
+texture = ExtResource( 50 )
+
+[node name="smoke9" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
+self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
+position = Vector2( 144, 56 )
+texture = ExtResource( 50 )
+
+[node name="smoke10" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
+self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
+position = Vector2( 104, 104 )
+texture = ExtResource( 50 )
+
+[node name="smoke11" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item3/Panel"]
+modulate = Color( 0.262745, 0.262745, 0.262745, 0.870588 )
+self_modulate = Color( 0.372549, 0.372549, 0.372549, 1 )
+position = Vector2( 72.0001, 72 )
+texture = ExtResource( 50 )
+
+[node name="mt_item4" type="Control" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont"]
 margin_top = 1040.0
 margin_right = 512.0
 margin_bottom = 1296.0
 rect_min_size = Vector2( 512, 256 )
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item5"]
+[node name="Label" type="Label" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item4"]
 margin_left = 16.0
-margin_right = 336.0
-margin_bottom = 64.0
+margin_top = -12.0
+margin_right = 272.0
+margin_bottom = 52.0
 custom_fonts/font = ExtResource( 3 )
-text = "Placeholder"
+text = "Flames"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item5"]
-margin_left = 352.0
+[node name="mt_but4" type="Button" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item4"]
+margin_left = 272.0
+margin_top = -12.0
 margin_right = 496.0
-margin_bottom = 64.0
-custom_styles/hover = ExtResource( 32 )
+margin_bottom = 52.0
+custom_styles/hover = ExtResource( 51 )
 custom_styles/pressed = ExtResource( 32 )
 custom_styles/normal = ExtResource( 32 )
 custom_fonts/font = ExtResource( 42 )
-text = "Buy"
+text = "500 Gold"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_skins/mt_tthemescrollcont/mt_hboxscrollcont/mt_item5"]
+[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item4"]
 margin_left = 16.0
-margin_top = 80.0
+margin_top = 68.0
 margin_right = 496.0
-margin_bottom = 240.0
+margin_bottom = 228.0
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="flames1" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item4/Panel"]
+process_priority = 1
+position = Vector2( 384, 80 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+
+[node name="flames2" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item4/Panel"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 336, 88 )
+scale = Vector2( 2, 2.0625 )
+texture = ExtResource( 39 )
+
+[node name="flames3" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item4/Panel"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 272, 124 )
+scale = Vector2( 2, 1.75 )
+texture = ExtResource( 39 )
+
+[node name="flames4" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item4/Panel"]
+modulate = Color( 1, 1, 1, 0.0980392 )
+position = Vector2( 272, 64 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 39 )
+
+[node name="flames5" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item4/Panel"]
+modulate = Color( 1, 1, 1, 0.0980392 )
+position = Vector2( 208, 104 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 39 )
+
+[node name="flames6" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item4/Panel"]
+modulate = Color( 1, 1, 1, 0.0980392 )
+position = Vector2( 208, 104 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 36 )
+
+[node name="flames7" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item4/Panel"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 208, 48 )
+scale = Vector2( 2, 1.5 )
+texture = ExtResource( 36 )
+
+[node name="flames9" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item4/Panel"]
+modulate = Color( 1, 1, 1, 0.0980392 )
+position = Vector2( 272, 64 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 36 )
+
+[node name="flames10" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item4/Panel"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 144, 72 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 36 )
+
+[node name="flames11" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item4/Panel"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 80, 88 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 36 )
+
+[node name="flames12" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item4/Panel"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 144, 128 )
+scale = Vector2( 2, 1.5 )
+texture = ExtResource( 36 )
+
+[node name="mt_item5" type="Control" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont"]
+margin_top = 1300.0
+margin_right = 512.0
+margin_bottom = 1540.0
+rect_min_size = Vector2( 512, 240 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item5"]
+margin_left = 16.0
+margin_top = -16.0
+margin_right = 272.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 3 )
+text = "Rainbow"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mt_but5" type="Button" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item5"]
+margin_left = 272.0
+margin_top = -16.0
+margin_right = 496.0
+margin_bottom = 48.0
+custom_styles/hover = ExtResource( 51 )
+custom_styles/pressed = ExtResource( 32 )
+custom_styles/normal = ExtResource( 32 )
+custom_fonts/font = ExtResource( 42 )
+text = "1000 Gold"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item5"]
+margin_left = 16.0
+margin_top = 64.0
+margin_right = 496.0
+margin_bottom = 224.0
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rainbow1" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item5/Panel"]
+process_priority = 1
+position = Vector2( 384, 80 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+
+[node name="pink" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item5/Panel"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 340, 80 )
+scale = Vector2( 1.25, 2.99999 )
+texture = ExtResource( 38 )
+
+[node name="purple" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item5/Panel"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 300, 80 )
+scale = Vector2( 1.24999, 2.99999 )
+texture = ExtResource( 40 )
+
+[node name="blue" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item5/Panel"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 260, 80 )
+scale = Vector2( 1.25, 2.99999 )
+texture = ExtResource( 37 )
+
+[node name="green" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item5/Panel"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 220, 80 )
+scale = Vector2( 1.25, 3 )
+texture = ExtResource( 41 )
+
+[node name="yellow" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item5/Panel"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 180, 80 )
+scale = Vector2( 1.25, 3 )
+texture = ExtResource( 39 )
+
+[node name="orange1" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item5/Panel"]
+modulate = Color( 1, 1, 1, 0.0980392 )
+position = Vector2( 140, 80 )
+scale = Vector2( 1.25, 3 )
+texture = ExtResource( 39 )
+
+[node name="orange2" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item5/Panel"]
+modulate = Color( 1, 1, 1, 0.0980392 )
+position = Vector2( 140, 80 )
+scale = Vector2( 1.25, 3 )
+texture = ExtResource( 36 )
+
+[node name="orange3" type="Sprite" parent="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item5/Panel"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 100, 80 )
+scale = Vector2( 1.25, 3 )
+texture = ExtResource( 36 )
 
 [node name="mt_themes" type="Panel" parent="menucanvas/menustore"]
 margin_left = 864.0
@@ -1638,7 +2164,7 @@ __meta__ = {
 margin_right = 528.0
 margin_bottom = 128.0
 custom_fonts/font = ExtResource( 3 )
-text = "Themes"
+text = "Backgrounds"
 align = 1
 valign = 1
 __meta__ = {
@@ -1657,7 +2183,7 @@ __meta__ = {
 
 [node name="mt_hboxscrollcont" type="VBoxContainer" parent="menucanvas/menustore/mt_themes/mt_themescrollcont"]
 margin_right = 528.0
-margin_bottom = 1296.0
+margin_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -1669,40 +2195,72 @@ margin_right = 512.0
 margin_bottom = 256.0
 rect_min_size = Vector2( 512, 256 )
 size_flags_horizontal = 3
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Label" type="Label" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item1"]
-margin_left = 16.0
-margin_right = 336.0
+margin_left = 32.0
+margin_right = 224.0
 margin_bottom = 64.0
 custom_fonts/font = ExtResource( 3 )
-text = "Placeholder"
+text = "Plain"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item1"]
-margin_left = 352.0
+[node name="mt_but1_bgs" type="Button" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item1"]
+margin_left = 224.0
 margin_right = 496.0
 margin_bottom = 64.0
-custom_styles/hover = ExtResource( 32 )
+custom_styles/hover = ExtResource( 51 )
 custom_styles/pressed = ExtResource( 32 )
 custom_styles/normal = ExtResource( 32 )
-custom_fonts/font = ExtResource( 42 )
-text = "Buy"
+custom_fonts/font = ExtResource( 43 )
+text = "Score Over 0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item1"]
-margin_left = 16.0
-margin_top = 80.0
-margin_right = 496.0
-margin_bottom = 240.0
-custom_styles/panel = SubResource( 4 )
+[node name="plane" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item1"]
+position = Vector2( 264, 152 )
+scale = Vector2( 0.226563, 142.125 )
+texture = SubResource( 5 )
+
+[node name="border" type="Node2D" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item1"]
+
+[node name="bordertop" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item1/border"]
+position = Vector2( 264, 85 )
+scale = Vector2( 14.5, 0.31 )
+texture = ExtResource( 35 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_lock_": true
+}
+
+[node name="borderbot" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item1/border"]
+position = Vector2( 264, 219 )
+scale = Vector2( 14.5, 0.31 )
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="borderleft" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item1/border"]
+position = Vector2( 37, 152 )
+scale = Vector2( 0.31, 3.905 )
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="borderright" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item1/border"]
+position = Vector2( 491, 152 )
+scale = Vector2( 0.31, 3.9375 )
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_lock_": true
 }
 
 [node name="mt_item2" type="Control" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont"]
@@ -1714,177 +2272,184 @@ size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item2"]
 margin_left = 16.0
-margin_right = 336.0
-margin_bottom = 64.0
+margin_top = -20.0
+margin_right = 224.0
+margin_bottom = 44.0
 custom_fonts/font = ExtResource( 3 )
-text = "Placeholder"
+text = "Fade"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item2"]
-margin_left = 352.0
-margin_right = 496.0
-margin_bottom = 64.0
-custom_styles/hover = ExtResource( 32 )
+[node name="mt_but2_bgs" type="Button" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item2"]
+margin_left = 224.0
+margin_top = -20.0
+margin_right = 493.0
+margin_bottom = 44.0
+custom_styles/hover = ExtResource( 51 )
 custom_styles/pressed = ExtResource( 32 )
 custom_styles/normal = ExtResource( 32 )
-custom_fonts/font = ExtResource( 42 )
-text = "Buy"
+custom_fonts/font = ExtResource( 43 )
+text = "Score Over 100"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item2"]
-margin_left = 16.0
-margin_top = 80.0
-margin_right = 496.0
-margin_bottom = 240.0
-custom_styles/panel = SubResource( 4 )
+[node name="fade" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item2"]
+position = Vector2( 264, 132 )
+scale = Vector2( 0.226563, 144 )
+texture = ExtResource( 52 )
+
+[node name="border" type="Node2D" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item2"]
+position = Vector2( 0, -20 )
+
+[node name="bordertop" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item2/border"]
+position = Vector2( 264, 85 )
+scale = Vector2( 14.5, 0.31 )
+texture = ExtResource( 35 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_lock_": true
+}
+
+[node name="borderbot" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item2/border"]
+position = Vector2( 264, 219 )
+scale = Vector2( 14.5, 0.31 )
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="borderleft" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item2/border"]
+position = Vector2( 37, 152 )
+scale = Vector2( 0.31, 3.905 )
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="borderright" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item2/border"]
+position = Vector2( 491, 152 )
+scale = Vector2( 0.31, 3.9375 )
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_lock_": true
 }
 
 [node name="mt_item3" type="Control" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont"]
 margin_top = 520.0
 margin_right = 512.0
-margin_bottom = 776.0
-rect_min_size = Vector2( 512, 256 )
+margin_bottom = 720.0
+rect_min_size = Vector2( 512, 200 )
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item3"]
-margin_left = 16.0
-margin_right = 336.0
-margin_bottom = 64.0
+margin_left = 32.0
+margin_top = -40.0
+margin_right = 224.0
+margin_bottom = 24.0
 custom_fonts/font = ExtResource( 3 )
-text = "Placeholder"
+text = "Disco"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item3"]
-margin_left = 352.0
+[node name="mt_but3_bgs" type="Button" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item3"]
+margin_left = 224.0
+margin_top = -40.0
 margin_right = 496.0
-margin_bottom = 64.0
-custom_styles/hover = ExtResource( 32 )
+margin_bottom = 24.0
+custom_styles/hover = ExtResource( 51 )
 custom_styles/pressed = ExtResource( 32 )
 custom_styles/normal = ExtResource( 32 )
-custom_fonts/font = ExtResource( 42 )
-text = "Buy"
+custom_fonts/font = ExtResource( 43 )
+text = "Score Over 500"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item3"]
-margin_left = 16.0
-margin_top = 80.0
-margin_right = 496.0
-margin_bottom = 240.0
-custom_styles/panel = SubResource( 4 )
+[node name="disco" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item3"]
+position = Vector2( 264, 112 )
+scale = Vector2( 0.4375, 128 )
+texture = ExtResource( 54 )
+
+[node name="border" type="Node2D" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item3"]
+position = Vector2( 0, -40 )
+
+[node name="bordertop" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item3/border"]
+position = Vector2( 264, 85 )
+scale = Vector2( 14.5, 0.31 )
+texture = ExtResource( 35 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_lock_": true
 }
 
-[node name="mt_item4" type="Control" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont"]
-margin_top = 780.0
-margin_right = 512.0
-margin_bottom = 1036.0
-rect_min_size = Vector2( 512, 256 )
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item4"]
-margin_left = 16.0
-margin_right = 336.0
-margin_bottom = 64.0
-custom_fonts/font = ExtResource( 3 )
-text = "Placeholder"
-align = 1
-valign = 1
+[node name="borderbot" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item3/border"]
+position = Vector2( 264, 219 )
+scale = Vector2( 14.5, 0.31 )
+texture = ExtResource( 35 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_lock_": true
 }
 
-[node name="Button" type="Button" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item4"]
-margin_left = 352.0
-margin_right = 496.0
-margin_bottom = 64.0
-custom_styles/hover = ExtResource( 32 )
-custom_styles/pressed = ExtResource( 32 )
-custom_styles/normal = ExtResource( 32 )
-custom_fonts/font = ExtResource( 42 )
-text = "Buy"
+[node name="borderleft" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item3/border"]
+position = Vector2( 37, 152 )
+scale = Vector2( 0.31, 3.905 )
+texture = ExtResource( 35 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_lock_": true
 }
 
-[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item4"]
-margin_left = 16.0
-margin_top = 80.0
-margin_right = 496.0
-margin_bottom = 240.0
-custom_styles/panel = SubResource( 4 )
+[node name="borderright" type="Sprite" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item3/border"]
+position = Vector2( 491, 152 )
+scale = Vector2( 0.31, 3.9375 )
+texture = ExtResource( 35 )
 __meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="mt_item5" type="Control" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont"]
-margin_top = 1040.0
-margin_right = 512.0
-margin_bottom = 1296.0
-rect_min_size = Vector2( 512, 256 )
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item5"]
-margin_left = 16.0
-margin_right = 336.0
-margin_bottom = 64.0
-custom_fonts/font = ExtResource( 3 )
-text = "Placeholder"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button" type="Button" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item5"]
-margin_left = 352.0
-margin_right = 496.0
-margin_bottom = 64.0
-custom_styles/hover = ExtResource( 32 )
-custom_styles/pressed = ExtResource( 32 )
-custom_styles/normal = ExtResource( 32 )
-custom_fonts/font = ExtResource( 42 )
-text = "Buy"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel" type="Panel" parent="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item5"]
-margin_left = 16.0
-margin_top = 80.0
-margin_right = 496.0
-margin_bottom = 240.0
-custom_styles/panel = SubResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
+"_edit_lock_": true
 }
 
 [node name="mt_score" type="Panel" parent="menucanvas/menustore"]
 margin_top = 872.0
 margin_right = 576.0
 margin_bottom = 1080.0
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mp_scorelabel" type="Label" parent="menucanvas/menustore/mt_score"]
+margin_left = 64.0
+margin_top = 24.0
+margin_right = 512.0
+margin_bottom = 88.0
+custom_fonts/font = ExtResource( 3 )
+text = "High Score:"
+align = 1
+valign = 1
+
+[node name="mp_scorevalue" type="Label" parent="menucanvas/menustore/mt_score"]
+margin_left = 64.0
+margin_top = 88.0
+margin_right = 512.0
+margin_bottom = 152.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.0235294, 1, 0, 1 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="mt_coins" type="Panel" parent="menucanvas/menustore"]
 margin_top = 640.0
 margin_right = 576.0
 margin_bottom = 872.0
 rect_pivot_offset = Vector2( 416, -192 )
-custom_styles/panel = SubResource( 6 )
+custom_styles/panel = SubResource( 7 )
 
 [node name="mp_coinlabel" type="Label" parent="menucanvas/menustore/mt_coins"]
 margin_left = 64.0
@@ -1913,30 +2478,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mp_scorelabel" type="Label" parent="menucanvas/menustore/mt_coins"]
-margin_left = 64.0
-margin_top = 256.0
-margin_right = 512.0
-margin_bottom = 320.0
-custom_fonts/font = ExtResource( 3 )
-text = "High Score:"
-align = 1
-valign = 1
-
-[node name="mp_scorevalue2" type="Label" parent="menucanvas/menustore/mt_coins"]
-margin_left = 64.0
-margin_top = 320.0
-margin_right = 512.0
-margin_bottom = 384.0
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0.0235294, 1, 0, 1 )
-text = "0"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="mt_back" type="Button" parent="menucanvas/menustore"]
 margin_right = 384.0
 margin_bottom = 192.0
@@ -1951,7 +2492,30 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="mt_moneydialog" type="AcceptDialog" parent="menucanvas/menustore"]
+margin_top = 16.0
+margin_right = 388.0
+margin_bottom = 264.0
+theme = ExtResource( 11 )
+window_title = "Oops!"
+dialog_text = "You don't have enough coins to make this purchase!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mt_pointdialog" type="AcceptDialog" parent="menucanvas/menustore"]
+margin_top = 16.0
+margin_right = 388.0
+margin_bottom = 264.0
+theme = ExtResource( 11 )
+window_title = "Oops!"
+dialog_text = "Your score isn't high enough to make this purchase!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="mt_player" type="Sprite" parent="menucanvas/menustore"]
+visible = false
 position = Vector2( 96, 208 )
 texture = ExtResource( 35 )
 
@@ -1975,7 +2539,7 @@ margin_right = 448.0
 margin_bottom = 128.0
 custom_styles/hover = ExtResource( 12 )
 custom_styles/pressed = ExtResource( 26 )
-custom_styles/focus = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
 custom_styles/normal = ExtResource( 31 )
 custom_fonts/font = ExtResource( 43 )
 toggle_mode = true
@@ -2045,9 +2609,9 @@ margin_right = 1080.0
 margin_bottom = 376.0
 custom_styles/hover = ExtResource( 47 )
 custom_styles/pressed = ExtResource( 47 )
-custom_styles/focus = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
 custom_styles/normal = ExtResource( 47 )
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2072,7 +2636,7 @@ margin_right = 832.0
 margin_bottom = 128.0
 custom_styles/hover = ExtResource( 12 )
 custom_styles/pressed = ExtResource( 18 )
-custom_styles/focus = SubResource( 10 )
+custom_styles/focus = SubResource( 11 )
 custom_styles/normal = ExtResource( 31 )
 custom_fonts/font = ExtResource( 43 )
 toggle_mode = true
@@ -2190,7 +2754,7 @@ margin_right = 1408.0
 margin_bottom = 128.0
 custom_styles/hover = ExtResource( 12 )
 custom_styles/pressed = ExtResource( 19 )
-custom_styles/focus = SubResource( 11 )
+custom_styles/focus = SubResource( 12 )
 custom_styles/normal = ExtResource( 31 )
 custom_fonts/font = ExtResource( 43 )
 toggle_mode = true
@@ -2287,7 +2851,7 @@ margin_right = 1792.0
 margin_bottom = 128.0
 custom_styles/hover = ExtResource( 12 )
 custom_styles/pressed = ExtResource( 28 )
-custom_styles/focus = SubResource( 12 )
+custom_styles/focus = SubResource( 13 )
 custom_styles/normal = ExtResource( 31 )
 custom_fonts/font = ExtResource( 43 )
 toggle_mode = true
@@ -2306,9 +2870,9 @@ margin_right = -832.0
 margin_bottom = 384.0
 custom_styles/hover = ExtResource( 46 )
 custom_styles/pressed = ExtResource( 46 )
-custom_styles/focus = SubResource( 13 )
+custom_styles/focus = SubResource( 14 )
 custom_styles/normal = ExtResource( 32 )
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 15 )
 text = "Press"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2355,7 +2919,7 @@ margin_top = 64.0
 margin_right = 704.0
 margin_bottom = 192.0
 custom_fonts/font = ExtResource( 44 )
-text = "Help Screen 1"
+text = "Welcome!"
 align = 1
 valign = 1
 __meta__ = {
@@ -2375,10 +2939,51 @@ __meta__ = {
 margin_left = 64.0
 margin_top = 192.0
 margin_right = 1856.0
-margin_bottom = 1024.0
-custom_styles/normal = SubResource( 15 )
+margin_bottom = 832.0
+custom_styles/normal = SubResource( 16 )
 custom_fonts/font = ExtResource( 3 )
-text = "Placeholder Text for Prototype"
+text = "Welcome to Upwn, an infinitely generated side-scroller.
+
+These few slides are here teach you the very basics!
+
+
+You are a small, white cube that is stuck going perpetually right.
+
+To survive, you must manage your gravity to avoid various obstacles.
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="white" type="Sprite" parent="menucanvas/menuhelp/mh_cont1/mh_info"]
+position = Vector2( 96, 736 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+
+[node name="mh_extra1" type="Label" parent="menucanvas/menuhelp/mh_cont1/mh_info"]
+margin_left = 128.0
+margin_top = 672.0
+margin_right = 432.0
+margin_bottom = 800.0
+custom_fonts/font = ExtResource( 42 )
+text = "<-- This is you!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mh_extra2" type="Label" parent="menucanvas/menuhelp/mh_cont1/mh_info"]
+margin_left = 520.0
+margin_top = 512.0
+margin_right = 1143.0
+margin_bottom = 640.0
+custom_fonts/font = ExtResource( 42 )
+text = "/\\
+|
+This can be done by pressing the \"W\" key!"
 align = 1
 valign = 1
 __meta__ = {
@@ -2397,6 +3002,9 @@ custom_styles/normal = ExtResource( 2 )
 custom_fonts/font = ExtResource( 1 )
 keep_pressed_outside = true
 text = "Next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="mh_cont2" type="Control" parent="menucanvas/menuhelp"]
 visible = false
@@ -2419,7 +3027,7 @@ margin_top = 64.0
 margin_right = 704.0
 margin_bottom = 192.0
 custom_fonts/font = ExtResource( 44 )
-text = "Help Screen 2"
+text = "Colours"
 align = 1
 valign = 1
 __meta__ = {
@@ -2439,10 +3047,129 @@ __meta__ = {
 margin_left = 64.0
 margin_top = 192.0
 margin_right = 1856.0
-margin_bottom = 1024.0
-custom_styles/normal = SubResource( 15 )
+margin_bottom = 640.0
+custom_styles/normal = SubResource( 16 )
 custom_fonts/font = ExtResource( 3 )
-text = "Placeholder Text for Prototype"
+text = "Besides walls, you will also be avoiding (or approaching) various
+different colours.
+
+These will appear randomly based on the gamemode you are playing.
+
+These are their effects:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pink" type="Sprite" parent="menucanvas/menuhelp/mh_cont2/mh_info"]
+position = Vector2( 480, 736 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 38 )
+
+[node name="Label" type="Label" parent="menucanvas/menuhelp/mh_cont2/mh_info/pink"]
+margin_left = 16.0
+margin_top = -24.0
+margin_right = 176.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 55 )
+text = "Overloads your
+powerup"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="yellow" type="Sprite" parent="menucanvas/menuhelp/mh_cont2/mh_info"]
+position = Vector2( 480, 608 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 39 )
+
+[node name="Label" type="Label" parent="menucanvas/menuhelp/mh_cont2/mh_info/yellow"]
+margin_left = 16.0
+margin_top = -24.0
+margin_right = 188.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 55 )
+text = "Increases or decreases
+your gravity"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="green" type="Sprite" parent="menucanvas/menuhelp/mh_cont2/mh_info"]
+position = Vector2( 480, 480 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 41 )
+
+[node name="Label" type="Label" parent="menucanvas/menuhelp/mh_cont2/mh_info/green"]
+margin_left = 16.0
+margin_top = -24.0
+margin_right = 176.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 55 )
+text = "Increases your max
+speed"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="purple" type="Sprite" parent="menucanvas/menuhelp/mh_cont2/mh_info"]
+position = Vector2( 96, 736 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 40 )
+
+[node name="Label" type="Label" parent="menucanvas/menuhelp/mh_cont2/mh_info/purple"]
+margin_left = 16.0
+margin_top = -24.0
+margin_right = 112.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 55 )
+text = "Slows you
+backwards"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="blue" type="Sprite" parent="menucanvas/menuhelp/mh_cont2/mh_info"]
+position = Vector2( 96, 608 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 37 )
+
+[node name="Label" type="Label" parent="menucanvas/menuhelp/mh_cont2/mh_info/blue"]
+margin_left = 16.0
+margin_top = -24.0
+margin_right = 112.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 55 )
+text = "Slows you
+down"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="red" type="Sprite" parent="menucanvas/menuhelp/mh_cont2/mh_info"]
+position = Vector2( 96, 480 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 36 )
+
+[node name="Label" type="Label" parent="menucanvas/menuhelp/mh_cont2/mh_info/red"]
+margin_left = 16.0
+margin_top = -24.0
+margin_right = 112.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 55 )
+text = "Kills you 
+instantly"
 align = 1
 valign = 1
 __meta__ = {
@@ -2461,11 +3188,17 @@ custom_styles/normal = ExtResource( 2 )
 custom_fonts/font = ExtResource( 1 )
 keep_pressed_outside = true
 text = "Next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="mh_cont3" type="Control" parent="menucanvas/menuhelp"]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="mh_headerpanel" type="Panel" parent="menucanvas/menuhelp/mh_cont3"]
 margin_left = 64.0
@@ -2483,7 +3216,7 @@ margin_top = 64.0
 margin_right = 704.0
 margin_bottom = 192.0
 custom_fonts/font = ExtResource( 44 )
-text = "Help Screen 3"
+text = "Final Tips"
 align = 1
 valign = 1
 __meta__ = {
@@ -2501,12 +3234,52 @@ __meta__ = {
 
 [node name="mh_info" type="Label" parent="menucanvas/menuhelp/mh_cont3"]
 margin_left = 64.0
-margin_top = 192.0
+margin_top = 256.0
 margin_right = 1856.0
 margin_bottom = 1024.0
-custom_styles/normal = SubResource( 15 )
+rect_pivot_offset = Vector2( 1176, 144 )
+custom_styles/normal = SubResource( 16 )
 custom_fonts/font = ExtResource( 3 )
-text = "Placeholder Text for Prototype"
+text = "You also have a powerup bar that will slowly gain while you play.
+
+When it reaches 100%, you can hold the space key to temporarily slow
+yourself down and potentially save yourself from death.
+
+Finally, you can unlock new gamemodes by improving your highscore, 
+and once you've unlocked them all you can make your own using the 
+Custom menu!
+
+Good luck, and thanks for playing :)"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Powerup" type="ProgressBar" parent="menucanvas/menuhelp/mh_cont3/mh_info"]
+anchor_left = 0.03125
+anchor_top = -0.0833333
+anchor_right = 0.03125
+anchor_bottom = -0.0833333
+margin_left = 1008.0
+margin_top = 56.0
+margin_right = 1392.0
+margin_bottom = 136.0
+custom_styles/fg = SubResource( 17 )
+custom_styles/bg = ExtResource( 56 )
+custom_fonts/font = ExtResource( 42 )
+value = 72.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="menucanvas/menuhelp/mh_cont3/mh_info/Powerup"]
+margin_left = 408.0
+margin_top = 16.0
+margin_right = 692.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 43 )
+text = "<-- Your powerup bar!"
 align = 1
 valign = 1
 __meta__ = {
@@ -2525,6 +3298,9 @@ custom_styles/normal = ExtResource( 2 )
 custom_fonts/font = ExtResource( 1 )
 keep_pressed_outside = true
 text = "Next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="menucamera" type="Camera2D" parent="menucanvas"]
 visible = false
@@ -2534,12 +3310,21 @@ current = true
 [node name="menuenv" type="WorldEnvironment" parent="menucanvas"]
 environment = ExtResource( 9 )
 
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 960, 539.875 )
+scale = Vector2( 0.9375, 1080.25 )
+z_index = -1
+texture = SubResource( 19 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="gui_input" from="menucanvas/menuwelcome" to="." method="_on_menuwelcome_gui_input"]
 [connection signal="pressed" from="menucanvas/menumain/mm_playbtn" to="." method="_on_mm_playbtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_custombtn" to="." method="_on_mm_custombtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_storebtn" to="." method="_on_mm_storebtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_settingsbtn" to="." method="_on_mm_settingsbtn_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_helpbtn" to="." method="_on_mm_helpbtn_pressed"]
-[connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn2_pressed"]
 [connection signal="pressed" from="menucanvas/menumain/mm_quitbtn" to="." method="_on_mm_quitbtn_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer1/mp_op1" to="." method="_on_mp_op1_pressed"]
 [connection signal="pressed" from="menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer2/mp_op2" to="." method="_on_mp_op2_pressed"]
@@ -2563,10 +3348,25 @@ environment = ExtResource( 9 )
 [connection signal="value_changed" from="menucanvas/menucustom/mc_spdgrav/mc_lbl_grav/mc_slidergrav" to="." method="_on_mc_slidergrav_value_changed"]
 [connection signal="pressed" from="menucanvas/menucustom/mc_back" to="." method="_on_mc_back_pressed"]
 [connection signal="pressed" from="menucanvas/menucustom/mc_start" to="." method="_on_mc_start_pressed"]
+[connection signal="pressed" from="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item0/mt_but0" to="." method="_on_mt_but0_pressed"]
+[connection signal="pressed" from="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item1/mt_but1" to="." method="_on_mt_but1_pressed"]
+[connection signal="pressed" from="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item2/mt_but2" to="." method="_on_mt_but2_pressed"]
+[connection signal="pressed" from="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item3/mt_but3" to="." method="_on_mt_but3_pressed"]
+[connection signal="pressed" from="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item4/mt_but4" to="." method="_on_mt_but4_pressed"]
+[connection signal="pressed" from="menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item5/mt_but5" to="." method="_on_mt_but5_pressed"]
+[connection signal="pressed" from="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item1/mt_but1_bgs" to="." method="_on_mt_but1_bgs_pressed"]
+[connection signal="pressed" from="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item2/mt_but2_bgs" to="." method="_on_mt_but2_bgs_pressed"]
+[connection signal="pressed" from="menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item3/mt_but3_bgs" to="." method="_on_mt_but3_bgs_pressed"]
 [connection signal="pressed" from="menucanvas/menustore/mt_back" to="." method="_on_mt_back_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_g+d" to="." method="_on_ms_gd_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_fullscreen" to="." method="_on_ms_fullscreen_pressed"]
+[connection signal="pressed" from="menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_vsync" to="." method="_on_ms_vsync_pressed"]
+[connection signal="item_selected" from="menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_resolution" to="." method="_on_ms_resolution_item_selected"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_gui" to="." method="_on_ms_gui_pressed"]
+[connection signal="pressed" from="menucanvas/menusettings/ms_gui/ms_gui_menu/ms_spdgrav" to="." method="_on_ms_spdgrav_pressed"]
+[connection signal="pressed" from="menucanvas/menusettings/ms_gui/ms_gui_menu/ms_status" to="." method="_on_ms_status_pressed"]
+[connection signal="pressed" from="menucanvas/menusettings/ms_gui/ms_gui_menu/ms_movebox" to="." method="_on_ms_movebox_pressed"]
+[connection signal="pressed" from="menucanvas/menusettings/ms_gui/ms_gui_menu/ms_fps" to="." method="_on_ms_fps_pressed"]
 [connection signal="pressed" from="menucanvas/menusettings/ms_sound" to="." method="_on_ms_sound_pressed"]
 [connection signal="value_changed" from="menucanvas/menusettings/ms_sound/ms_sound_menu/ms_slidermusic" to="." method="_on_ms_slidermusic_value_changed"]
 [connection signal="value_changed" from="menucanvas/menusettings/ms_sound/ms_sound_menu/ms_slidereffect" to="." method="_on_ms_slidereffect_value_changed"]

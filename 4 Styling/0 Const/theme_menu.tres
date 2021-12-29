@@ -1,7 +1,10 @@
-[gd_resource type="Theme" load_steps=21 format=2]
+[gd_resource type="Theme" load_steps=24 format=2]
 
 [ext_resource path="res://3 Fonts/0 Const/mainfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://3 Fonts/0 Const/pixel font-7.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://4 Styling/2 Panels/popup_panel.tres" type="StyleBox" id=3]
+[ext_resource path="res://4 Styling/0 Const/norm_disabled.tres" type="StyleBox" id=4]
+[ext_resource path="res://4 Styling/0 Const/norm.tres" type="StyleBox" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -78,6 +81,17 @@ border_color = Color( 0.192157, 0.192157, 0.192157, 1 )
 
 [resource]
 default_font = ExtResource( 1 )
+Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = ExtResource( 4 )
+Button/styles/focus = null
+Button/styles/hover = ExtResource( 5 )
+Button/styles/normal = ExtResource( 5 )
+Button/styles/pressed = ExtResource( 5 )
 CheckBox/colors/font_color = Color( 1, 1, 1, 1 )
 CheckBox/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 CheckBox/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
@@ -179,3 +193,12 @@ VScrollBar/styles/grabber_highlight = SubResource( 9 )
 VScrollBar/styles/grabber_pressed = SubResource( 10 )
 VScrollBar/styles/scroll = SubResource( 18 )
 VScrollBar/styles/scroll_focus = null
+WindowDialog/colors/title_color = Color( 0, 0, 0, 1 )
+WindowDialog/constants/close_h_ofs = 18
+WindowDialog/constants/close_v_ofs = 18
+WindowDialog/constants/scaleborder_size = 4
+WindowDialog/constants/title_height = 20
+WindowDialog/fonts/title_font = null
+WindowDialog/icons/close = null
+WindowDialog/icons/close_highlight = null
+WindowDialog/styles/panel = ExtResource( 3 )

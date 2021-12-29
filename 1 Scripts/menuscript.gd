@@ -5,12 +5,15 @@ Variable Initalisation
 """
 
 #Menu Node Variables
+onready var menuwelcome = get_node("menucanvas/menuwelcome")
 onready var menumain = get_node("menucanvas/menumain")
 onready var menuplay = get_node("menucanvas/menuplay")
 onready var menucustom = get_node("menucanvas/menucustom")
 onready var menustore = get_node("menucanvas/menustore")
 onready var menusettings = get_node("menucanvas/menusettings")
 onready var menuhelp = get_node("menucanvas/menuhelp")
+
+onready var transitionroot = get_node("transitioncanvas/transitionroot")
 
 #Main Menu Vars
 onready var currentmenu = menumain
@@ -28,6 +31,14 @@ onready var mpbuttons = [
 	get_node("menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer8/mp_op8"),
 	get_node("menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer9/mp_op9"),
 	get_node("menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer10/mp_op10")
+]
+
+onready var mpbuttonscorelabels = [
+	
+]
+
+onready var mpbuttonscorevalues = [
+	0, 3, 5, 7, 10, 20, 25, 50, 75, 100
 ]
 
 onready var mpcolours_red = get_node("menucanvas/menuplay/mp_infopanel/red")
@@ -93,6 +104,37 @@ var customDataGet = {
 	"gravityvalue": 100
 }
 
+#Store Menu Vars
+onready var storeScore = get_node("menucanvas/menustore/mt_score/mp_scorevalue")
+onready var storeCoins = get_node("menucanvas/menustore/mt_coins/mp_coinvalue")
+
+onready var storeTrailNoneButton = get_node("menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item0/mt_but0")
+onready var storeTrailGhostButton = get_node("menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item1/mt_but1")
+onready var storeTrailSnakeButton = get_node("menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item2/mt_but2")
+onready var storeTrailSmokeButton = get_node("menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item3/mt_but3")
+onready var storeTrailFlamesButton = get_node("menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item4/mt_but4")
+onready var storeTrailRainbowButton = get_node("menucanvas/menustore/mt_trails/mt_themescrollcont/mt_hboxscrollcont/mt_item5/mt_but5")
+
+var storeTrailNames = [
+	"none", "ghost", "snake", "smoke", "flames", "rainbow"
+]
+
+var storeTrailPrices = [
+	0, 25, 75, 150, 500, 1000
+]
+
+onready var storeBGPlainButton = get_node("menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item1/mt_but1_bgs")
+onready var storeBGFadeButton = get_node("menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item2/mt_but2_bgs")
+onready var storeBGDiscoButton = get_node("menucanvas/menustore/mt_themes/mt_themescrollcont/mt_hboxscrollcont/mt_item3/mt_but3_bgs")
+
+var storeBGNames = [
+	"plain", "fade", "disco"
+]
+
+var storeBGScoresNeeded = [
+	0, 100, 500
+]
+
 #Settings Menu Vars
 onready var msbuttons = [
 	get_node("menucanvas/menusettings/ms_g+d"),
@@ -107,21 +149,72 @@ onready var settingsound = get_node("menucanvas/menusettings/ms_sound/ms_sound_m
 onready var settinggameplay = get_node("menucanvas/menusettings/ms_gameplay/ms_gameplay_menu")
 
 onready var fullscreenbutton = get_node("menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_fullscreen")
+onready var vsyncbutton = get_node("menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_vsync")
 onready var resolution = get_node("menucanvas/menusettings/ms_g+d/ms_g+d_menu/ms_resolution")
+var resWidth = 0;
+var resHeight = 0;
 
-onready var hold = false
+onready var spdgravbutton = get_node("menucanvas/menusettings/ms_gui/ms_gui_menu/ms_spdgrav")
+onready var fpsbutton = get_node("menucanvas/menusettings/ms_gui/ms_gui_menu/ms_fps")
+onready var movebutton = get_node("menucanvas/menusettings/ms_gui/ms_gui_menu/ms_movebox")
+onready var statusbutton = get_node("menucanvas/menusettings/ms_gui/ms_gui_menu/ms_status")
+
 onready var pressholdbtn = get_node("menucanvas/menusettings/ms_gameplay/ms_gameplay_menu/ms_presshold")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	if globalsettings.firstload == true:
+		menuwelcome.visible = true
+		globalsettings.firstload = false
+	else:
+		transitionroot.transitionIn("transition_in", null)
+		menumain.visible = true
+		currentmenu = menumain
+	
 	get_node("menucanvas/menumain/mm_playbtn").grab_focus()
+	resolution.add_item("Default")
 	resolution.add_item("1366x768")
 	resolution.add_item("1920x1080")
+	
+	updateProgression()
+	
+	updateStats()
+	
+	updateStore()
+	
+	# -- Settings Checks
+	# - Graphics Checks
+	vsyncCheck()
+	resolutionCheck()
+	# - Gui Checks
+	spdgravCheck()
+	fpsCheck()
+	moveCheck()
+	statusCheck()
+	# - Gameplay Checks
+	holdmodeCheck()
+	globalsettings.save_game()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+
+	# Changes button status and allows for fullscreen change through f key
 	fullscreenCheck()
-	holdmodeCheck()
+	
+	# Store Checks for when a purchase is made without enough currency
+	noMoneyCheck()
+	noScoreCheck()
+	
+	#Checks if a the player has just finished transitioning into a new menu
+	transitionedOut()
+
+func updateStats():
+	storeScore.text = str(globalsettings.highscore)
+	get_node("menucanvas/menuplay/mp_scorepanel/mp_scorevalue").text = str(globalsettings.highscore)
+	storeCoins.text = str(globalsettings.currency)
+	get_node("menucanvas/menuplay/mp_coinpanel/mp_coinvalue").text = str(globalsettings.currency)
 
 """
 Menu Update Signals
@@ -141,35 +234,53 @@ func currentmenu_update(newcurrent):
 			get_node("menucanvas/menusettings/ms_back").grab_focus()
 		menuhelp:
 			pass
-			
-	newcurrent.visible = true
+	
 	currentmenu.visible = false
+	newcurrent.visible = true
 	currentmenu = newcurrent
 
+func _unhandled_input(event):
+	if menuwelcome.visible == true:
+		if event is InputEventKey:
+			transitionroot.resetSmooth()
+			currentmenu = menuwelcome
+			print(transitionroot.animationPlaying)
+			if globalsettings.firstrun == true:
+				transitionroot.play("fade_in", "fade_out", menuhelp)
+				globalsettings.firstrun = false
+			elif transitionroot.animationPlaying == false:
+				transitionroot.play("transition_in", "fade_out", menumain)
+
+func transitionedOut():
+	if transitionroot.transitionedOut == true:
+		currentmenu_update(transitionroot.currentMenu)
+
+	
 """
 Main Menu Signals
 """
 
 func _on_mm_playbtn_pressed():
 	globalsettings.globalgrav = 40
-	currentmenu_update(menuplay)
+	transitionroot.play("transition_in", "transition_out", menuplay)
 
 func _on_mm_custombtn_pressed():
-	currentmenu_update(menucustom)
+	transitionroot.play("transition_in", "transition_out", menucustom)
 
 func _on_mm_storebtn_pressed():
-	currentmenu_update(menustore)
+	transitionroot.play("transition_in", "transition_out", menustore)
 
 func _on_mm_settingsbtn_pressed():
-	currentmenu_update(menusettings)
+	transitionroot.play("fade_in", "transition_out", menusettings)
 
 func _on_mm_helpbtn_pressed():
-	currentmenu_update(menuhelp)
+	transitionroot.play("fade_in", "transition_out", menuhelp)
 	get_node("menucanvas/menuhelp/mh_cont1").visible = true
 	get_node("menucanvas/menuhelp/mh_cont2").visible = false
 	get_node("menucanvas/menuhelp/mh_cont3").visible = false
 
 func _on_mm_quitbtn_pressed():
+	globalsettings.save_game()
 	get_tree().quit()
 
 """
@@ -177,7 +288,7 @@ Play Menu Signals
 """
 
 func _on_mp_back_pressed():
-	currentmenu_update(menumain)
+	transitionroot.play("transition_in", "transition_out", menumain)
 
 func togglemodecheck(num):
 	$menucanvas/menuplay/mp_start.disabled = false
@@ -282,16 +393,28 @@ func _on_mp_op10_pressed():
 	globalsettings.gamemode = "Rainbow"
 	togglemodecheck(9)
 
+func updateProgression():
+	for i in range(mpbuttons.size()):
+		if globalsettings.highscore >= mpbuttonscorevalues[i]:
+			mpbuttons[i].disabled = false
+			get_node(str(mpbuttons[i].get_path()) + "/mp_score").visible = false
+		else:
+			mpbuttons[i].disabled = true
+			get_node(str(mpbuttons[i].get_path()) + "/mp_score").visible = true
+	
+	if globalsettings.highscore < 100:
+		get_node("menucanvas/menumain/mm_custombtn").disabled = true
+	
 
 func _on_mp_start_pressed():
-	get_tree().change_scene("res://0 Scenes/game.tscn")
+	transitionroot.transitionOut("transition_out", "Game")
 
 """
 Custom Menu Signals
 """
 
 func _on_mc_back_pressed():
-	currentmenu_update(menumain)
+	transitionroot.play("transition_in", "transition_out", menumain)
 
 func _on_mc_sliderblue_value_changed(value):	
 	bluelabel.text = str(blueslider.value) + "%"
@@ -328,14 +451,99 @@ func _on_mc_start_pressed():
 	customDataGet.gravityvalue = gravslider.value
 	globalsettings.customData = customDataGet
 	globalsettings.gamemode = "Custom"
-	get_tree().change_scene("res://0 Scenes/game.tscn")
+	transitionroot.transitionOut("transition_out", "Game")
 
 """
 Store Menu Signals
 """
 
+func updateStore():
+	#Trails
+	var storeTrailList = [
+	storeTrailNoneButton, storeTrailGhostButton, storeTrailSnakeButton, storeTrailSmokeButton, storeTrailFlamesButton, storeTrailRainbowButton
+	]
+	for i in range(storeTrailList.size()):
+		updateStoreTrail(storeTrailList[i], storeTrailNames[i], storeTrailPrices[i])
+	#Backgrounds
+	var storeBGList = [
+	storeBGPlainButton, storeBGFadeButton, storeBGDiscoButton
+	]
+	for i in range (storeBGList.size()):
+		updateStoreBg(storeBGList[i], storeBGNames[i], storeBGScoresNeeded[i])
+	globalsettings.save_game()
+
+func updateStoreTrail(button, mode, price):
+	if globalsettings.trailsBought[mode] == true:
+		if globalsettings.currentTrail == mode:
+			button.text = "Equipped"
+		else:
+			button.text = "Unequipped"
+	else:
+		button.text = str(price) + " Coins" 
+	globalsettings.save()
+
+func updateStoreBg(button, mode, scoreneeded):
+	if globalsettings.bgsUnlocked[mode] == true:
+		if globalsettings.currentBg == mode:
+			button.text = "Equipped"
+		else:
+			button.text = "Unequipped"
+	else:
+		button.text = "Score Over " + str(scoreneeded)
+	globalsettings.save()
+
+func noMoneyCheck():
+	if globalsettings.noMoney == true:
+		get_node("menucanvas/menustore/mt_moneydialog").popup_centered_clamped()
+		globalsettings.noMoney = false
+
+func noScoreCheck():
+	if globalsettings.noScore == true:
+		get_node("menucanvas/menustore/mt_pointdialog").popup_centered_clamped()
+		globalsettings.noScore = false
+
+func buyTrailAttempt(num):
+	globalsettings.buyTrail(storeTrailNames[num], storeTrailPrices[num])
+	updateStats()
+	updateStore()
+
+func unlockBGAttempt(num):
+	globalsettings.unlockBg(storeBGNames[num], storeBGScoresNeeded[num])
+	updateStore()
+
+#Trail Buttons
+
+func _on_mt_but0_pressed():
+	buyTrailAttempt(0)
+
+func _on_mt_but1_pressed():
+	buyTrailAttempt(1)
+
+func _on_mt_but2_pressed():
+	buyTrailAttempt(2)
+
+func _on_mt_but3_pressed():
+	buyTrailAttempt(3)
+
+func _on_mt_but4_pressed():
+	buyTrailAttempt(4)
+
+func _on_mt_but5_pressed():
+	buyTrailAttempt(5)
+
+#Background Buttons
+
+func _on_mt_but1_bgs_pressed():
+	unlockBGAttempt(0)
+
+func _on_mt_but2_bgs_pressed():
+	unlockBGAttempt(1)
+
+func _on_mt_but3_bgs_pressed():
+	unlockBGAttempt(2)
+
 func _on_mt_back_pressed():
-	currentmenu_update(menumain)
+	transitionroot.play("transition_in", "transition_out", menumain)
 
 """
 Settings Menu Signals
@@ -377,6 +585,10 @@ func _on_ms_gameplay_pressed():
 
 func _on_ms_presshold_pressed():
 	globalsettings.holdmode = !globalsettings.holdmode
+	if globalsettings.holdmode == false:
+		pressholdbtn.text = "Press"
+	elif globalsettings.holdmode == true:
+		pressholdbtn.text = "Hold"
 
 func holdmodeCheck():
 	if globalsettings.holdmode == false:
@@ -396,20 +608,110 @@ func _on_ms_slidereffect_value_changed(value):
 	
 	label.text = str(slider.value) + "%"
 
+# Fullscreen Settings Functions
+
 func _on_ms_fullscreen_pressed():
 	globalsettings.fullscreen()
 
 func fullscreenCheck():
 	if Input.is_action_just_released("fullscreen"):
 		globalsettings.fullscreen()
-	
 	if OS.window_fullscreen == true:
 		fullscreenbutton.pressed = true
 	else:
 		fullscreenbutton.pressed = false
+	resolutionCheck()
+
+# Resoltion Settings Functions
+
+func _on_ms_resolution_item_selected(index):
+
+	match index:
+		1:
+			resWidth = 1366
+			resHeight = 768
+		2:
+			resWidth = 1920
+			resHeight = 1080
+	
+	if index != 0:
+		OS.window_fullscreen = false
+		OS.window_size = Vector2(resWidth, resHeight)
+	
+
+func resolutionCheck():
+	
+	match OS.window_size:
+		Vector2(1920, 1080):
+			resolution.select(2)
+		Vector2(1366, 768):
+			resolution.select(1)
+		_:
+			resolution.select(0)
+
+# VSync Settings Functions
+
+func _on_ms_vsync_pressed():
+	globalsettings.vsync = !globalsettings.vsync
+	
+	# --- reference start: https://godotengine.org/qa/27123/set-vsync-from-code-2-1-4
+	var vsync = !OS.is_vsync_enabled()
+	OS.set_use_vsync(vsync)
+	# reference end ---
+	
+
+func vsyncCheck():
+	if globalsettings.vsync == true:
+		vsyncbutton.pressed = true
+	else:
+		vsyncbutton.pressed = false
+
+# Speed and Gravity Info Settings Functions
+
+func _on_ms_spdgrav_pressed():
+	globalsettings.spdgravInfo = !globalsettings.spdgravInfo
+
+func spdgravCheck():
+	if globalsettings.spdgravInfo == true:
+		spdgravbutton.pressed = true
+	else:
+		spdgravbutton.pressed = false
+
+# FPS Info Functions
+
+func _on_ms_fps_pressed():
+	globalsettings.fpsInfo = !globalsettings.fpsInfo
+
+func fpsCheck():
+	if globalsettings.fpsInfo == true:
+		fpsbutton.pressed = true
+	else:
+		fpsbutton.pressed = false
+
+# Move Box Info Functions
+
+func _on_ms_movebox_pressed():
+	globalsettings.moveInfo = !globalsettings.moveInfo
+
+func moveCheck():
+	if globalsettings.moveInfo == true:
+		movebutton.pressed = true
+	else:
+		movebutton.pressed = false
+
+# Status Box Info Functions
+
+func _on_ms_status_pressed():
+	globalsettings.statusInfo = !globalsettings.statusInfo
+
+func statusCheck():
+	if globalsettings.statusInfo == true:
+		statusbutton.pressed = true
+	else:
+		statusbutton.pressed = false
 
 func _on_ms_back_pressed():
-	currentmenu_update(menumain)
+	transitionroot.play("transition_in", "fade_out", menumain)
 
 """
 Help Menu Signals
@@ -426,7 +728,4 @@ func _on_mh_next2_pressed():
 	get_node("menucanvas/menuhelp/mh_cont3").visible = true
 
 func _on_mh_next3_pressed():
-	get_node("menucanvas/menuhelp/mh_cont1").visible = true
-	get_node("menucanvas/menuhelp/mh_cont2").visible = false
-	get_node("menucanvas/menuhelp/mh_cont3").visible = false
-	currentmenu_update(menumain)
+	transitionroot.play("transition_in", "fade_out", menumain)

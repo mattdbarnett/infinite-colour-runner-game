@@ -23,19 +23,27 @@ var randomTypeList
 	
 var typedict = {}
 var typelist = Array()
-var texture = preload("res://2 Sprites/black.png")
-var texturered = preload("res://2 Sprites/red.png")
-var textureblue = preload("res://2 Sprites/blue.png")
-var texturepurple = preload("res://2 Sprites/purple.png")
-var texturegreen = preload("res://2 Sprites/green.png")
-var textureyellow = preload("res://2 Sprites/yellow.png")
-var texturepink = preload("res://2 Sprites/pink.png")
+var texture = preload("res://2 Sprites/0 Basic/black.png")
+var texturered = preload("res://2 Sprites/0 Basic/red.png")
+var textureblue = preload("res://2 Sprites/0 Basic/blue.png")
+var texturepurple = preload("res://2 Sprites/0 Basic/purple.png")
+var texturegreen = preload("res://2 Sprites/0 Basic/green.png")
+var textureyellow = preload("res://2 Sprites/0 Basic/yellow.png")
+var texturepink = preload("res://2 Sprites/0 Basic/pink.png")
+
+onready var transitionroot = get_node("transitioncanvas/transitionroot")
 
 onready var globalsettings = get_node("/root/globalsettings")
 var customDataGet
 var customDataSum = 0
+
+var ending = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	transitionroot.transitionIn("fade_in", null)
+	if globalsettings.fpsInfo == true:
+		get_node("player/Camera2D/CanvasLayer/fpsLabel").visible = true
 	typedict = {
 		texture: $LBody,
 		texturered: $RedLBody,
@@ -168,9 +176,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	if Input.is_action_just_released("fullscreen"):
-		globalsettings.fullscreen()
-	
+	extraFeatures()
+		
 	if fterrain[-1].x < $player.position.x + screensize.x:
 		texture_gen()
 		floor_gen(ftype)
@@ -220,7 +227,7 @@ func floor_gen(ftype):
 			
 			if piecePart == 0 and piece == 0:
 				#If this is the first section of the piece, define/create height
-				floor_point.y = start.y + height * cos(1 * PI / floor_slices * piecePart) + random
+				floor_point.y = start.y + height * cos(1 / floor_slices * piecePart) + random
 				
 				#Limits floor from going too low
 				if floor_point.y < 90:
@@ -274,7 +281,7 @@ func ceiling_gen(ctype):
 				
 			if piecePart == 0 and piece == 0:
 				#If this is the first section of the piece, define/create height
-				ceiling_point.y = start.y + height * cos(1 * PI / ceiling_slices * piecePart) + random
+				ceiling_point.y = start.y + height * cos(1 / ceiling_slices * piecePart) + random
 				
 				if ceiling_point.y > -90:
 					ceiling_point.y += -64
@@ -297,3 +304,17 @@ func ceiling_gen(ctype):
 	ground.polygon = poly
 	ground.texture = ctype
 	add_child(ground)
+
+func extraFeatures():
+	
+	#Keep FPS label updated
+	if globalsettings.fpsInfo == true:
+		get_node("player/Camera2D/CanvasLayer/fpsLabel").text = str(Engine.get_frames_per_second())
+	
+	#Allow fullscreen to be switched mid-game
+	if Input.is_action_just_released("fullscreen"):
+		globalsettings.fullscreen()
+	
+	if Input.is_action_just_pressed("esc"):
+		ending = true
+		transitionroot.transitionOut("fade_out", "Quit")

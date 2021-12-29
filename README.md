@@ -4,6 +4,7 @@ A basic, procedurally generated side-scrolling game for my third year of undergr
 
 ## Installation Instructions
 
+<<<<<<< HEAD
 Currently there is no executable release for the project, though the latest stable build in main will run without error in the Godot IDE.
 
 ## Overall Plans/Aims
@@ -14,3 +15,7 @@ Currently there is no executable release for the project, though the latest stab
 4. ~~Give the user a range of methods to play - including a custom-made experience and pre-set gamemoeds.~~
 5. Allow for the collection of in-game currency that can be used in an in-application score.
 6. Create a help screen for new users.
+=======
+All releases of the game are avaliable in the following directory: "res://6 Releases/".
+To run a release, simply copy the exe and it's corresponding pck file to a directory of your choice and run them from there.
+>>>>>>> origin/development
