@@ -85,13 +85,11 @@ func play(transitionIn, transitionOut, menu):
 func transitionIn(transition, mode):
 	rect.visible = true
 	currentMode = mode
-	changeMask()
 	player.play(transition)
 
 func transitionOut(transition, mode):
 	rect.visible = true
 	currentMode = mode
-	changeMask()
 	player.play(transition)
 
 func resetSmooth():
