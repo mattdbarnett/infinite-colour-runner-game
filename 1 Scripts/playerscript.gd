@@ -18,7 +18,6 @@ var motion = Vector2()
 
 var touchingCurrent 
 var powerupBool = false
-var powerupCurrent = "base"
 var modeCurrent 
 
 var bluex = 300
@@ -48,7 +47,18 @@ onready var powerdownTimer = get_node("Camera2D/TimerPowerdown")
 onready var powerupTimer = get_node("Camera2D/TimerPowerup")
 onready var powerupBar = get_node("Camera2D/CanvasLayer/Powerup")
 var powerupValue = 50
-var powerupMode = false
+
+#Trails
+onready var trailGhost = get_node("sprite/trail_ghost")
+onready var trailSnake = get_node("sprite/trail_snake")
+onready var trailSmoke = get_node("sprite/trail_smoke")
+onready var trailFlames = get_node("sprite/trail_flames")
+onready var trailRainbow = get_node("sprite/trail_rainbow")
+
+#Backgrounds
+onready var bgPlain = get_node("sprite/backgrounds/bg_plain")
+onready var bgFade = get_node("sprite/backgrounds/bg_fade")
+onready var bgRainbow = get_node("sprite/backgrounds/bg_rainbowlayer/bg_rainbow")
 
 func _ready():
 	powerupTimer.start()
@@ -88,7 +98,7 @@ func playerInput():
 		grav = gravdown
 	
 	#Hold-mode input
-	if globalsettings.holdmode == true:
+	if globalsettings.getHoldmode() == true:
 		
 		if Input.is_action_pressed("move"):
 			currentHold = true
@@ -214,20 +224,22 @@ func playerUIConst():
 	
 	# Speed + Gravity Panels
 	
-	if globalsettings.spdgravInfo == true:
-		get_node(str(speedGravPanels.get_path()) + "/speedPanel/valueLabel").text = str(xspeed)
-		get_node(str(speedGravPanels.get_path()) + "/gravPanel/valueLabel").text = str(int(gravchange))
+	if globalsettings.getSpdGravInfo() == true:
+		var speedValueLabel = get_node(str(speedGravPanels.get_path()) + "/speedPanel/valueLabel")
+		speedValueLabel.text = str(xspeed)
+		var gravValueLabel = get_node(str(speedGravPanels.get_path()) + "/gravPanel/valueLabel")
+		gravValueLabel.text = str(int(gravchange))
 	
 	# Move Panel
 	
-	if globalsettings.moveInfo == true:
+	if globalsettings.getMoveInfo() == true:
 		if (is_on_floor() or is_on_ceiling()):
 			movePanel.get_stylebox("panel", "").set_bg_color("#00FF21")
 		else:
 			movePanel.get_stylebox("panel", "").set_bg_color("#000000")
 	
 	# Status Panel
-	if globalsettings.statusInfo == true:
+	if globalsettings.getStatusInfo() == true:
 		match modeCurrent:
 			"base": statusPanel.get_stylebox("panel", "").set_bg_color("#000000")
 			"blue": statusPanel.get_stylebox("panel", "").set_bg_color("#0016ff")
@@ -246,47 +258,47 @@ func playerUIConst():
 			statusArrow.visible = false
 
 func playerDeath():
-	if globalsettings.gamemode != "Custom":
-		if score > globalsettings.highscore:
-			globalsettings.highscore = score
+	if globalsettings.getGamemode() != "Custom":
+		if score > globalsettings.getHighscore():
+			globalsettings.setHighscore(score)
 		
 		score = int(score/5)
-		globalsettings.currency += score
+		globalsettings.setCurrency(globalsettings.getCurrency() + score)
 	
 	if gameroot.ending != true:
 		if get_tree().reload_current_scene() != OK:
-			print ("An unexpected error occured when trying to restart the scene")
+			print("An unexpected error occured when trying to restart the scene")
 
 func playerTrail():
-	match globalsettings.currentTrail:
+	match globalsettings.getCurrentTrail():
 		"ghost":
-			get_node("sprite/trail_ghost").visible = true
+			trailGhost.visible = true
 		"snake":
-			get_node("sprite/trail_snake").visible = true
+			trailSnake.visible = true
 		"smoke":
-			get_node("sprite/trail_smoke").visible = true
+			trailSmoke.visible = true
 		"flames":
-			get_node("sprite/trail_flames").visible = true
+			trailFlames.visible = true
 		"rainbow":
-			get_node("sprite/trail_rainbow").visible = true
+			trailRainbow.visible = true
 
 func playerBg():
-	match globalsettings.currentBg:
+	match globalsettings.getCurrentBg():
 		"plain":
-			get_node("sprite/backgrounds/bg_plain").visible = true
+			bgPlain.visible = true
 		"fade":
-			get_node("sprite/backgrounds/bg_fade").visible = true
+			bgFade.visible = true
 		"disco":
-			get_node("sprite/backgrounds/bg_rainbowlayer/bg_rainbow").visible = true
+			bgRainbow.visible = true
 
 func playerUIInitalise():
-	if globalsettings.spdgravInfo == true:
+	if globalsettings.getSpdGravInfo() == true:
 		speedGravPanels.visible = true
 	
-	if globalsettings.moveInfo == true:
+	if globalsettings.getMoveInfo() == true:
 		movePanel.visible = true
 	
-	if globalsettings.statusInfo == true:
+	if globalsettings.getStatusInfo() == true:
 		statusPanel.visible = true
 
 func powerupStatus():
@@ -296,7 +308,7 @@ func powerupStatus():
 		return "EMPTY"
 
 func setGrav():
-	grav = globalsettings.globalgrav
+	grav = globalsettings.getGlobalgrav()
 	gravchange = grav
 	gravup = -gravchange
 	gravdown = gravchange

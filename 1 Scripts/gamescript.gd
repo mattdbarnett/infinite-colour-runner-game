@@ -19,7 +19,6 @@ var rng = RandomNumberGenerator.new()
 var ftype
 var ctype
 var lastTypeUnique = true #if true, can't be another colour piece
-var randomTypeList
 	
 var typedict = {}
 var typelist = Array()
@@ -33,6 +32,10 @@ var texturepink = preload("res://2 Sprites/0 Basic/pink.png")
 
 onready var transitionroot = get_node("transitioncanvas/transitionroot")
 
+onready var fpsLabel = get_node("player/Camera2D/CanvasLayer/fpsLabel")
+
+onready var player = get_node("player")
+
 onready var globalsettings = get_node("/root/globalsettings")
 var customDataGet
 var customDataSum = 0
@@ -42,8 +45,8 @@ var ending = false
 func _ready():
 	
 	transitionroot.transitionIn("fade_in", null)
-	if globalsettings.fpsInfo == true:
-		get_node("player/Camera2D/CanvasLayer/fpsLabel").visible = true
+	if globalsettings.getFpsInfo() == true:
+		fpsLabel.visible = true
 	typedict = {
 		texture: $LBody,
 		texturered: $RedLBody,
@@ -139,10 +142,10 @@ func _ready():
 				typelist.append(texturepink)
 		"Custom":
 			customDataGet = globalsettings.customData
-			globalsettings.globalgrav = 40 * (customDataGet.gravityvalue/100)
-			get_node("player").setGrav()
-			get_node("player").staticx = 700 * (customDataGet.speedvalue/100)
-			get_node("player").basex = 700 * (customDataGet.speedvalue/100)
+			globalsettings.setGlobalgrav(40 * (customDataGet.gravityvalue/100))
+			player.setGrav()
+			player.staticx = 700 * (customDataGet.speedvalue/100)
+			player.basex = 700 * (customDataGet.speedvalue/100)
 			var sum = 0
 			for value in customDataGet:
 				sum += int(value)
@@ -178,11 +181,11 @@ func _process(_delta):
 	
 	extraFeatures()
 		
-	if fterrain[-1].x < $player.position.x + screensize.x:
+	if fterrain[-1].x < player.position.x + screensize.x:
 		texture_gen()
 		floor_gen(ftype)
 	
-	if cterrain[-1].x < $player.position.x + screensize.x:
+	if cterrain[-1].x < player.position.x + screensize.x:
 		ceiling_gen(ctype)
 
 func texture_gen():
@@ -309,7 +312,7 @@ func extraFeatures():
 	
 	#Keep FPS label updated
 	if globalsettings.fpsInfo == true:
-		get_node("player/Camera2D/CanvasLayer/fpsLabel").text = str(Engine.get_frames_per_second())
+		fpsLabel.text = str(Engine.get_frames_per_second())
 	
 	#Allow fullscreen to be switched mid-game
 	if Input.is_action_just_released("fullscreen"):

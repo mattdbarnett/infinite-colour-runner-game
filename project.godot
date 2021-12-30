@@ -32,6 +32,14 @@ config/windows_native_icon="res://2 Sprites/2 Misc/icon.ico"
 
 globalsettings="*res://1 Scripts/globalscript.gd"
 
+[debug]
+
+gdscript/warnings/unused_class_variable=true
+gdscript/warnings/unsafe_property_access=true
+gdscript/warnings/unsafe_method_access=true
+gdscript/warnings/unsafe_cast=true
+gdscript/warnings/unsafe_call_argument=true
+
 [display]
 
 window/size/width=1920

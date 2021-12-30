@@ -55,6 +55,125 @@ var bgsUnlocked = {
 func _ready():
 	load_game()
 
+# - - Getters and Setters
+
+# - Temp Vars
+
+func getFirstload():
+	return firstload
+
+func setFirstload(input):
+	firstload = input
+
+func getGlobalgrav():
+	return globalgrav
+
+func setGlobalgrav(input):
+	globalgrav = input
+
+func getGamemode():
+	return gamemode
+
+func setGamemode(input):
+	gamemode = input
+
+func getNoMoney():
+	return noMoney
+
+func setNoMoney(input):
+	noMoney = input
+
+func getNoScore():
+	return noScore
+
+func setNoScore(input):
+	noScore = input
+
+func getCustomData():
+	return customData
+
+func setCustomData(input):
+	customData = input
+
+# - Saved Vars
+
+func getFirstrun():
+	return firstrun
+
+func setFirstrun(input):
+	firstrun = input
+
+func getHoldmode():
+	return holdmode
+
+func setHoldmode(input):
+	holdmode = input
+
+func getSpdGravInfo():
+	return spdgravInfo
+
+func setSpdGravInfo(input):
+	spdgravInfo = input
+
+func getFpsInfo():
+	return fpsInfo
+
+func setFpsInfo(input):
+	fpsInfo = input
+
+func getMoveInfo():
+	return moveInfo
+
+func setMoveInfo(input):
+	moveInfo = input
+
+func getStatusInfo():
+	return statusInfo
+
+func setStatusInfo(input):
+	statusInfo = input
+
+func getVSync():
+	return vsync
+
+func setVSync(input):
+	vsync = input
+
+func getCurrency():
+	return currency
+
+func setCurrency(input):
+	currency = input
+
+func getHighscore():
+	return highscore
+
+func setHighscore(input):
+	highscore = input
+
+func getCurrentTrail():
+	return currentTrail
+
+func setCurrentTrail(input):
+	currentTrail = input
+
+func getTrailsBought():
+	return trailsBought
+
+func setTrailsBought(input):
+	trailsBought = input
+
+func getCurrentBg():
+	return currentBg
+
+func setCurrentBg(input):
+	currentBg = input
+
+func getBgsUnlocked():
+	return bgsUnlocked
+
+func setBgsUnlocked(input):
+	bgsUnlocked = input
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
