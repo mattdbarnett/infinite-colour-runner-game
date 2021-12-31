@@ -1,48 +1,71 @@
+"""
+- - - - - - - - - - - - - - -
+ Title: Player Class Script
+ Author: Matt Barnett
+ Created: 9/11/2021
+- - - - - - - - - - - - - - -
+
+ Desc:
+	Script for instances of the player object. Handles input, gravity, 
+	movespeed and reaction to colours. Currently only one exists, but more 
+	could be instanced in the future for multiplayer modes etc, which is why 
+	the player is a class rather than a part of the the game scene.
+"""
+
 extends KinematicBody2D
 
-
-#Basic movement vars
 const UP = Vector2(0, -1)
+var motion = Vector2()
 
+"""
+ Horizontal Speed Vars:
+	staticx - Stays the same throughout the game. Used to reset player speed.
+	basex - Xspeed is consistently equal to this. Resets to staticx when needed.
+	xspeed - Raw current speed of the player.
+"""
 var staticx = 700
 var basex = 700
 var xspeed = 700
 
+"""
+ Vertical Speed Vars:
+	grav - Raw, actual gravity of the player.
+	gravchange - The base gravity - grav is changed based around this in gameplay.
+	gravup - The value of gravity when the player falls up.
+	gravdown - The value of gravity when the player falls down.
+"""
 var grav = 40
 var gravchange = grav
 var gravup = -gravchange
 var gravdown = gravchange
 var isGravUp = false
 
-var motion = Vector2()
-
-var touchingCurrent 
-var powerupBool = false
-var modeCurrent 
-
+#Colour Vars
+var touchingCurrent
+var modeCurrent
+var powerupBool = false 
 var bluex = 300
-
 var purplex = -300
-
 var yellowtoggle = false
-
 var isPowerupPink = false
 
+#Misc Vars
 var scoreIncrement = 1
-
 var currentHold = false
-
 onready var gameroot = get_node("..")
 
+#Speed + Grav UI
 onready var speedGravPanels = get_node("Camera2D/CanvasLayer/speed+gravPanels")
 onready var movePanel = get_node("Camera2D/CanvasLayer/movePanel")
 onready var statusPanel = get_node("Camera2D/CanvasLayer/statusPanel")
 onready var statusArrow = get_node("Camera2D/CanvasLayer/statusPanel/statusArrow")
 
+#Score UI
 onready var scoreTimer = get_node("Camera2D/TimerScore")
 onready var scoreLabel = get_node("Camera2D/CanvasLayer/scorePanel/valueLabel")
 var score = 0
 
+#Powerup UI
 onready var powerdownTimer = get_node("Camera2D/TimerPowerdown")
 onready var powerupTimer = get_node("Camera2D/TimerPowerup")
 onready var powerupBar = get_node("Camera2D/CanvasLayer/Powerup")
@@ -60,32 +83,30 @@ onready var bgPlain = get_node("sprite/backgrounds/bg_plain")
 onready var bgFade = get_node("sprite/backgrounds/bg_fade")
 onready var bgRainbow = get_node("sprite/backgrounds/bg_rainbowlayer/bg_rainbow")
 
+# Pre-Built Functions (ready + process)
+
 func _ready():
 	powerupTimer.start()
 	scoreTimer.start()
 	
 	playerTrail()
-	
 	playerBg()
-	
 	playerUIInitalise()
 
 func _physics_process(_delta):
-
 	scoreLabel.text = str(int(score))
 	powerupBar.value = powerupValue
 	motion.y += grav
 	motion.x = xspeed
 	
 	playerInput()
-	
 	playerTouch()
-	
 	playerEffects()
-	
 	playerUIConst()
 	
 	motion = move_and_slide(motion, UP)
+
+# Custom Functions
 
 func playerInput():
 	#User input changes gravity
@@ -97,7 +118,7 @@ func playerInput():
 	else:
 		grav = gravdown
 	
-	#Hold-mode input
+	#Hold-mode Input
 	if globalsettings.getHoldmode() == true:
 		
 		if Input.is_action_pressed("move"):
@@ -112,16 +133,18 @@ func playerInput():
 				if is_on_ceiling():
 					isGravUp = false
 		
-	#Powerup inout
+	#Powerup Inout
 	if Input.is_action_just_pressed("powerup"):
 		if powerupValue >= 100:
 			isPowerupPink = false
 			powerupBool = true
 
 func playerTouch():
+	
 	if is_on_wall():
 		playerDeath()
 	
+	#Detect Touch
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
 		match collision.collider.name:
@@ -153,7 +176,6 @@ func playerTouch():
 func playerEffects():
 	
 	#Powerup Effects
-	
 	if powerupValue >= 100:
 		powerupTimer.stop()
 		powerupValue = 100
@@ -161,23 +183,19 @@ func playerEffects():
 	if powerupBool == true:
 		modeCurrent = "powerup"
 
-	#Terrian Effects
-	
+	#Apply effects of last terrain touched
 	match modeCurrent:
 		"blue":
 			xspeed = bluex
 			basex = staticx
-			
 			scoreIncrement = 0.5
 		"purple":
 			xspeed = purplex
 			basex = staticx
-			
 			scoreIncrement = -1
 		"green":
 			xspeed += 1
 			basex = xspeed
-			
 			timerScoreReset()
 		"yellow":
 			if yellowtoggle == false:
@@ -186,7 +204,6 @@ func playerEffects():
 				gravchange -= 0.5
 			gravup = -gravchange
 			gravdown = gravchange
-			
 			timerScoreReset()
 		"pink":
 			powerupValue = 100
@@ -217,13 +234,11 @@ func playerEffects():
 			scoreIncrement = 0
 		_:
 			xspeed = basex
-			
 			timerScoreReset()
 
 func playerUIConst():
 	
 	# Speed + Gravity Panels
-	
 	if globalsettings.getSpdGravInfo() == true:
 		var speedValueLabel = get_node(str(speedGravPanels.get_path()) + "/speedPanel/valueLabel")
 		speedValueLabel.text = str(xspeed)
@@ -231,7 +246,6 @@ func playerUIConst():
 		gravValueLabel.text = str(int(gravchange))
 	
 	# Move Panel
-	
 	if globalsettings.getMoveInfo() == true:
 		if (is_on_floor() or is_on_ceiling()):
 			movePanel.get_stylebox("panel", "").set_bg_color("#00FF21")
@@ -258,6 +272,7 @@ func playerUIConst():
 			statusArrow.visible = false
 
 func playerDeath():
+	#If game is not custom, check if highscore and add currency
 	if globalsettings.getGamemode() != "Custom":
 		if score > globalsettings.getHighscore():
 			globalsettings.setHighscore(score)
@@ -265,6 +280,7 @@ func playerDeath():
 		score = int(score/5)
 		globalsettings.setCurrency(globalsettings.getCurrency() + score)
 	
+	#Reload scene
 	if gameroot.ending != true:
 		if get_tree().reload_current_scene() != OK:
 			print("An unexpected error occured when trying to restart the scene")
@@ -313,6 +329,8 @@ func setGrav():
 	gravup = -gravchange
 	gravdown = gravchange
 	isGravUp = false
+
+# Node Functions
 
 func _on_TimerPowerup_timeout():
 	powerupValue += 0.1
