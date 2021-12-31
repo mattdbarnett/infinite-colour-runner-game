@@ -307,7 +307,8 @@ __meta__ = {
 }
 
 [node name="mp_hboxcont" type="HBoxContainer" parent="menucanvas/menuplay/mp_scollcont"]
-margin_right = 7720.0
+margin_left = -100.0
+margin_right = 7620.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1222,6 +1223,9 @@ custom_fonts/font = ExtResource( 3 )
 text = "Select a Gamemode"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="mp_coinpanel" type="Panel" parent="menucanvas/menuplay"]
 margin_left = 1664.0

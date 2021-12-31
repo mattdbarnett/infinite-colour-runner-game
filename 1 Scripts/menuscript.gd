@@ -6,26 +6,32 @@ Variable Initalisation
 
 #Menu Node Variables
 onready var menuwelcome = get_node("menucanvas/menuwelcome")
-onready var menumain = get_node("menucanvas/menumain")
-onready var menuplay = get_node("menucanvas/menuplay")
-onready var menucustom = get_node("menucanvas/menucustom")
-onready var menustore = get_node("menucanvas/menustore")
-onready var menusettings = get_node("menucanvas/menusettings")
-onready var menuhelp = get_node("menucanvas/menuhelp")
+onready var menumainPath = "menucanvas/menumain"
+onready var menumain = get_node(menumainPath)
+onready var menuplayPath = "menucanvas/menuplay"
+onready var menuplay = get_node(menuplayPath)
+onready var menucustomPath = "menucanvas/menucustom"
+onready var menucustom = get_node(menucustomPath)
+onready var menustorePath = "menucanvas/menustore"
+onready var menustore = get_node(menustorePath)
+onready var menusettingsPath = "menucanvas/menusettings"
+onready var menusettings = get_node(menusettingsPath)
+onready var menuhelpPath = "menucanvas/menuhelp"
+onready var menuhelp = get_node(menuhelpPath)
 
 onready var transitionroot = get_node("transitioncanvas/transitionroot")
 
 #Main Menu Vars
 onready var currentmenu = menuwelcome
 
-onready var mainCustom = get_node("menucanvas/menumain/mm_custombtn")
+onready var mainCustom = get_node(menumainPath + "/mm_custombtn")
 
 #Play Menu Vars
 
-onready var playStart = get_node("menucanvas/menuplay/mp_start")
+onready var playStart = get_node(menuplayPath + "/mp_start")
 
-onready var playScore = get_node("menucanvas/menuplay/mp_scorepanel/mp_scorevalue")
-onready var playCoins = get_node("menucanvas/menuplay/mp_coinpanel/mp_coinvalue")
+onready var playScore = get_node(menuplayPath + "/mp_scorepanel/mp_scorevalue")
+onready var playCoins = get_node(menuplayPath + "/mp_coinpanel/mp_coinvalue")
 
 onready var currentmode = 0
 onready var mpbuttons = []
@@ -34,6 +40,7 @@ onready var mpbuttonscorevalues = [
 	0, 3, 5, 7, 10, 20, 25, 50, 75, 100
 ]
 
+onready var mpinfoBase = get_node(menuplayPath + "/mp_infopanel/mp_infobase")
 onready var mpinfoArray = []
 
 onready var mpcolourDict = {}
@@ -313,8 +320,10 @@ func togglemodecheck(num):
 
 func colourpanelcheck(num):
 	
+	mpinfoBase.text = ""
+	
 	for colour in mpcolourDict:
-		colour.visible = false
+		mpcolourDict[colour].visible = false
 	
 	for info in mpinfoArray:
 		info.visible = false
