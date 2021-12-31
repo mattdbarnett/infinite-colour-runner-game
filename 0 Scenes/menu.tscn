@@ -316,7 +316,9 @@ __meta__ = {
 margin_right = 640.0
 rect_min_size = Vector2( 640, 0 )
 
-[node name="mp_btncontainer1" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
+[node name="mp_btncontainer1" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont" groups=[
+"btn_containers",
+]]
 margin_left = 644.0
 margin_right = 1284.0
 rect_min_size = Vector2( 640, 0 )
@@ -355,7 +357,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mp_btncontainer2" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
+[node name="mp_btncontainer2" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont" groups=[
+"btn_containers",
+]]
 margin_left = 1288.0
 margin_right = 1928.0
 rect_min_size = Vector2( 640, 0 )
@@ -398,7 +402,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mp_btncontainer3" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
+[node name="mp_btncontainer3" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont" groups=[
+"btn_containers",
+]]
 margin_left = 1932.0
 margin_right = 2572.0
 rect_min_size = Vector2( 640, 0 )
@@ -444,7 +450,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mp_btncontainer4" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
+[node name="mp_btncontainer4" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont" groups=[
+"btn_containers",
+]]
 margin_left = 2576.0
 margin_right = 3216.0
 rect_min_size = Vector2( 640, 0 )
@@ -482,7 +490,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mp_btncontainer5" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
+[node name="mp_btncontainer5" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont" groups=[
+"btn_containers",
+]]
 margin_left = 3220.0
 margin_right = 3860.0
 rect_min_size = Vector2( 640, 0 )
@@ -520,7 +530,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mp_btncontainer6" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
+[node name="mp_btncontainer6" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont" groups=[
+"btn_containers",
+]]
 margin_left = 3864.0
 margin_right = 4504.0
 rect_min_size = Vector2( 640, 0 )
@@ -562,7 +574,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mp_btncontainer7" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
+[node name="mp_btncontainer7" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont" groups=[
+"btn_containers",
+]]
 margin_left = 4508.0
 margin_right = 5148.0
 rect_min_size = Vector2( 640, 0 )
@@ -604,7 +618,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mp_btncontainer8" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
+[node name="mp_btncontainer8" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont" groups=[
+"btn_containers",
+]]
 margin_left = 5152.0
 margin_right = 5792.0
 rect_min_size = Vector2( 640, 0 )
@@ -642,7 +658,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mp_btncontainer9" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
+[node name="mp_btncontainer9" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont" groups=[
+"btn_containers",
+]]
 margin_left = 5796.0
 margin_right = 6436.0
 rect_min_size = Vector2( 640, 0 )
@@ -688,7 +706,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mp_btncontainer10" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont"]
+[node name="mp_btncontainer10" type="Control" parent="menucanvas/menuplay/mp_scollcont/mp_hboxcont" groups=[
+"btn_containers",
+]]
 margin_left = 6440.0
 margin_right = 7720.0
 rect_min_size = Vector2( 1280, 0 )

@@ -16,7 +16,7 @@ onready var menuhelp = get_node("menucanvas/menuhelp")
 onready var transitionroot = get_node("transitioncanvas/transitionroot")
 
 #Main Menu Vars
-onready var currentmenu = menumain
+onready var currentmenu = menuwelcome
 
 onready var mainCustom = get_node("menucanvas/menumain/mm_custombtn")
 
@@ -28,48 +28,15 @@ onready var playScore = get_node("menucanvas/menuplay/mp_scorepanel/mp_scorevalu
 onready var playCoins = get_node("menucanvas/menuplay/mp_coinpanel/mp_coinvalue")
 
 onready var currentmode = 0
-onready var mpbuttons = [
-	get_node("menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer1/mp_op1"),
-	get_node("menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer2/mp_op2"),
-	get_node("menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer3/mp_op3"),
-	get_node("menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer4/mp_op4"),
-	get_node("menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer5/mp_op5"),
-	get_node("menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer6/mp_op6"),
-	get_node("menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer7/mp_op7"),
-	get_node("menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer8/mp_op8"),
-	get_node("menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer9/mp_op9"),
-	get_node("menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer10/mp_op10")
-]
+onready var mpbuttons = []
 
 onready var mpbuttonscorevalues = [
 	0, 3, 5, 7, 10, 20, 25, 50, 75, 100
 ]
 
-onready var mpcolours_red = get_node("menucanvas/menuplay/mp_infopanel/red")
-onready var mpcolours_blue = get_node("menucanvas/menuplay/mp_infopanel/blue")
-onready var mpcolours_purple = get_node("menucanvas/menuplay/mp_infopanel/purple")
-onready var mpcolours_green = get_node("menucanvas/menuplay/mp_infopanel/green")
-onready var mpcolours_yellow = get_node("menucanvas/menuplay/mp_infopanel/yellow")
-onready var mpcolours_pink = get_node("menucanvas/menuplay/mp_infopanel/pink")
-onready var mpcolours = [
-	mpcolours_red, mpcolours_blue, mpcolours_purple, mpcolours_green, mpcolours_yellow, mpcolours_pink
-]
+onready var mpinfoArray = []
 
-onready var mpinfo1 = get_node("menucanvas/menuplay/mp_infopanel/mp_info1")
-onready var mpinfo2 = get_node("menucanvas/menuplay/mp_infopanel/mp_info2")
-onready var mpinfo3 = get_node("menucanvas/menuplay/mp_infopanel/mp_info3")
-onready var mpinfo4 = get_node("menucanvas/menuplay/mp_infopanel/mp_info4")
-onready var mpinfo5 = get_node("menucanvas/menuplay/mp_infopanel/mp_info5")
-onready var mpinfo6 = get_node("menucanvas/menuplay/mp_infopanel/mp_info6")
-onready var mpinfo7 = get_node("menucanvas/menuplay/mp_infopanel/mp_info7")
-onready var mpinfo8 = get_node("menucanvas/menuplay/mp_infopanel/mp_info8")
-onready var mpinfo9 = get_node("menucanvas/menuplay/mp_infopanel/mp_info9")
-onready var mpinfo10 = get_node("menucanvas/menuplay/mp_infopanel/mp_info10")
-onready var mpinfobase = get_node("menucanvas/menuplay/mp_infopanel/mp_infobase")
-onready var mpinfos = [
-	mpinfo1, mpinfo2, mpinfo3, mpinfo4, mpinfo5, mpinfo6, mpinfo7, mpinfo8, mpinfo9, mpinfo10, mpinfobase
-]
-
+onready var mpcolourDict = {}
 
 #Custom Menu Vars
 
@@ -182,8 +149,30 @@ onready var customFocus = get_node("menucanvas/menucustom/mc_back")
 onready var storeFocus = get_node("menucanvas/menustore/mt_back")
 onready var settingsFocus = get_node("menucanvas/menusettings/ms_back")
 
+
+#For more efficent initalisation of nodes than hardcoding:
+func nodeInitalise():
+	
+	#Play Menu Vars
+	var btn_containers = get_tree().get_nodes_in_group("btn_containers")
+	
+	var mpbuttonsprefix = "menucanvas/menuplay/mp_scollcont/mp_hboxcont/mp_btncontainer"
+	for i in range(btn_containers.size()):
+		mpbuttons.append(get_node(mpbuttonsprefix + str(i + 1) + "/mp_op" + str(i + 1)))
+	
+	var mpinfosprefix = "menucanvas/menuplay/mp_infopanel/mp_info"
+	for i in range(btn_containers.size()):
+		mpinfoArray.append(get_node(mpinfosprefix + str(i + 1)))
+	
+	var mpcoloursprefix = "menucanvas/menuplay/mp_infopanel/"
+	var mpcolournames = ["red", "blue", "purple", "green", "yellow", "pink"]
+	for i in range(mpcolournames.size()):
+		mpcolourDict[mpcolournames[i]] = get_node(mpcoloursprefix + mpcolournames[i])
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	nodeInitalise()
 	
 	if globalsettings.getFirstload() == true:
 		menuwelcome.visible = true
@@ -324,55 +313,55 @@ func togglemodecheck(num):
 
 func colourpanelcheck(num):
 	
-	for colour in mpcolours:
+	for colour in mpcolourDict:
 		colour.visible = false
 	
-	for info in mpinfos:
+	for info in mpinfoArray:
 		info.visible = false
 	
 	match num:
 		1:
-			mpinfo1.visible = true
-			mpcolours_red.visible = true
+			mpinfoArray[num - 1].visible = true
+			mpcolourDict["red"].visible = true
 		2:
-			mpinfo2.visible = true
-			mpcolours_red.visible = true
-			mpcolours_blue.visible = true
+			mpinfoArray[num - 1].visible = true
+			mpcolourDict["red"].visible = true
+			mpcolourDict["blue"].visible = true
 		3:
-			mpinfo3.visible = true
-			mpcolours_red.visible = true
-			mpcolours_blue.visible = true
-			mpcolours_purple.visible = true
+			mpinfoArray[num - 1].visible = true
+			mpcolourDict["red"].visible = true
+			mpcolourDict["blue"].visible = true
+			mpcolourDict["purple"].visible = true
 		4:
-			mpinfo4.visible = true
-			mpcolours_red.visible = true
+			mpinfoArray[num - 1].visible = true
+			mpcolourDict["red"].visible = true
 		5:
-			mpinfo5.visible = true
-			mpcolours_green.visible = true
+			mpinfoArray[num - 1].visible = true
+			mpcolourDict["green"].visible = true
 		6:
-			mpinfo6.visible = true
-			mpcolours_blue.visible = true
-			mpcolours_green.visible = true
+			mpinfoArray[num - 1].visible = true
+			mpcolourDict["blue"].visible = true
+			mpcolourDict["green"].visible = true
 		7:
-			mpinfo7.visible = true
-			mpcolours_red.visible = true
-			mpcolours_yellow.visible = true
+			mpinfoArray[num - 1].visible = true
+			mpcolourDict["red"].visible = true
+			mpcolourDict["yellow"].visible = true
 		8:
-			mpinfo8.visible = true
-			mpcolours_pink.visible = true
+			mpinfoArray[num - 1].visible = true
+			mpcolourDict["pink"].visible = true
 		9:
-			mpinfo9.visible = true
-			mpcolours_green.visible = true
-			mpcolours_yellow.visible = true
-			mpcolours_pink.visible = true
+			mpinfoArray[num - 1].visible = true
+			mpcolourDict["green"].visible = true
+			mpcolourDict["yellow"].visible = true
+			mpcolourDict["pink"].visible = true
 		10:
-			mpinfo10.visible = true
-			mpcolours_red.visible = true
-			mpcolours_blue.visible = true
-			mpcolours_purple.visible = true
-			mpcolours_green.visible = true
-			mpcolours_yellow.visible = true
-			mpcolours_pink.visible = true
+			mpinfoArray[num - 1].visible = true
+			mpcolourDict["red"].visible = true
+			mpcolourDict["blue"].visible = true
+			mpcolourDict["purple"].visible = true
+			mpcolourDict["green"].visible = true
+			mpcolourDict["yellow"].visible = true
+			mpcolourDict["pink"].visible = true
 
 func _on_mp_op1_pressed():
 	globalsettings.setGamemode("Standard")
