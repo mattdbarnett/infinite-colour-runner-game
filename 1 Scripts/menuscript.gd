@@ -438,29 +438,29 @@ Custom Menu Signals
 func _on_mc_back_pressed():
 	transitionroot.Play("transition_in", "transition_out", menumain)
 
-func _on_mc_sliderblue_value_changed():	
-	bluelabel.text = str(blueslider.value) + "%"
+func _on_mc_sliderblue_value_changed(value):
+	bluelabel.text = str(value) + "%"
 
-func _on_mc_sliderpurple_value_changed():
-	purplelabel.text = str(purpleslider.value) + "%"
+func _on_mc_sliderpurple_value_changed(value):
+	purplelabel.text = str(value) + "%"
 
-func _on_mc_slidergreen_value_changed():
-	greenlabel.text = str(greenslider.value) + "%"
+func _on_mc_slidergreen_value_changed(value):
+	greenlabel.text = str(value) + "%"
 
-func _on_mc_slideryellow_value_changed():
-	yellowlabel.text = str(yellowslider.value) + "%"
+func _on_mc_slideryellow_value_changed(value):
+	yellowlabel.text = str(value) + "%"
 
-func _on_mc_sliderpink_value_changed():
-	pinklabel.text = str(pinkslider.value) + "%"
+func _on_mc_sliderpink_value_changed(value):
+	pinklabel.text = str(value) + "%"
 
-func _on_mc_sliderred_value_changed():
-	redlabel.text = str(redslider.value) + "%"
+func _on_mc_sliderred_value_changed(value):
+	redlabel.text = str(value) + "%"
 
-func _on_mc_sliderspd_value_changed():
-	speedlabel.text = str(speedslider.value) + "%"
+func _on_mc_sliderspd_value_changed(value):
+	speedlabel.text = str(value) + "%"
 
-func _on_mc_slidergrav_value_changed():
-	gravlabel.text = str(gravslider.value) + "%"
+func _on_mc_slidergrav_value_changed(value):
+	gravlabel.text = str(value) + "%"
 
 func _on_mc_start_pressed():
 	customDataGet.redvalue = redslider.value

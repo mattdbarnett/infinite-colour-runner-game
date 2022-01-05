@@ -142,8 +142,8 @@ func _ready():
 				typelist.append(texturepink)
 		"Custom":
 			customDataGet = globalsettings.customData
-			globalsettings.setGlobalgrav(40 * (customDataGet.gravityvalue/100))
-			player.setGrav()
+			globalsettings.SetGlobalgrav(40 * (customDataGet.gravityvalue/100))
+			player.SetGrav()
 			player.staticx = 700 * (customDataGet.speedvalue/100)
 			player.basex = 700 * (customDataGet.speedvalue/100)
 			var sum = 0
