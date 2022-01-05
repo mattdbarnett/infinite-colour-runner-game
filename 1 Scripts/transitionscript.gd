@@ -68,31 +68,31 @@ func _ready():
 
 # Custom Functions
 
-func changeMask():
+func ChangeMask():
 	currentTransition = transitionArray[randi() % transitionArray.size()]
 	transitionArray.erase(currentTransition)
 	usedTransitions.append(currentTransition)
 	shaderMat.set_shader_param("mask", currentTransition)
 
-func play(transitionIn, transitionOut, menu):
+func Play(transitionIn, transitionOut, menu):
 	rect.visible = true
 	currentIn = transitionIn
 	currentOut = transitionOut
 	currentMenu = menu
-	changeMask()
+	ChangeMask()
 	player.play(transitionOut)
 
-func transitionIn(transition, mode):
+func TransitionIn(transition, mode):
 	rect.visible = true
 	currentMode = mode
 	player.play(transition)
 
-func transitionOut(transition, mode):
+func TransitionOut(transition, mode):
 	rect.visible = true
 	currentMode = mode
 	player.play(transition)
 
-func resetSmooth():
+func ResetSmooth():
 	shaderMat.set_shader_param("smooth_size", 0.001)
 
 # Node Functions
@@ -101,7 +101,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	
 	if anim_name == currentOut:
 		transitionedOut = true
-		changeMask()
+		ChangeMask()
 		transitionArray += usedTransitions
 		usedTransitions.clear()
 		player.play(currentIn)
@@ -125,7 +125,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 				print ("An unexpected error occured when trying to switch to the menu scene")
 
 	animationPlaying = false
-	resetSmooth()
+	ResetSmooth()
 
 func _on_AnimationPlayer_animation_started(anim_name):
 	animationPlaying = true

@@ -158,7 +158,7 @@ onready var settingsFocus = get_node("menucanvas/menusettings/ms_back")
 
 
 #For more efficent initalisation of nodes than hardcoding:
-func nodeInitalise():
+func NodeInitalise():
 	
 	#Play Menu Vars
 	var btn_containers = get_tree().get_nodes_in_group("btn_containers")
@@ -179,13 +179,13 @@ func nodeInitalise():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	nodeInitalise()
+	NodeInitalise()
 	
-	if globalsettings.getFirstload() == true:
+	if globalsettings.GetFirstload() == true:
 		menuwelcome.visible = true
-		globalsettings.setFirstload(false)
+		globalsettings.SetFirstload(false)
 	else:
-		transitionroot.transitionIn("transition_in", null)
+		transitionroot.TransitionIn("transition_in", null)
 		menumain.visible = true
 		currentmenu = menumain
 	
@@ -195,50 +195,50 @@ func _ready():
 	resolution.add_item("1366x768")
 	resolution.add_item("1920x1080")
 	
-	updateProgression()
+	UpdateProgression()
 	
-	updateStats()
+	UpdateStats()
 	
-	updateStore()
+	UpdateStore()
 	
 	# -- Settings Checks
 	# - Graphics Checks
-	vsyncCheck()
-	resolutionCheck()
+	VsyncCheck()
+	ResolutionCheck()
 	# - Gui Checks
-	spdgravCheck()
-	fpsCheck()
-	moveCheck()
-	statusCheck()
+	SpdgravCheck()
+	FpsCheck()
+	MoveCheck()
+	StatusCheck()
 	# - Gameplay Checks
-	holdmodeCheck()
-	globalsettings.save_game()
+	HoldmodeCheck()
+	globalsettings.SaveGame()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 
 	# Changes button status and allows for fullscreen change through f key
-	fullscreenCheck()
+	FullscreenCheck()
 	
 	# Store Checks for when a purchase is made without enough currency
-	noMoneyCheck()
-	noScoreCheck()
+	NoMoneyCheck()
+	NoScoreCheck()
 	
 	#Checks if a the player has just finished transitioning into a new menu
-	transitionedOut()
+	TransitionedOut()
 
-func updateStats():
-	storeScore.text = str(globalsettings.getHighscore())
-	playScore.text = str(globalsettings.getHighscore())
-	storeCoins.text = str(globalsettings.getCurrency())
-	playCoins.text = str(globalsettings.getCurrency())
+func UpdateStats():
+	storeScore.text = str(globalsettings.GetHighscore())
+	playScore.text = str(globalsettings.GetHighscore())
+	storeCoins.text = str(globalsettings.GetCurrency())
+	playCoins.text = str(globalsettings.GetCurrency())
 
 """
 Menu Update Signals
 """
 
-func currentmenu_update(newcurrent):
+func CurrentmenuUpdate(newcurrent):
 	match newcurrent:
 		menumain:
 			mainFocus.grab_focus()
@@ -260,17 +260,17 @@ func currentmenu_update(newcurrent):
 func _unhandled_input(event):
 	if menuwelcome.visible == true:
 		if event is InputEventKey:
-			transitionroot.resetSmooth()
+			transitionroot.ResetSmooth()
 			currentmenu = menuwelcome
-			if globalsettings.getFirstrun() == true:
-				transitionroot.play("fade_in", "fade_out", menuhelp)
-				globalsettings.setFirstrun(false)
+			if globalsettings.GetFirstrun() == true:
+				transitionroot.Play("fade_in", "fade_out", menuhelp)
+				globalsettings.SetFirstrun(false)
 			elif transitionroot.animationPlaying == false:
-				transitionroot.play("transition_in", "fade_out", menumain)
+				transitionroot.Play("transition_in", "fade_out", menumain)
 
-func transitionedOut():
+func TransitionedOut():
 	if transitionroot.transitionedOut == true:
-		currentmenu_update(transitionroot.currentMenu)
+		CurrentmenuUpdate(transitionroot.currentMenu)
 
 	
 """
@@ -278,26 +278,26 @@ Main Menu Signals
 """
 
 func _on_mm_playbtn_pressed():
-	globalsettings.setGlobalgrav(40)
-	transitionroot.play("transition_in", "transition_out", menuplay)
+	globalsettings.SetGlobalgrav(40)
+	transitionroot.Play("transition_in", "transition_out", menuplay)
 
 func _on_mm_custombtn_pressed():
-	transitionroot.play("transition_in", "transition_out", menucustom)
+	transitionroot.Play("transition_in", "transition_out", menucustom)
 
 func _on_mm_storebtn_pressed():
-	transitionroot.play("transition_in", "transition_out", menustore)
+	transitionroot.Play("transition_in", "transition_out", menustore)
 
 func _on_mm_settingsbtn_pressed():
-	transitionroot.play("fade_in", "transition_out", menusettings)
+	transitionroot.Play("fade_in", "transition_out", menusettings)
 
 func _on_mm_helpbtn_pressed():
-	transitionroot.play("fade_in", "transition_out", menuhelp)
+	transitionroot.Play("fade_in", "transition_out", menuhelp)
 	helpCont1.visible = true
 	helpCont2.visible = false
 	helpCont3.visible = false
 
 func _on_mm_quitbtn_pressed():
-	globalsettings.save_game()
+	globalsettings.SaveGame()
 	get_tree().quit()
 
 """
@@ -305,20 +305,20 @@ Play Menu Signals
 """
 
 func _on_mp_back_pressed():
-	transitionroot.play("transition_in", "transition_out", menumain)
+	transitionroot.Play("transition_in", "transition_out", menumain)
 
-func togglemodecheck(num):
+func TogglemodeCheck(num):
 	playStart.disabled = false
 	for but in mpbuttons:
 		but.pressed = false
 	
 	currentmode = num + 1
 	
-	colourpanelcheck(currentmode)
+	ColourpanelCheck(currentmode)
 	
 	mpbuttons[num].pressed = true
 
-func colourpanelcheck(num):
+func ColourpanelCheck(num):
 	
 	mpinfoBase.text = ""
 	
@@ -373,49 +373,49 @@ func colourpanelcheck(num):
 			mpcolourDict["pink"].visible = true
 
 func _on_mp_op1_pressed():
-	globalsettings.setGamemode("Standard")
-	togglemodecheck(0)
+	globalsettings.SetGamemode("Standard")
+	TogglemodeCheck(0)
 
 func _on_mp_op2_pressed():
-	globalsettings.setGamemode("Take It Slow")
-	togglemodecheck(1)
+	globalsettings.SetGamemode("Take It Slow")
+	TogglemodeCheck(1)
 
 func _on_mp_op3_pressed():
-	globalsettings.setGamemode("Reverse")
-	togglemodecheck(2)
+	globalsettings.SetGamemode("Reverse")
+	TogglemodeCheck(2)
 
 func _on_mp_op4_pressed():
-	globalsettings.setGamemode("Lava")
-	togglemodecheck(3)
+	globalsettings.SetGamemode("Lava")
+	TogglemodeCheck(3)
 
 func _on_mp_op5_pressed():
-	globalsettings.setGamemode("Rapid")
-	togglemodecheck(4)
+	globalsettings.SetGamemode("Rapid")
+	TogglemodeCheck(4)
 
 func _on_mp_op6_pressed():
-	globalsettings.setGamemode("Fluctuant")
-	togglemodecheck(5)
+	globalsettings.SetGamemode("Fluctuant")
+	TogglemodeCheck(5)
 
 func _on_mp_op7_pressed():
-	globalsettings.setGamemode("Gravity")
-	togglemodecheck(6)
+	globalsettings.SetGamemode("Gravity")
+	TogglemodeCheck(6)
 
 func _on_mp_op8_pressed():
-	globalsettings.setGamemode("Powerup")
-	togglemodecheck(7)
+	globalsettings.SetGamemode("Powerup")
+	TogglemodeCheck(7)
 
 func _on_mp_op9_pressed():
-	globalsettings.setGamemode("Lunacy")
-	togglemodecheck(8)
+	globalsettings.SetGamemode("Lunacy")
+	TogglemodeCheck(8)
 
 func _on_mp_op10_pressed():
-	globalsettings.setGamemode("Rainbow")
-	togglemodecheck(9)
+	globalsettings.SetGamemode("Rainbow")
+	TogglemodeCheck(9)
 
-func updateProgression():
+func UpdateProgression():
 	for i in range(mpbuttons.size()):
 		var currentReqScoreLabel;
-		if globalsettings.getHighscore() >= mpbuttonscorevalues[i]:
+		if globalsettings.GetHighscore() >= mpbuttonscorevalues[i]:
 			mpbuttons[i].disabled = false
 			currentReqScoreLabel = get_node(str(mpbuttons[i].get_path()) + "/mp_score")
 			currentReqScoreLabel.visible = false
@@ -424,19 +424,19 @@ func updateProgression():
 			currentReqScoreLabel = get_node(str(mpbuttons[i].get_path()) + "/mp_score")
 			currentReqScoreLabel.visible = true
 	
-	if globalsettings.getHighscore() < 100:
+	if globalsettings.GetHighscore() < 100:
 		mainCustom.disabled = true
 	
 
 func _on_mp_start_pressed():
-	transitionroot.transitionOut("transition_out", "Game")
+	transitionroot.TransitionOut("transition_out", "Game")
 
 """
 Custom Menu Signals
 """
 
 func _on_mc_back_pressed():
-	transitionroot.play("transition_in", "transition_out", menumain)
+	transitionroot.Play("transition_in", "transition_out", menumain)
 
 func _on_mc_sliderblue_value_changed():	
 	bluelabel.text = str(blueslider.value) + "%"
@@ -471,154 +471,154 @@ func _on_mc_start_pressed():
 	customDataGet.pinkvalue = pinkslider.value
 	customDataGet.speedvalue = speedslider.value
 	customDataGet.gravityvalue = gravslider.value
-	globalsettings.setCustomData(customDataGet)
-	globalsettings.setGamemode("Custom")
-	transitionroot.transitionOut("transition_out", "Game")
+	globalsettings.SetCustomData(customDataGet)
+	globalsettings.SetGamemode("Custom")
+	transitionroot.TransitionOut("transition_out", "Game")
 
 """
 Store Menu Signals
 """
 
-func updateStore():
+func UpdateStore():
 	#Trails
 	var storeTrailList = [
 	storeTrailNoneButton, storeTrailGhostButton, storeTrailSnakeButton, storeTrailSmokeButton, storeTrailFlamesButton, storeTrailRainbowButton
 	]
 	for i in range(storeTrailList.size()):
-		updateStoreTrail(storeTrailList[i], storeTrailNames[i], storeTrailPrices[i])
+		UpdateStoreTrail(storeTrailList[i], storeTrailNames[i], storeTrailPrices[i])
 	#Backgrounds
 	var storeBGList = [
 	storeBGPlainButton, storeBGFadeButton, storeBGDiscoButton
 	]
 	for i in range (storeBGList.size()):
-		updateStoreBg(storeBGList[i], storeBGNames[i], storeBGScoresNeeded[i])
-	globalsettings.save_game()
+		UpdateStoreBg(storeBGList[i], storeBGNames[i], storeBGScoresNeeded[i])
+	globalsettings.SaveGame()
 
-func updateStoreTrail(button, mode, price):
-	var trailsBought = globalsettings.getTrailsBought()
+func UpdateStoreTrail(button, mode, price):
+	var trailsBought = globalsettings.GetTrailsBought()
 	if trailsBought[mode] == true:
-		if globalsettings.getCurrentTrail() == mode:
+		if globalsettings.GetCurrentTrail() == mode:
 			button.text = "Equipped"
 		else:
 			button.text = "Unequipped"
 	else:
 		button.text = str(price) + " Coins" 
-	globalsettings.save()
+	globalsettings.Save()
 
-func updateStoreBg(button, mode, scoreneeded):
-	var bgsUnlocked = globalsettings.getBgsUnlocked()
+func UpdateStoreBg(button, mode, scoreneeded):
+	var bgsUnlocked = globalsettings.GetBgsUnlocked()
 	if bgsUnlocked[mode] == true:
-		if globalsettings.getCurrentBg() == mode:
+		if globalsettings.GetCurrentBg() == mode:
 			button.text = "Equipped"
 		else:
 			button.text = "Unequipped"
 	else:
 		button.text = "Score Over " + str(scoreneeded)
-	globalsettings.save()
+	globalsettings.Save()
 
-func noMoneyCheck():
-	if globalsettings.getNoMoney() == true:
+func NoMoneyCheck():
+	if globalsettings.GetNoMoney() == true:
 		storeMoneyDialog.popup_centered_clamped()
-		globalsettings.setNoMoney(false)
+		globalsettings.SetNoMoney(false)
 
-func noScoreCheck():
-	if globalsettings.getNoScore() == true:
+func NoScoreCheck():
+	if globalsettings.GetNoScore() == true:
 		storeScoreDialog.popup_centered_clamped()
-		globalsettings.setNoScore(false)
+		globalsettings.SetNoScore(false)
 
-func buyTrailAttempt(num):
-	globalsettings.buyTrail(storeTrailNames[num], storeTrailPrices[num])
-	updateStats()
-	updateStore()
+func BuyTrailAttempt(num):
+	globalsettings.BuyTrail(storeTrailNames[num], storeTrailPrices[num])
+	UpdateStats()
+	UpdateStore()
 
-func unlockBGAttempt(num):
-	globalsettings.unlockBg(storeBGNames[num], storeBGScoresNeeded[num])
-	updateStore()
+func UnlockBGAttempt(num):
+	globalsettings.UnlockBg(storeBGNames[num], storeBGScoresNeeded[num])
+	UpdateStore()
 
 #Trail Buttons
 
 func _on_mt_but0_pressed():
-	buyTrailAttempt(0)
+	BuyTrailAttempt(0)
 
 func _on_mt_but1_pressed():
-	buyTrailAttempt(1)
+	BuyTrailAttempt(1)
 
 func _on_mt_but2_pressed():
-	buyTrailAttempt(2)
+	BuyTrailAttempt(2)
 
 func _on_mt_but3_pressed():
-	buyTrailAttempt(3)
+	BuyTrailAttempt(3)
 
 func _on_mt_but4_pressed():
-	buyTrailAttempt(4)
+	BuyTrailAttempt(4)
 
 func _on_mt_but5_pressed():
-	buyTrailAttempt(5)
+	BuyTrailAttempt(5)
 
 #Background Buttons
 
 func _on_mt_but1_bgs_pressed():
-	unlockBGAttempt(0)
+	UnlockBGAttempt(0)
 
 func _on_mt_but2_bgs_pressed():
-	unlockBGAttempt(1)
+	UnlockBGAttempt(1)
 
 func _on_mt_but3_bgs_pressed():
-	unlockBGAttempt(2)
+	UnlockBGAttempt(2)
 
 func _on_mt_back_pressed():
-	transitionroot.play("transition_in", "transition_out", menumain)
+	transitionroot.Play("transition_in", "transition_out", menumain)
 
 """
 Settings Menu Signals
 """
 
-func togglemodesettingscheck(num):
+func TogglemodesettingsCheck(num):
 	for but in msbuttons:
 		but.pressed = false
 	
 	msbuttons[num].pressed = true
 
 func _on_ms_gd_pressed():
-	togglemodesettingscheck(0)
+	TogglemodesettingsCheck(0)
 	settinggd.visible = true
 	settinggui.visible = false
 	settingsound.visible = false
 	settinggameplay.visible = false
 
 func _on_ms_gui_pressed():
-	togglemodesettingscheck(1)
+	TogglemodesettingsCheck(1)
 	settinggd.visible = false
 	settinggui.visible = true
 	settingsound.visible = false
 	settinggameplay.visible = false
 
 func _on_ms_sound_pressed():
-	togglemodesettingscheck(2)
+	TogglemodesettingsCheck(2)
 	settinggd.visible = false
 	settinggui.visible = false
 	settingsound.visible = true
 	settinggameplay.visible = false
 
 func _on_ms_gameplay_pressed():
-	togglemodesettingscheck(3)
+	TogglemodesettingsCheck(3)
 	settinggd.visible = false
 	settinggui.visible = false
 	settingsound.visible = false
 	settinggameplay.visible = true
 
 func _on_ms_presshold_pressed():
-	var holdmode = globalsettings.getHoldmode()
-	globalsettings.setHoldmode(!holdmode)
-	if globalsettings.getHoldmode() == false:
+	var holdmode = globalsettings.GetHoldmode()
+	globalsettings.SetHoldmode(!holdmode)
+	if globalsettings.GetHoldmode() == false:
 		pressholdbtn.text = "Press"
-	elif globalsettings.getHoldmode() == true:
+	elif globalsettings.GetHoldmode() == true:
 		pressholdbtn.text = "Hold"
 
-func holdmodeCheck():
-	if globalsettings.getHoldmode() == false:
+func HoldmodeCheck():
+	if globalsettings.GetHoldmode() == false:
 		pressholdbtn.text = "Press"
-	elif globalsettings.getHoldmode() == true:
+	elif globalsettings.GetHoldmode() == true:
 		pressholdbtn.text = "Hold"
 
 func _on_ms_slidermusic_value_changed():
@@ -636,16 +636,16 @@ func _on_ms_slidereffect_value_changed():
 # Fullscreen Settings Functions
 
 func _on_ms_fullscreen_pressed():
-	globalsettings.fullscreen()
+	globalsettings.Fullscreen()
 
-func fullscreenCheck():
+func FullscreenCheck():
 	if Input.is_action_just_released("fullscreen"):
-		globalsettings.fullscreen()
+		globalsettings.Fullscreen()
 	if OS.window_fullscreen == true:
 		fullscreenbutton.pressed = true
 	else:
 		fullscreenbutton.pressed = false
-	resolutionCheck()
+	ResolutionCheck()
 
 # Resoltion Settings Functions
 
@@ -664,7 +664,7 @@ func _on_ms_resolution_item_selected(index):
 		OS.window_size = Vector2(resWidth, resHeight)
 	
 
-func resolutionCheck():
+func ResolutionCheck():
 	
 	match OS.window_size:
 		Vector2(1920, 1080):
@@ -677,8 +677,8 @@ func resolutionCheck():
 # VSync Settings Functions
 
 func _on_ms_vsync_pressed():
-	var vsyncBool = globalsettings.getVSync()
-	globalsettings.setVSync(vsyncBool)
+	var vsyncBool = globalsettings.GetVSync()
+	globalsettings.SetVSync(vsyncBool)
 	
 	# --- reference start: https://godotengine.org/qa/27123/set-vsync-from-code-2-1-4
 	var vsync = !OS.is_vsync_enabled()
@@ -686,8 +686,8 @@ func _on_ms_vsync_pressed():
 	# reference end ---
 	
 
-func vsyncCheck():
-	if globalsettings.getVSync() == true:
+func VsyncCheck():
+	if globalsettings.GetVSync() == true:
 		vsyncbutton.pressed = true
 	else:
 		vsyncbutton.pressed = false
@@ -695,11 +695,11 @@ func vsyncCheck():
 # Speed and Gravity Info Settings Functions
 
 func _on_ms_spdgrav_pressed():
-	var spdgravInfo = globalsettings.getSpdGravInfo()
-	globalsettings.setSpdGravInfo(!spdgravInfo)
+	var spdgravInfo = globalsettings.GetSpdGravInfo()
+	globalsettings.SetSpdGravInfo(!spdgravInfo)
 
-func spdgravCheck():
-	if globalsettings.getSpdGravInfo() == true:
+func SpdgravCheck():
+	if globalsettings.GetSpdGravInfo() == true:
 		spdgravbutton.pressed = true
 	else:
 		spdgravbutton.pressed = false
@@ -707,11 +707,11 @@ func spdgravCheck():
 # FPS Info Functions
 
 func _on_ms_fps_pressed():
-	var fpsInfo = globalsettings.getFpsInfo()
-	globalsettings.setFpsInfo(!fpsInfo)
+	var fpsInfo = globalsettings.GetFpsInfo()
+	globalsettings.SetFpsInfo(!fpsInfo)
 
-func fpsCheck():
-	if globalsettings.getFpsInfo() == true:
+func FpsCheck():
+	if globalsettings.GetFpsInfo() == true:
 		fpsbutton.pressed = true
 	else:
 		fpsbutton.pressed = false
@@ -719,11 +719,11 @@ func fpsCheck():
 # Move Box Info Functions
 
 func _on_ms_movebox_pressed():
-	var moveInfo = globalsettings.getMoveInfo()
-	globalsettings.setMoveInfo(!moveInfo)
+	var moveInfo = globalsettings.GetMoveInfo()
+	globalsettings.SetMoveInfo(!moveInfo)
 
-func moveCheck():
-	if globalsettings.getMoveInfo() == true:
+func MoveCheck():
+	if globalsettings.GetMoveInfo() == true:
 		movebutton.pressed = true
 	else:
 		movebutton.pressed = false
@@ -731,17 +731,17 @@ func moveCheck():
 # Status Box Info Functions
 
 func _on_ms_status_pressed():
-	var statusInfo = globalsettings.getStatusInfo()
-	globalsettings.setStatusInfo(!statusInfo)
+	var statusInfo = globalsettings.GetStatusInfo()
+	globalsettings.SetStatusInfo(!statusInfo)
 
-func statusCheck():
-	if globalsettings.getStatusInfo() == true:
+func StatusCheck():
+	if globalsettings.GetStatusInfo() == true:
 		statusbutton.pressed = true
 	else:
 		statusbutton.pressed = false
 
 func _on_ms_back_pressed():
-	transitionroot.play("transition_in", "fade_out", menumain)
+	transitionroot.Play("transition_in", "fade_out", menumain)
 
 """
 Help Menu Signals
@@ -758,4 +758,4 @@ func _on_mh_next2_pressed():
 	helpCont3.visible = true
 
 func _on_mh_next3_pressed():
-	transitionroot.play("transition_in", "fade_out", menumain)
+	transitionroot.Play("transition_in", "fade_out", menumain)

@@ -44,8 +44,8 @@ var ending = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	transitionroot.transitionIn("fade_in", null)
-	if globalsettings.getFpsInfo() == true:
+	transitionroot.TransitionIn("fade_in", null)
+	if globalsettings.GetFpsInfo() == true:
 		fpsLabel.visible = true
 	typedict = {
 		texture: $LBody,
@@ -173,22 +173,22 @@ func _ready():
 				typelist.append(texturered)
 	
 	for _i in range(3):
-		floor_gen(texture)
-		ceiling_gen(texture)
+		FloorGen(texture)
+		CeilingGen(texture)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	
-	extraFeatures()
+	ExtraFeatures()
 		
 	if fterrain[-1].x < player.position.x + screensize.x:
-		texture_gen()
-		floor_gen(ftype)
+		TextureGen()
+		FloorGen(ftype)
 	
 	if cterrain[-1].x < player.position.x + screensize.x:
-		ceiling_gen(ctype)
+		CeilingGen(ctype)
 
-func texture_gen():
+func TextureGen():
 	if lastTypeUnique == false:
 		ftype = typelist[randi() % typelist.size()]
 		ctype = typelist[randi() % typelist.size()]
@@ -203,7 +203,7 @@ func texture_gen():
 		ctype = texture
 		lastTypeUnique = false
 	
-func floor_gen(ftypeinp):
+func FloorGen(ftypeinp):
 	var random = randomlist[randi() % randomlist.size()]
 	
 	var start = fterrain[-1] #The start is startf_y
@@ -259,7 +259,7 @@ func floor_gen(ftypeinp):
 	ground.texture = ftypeinp
 	add_child(ground)
 
-func ceiling_gen(ctypeinp):
+func CeilingGen(ctypeinp):
 	var random = randomlist[randi() % randomlist.size()]
 	
 	var start = cterrain[-1]
@@ -308,7 +308,7 @@ func ceiling_gen(ctypeinp):
 	ground.texture = ctypeinp
 	add_child(ground)
 
-func extraFeatures():
+func ExtraFeatures():
 	
 	#Keep FPS label updated
 	if globalsettings.fpsInfo == true:
@@ -320,4 +320,4 @@ func extraFeatures():
 	
 	if Input.is_action_just_pressed("esc"):
 		ending = true
-		transitionroot.transitionOut("fade_out", "Quit")
+		transitionroot.TransitionOut("fade_out", "Quit")

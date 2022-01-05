@@ -307,8 +307,7 @@ __meta__ = {
 }
 
 [node name="mp_hboxcont" type="HBoxContainer" parent="menucanvas/menuplay/mp_scollcont"]
-margin_left = -100.0
-margin_right = 7620.0
+margin_right = 7720.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

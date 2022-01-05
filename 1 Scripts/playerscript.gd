@@ -89,9 +89,9 @@ func _ready():
 	powerupTimer.start()
 	scoreTimer.start()
 	
-	playerTrail()
-	playerBg()
-	playerUIInitalise()
+	PlayerTrail()
+	PlayerBg()
+	PlayerUIInitalise()
 
 func _physics_process(_delta):
 	scoreLabel.text = str(int(score))
@@ -99,16 +99,16 @@ func _physics_process(_delta):
 	motion.y += grav
 	motion.x = xspeed
 	
-	playerInput()
-	playerTouch()
-	playerEffects()
-	playerUIConst()
+	PlayerInput()
+	PlayerTouch()
+	PlayerEffects()
+	PlayerUIConst()
 	
 	motion = move_and_slide(motion, UP)
 
 # Custom Functions
 
-func playerInput():
+func PlayerInput():
 	#User input changes gravity
 	if (is_on_floor() or is_on_ceiling()) && Input.is_action_just_pressed("move"):
 		isGravUp = !isGravUp
@@ -119,7 +119,7 @@ func playerInput():
 		grav = gravdown
 	
 	#Hold-mode Input
-	if globalsettings.getHoldmode() == true:
+	if globalsettings.GetHoldmode() == true:
 		
 		if Input.is_action_pressed("move"):
 			currentHold = true
@@ -139,17 +139,17 @@ func playerInput():
 			isPowerupPink = false
 			powerupBool = true
 
-func playerTouch():
+func PlayerTouch():
 	
 	if is_on_wall():
-		playerDeath()
+		PlayerDeath()
 	
 	#Detect Touch
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
 		match collision.collider.name:
 			"RedLBody": 
-				playerDeath()
+				PlayerDeath()
 			"BlueLBody":
 				touchingCurrent = "blue"
 				modeCurrent = "blue"
@@ -173,7 +173,7 @@ func playerTouch():
 				touchingCurrent = "base"
 				
 		
-func playerEffects():
+func PlayerEffects():
 	
 	#Powerup Effects
 	if powerupValue >= 100:
@@ -196,7 +196,7 @@ func playerEffects():
 		"green":
 			xspeed += 1
 			basex = xspeed
-			timerScoreReset()
+			TimerScoreReset()
 		"yellow":
 			if yellowtoggle == false:
 				gravchange += 0.5
@@ -204,7 +204,7 @@ func playerEffects():
 				gravchange -= 0.5
 			gravup = -gravchange
 			gravdown = gravchange
-			timerScoreReset()
+			TimerScoreReset()
 		"pink":
 			powerupValue = 100
 			isPowerupPink = true
@@ -219,7 +219,7 @@ func playerEffects():
 			if isPowerupPink == true and touchingCurrent != "pink":
 				powerupValue = 0
 			
-			if powerupStatus() == "EMPTY" or Input.is_action_just_released("powerup"): 
+			if PowerupStatus() == "EMPTY" or Input.is_action_just_released("powerup"): 
 				powerupBool = false
 				basex = staticx
 				powerdownTimer.stop()
@@ -234,26 +234,26 @@ func playerEffects():
 			scoreIncrement = 0
 		_:
 			xspeed = basex
-			timerScoreReset()
+			TimerScoreReset()
 
-func playerUIConst():
+func PlayerUIConst():
 	
 	# Speed + Gravity Panels
-	if globalsettings.getSpdGravInfo() == true:
+	if globalsettings.GetSpdGravInfo() == true:
 		var speedValueLabel = get_node(str(speedGravPanels.get_path()) + "/speedPanel/valueLabel")
 		speedValueLabel.text = str(xspeed)
 		var gravValueLabel = get_node(str(speedGravPanels.get_path()) + "/gravPanel/valueLabel")
 		gravValueLabel.text = str(int(gravchange))
 	
 	# Move Panel
-	if globalsettings.getMoveInfo() == true:
+	if globalsettings.GetMoveInfo() == true:
 		if (is_on_floor() or is_on_ceiling()):
 			movePanel.get_stylebox("panel", "").set_bg_color("#00FF21")
 		else:
 			movePanel.get_stylebox("panel", "").set_bg_color("#000000")
 	
 	# Status Panel
-	if globalsettings.getStatusInfo() == true:
+	if globalsettings.GetStatusInfo() == true:
 		match modeCurrent:
 			"base": statusPanel.get_stylebox("panel", "").set_bg_color("#000000")
 			"blue": statusPanel.get_stylebox("panel", "").set_bg_color("#0016ff")
@@ -271,22 +271,22 @@ func playerUIConst():
 		else:
 			statusArrow.visible = false
 
-func playerDeath():
+func PlayerDeath():
 	#If game is not custom, check if highscore and add currency
-	if globalsettings.getGamemode() != "Custom":
-		if score > globalsettings.getHighscore():
-			globalsettings.setHighscore(score)
+	if globalsettings.GetGamemode() != "Custom":
+		if score > globalsettings.GetHighscore():
+			globalsettings.SetHighscore(score)
 		
 		score = int(score/5)
-		globalsettings.setCurrency(globalsettings.getCurrency() + score)
+		globalsettings.SetCurrency(globalsettings.GetCurrency() + score)
 	
 	#Reload scene
 	if gameroot.ending != true:
 		if get_tree().reload_current_scene() != OK:
 			print("An unexpected error occured when trying to restart the scene")
 
-func playerTrail():
-	match globalsettings.getCurrentTrail():
+func PlayerTrail():
+	match globalsettings.GetCurrentTrail():
 		"ghost":
 			trailGhost.visible = true
 		"snake":
@@ -298,8 +298,8 @@ func playerTrail():
 		"rainbow":
 			trailRainbow.visible = true
 
-func playerBg():
-	match globalsettings.getCurrentBg():
+func PlayerBg():
+	match globalsettings.GetCurrentBg():
 		"plain":
 			bgPlain.visible = true
 		"fade":
@@ -307,24 +307,24 @@ func playerBg():
 		"disco":
 			bgRainbow.visible = true
 
-func playerUIInitalise():
-	if globalsettings.getSpdGravInfo() == true:
+func PlayerUIInitalise():
+	if globalsettings.GetSpdGravInfo() == true:
 		speedGravPanels.visible = true
 	
-	if globalsettings.getMoveInfo() == true:
+	if globalsettings.GetMoveInfo() == true:
 		movePanel.visible = true
 	
-	if globalsettings.getStatusInfo() == true:
+	if globalsettings.GetStatusInfo() == true:
 		statusPanel.visible = true
 
-func powerupStatus():
+func PowerupStatus():
 	if powerupValue == 100:
 		return "FULL"
 	elif powerupValue < 1:
 		return "EMPTY"
 
-func setGrav():
-	grav = globalsettings.getGlobalgrav()
+func SetGrav():
+	grav = globalsettings.GetGlobalgrav()
 	gravchange = grav
 	gravup = -gravchange
 	gravdown = gravchange
@@ -338,7 +338,7 @@ func _on_TimerPowerup_timeout():
 func _on_TimerPowerdown_timeout():
 	powerupValue -= 0.1
 
-func timerScoreReset():
+func TimerScoreReset():
 	scoreIncrement = 1
 	scoreTimer.wait_time = 1
 

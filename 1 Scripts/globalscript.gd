@@ -53,136 +53,136 @@ var bgsUnlocked = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	load_game()
+	LoadGame()
 
 # - - Getters and Setters
 
 # - Temp Vars
 
-func getFirstload():
+func GetFirstload():
 	return firstload
 
-func setFirstload(input):
+func SetFirstload(input):
 	firstload = input
 
-func getGlobalgrav():
+func GetGlobalgrav():
 	return globalgrav
 
-func setGlobalgrav(input):
+func SetGlobalgrav(input):
 	globalgrav = input
 
-func getGamemode():
+func GetGamemode():
 	return gamemode
 
-func setGamemode(input):
+func SetGamemode(input):
 	gamemode = input
 
-func getNoMoney():
+func GetNoMoney():
 	return noMoney
 
-func setNoMoney(input):
+func SetNoMoney(input):
 	noMoney = input
 
-func getNoScore():
+func GetNoScore():
 	return noScore
 
-func setNoScore(input):
+func SetNoScore(input):
 	noScore = input
 
-func getCustomData():
+func GetCustomData():
 	return customData
 
-func setCustomData(input):
+func SetCustomData(input):
 	customData = input
 
 # - Saved Vars
 
-func getFirstrun():
+func GetFirstrun():
 	return firstrun
 
-func setFirstrun(input):
+func SetFirstrun(input):
 	firstrun = input
 
-func getHoldmode():
+func GetHoldmode():
 	return holdmode
 
-func setHoldmode(input):
+func SetHoldmode(input):
 	holdmode = input
 
-func getSpdGravInfo():
+func GetSpdGravInfo():
 	return spdgravInfo
 
-func setSpdGravInfo(input):
+func SetSpdGravInfo(input):
 	spdgravInfo = input
 
-func getFpsInfo():
+func GetFpsInfo():
 	return fpsInfo
 
-func setFpsInfo(input):
+func SetFpsInfo(input):
 	fpsInfo = input
 
-func getMoveInfo():
+func GetMoveInfo():
 	return moveInfo
 
-func setMoveInfo(input):
+func SetMoveInfo(input):
 	moveInfo = input
 
-func getStatusInfo():
+func GetStatusInfo():
 	return statusInfo
 
-func setStatusInfo(input):
+func SetStatusInfo(input):
 	statusInfo = input
 
-func getVSync():
+func GetVSync():
 	return vsync
 
-func setVSync(input):
+func SetVSync(input):
 	vsync = input
 
-func getCurrency():
+func GetCurrency():
 	return currency
 
-func setCurrency(input):
+func SetCurrency(input):
 	currency = input
 
-func getHighscore():
+func GetHighscore():
 	return highscore
 
-func setHighscore(input):
+func SetHighscore(input):
 	highscore = input
 
-func getCurrentTrail():
+func GetCurrentTrail():
 	return currentTrail
 
-func setCurrentTrail(input):
+func SetCurrentTrail(input):
 	currentTrail = input
 
-func getTrailsBought():
+func GetTrailsBought():
 	return trailsBought
 
-func setTrailsBought(input):
+func SetTrailsBought(input):
 	trailsBought = input
 
-func getCurrentBg():
+func GetCurrentBg():
 	return currentBg
 
-func setCurrentBg(input):
+func SetCurrentBg(input):
 	currentBg = input
 
-func getBgsUnlocked():
+func GetBgsUnlocked():
 	return bgsUnlocked
 
-func setBgsUnlocked(input):
+func SetBgsUnlocked(input):
 	bgsUnlocked = input
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 
-func fullscreen():
+func Fullscreen():
 	OS.window_fullscreen = !OS.window_fullscreen
 
-func buyTrail(trail, price):
+func BuyTrail(trail, price):
 	if trailsBought[trail] == true:
 		currentTrail = trail
 	elif currency >= price:
@@ -192,7 +192,7 @@ func buyTrail(trail, price):
 	else:
 		noMoney = true
 
-func unlockBg(bg, neededscore):
+func UnlockBg(bg, neededscore):
 	if bgsUnlocked[bg] == true:
 		currentBg = bg
 	elif highscore >= neededscore:
@@ -201,7 +201,7 @@ func unlockBg(bg, neededscore):
 	else:
 		noScore = true
 
-func save():
+func Save():
 	save_dict = {
 		#Flags
 		"firstrun" : firstrun,
@@ -233,22 +233,22 @@ func save():
 	}
 	return save_dict
 
-func save_game():
+func SaveGame():
 	var save_game = File.new()
 	save_game.open("user://savegame.save", File.WRITE)
-	save_dict = save()
+	save_dict = Save()
 	for i in save_dict.keys():
 		#save_game.store_line(to_json(i))
 		save_game.store_line(to_json(save_dict[i]))
 	save_game.close()
 
-func load_game():
+func LoadGame():
 	var save_game = File.new()
 	if not save_game.file_exists("user://savegame.save"):
 		return
 	
 	save_game.open("user://savegame.save", File.READ)
-	save()
+	Save()
 	for i in save_dict.keys():
 		var data = parse_json(save_game.get_line())
 		save_dict[i] = data
