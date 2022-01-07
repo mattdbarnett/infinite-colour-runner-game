@@ -1,6 +1,6 @@
 extends Node
 
-#--Temp Vars
+# - - Temp Vars
 
 var firstload = true
 var globalgrav = 40;
@@ -16,12 +16,12 @@ var customData = {
 	"yellowvalue": 0,
 	"pinkvalue": 0,
 	"speedvalue": 100,
-	"gravityvalue": 100
+	"gravityvalue": 100,
 }
 
 var save_dict
 
-#--Locally Saved Vars
+# - - Locally Saved Vars
 
 var firstrun = true;
 var holdmode = false;
@@ -32,7 +32,7 @@ var statusInfo = false;
 var vsync = true;
 var currency = 0;
 var highscore = 0;
-var currentTrail = "none" #none/ghost/snake/smoke/flames/rainbow
+var currentTrail = "none" # none/ghost/snake/smoke/flames/rainbow
 
 var trailsBought = {
 	"none": true,
@@ -40,15 +40,15 @@ var trailsBought = {
 	"snake": false,
 	"smoke": false,
 	"flames": false,
-	"rainbow": false
+	"rainbow": false,
 }
 
-var currentBg = "plain" #plain/fade/disco
+var currentBg = "plain" # plain/fade/disco
 
 var bgsUnlocked = {
 	"plain": true,
 	"fade": false,
-	"disco": false
+	"disco": false,
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -203,10 +203,10 @@ func UnlockBg(bg, neededscore):
 
 func Save():
 	save_dict = {
-		#Flags
+		# Flags
 		"firstrun" : firstrun,
 		
-		#Settings
+		# Settings
 		"holdmode" : holdmode,
 		"vsync" : vsync,
 		"spdgravInfo" : spdgravInfo,
@@ -214,11 +214,11 @@ func Save():
 		"moveInfo" : moveInfo,
 		"statusInfo" : statusInfo,
 
-		#Records
+		# Records
 		"currency" : currency,
 		"highscore" : highscore,
 		
-		#Purchases
+		# Purchases
 		"currentTrail" : currentTrail,
 		"currentBg" : currentBg,
 		"trailsBought-none" : true,
@@ -253,10 +253,10 @@ func LoadGame():
 		var data = parse_json(save_game.get_line())
 		save_dict[i] = data
 	
-	#Flag Vars
+	# Flag Vars
 	firstrun = save_dict["firstrun"]
 	
-	#Settings Vars
+	# Settings Vars
 	holdmode = save_dict["holdmode"]
 	vsync = save_dict["vsync"]
 	OS.set_use_vsync(vsync)
@@ -265,11 +265,11 @@ func LoadGame():
 	moveInfo = save_dict["moveInfo"]
 	statusInfo = save_dict["statusInfo"]
 	
-	#Record Vars
+	# Record Vars
 	currency = save_dict["currency"]
 	highscore = save_dict["highscore"]
 	
-	#Purchase Vars
+	# Purchase Vars
 	currentTrail = save_dict["currentTrail"]
 	currentBg = save_dict["currentBg"]
 	
