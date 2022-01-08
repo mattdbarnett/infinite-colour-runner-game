@@ -5,6 +5,8 @@
 [ext_resource path="res://4 Styling/2 Panels/popup_panel.tres" type="StyleBox" id=3]
 [ext_resource path="res://4 Styling/0 Const/norm_disabled.tres" type="StyleBox" id=4]
 [ext_resource path="res://4 Styling/0 Const/norm.tres" type="StyleBox" id=5]
+[ext_resource path="res://2 Sprites/2 Misc/checkboxfalse.png" type="Texture" id=6]
+[ext_resource path="res://2 Sprites/2 Misc/checkboxtrue.png" type="Texture" id=7]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -21,14 +23,6 @@ border_color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="StreamTexture" id=5]
-flags = 4
-load_path = "res://.import/checkboxfalse.png-75d48c0225a34a1471ff952bf3e880d6.stex"
-
-[sub_resource type="StreamTexture" id=6]
-flags = 4
-load_path = "res://.import/checkboxtrue.png-caff23faf478b86f94d99d9af337f540.stex"
 
 [sub_resource type="StyleBoxEmpty" id=7]
 
@@ -118,9 +112,9 @@ CheckButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 CheckButton/constants/check_vadjust = 0
 CheckButton/constants/hseparation = 4
 CheckButton/fonts/font = null
-CheckButton/icons/off = SubResource( 5 )
+CheckButton/icons/off = ExtResource( 6 )
 CheckButton/icons/off_disabled = null
-CheckButton/icons/on = SubResource( 6 )
+CheckButton/icons/on = ExtResource( 7 )
 CheckButton/icons/on_disabled = null
 CheckButton/styles/disabled = null
 CheckButton/styles/focus = SubResource( 7 )
