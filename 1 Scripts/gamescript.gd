@@ -206,8 +206,8 @@ func TextureGen():
 func FloorGen(ftypeinp):
 	var random = randomlist[randi() % randomlist.size()]
 	
-	var start = fterrain[-1] #The start is startf_y
-	var poly = PoolVector2Array() #The shape of the floor piece
+	var start = fterrain[-1] # The start is startf_y
+	var poly = PoolVector2Array() # The shape of the floor piece
 	var height = randi() % 50
 	var lastx = 0
 	var lasty = 0
@@ -217,26 +217,26 @@ func FloorGen(ftypeinp):
 			
 			var floor_point = Vector2()
 			
-			#Maintains position if it's the second part of the piece
+			# Maintains position if it's the second part of the piece
 			floor_point.x = lastx
 			
-			#Maintains height if it's the second part of the piece
+			# Maintains height if it's the second part of the piece
 			floor_point.y = lasty
 			
 			if piecePart == 0:
-				#If this is the first section of the piece, define/create position
+				# If this is the first section of the piece, define/create position
 				floor_point.x = start.x + piecePart + floor_width * piece
 				lastx = floor_point.x
 			
 			if piecePart == 0 and piece == 0:
-				#If this is the first section of the piece, define/create height
+				# If this is the first section of the piece, define/create height
 				floor_point.y = start.y + height * cos(1 / floor_slices * piecePart) + random
 				
-				#Limits floor from going too low
+				# Limits floor from going too low
 				if floor_point.y < 90:
 					floor_point.y += 64
 				
-				#Limits floor from going too high
+				# Limits floor from going too high
 				if floor_point.y > 300:
 					floor_point.y -= 64
 				
@@ -245,15 +245,15 @@ func FloorGen(ftypeinp):
 			fterrain.append(floor_point)
 			poly.append(floor_point)
 		start.y += height
-	shape = CollisionPolygon2D.new() #The collision shape for the floor
-	ground = Polygon2D.new() #The visual shape for the floor
+	shape = CollisionPolygon2D.new() # The collision shape for the floor
+	ground = Polygon2D.new() # The visual shape for the floor
 	type = typedict[ftypeinp]
-	type.add_child(shape) #Adds the collision to the level
-	#Below closes the shape collision and visual shown from the start of the floor
-	#to the bottom of the level
+	type.add_child(shape) # Adds the collision to the level
+	#  Below closes the shape collision and visual shown from the start of the floor
+	# to the bottom of the level
 	poly.append(Vector2(fterrain[-1].x, screensize.y))
 	poly.append(Vector2(start.x, screensize.y))
-	#Below sets the closed shape to be shown visually and in collisions.
+	# Below sets the closed shape to be shown visually and in collisions.
 	shape.polygon = poly
 	ground.polygon = poly
 	ground.texture = ftypeinp
