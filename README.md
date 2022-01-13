@@ -9,6 +9,8 @@ All releases of the game are avaliable in the following directory: "res://6 Rele
 To run a release, simply copy the exe and it's corresponding pck file to a directory of your choice and run them from there.
 It is recommended to execute and/or copy the most recent release within the directory.
 
+Users must be running Windows to run the game.
+
 ## Frameworks and APIs
 
 The frameworks used to develop this game is the Godot Engine, and will be required in order to edit and run the project.
@@ -38,3 +40,5 @@ This project has achieved all it's MVP goals, though documentation of past objec
 ## Misc.
 
 If any bugs are found by community members, please add them via the GitHub issues page to be fixed and discussed.
+
+All C4 architecture diagrams can be found in the following directory: "res://architecture diagrams/".
