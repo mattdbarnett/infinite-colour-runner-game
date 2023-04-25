@@ -1,41 +1,38 @@
 # Godot Autumn Semester Project
 
-A basic, procedurally generated side-scrolling game with a variety of customisation options and goals.
+An open-source, basic, procedurally generated side-scrolling game with a variety of customisation options and goals.
 It is open-source and aims for a eventual release on Steam, and potentially other platforms post-PC-release.
 
 ## Installation Instructions
 
 All releases of the game are avaliable in the following directory: "res://6 Releases/".
-To run a release, simply copy the exe and it's corresponding pck file to a directory of your choice and run them from there.
-It is recommended to execute and/or copy the most recent release within the directory.
+To run a release, simply copy the '.exe' file and its sibling '.pck' file to a directory of your choice and run the executable from there.
+It is recommended to execute and/or copy the most recent release within the releases directory.
 
-Users must be running Windows to run the game.
+You can also download the files for the 1.0.2 release at the following links:
+- 1.0.2 .exe Download: https://github.com/mattdbarnett/infinite-colour-runner-game/raw/main/6%20Releases/1.0.2%20release/upwn-1.0.2-release.exe
+- 1.0.2 .pck Download: https://github.com/mattdbarnett/infinite-colour-runner-game/raw/main/6%20Releases/1.0.2%20release/upwn-1.0.2-release.pck
+
+(This game can only be ran in Windows 7+)
 
 ## Frameworks and APIs
 
-The frameworks used to develop this game is the Godot Engine, and will be required in order to edit and run the project.
-I also opted to develop this project using the GDScript variant, rather than the C# fork.
-It can be downloaded at the following link:
-https://godotengine.org/download/windows
+Godot 3.5 is required to edit and run the project.
+The project was developed using GDScript, rather than Godot's C# mono variant.
+The engine can be downloaded at the following link:
+- Download Engine: https://godotengine.org/download/windows
 
 Additionally, its documentation and source code can be found at the two following links:
-Source Code: https://github.com/godotengine/godot
-Documentation: https://docs.godotengine.org/en/stable/index.html
+- Source Code: https://github.com/godotengine/godot
+- Documentation: https://docs.godotengine.org/en/stable/index.html
 
-The APIs and communtiy made addons present within this project are as follows:
+The APIs and community made addons present within this project are as follows:
 
-- Godot File API
-URL: https://docs.godotengine.org/en/stable/classes/class_file.html
+- Godot File API: https://docs.godotengine.org/en/stable/classes/class_file.html
 
-- Godot Version Control API
-URL: https://github.com/godotengine/godot-git-plugin/releases
+- Godot Version Control API: https://github.com/godotengine/godot-git-plugin/releases
 
-- GUT Unit Testing
-URL: https://github.com/bitwes/Gut
-
-## Essential Goals
-
-This project has achieved all it's MVP goals, though documentation of past objectives can be found in previous iterations of this readme file, accessible through prior commits.
+- GUT Unit Testing: https://github.com/bitwes/Gut
 
 ## Misc.
 
